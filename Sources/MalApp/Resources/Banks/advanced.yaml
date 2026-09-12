@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: "mal.advanced"
-contentVersion: 1
+contentVersion: 2
 title: "Advanced"
 provenance:
   source: "NIKL Korean learner vocabulary (2003); English Wiktionary contributors via Kaikki, 2026-09-02 dump"
@@ -10,28 +10,29 @@ entries:
   - id: "mal.advanced.1753a8d2fa10436c"
     lemma: "안방"
     partOfSpeech: "noun"
-    english: ["inner room"]
+    english: ["inner room", "main bedroom"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: inner room\nSource: https://en.wiktionary.org/wiki/안방#Korean · NIKL level B, frequency rank 2136"
+    promptCue: "traditional home"
   - id: "mal.advanced.74ec17697ac628ab"
     lemma: "앓다"
     partOfSpeech: "verb"
-    english: ["suffer from an illness", "to suffer from an illness"]
+    english: ["be ill", "suffer from illness"]
     koreanForms: [{"text": "앓는다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "앓아", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "앓아요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "앓습니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "앓는", "honorific": false, "attributive": true}, {"text": "앓으신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "앓으셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "앓으세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "앓으셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "앓으십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "앓으시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to suffer from an illness\nSource: https://en.wiktionary.org/wiki/앓다#Korean · NIKL level B, frequency rank 2137"
   - id: "mal.advanced.b24011d33ab9aaf0"
     lemma: "오직"
     partOfSpeech: "adverb"
-    english: ["only", "solely", "alone", "exclusively", "but"]
+    english: ["only", "solely"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: only, solely, alone, exclusively, but\nSource: https://en.wiktionary.org/wiki/오직#Korean · NIKL level B, frequency rank 2140"
   - id: "mal.advanced.45186451fe011a0c"
     lemma: "포함되다"
     partOfSpeech: "verb"
-    english: ["be included", "to be included"]
+    english: ["be included"]
     koreanForms: [{"text": "포함된다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "포함돼", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "포함돼요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "포함되어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "포함됩니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "포함되는", "honorific": false, "attributive": true}, {"text": "포함되신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "포함되셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "포함되세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "포함되셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "포함되십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "포함되시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to be included\nSource: https://en.wiktionary.org/wiki/포함되다#Korean · NIKL level B, frequency rank 2148"
@@ -49,10 +50,11 @@ entries:
     koreanForms: []
     verification: "draft"
     notes: "Source sense: less\nSource: https://en.wiktionary.org/wiki/덜#Korean · NIKL level B, frequency rank 2154"
+    promptCue: "to a lesser extent"
   - id: "mal.advanced.8a7f008b897cec85"
     lemma: "둥글다"
     partOfSpeech: "adjective"
-    english: ["be round", "to be round", "circular"]
+    english: ["round", "be round"]
     koreanForms: [{"text": "둥글다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "둥글어", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "둥글어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "둥급니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "둥근", "honorific": false, "attributive": true}, {"text": "둥그시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "둥그셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "둥그세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "둥그셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "둥그십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "둥그신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to be round, circular\nSource: https://en.wiktionary.org/wiki/둥글다#Korean · NIKL level B, frequency rank 2155"
@@ -66,14 +68,14 @@ entries:
   - id: "mal.advanced.82d228a5b8d67959"
     lemma: "세금"
     partOfSpeech: "noun"
-    english: ["tax", "duty"]
+    english: ["tax", "taxes"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: tax, duty\nSource: https://en.wiktionary.org/wiki/세금#Korean · NIKL level B, frequency rank 2160"
   - id: "mal.advanced.d47b449823d1f6ad"
     lemma: "입구"
     partOfSpeech: "noun"
-    english: ["entrance"]
+    english: ["entrance", "entryway"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: entrance\nSource: https://en.wiktionary.org/wiki/입구#Korean · NIKL level B, frequency rank 2165"
@@ -94,7 +96,7 @@ entries:
   - id: "mal.advanced.5f7e19e132fbd3ba"
     lemma: "펼쳐지다"
     partOfSpeech: "verb"
-    english: ["unfold", "to unfold"]
+    english: ["unfold", "be spread out"]
     koreanForms: [{"text": "펼쳐진다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "펼쳐져", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "펼쳐져요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "펼쳐지어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "펼쳐집니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "펼쳐지는", "honorific": false, "attributive": true}, {"text": "펼쳐지신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "펼쳐지셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "펼쳐지세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "펼쳐지셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "펼쳐지십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "펼쳐지시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to unfold\nSource: https://en.wiktionary.org/wiki/펼쳐지다#Korean · NIKL level B, frequency rank 2169"
@@ -108,7 +110,7 @@ entries:
   - id: "mal.advanced.ef6ba12ad565fc2a"
     lemma: "넘치다"
     partOfSpeech: "verb"
-    english: ["overflow", "to overflow", "run over", "to run over", "brim over", "to brim over", "flood", "to flood"]
+    english: ["overflow", "to overflow"]
     koreanForms: [{"text": "넘친다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "넘쳐", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "넘쳐요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "넘치어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "넘칩니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "넘치는", "honorific": false, "attributive": true}, {"text": "넘치신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "넘치셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "넘치세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "넘치셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "넘치십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "넘치시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to overflow, to run over, to brim over, to flood\nSource: https://en.wiktionary.org/wiki/넘치다#Korean · NIKL level B, frequency rank 2172"
@@ -129,14 +131,14 @@ entries:
   - id: "mal.advanced.2bb9628681c84ca1"
     lemma: "머릿속"
     partOfSpeech: "noun"
-    english: ["inside one's mind"]
+    english: ["inside the mind", "in the mind"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: inside one's mind\nSource: https://en.wiktionary.org/wiki/머릿속#Korean · NIKL level B, frequency rank 2178"
   - id: "mal.advanced.a12ebaf085e55f9d"
     lemma: "불안하다"
     partOfSpeech: "adjective"
-    english: ["uneasy", "anxious"]
+    english: ["anxious", "uneasy", "be anxious", "be uneasy"]
     koreanForms: [{"text": "불안하다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "불안해", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "불안해요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "불안합니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "불안한", "honorific": false, "attributive": true}, {"text": "불안하시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "불안하셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "불안하세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "불안하셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "불안하십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "불안하신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: uneasy, anxious\nSource: https://en.wiktionary.org/wiki/불안하다#Korean · NIKL level B, frequency rank 2180"
@@ -150,14 +152,14 @@ entries:
   - id: "mal.advanced.c00e1f357724a007"
     lemma: "평생"
     partOfSpeech: "noun"
-    english: ["one's entire life", "lifetime"]
+    english: ["whole life", "entire life", "lifetime"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: one's entire life, lifetime\nSource: https://en.wiktionary.org/wiki/평생#Korean · NIKL level B, frequency rank 2185"
   - id: "mal.advanced.760bb2a386671a2f"
     lemma: "굉장히"
     partOfSpeech: "adverb"
-    english: ["very", "greatly"]
+    english: ["very", "extremely"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: very, greatly\nSource: https://en.wiktionary.org/wiki/굉장히#Korean · NIKL level B, frequency rank 2190"
@@ -171,49 +173,50 @@ entries:
   - id: "mal.advanced.5d0146d0c6f25511"
     lemma: "몰다"
     partOfSpeech: "verb"
-    english: ["drive (an animal, a car, etc.)", "to drive (an animal, a car, etc.)"]
+    english: ["drive", "to drive"]
     koreanForms: [{"text": "몬다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "몰아", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "몰아요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "몹니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "모는", "honorific": false, "attributive": true}, {"text": "모신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "모셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "모세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "모셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "모십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "모시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to drive (an animal, a car, etc.)\nSource: https://en.wiktionary.org/wiki/몰다#Korean · NIKL level B, frequency rank 2196"
+    promptCue: "a vehicle or herd"
   - id: "mal.advanced.b36bf99e499d0d63"
     lemma: "배우"
     partOfSpeech: "noun"
-    english: ["actor (person who performs in a theatrical play or film)"]
+    english: ["actor", "actress"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: actor (person who performs in a theatrical play or film)\nSource: https://en.wiktionary.org/wiki/배우#Korean · NIKL level B, frequency rank 2197"
   - id: "mal.advanced.218b3473d8ee3f0e"
     lemma: "알"
     partOfSpeech: "noun"
-    english: ["egg, roe (of fish)"]
+    english: ["egg", "eggs", "roe"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: egg, roe (of fish)\nSource: https://en.wiktionary.org/wiki/알#Korean · NIKL level B, frequency rank 2200"
   - id: "mal.advanced.f4a82f14366d5334"
     lemma: "앞서다"
     partOfSpeech: "verb"
-    english: ["precede", "to precede", "come before", "to come before"]
+    english: ["precede", "go ahead"]
     koreanForms: [{"text": "앞선다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "앞서", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "앞서요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "앞섭니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "앞서는", "honorific": false, "attributive": true}, {"text": "앞서신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "앞서셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "앞서세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "앞서셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "앞서십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "앞서시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to precede, to come before\nSource: https://en.wiktionary.org/wiki/앞서다#Korean · NIKL level B, frequency rank 2201"
   - id: "mal.advanced.7f0b6acd00acaf88"
     lemma: "오래전"
     partOfSpeech: "noun"
-    english: ["long ago", "long before"]
+    english: ["long ago"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: long ago, long before\nSource: https://en.wiktionary.org/wiki/오래전#Korean · NIKL level B, frequency rank 2203"
   - id: "mal.advanced.276a8f76324c5735"
     lemma: "자격"
     partOfSpeech: "noun"
-    english: ["qualifications"]
+    english: ["qualification", "qualifications"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: qualifications\nSource: https://en.wiktionary.org/wiki/자격#Korean · NIKL level B, frequency rank 2204"
   - id: "mal.advanced.2063447746dd49a3"
     lemma: "계단"
     partOfSpeech: "noun"
-    english: ["stairs", "staircase", "stairway", "ladder"]
+    english: ["stairs", "staircase"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: stairs, staircase, stairway; ladder\nSource: https://en.wiktionary.org/wiki/계단#Korean · NIKL level B, frequency rank 2206"
@@ -227,7 +230,7 @@ entries:
   - id: "mal.advanced.67a42386b66d510b"
     lemma: "낯설다"
     partOfSpeech: "adjective"
-    english: ["strange"]
+    english: ["unfamiliar", "be unfamiliar"]
     koreanForms: [{"text": "낯설다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "낯설어", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "낯설어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "낯섭니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "낯선", "honorific": false, "attributive": true}, {"text": "낯서시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "낯서셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "낯서세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "낯서셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "낯서십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "낯서신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: strange\nSource: https://en.wiktionary.org/wiki/낯설다#Korean · NIKL level B, frequency rank 2209"
@@ -241,7 +244,7 @@ entries:
   - id: "mal.advanced.a46d379af38cf23e"
     lemma: "닮다"
     partOfSpeech: "verb"
-    english: ["resemble", "to resemble", "look like", "to look like"]
+    english: ["resemble", "look like"]
     koreanForms: [{"text": "닮는다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "닮아", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "닮아요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "닮습니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "닮는", "honorific": false, "attributive": true}, {"text": "닮으신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "닮으셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "닮으세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "닮으셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "닮으십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "닮으시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to resemble, to look like\nSource: https://en.wiktionary.org/wiki/닮다#Korean · NIKL level B, frequency rank 2211"

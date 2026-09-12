@@ -105,6 +105,7 @@ public struct HistoryItem: Identifiable, Sendable {
             summary.retired = oldRows.filter { $0[2] == "1" && !incoming.contains($0[0]) }.count
             try execute("UPDATE entries SET active=0 WHERE bank_id=?", [bank.id])
             for entry in bank.entries {
+                if let owner = try rows("SELECT bank_id FROM entries WHERE id=?", [entry.id]).first?.first, owner != bank.id { throw StoreError(message: "Entry \(entry.id) belongs to bank \(owner); IDs cannot cross bank ownership.") }
                 if let previous = old[entry.id] {
                     if try decode(Entry.self, previous[1]) != entry || previous[2] != "1" { summary.changed += 1 }
                 } else { summary.added += 1 }

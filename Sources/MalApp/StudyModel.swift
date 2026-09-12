@@ -30,6 +30,7 @@ import MalStorage
     private var aliases: [String: [String]] = [:]
     private let speech = AVSpeechSynthesizer()
     private var random = SystemRandomNumberGenerator()
+    private var keyMonitor: Any?
     var selectedEntries: [Entry] { banks.filter { settings.bankIDs.contains($0.id) }.flatMap(\.entries) }
     var allEntries: [Entry] { banks.flatMap(\.entries) }
     var filteredLibrary: [Entry] {
@@ -43,7 +44,7 @@ import MalStorage
         let ids = Set(selectedEntries.filter { settings.parts.contains($0.partOfSpeech) }.map(\.id))
         return states.filter { ids.contains($0.key.entryID) && $0.key.direction == settings.direction && $0.key.mode == settings.mode && $0.value.due > Date() }.map(\.value.due).min()
     }
-    var learningCount: Int { states.filter { $0.key.direction == settings.direction && $0.key.mode == settings.mode && $0.value.phase != .review }.count }
+    var learningCount: Int { let active = Set(allEntries.map(\.id)); return states.filter { active.contains($0.key.entryID) && $0.key.direction == settings.direction && $0.key.mode == settings.mode && $0.value.phase != .review }.count }
     var recognizedCount: Int { states.filter { $0.key.direction == settings.direction && $0.key.mode == .multipleChoice && $0.value.graduated }.count }
     init() {
         do {
@@ -63,6 +64,14 @@ import MalStorage
             settings = try storage.settings()
             try reload()
             next()
+            keyMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
+                let ignore = MainActor.assumeIsolated {
+                    guard let self, !self.showLibrary, !self.showHistory, event.window?.title == "Mal · 말" else { return false }
+                    let modified = !event.modifierFlags.intersection([.command, .control, .option, .shift]).isEmpty
+                    return InputRules.ignoreRepeatedStudyKey(isRepeat: event.isARepeat, modified: modified, key: event.charactersIgnoringModifiers ?? "", multipleChoice: self.settings.mode == .multipleChoice, waitingForContinue: self.waiting)
+                }
+                return ignore ? nil : event
+            }
         } catch { self.error = error.localizedDescription }
     }
     func reload(includeContent: Bool = true) throws {
@@ -82,7 +91,7 @@ import MalStorage
         waiting = false; answer = ""; saveAlias = false
         if batchAnswered >= settings.reviewBatch { batchPaused = true; current = nil; return }
         let context = QueueContext(now: Date(), sequence: sequence, answersSinceIntroduction: sinceIntroduction, previousSense: lastSense)
-        guard let selection = StudyQueue.select(entries: selectedEntries, states: states, settings: settings, context: context),
+        guard let selection = StudyQueue.select(entries: selectedEntries, states: states, settings: settings, context: context, activeEntryIDs: Set(allEntries.map(\.id))),
               let entry = selectedEntries.first(where: { $0.id == selection.entryID }) else { current = nil; return }
         current = entry
         if selection.isNew { sinceIntroduction = 0 }

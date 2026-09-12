@@ -1,0 +1,1040 @@
+{
+  "date": "2026-09-12",
+  "status": "English prompt/alias editorial pass only; source sense and forms still require verification",
+  "changes": {
+    "있다": {
+      "english": [
+        "exist",
+        "be present"
+      ],
+      "cue": "existence or presence"
+    },
+    "되다": {
+      "english": [
+        "become",
+        "to become"
+      ],
+      "cue": null
+    },
+    "나": {
+      "english": [
+        "I",
+        "me"
+      ],
+      "cue": "plain first-person pronoun"
+    },
+    "그": {
+      "english": [
+        "that"
+      ],
+      "cue": "previously mentioned"
+    },
+    "없다": {
+      "english": [
+        "not exist",
+        "be absent"
+      ],
+      "cue": "absence or nonexistence"
+    },
+    "아니다": {
+      "english": [
+        "not be"
+      ],
+      "cue": "negative copula"
+    },
+    "때": {
+      "english": [
+        "time",
+        "occasion"
+      ],
+      "cue": "a time or occasion"
+    },
+    "같다": {
+      "english": [
+        "be similar",
+        "be alike",
+        "similar",
+        "alike"
+      ],
+      "cue": null
+    },
+    "년": {
+      "english": [
+        "year"
+      ],
+      "cue": "year unit"
+    },
+    "말": {
+      "english": [
+        "speech",
+        "words"
+      ],
+      "cue": "spoken language"
+    },
+    "말하다": {
+      "english": [
+        "speak",
+        "say",
+        "to speak",
+        "to say"
+      ],
+      "cue": null
+    },
+    "그러나": {
+      "english": [
+        "but",
+        "however"
+      ],
+      "cue": null
+    },
+    "알다": {
+      "english": [
+        "know",
+        "to know"
+      ],
+      "cue": null
+    },
+    "그렇다": {
+      "english": [
+        "be so",
+        "be like that"
+      ],
+      "cue": null
+    },
+    "또": {
+      "english": [
+        "also",
+        "again"
+      ],
+      "cue": null
+    },
+    "안": {
+      "english": [
+        "not"
+      ],
+      "cue": "negation"
+    },
+    "더": {
+      "english": [
+        "more"
+      ],
+      "cue": "to a greater extent"
+    },
+    "받다": {
+      "english": [
+        "receive",
+        "get",
+        "to receive",
+        "to get"
+      ],
+      "cue": null
+    },
+    "그것": {
+      "english": [
+        "that"
+      ],
+      "cue": "thing near the listener"
+    },
+    "나오다": {
+      "english": [
+        "come out",
+        "to come out"
+      ],
+      "cue": null
+    },
+    "그리고": {
+      "english": [
+        "and",
+        "also",
+        "and then"
+      ],
+      "cue": null
+    },
+    "문제": {
+      "english": [
+        "problem",
+        "question"
+      ],
+      "cue": "a problem or question"
+    },
+    "살다": {
+      "english": [
+        "live",
+        "to live"
+      ],
+      "cue": null
+    },
+    "생각하다": {
+      "english": [
+        "think",
+        "to think"
+      ],
+      "cue": null
+    },
+    "모르다": {
+      "english": [
+        "not know",
+        "be unaware"
+      ],
+      "cue": null
+    },
+    "만들다": {
+      "english": [
+        "make",
+        "create",
+        "to make",
+        "to create"
+      ],
+      "cue": null
+    },
+    "앞": {
+      "english": [
+        "front"
+      ],
+      "cue": "position in front"
+    },
+    "어떤": {
+      "english": [
+        "what kind of",
+        "which kind of"
+      ],
+      "cue": null
+    },
+    "잘": {
+      "english": [
+        "well"
+      ],
+      "cue": "in a good manner"
+    },
+    "생각": {
+      "english": [
+        "thought",
+        "idea"
+      ],
+      "cue": null
+    },
+    "다시": {
+      "english": [
+        "again"
+      ],
+      "cue": null
+    },
+    "둘째": {
+      "english": [
+        "second"
+      ],
+      "cue": "ordinal number"
+    },
+    "무겁다": {
+      "english": [
+        "heavy",
+        "be heavy"
+      ],
+      "cue": null
+    },
+    "침대": {
+      "english": [
+        "bed"
+      ],
+      "cue": "furniture"
+    },
+    "권": {
+      "english": [
+        "volume",
+        "volumes",
+        "counter for books"
+      ],
+      "cue": "book counter"
+    },
+    "잎": {
+      "english": [
+        "leaf",
+        "leaves"
+      ],
+      "cue": null
+    },
+    "스포츠": {
+      "english": [
+        "sports",
+        "sport"
+      ],
+      "cue": null
+    },
+    "저기": {
+      "english": [
+        "over there"
+      ],
+      "cue": "distant location"
+    },
+    "교회": {
+      "english": [
+        "church"
+      ],
+      "cue": null
+    },
+    "화": {
+      "english": [
+        "anger"
+      ],
+      "cue": null
+    },
+    "일월": {
+      "english": [
+        "January"
+      ],
+      "cue": null
+    },
+    "첫째": {
+      "english": [
+        "first"
+      ],
+      "cue": "ordinal number"
+    },
+    "도서관": {
+      "english": [
+        "library"
+      ],
+      "cue": null
+    },
+    "선물": {
+      "english": [
+        "gift",
+        "present"
+      ],
+      "cue": null
+    },
+    "위험": {
+      "english": [
+        "danger",
+        "risk"
+      ],
+      "cue": null
+    },
+    "지하": {
+      "english": [
+        "underground",
+        "below ground"
+      ],
+      "cue": null
+    },
+    "지하철": {
+      "english": [
+        "subway",
+        "metro"
+      ],
+      "cue": null
+    },
+    "사무실": {
+      "english": [
+        "office"
+      ],
+      "cue": null
+    },
+    "이월": {
+      "english": [
+        "February"
+      ],
+      "cue": null
+    },
+    "일요일": {
+      "english": [
+        "Sunday"
+      ],
+      "cue": null
+    },
+    "강": {
+      "english": [
+        "river"
+      ],
+      "cue": null
+    },
+    "비싸다": {
+      "english": [
+        "expensive",
+        "be expensive"
+      ],
+      "cue": null
+    },
+    "왼쪽": {
+      "english": [
+        "left",
+        "left side"
+      ],
+      "cue": null
+    },
+    "택시": {
+      "english": [
+        "taxi",
+        "cab"
+      ],
+      "cue": null
+    },
+    "잡지": {
+      "english": [
+        "magazine"
+      ],
+      "cue": null
+    },
+    "댁": {
+      "english": [
+        "house",
+        "home"
+      ],
+      "cue": "honorific"
+    },
+    "반갑다": {
+      "english": [
+        "glad",
+        "be glad"
+      ],
+      "cue": "pleased to meet or see someone"
+    },
+    "다녀오다": {
+      "english": [
+        "go and come back",
+        "make a round trip"
+      ],
+      "cue": null
+    },
+    "이쪽": {
+      "english": [
+        "this side",
+        "this way"
+      ],
+      "cue": null
+    },
+    "연습": {
+      "english": [
+        "practice"
+      ],
+      "cue": null
+    },
+    "오른쪽": {
+      "english": [
+        "right",
+        "right side"
+      ],
+      "cue": "direction"
+    },
+    "마치다": {
+      "english": [
+        "finish",
+        "complete",
+        "to finish",
+        "to complete"
+      ],
+      "cue": null
+    },
+    "도움": {
+      "english": [
+        "help",
+        "assistance"
+      ],
+      "cue": null
+    },
+    "빠지다": {
+      "english": [
+        "fall out",
+        "to fall out"
+      ],
+      "cue": null
+    },
+    "오늘날": {
+      "english": [
+        "nowadays",
+        "these days"
+      ],
+      "cue": null
+    },
+    "농업": {
+      "english": [
+        "agriculture",
+        "farming"
+      ],
+      "cue": null
+    },
+    "표현하다": {
+      "english": [
+        "express",
+        "to express"
+      ],
+      "cue": "a thought or feeling"
+    },
+    "이상하다": {
+      "english": [
+        "strange",
+        "be strange",
+        "odd",
+        "be odd"
+      ],
+      "cue": null
+    },
+    "붙다": {
+      "english": [
+        "stick",
+        "stick to",
+        "adhere"
+      ],
+      "cue": null
+    },
+    "태도": {
+      "english": [
+        "attitude"
+      ],
+      "cue": null
+    },
+    "남성": {
+      "english": [
+        "male",
+        "man"
+      ],
+      "cue": "male person"
+    },
+    "발생하다": {
+      "english": [
+        "occur",
+        "happen",
+        "to occur",
+        "to happen"
+      ],
+      "cue": null
+    },
+    "재료": {
+      "english": [
+        "ingredient",
+        "ingredients",
+        "material",
+        "materials"
+      ],
+      "cue": null
+    },
+    "각각": {
+      "english": [
+        "each",
+        "each one"
+      ],
+      "cue": null
+    },
+    "옮기다": {
+      "english": [
+        "move",
+        "transfer",
+        "to move",
+        "to transfer"
+      ],
+      "cue": null
+    },
+    "자유": {
+      "english": [
+        "freedom",
+        "liberty"
+      ],
+      "cue": null
+    },
+    "책임": {
+      "english": [
+        "responsibility"
+      ],
+      "cue": null
+    },
+    "바뀌다": {
+      "english": [
+        "be changed",
+        "change"
+      ],
+      "cue": "undergo a change"
+    },
+    "심하다": {
+      "english": [
+        "severe",
+        "be severe"
+      ],
+      "cue": null
+    },
+    "자라다": {
+      "english": [
+        "grow",
+        "to grow"
+      ],
+      "cue": null
+    },
+    "기회": {
+      "english": [
+        "opportunity",
+        "chance"
+      ],
+      "cue": null
+    },
+    "소비자": {
+      "english": [
+        "consumer",
+        "consumers"
+      ],
+      "cue": null
+    },
+    "꺼내다": {
+      "english": [
+        "take out",
+        "pull out",
+        "to take out"
+      ],
+      "cue": null
+    },
+    "노동자": {
+      "english": [
+        "worker",
+        "laborer",
+        "labourer"
+      ],
+      "cue": null
+    },
+    "동네": {
+      "english": [
+        "neighborhood",
+        "neighbourhood"
+      ],
+      "cue": null
+    },
+    "완전히": {
+      "english": [
+        "completely",
+        "fully"
+      ],
+      "cue": null
+    },
+    "안방": {
+      "english": [
+        "inner room",
+        "main bedroom"
+      ],
+      "cue": "traditional home"
+    },
+    "앓다": {
+      "english": [
+        "be ill",
+        "suffer from illness"
+      ],
+      "cue": null
+    },
+    "오직": {
+      "english": [
+        "only",
+        "solely"
+      ],
+      "cue": null
+    },
+    "포함되다": {
+      "english": [
+        "be included"
+      ],
+      "cue": null
+    },
+    "호랑이": {
+      "english": [
+        "tiger"
+      ],
+      "cue": null
+    },
+    "덜": {
+      "english": [
+        "less"
+      ],
+      "cue": "to a lesser extent"
+    },
+    "둥글다": {
+      "english": [
+        "round",
+        "be round"
+      ],
+      "cue": null
+    },
+    "세금": {
+      "english": [
+        "tax",
+        "taxes"
+      ],
+      "cue": null
+    },
+    "입구": {
+      "english": [
+        "entrance",
+        "entryway"
+      ],
+      "cue": null
+    },
+    "펼쳐지다": {
+      "english": [
+        "unfold",
+        "be spread out"
+      ],
+      "cue": null
+    },
+    "경험하다": {
+      "english": [
+        "experience",
+        "to experience"
+      ],
+      "cue": null
+    },
+    "넘치다": {
+      "english": [
+        "overflow",
+        "to overflow"
+      ],
+      "cue": null
+    },
+    "돌아보다": {
+      "english": [
+        "look back",
+        "to look back"
+      ],
+      "cue": null
+    },
+    "머릿속": {
+      "english": [
+        "inside the mind",
+        "in the mind"
+      ],
+      "cue": null
+    },
+    "불안하다": {
+      "english": [
+        "anxious",
+        "uneasy",
+        "be anxious",
+        "be uneasy"
+      ],
+      "cue": null
+    },
+    "위반": {
+      "english": [
+        "violation",
+        "breach"
+      ],
+      "cue": null
+    },
+    "평생": {
+      "english": [
+        "whole life",
+        "entire life",
+        "lifetime"
+      ],
+      "cue": null
+    },
+    "굉장히": {
+      "english": [
+        "very",
+        "extremely"
+      ],
+      "cue": null
+    },
+    "덮다": {
+      "english": [
+        "cover",
+        "to cover"
+      ],
+      "cue": null
+    },
+    "몰다": {
+      "english": [
+        "drive",
+        "to drive"
+      ],
+      "cue": "a vehicle or herd"
+    },
+    "배우": {
+      "english": [
+        "actor",
+        "actress"
+      ],
+      "cue": null
+    },
+    "알": {
+      "english": [
+        "egg",
+        "eggs",
+        "roe"
+      ],
+      "cue": null
+    },
+    "앞서다": {
+      "english": [
+        "precede",
+        "go ahead"
+      ],
+      "cue": null
+    },
+    "오래전": {
+      "english": [
+        "long ago"
+      ],
+      "cue": null
+    },
+    "자격": {
+      "english": [
+        "qualification",
+        "qualifications"
+      ],
+      "cue": null
+    },
+    "계단": {
+      "english": [
+        "stairs",
+        "staircase"
+      ],
+      "cue": null
+    },
+    "끄덕이다": {
+      "english": [
+        "nod",
+        "to nod"
+      ],
+      "cue": null
+    },
+    "낯설다": {
+      "english": [
+        "unfamiliar",
+        "be unfamiliar"
+      ],
+      "cue": null
+    },
+    "높이": {
+      "english": [
+        "height"
+      ],
+      "cue": null
+    },
+    "닮다": {
+      "english": [
+        "resemble",
+        "look like"
+      ],
+      "cue": null
+    },
+    "그녀": {
+      "english": [
+        "she",
+        "her"
+      ],
+      "cue": "third-person female pronoun"
+    },
+    "그러다": {
+      "english": [
+        "do so",
+        "do that"
+      ],
+      "cue": null
+    },
+    "정부": {
+      "english": [
+        "government"
+      ],
+      "cue": "national government"
+    },
+    "새롭다": {
+      "english": [
+        "new",
+        "be new"
+      ],
+      "cue": null
+    },
+    "과정": {
+      "english": [
+        "process"
+      ],
+      "cue": null
+    },
+    "삶": {
+      "english": [
+        "life"
+      ],
+      "cue": "living or existence"
+    },
+    "생명": {
+      "english": [
+        "life"
+      ],
+      "cue": "being alive"
+    },
+    "상황": {
+      "english": [
+        "situation",
+        "circumstances"
+      ],
+      "cue": null
+    },
+    "따라서": {
+      "english": [
+        "therefore",
+        "accordingly"
+      ],
+      "cue": null
+    },
+    "상태": {
+      "english": [
+        "state",
+        "condition"
+      ],
+      "cue": null
+    },
+    "더욱": {
+      "english": [
+        "even more",
+        "all the more"
+      ],
+      "cue": null
+    },
+    "채": {
+      "english": [
+        "counter for houses",
+        "house counter"
+      ],
+      "cue": null
+    },
+    "현실": {
+      "english": [
+        "reality"
+      ],
+      "cue": null
+    },
+    "기업": {
+      "english": [
+        "enterprise",
+        "business"
+      ],
+      "cue": null
+    },
+    "선거": {
+      "english": [
+        "election"
+      ],
+      "cue": null
+    },
+    "오히려": {
+      "english": [
+        "rather",
+        "on the contrary"
+      ],
+      "cue": null
+    },
+    "의식": {
+      "english": [
+        "consciousness",
+        "awareness"
+      ],
+      "cue": null
+    },
+    "알아보다": {
+      "english": [
+        "recognize",
+        "recognise"
+      ],
+      "cue": null
+    },
+    "산업": {
+      "english": [
+        "industry"
+      ],
+      "cue": null
+    },
+    "형태": {
+      "english": [
+        "form",
+        "shape"
+      ],
+      "cue": null
+    },
+    "작업": {
+      "english": [
+        "work",
+        "task"
+      ],
+      "cue": null
+    },
+    "비하다": {
+      "english": [
+        "compare",
+        "to compare"
+      ],
+      "cue": null
+    },
+    "입장": {
+      "english": [
+        "standpoint",
+        "position"
+      ],
+      "cue": "point of view"
+    },
+    "영향": {
+      "english": [
+        "influence",
+        "effect"
+      ],
+      "cue": null
+    },
+    "단계": {
+      "english": [
+        "stage",
+        "step"
+      ],
+      "cue": "progression"
+    },
+    "올리다": {
+      "english": [
+        "raise",
+        "lift",
+        "to raise",
+        "to lift"
+      ],
+      "cue": null
+    },
+    "지니다": {
+      "english": [
+        "keep",
+        "possess"
+      ],
+      "cue": null
+    },
+    "의원": {
+      "english": [
+        "legislator",
+        "member of parliament"
+      ],
+      "cue": null
+    },
+    "주민": {
+      "english": [
+        "resident",
+        "residents"
+      ],
+      "cue": null
+    },
+    "존재": {
+      "english": [
+        "existence"
+      ],
+      "cue": null
+    },
+    "분야": {
+      "english": [
+        "field",
+        "area"
+      ],
+      "cue": "study or activity"
+    },
+    "기능": {
+      "english": [
+        "function",
+        "functionality"
+      ],
+      "cue": null
+    },
+    "노동": {
+      "english": [
+        "labor",
+        "labour"
+      ],
+      "cue": null
+    }
+  }
+}

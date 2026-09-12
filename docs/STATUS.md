@@ -65,3 +65,24 @@ Keep commits focused. Update this status file after each iteration with exact ch
 - `codesign --verify --deep --strict build/Mal.app`: passed.
 - Sample bank validator: passed. All five bundled banks: 500 entries each, structural validation passed. Linguistic release gate: failed as expected.
 - DEF-003: Fixed repeat app packaging when SwiftPM resources are copied read-only; subsequent packaging and signature verification passed.
+
+## Continuation pass — 2026-09-12
+
+- Initial implementation checkpoint: `8434d5b`.
+- **31 tests pass** after the continuation refinements.
+- Added MalNative with a custom field editor that captures composition at key-down, before an IME can unmark it; disables text autocorrection/replacement. Native marked-text test passes. Real 2-Set keyboard testing remains open.
+- Repeated choice/Continue keys are suppressed in the study window; ordinary write-in characters and modified shortcuts are unaffected.
+- Retired entries no longer occupy active learning slots. Deselected but still active entries continue to count as designed.
+- Custom nested namespaces cannot take ownership of another bank's entries; reserved root `mal` is protected as well as `mal.*`.
+- Native sample-bank import, save-panel backup, and open-panel restore all succeeded using `/tmp/mal-ui-smoke`. This completes the basic UI path for QA-003; edited-bank/reimport UI checks remain.
+- Edited 149 verbose English prompts into concise answer lists/cues. Exact edits: `editorial-pass-001.json`. Verification status did not change.
+- `content-audit.json` lists 100 entries needing early attention: 98 long prompts and 3 predicates without inflected answers (one overlaps). This is automated triage, not a linguistic correctness verdict.
+- Reverse prompts omit a cue if it contains an accepted English answer. Usage notes and source citations remain separate in the study/library views.
+- Packaging now verifies a complete staging app before publishing, retaining the previous app as `build/Mal.previous.<timestamp>.app`.
+
+### Next priorities
+
+1. Exercise the new field editor with the user's actual Korean input method.
+2. Review the 100 triaged vocabulary entries, then continue source/sense/form verification of the entire corpus. Do not promote statuses based solely on the editorial gloss pass.
+3. Audit tier placement and correct ambiguous source matches with explicit semantic ID migrations where needed.
+- Refined package built and signature-verified successfully. Relaunched against the same isolated database; the new native field editor accepted a Korean answer and advanced correctly.

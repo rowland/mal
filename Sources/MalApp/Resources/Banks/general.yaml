@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: "mal.general"
-contentVersion: 1
+contentVersion: 2
 title: "General"
 provenance:
   source: "NIKL Korean learner vocabulary (2003); English Wiktionary contributors via Kaikki, 2026-09-02 dump"
@@ -10,73 +10,75 @@ entries:
   - id: "mal.general.b523911e3ba11bf9"
     lemma: "마치다"
     partOfSpeech: "verb"
-    english: ["finish", "to finish"]
+    english: ["finish", "complete", "to finish", "to complete"]
     koreanForms: [{"text": "마친다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "마쳐", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "마쳐요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "마치어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "마칩니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "마치는", "honorific": false, "attributive": true}, {"text": "마치신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "마치셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "마치세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "마치셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "마치십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "마치시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to finish\nSource: https://en.wiktionary.org/wiki/마치다#Korean · NIKL level B, frequency rank 711"
   - id: "mal.general.c2278d8ce0af3049"
     lemma: "도움"
     partOfSpeech: "noun"
-    english: ["help", "assistance", "favour", "favor"]
+    english: ["help", "assistance"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: help; assistance; favour, favor\nSource: https://en.wiktionary.org/wiki/도움#Korean · NIKL level B, frequency rank 714"
   - id: "mal.general.12bc520444b6b5e3"
     lemma: "빠지다"
     partOfSpeech: "verb"
-    english: ["fall out", "to fall out", "come off", "to come off", "come out", "to come out"]
+    english: ["fall out", "to fall out"]
     koreanForms: [{"text": "빠진다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "빠져", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "빠져요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "빠지어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "빠집니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "빠지는", "honorific": false, "attributive": true}, {"text": "빠지신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "빠지셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "빠지세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "빠지셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "빠지십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "빠지시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to fall out, to come off, to come out\nSource: https://en.wiktionary.org/wiki/빠지다#Korean · NIKL level B, frequency rank 717"
   - id: "mal.general.c29d2a2f153cab47"
     lemma: "오늘날"
     partOfSpeech: "noun"
-    english: ["these days", "modern times"]
+    english: ["nowadays", "these days"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: these days; modern times\nSource: https://en.wiktionary.org/wiki/오늘날#Korean · NIKL level B, frequency rank 721"
   - id: "mal.general.d910f3ea11d0de9d"
     lemma: "농업"
     partOfSpeech: "noun"
-    english: ["agriculture"]
+    english: ["agriculture", "farming"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: agriculture\nSource: https://en.wiktionary.org/wiki/농업#Korean · NIKL level B, frequency rank 723"
   - id: "mal.general.f61afb35245e82c8"
     lemma: "표현하다"
     partOfSpeech: "verb"
-    english: ["express (a thought or feeling)", "to express (a thought or feeling)"]
+    english: ["express", "to express"]
     koreanForms: [{"text": "표현한다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "표현해", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "표현해요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "표현합니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "표현하는", "honorific": false, "attributive": true}, {"text": "표현하신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "표현하셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "표현하세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "표현하셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "표현하십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "표현하시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to express (a thought or feeling)\nSource: https://en.wiktionary.org/wiki/표현하다#Korean · NIKL level B, frequency rank 730"
+    promptCue: "a thought or feeling"
   - id: "mal.general.0bf7a5ecf093602e"
     lemma: "이상하다"
     partOfSpeech: "adjective"
-    english: ["be strange", "to be strange", "be unusual", "to be unusual"]
+    english: ["strange", "be strange", "odd", "be odd"]
     koreanForms: [{"text": "이상하다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "이상해", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "이상해요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "이상합니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "이상한", "honorific": false, "attributive": true}, {"text": "이상하시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "이상하셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "이상하세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "이상하셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "이상하십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "이상하신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to be strange, to be unusual\nSource: https://en.wiktionary.org/wiki/이상하다#Korean · NIKL level B, frequency rank 732"
   - id: "mal.general.936238b74a43d0b9"
     lemma: "붙다"
     partOfSpeech: "verb"
-    english: ["stick to", "to stick to", "adhere to", "cling to", "attach"]
+    english: ["stick", "stick to", "adhere"]
     koreanForms: [{"text": "붙는다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "붙어", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "붙어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "붙습니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "붙는", "honorific": false, "attributive": true}, {"text": "붙으신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "붙으셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "붙으세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "붙으셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "붙으십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "붙으시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to stick to, adhere to, cling to, attach\nSource: https://en.wiktionary.org/wiki/붙다#Korean · NIKL level B, frequency rank 734"
   - id: "mal.general.039ffb481492b90f"
     lemma: "태도"
     partOfSpeech: "noun"
-    english: ["attitude", "stance"]
+    english: ["attitude"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: attitude, stance\nSource: https://en.wiktionary.org/wiki/태도#Korean · NIKL level B, frequency rank 741"
   - id: "mal.general.2a0881571d08be13"
     lemma: "남성"
     partOfSpeech: "noun"
-    english: ["male", "men"]
+    english: ["male", "man"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: male, men\nSource: https://en.wiktionary.org/wiki/남성#Korean · NIKL level B, frequency rank 742"
+    promptCue: "male person"
   - id: "mal.general.8eeb65f445c1ba4b"
     lemma: "주위"
     partOfSpeech: "noun"
@@ -94,7 +96,7 @@ entries:
   - id: "mal.general.d217d55dd1983a6a"
     lemma: "발생하다"
     partOfSpeech: "verb"
-    english: ["occur", "to occur", "happen", "to happen"]
+    english: ["occur", "happen", "to occur", "to happen"]
     koreanForms: [{"text": "발생한다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "발생해", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "발생해요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "발생합니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "발생하는", "honorific": false, "attributive": true}, {"text": "발생하신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "발생하셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "발생하세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "발생하셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "발생하십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "발생하시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to occur, to happen\nSource: https://en.wiktionary.org/wiki/발생하다#Korean · NIKL level B, frequency rank 746"
@@ -108,21 +110,21 @@ entries:
   - id: "mal.general.80b7cd55314a4bfa"
     lemma: "재료"
     partOfSpeech: "noun"
-    english: ["ingredients", "materials"]
+    english: ["ingredient", "ingredients", "material", "materials"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: ingredients, materials\nSource: https://en.wiktionary.org/wiki/재료#Korean · NIKL level B, frequency rank 750"
   - id: "mal.general.c45365d3982d8375"
     lemma: "각각"
     partOfSpeech: "adverb"
-    english: ["each", "every", "respective"]
+    english: ["each", "each one"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: each, every, respective\nSource: https://en.wiktionary.org/wiki/각각#Korean · NIKL level B, frequency rank 751"
   - id: "mal.general.eb0b1e4725a4235a"
     lemma: "옮기다"
     partOfSpeech: "verb"
-    english: ["move", "to move", "shift", "to shift"]
+    english: ["move", "transfer", "to move", "to transfer"]
     koreanForms: [{"text": "옮긴다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "옮겨", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "옮겨요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "옮기어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "옮깁니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "옮기는", "honorific": false, "attributive": true}, {"text": "옮기신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "옮기셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "옮기세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "옮기셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "옮기십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "옮기시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to move; to shift\nSource: https://en.wiktionary.org/wiki/옮기다#Korean · NIKL level B, frequency rank 753"
@@ -136,21 +138,22 @@ entries:
   - id: "mal.general.b315028f40407ba2"
     lemma: "책임"
     partOfSpeech: "noun"
-    english: ["responsibility", "duty"]
+    english: ["responsibility"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: responsibility, duty\nSource: https://en.wiktionary.org/wiki/책임#Korean · NIKL level B, frequency rank 758"
   - id: "mal.general.deb88cbf415951c1"
     lemma: "바뀌다"
     partOfSpeech: "verb"
-    english: ["be changed or exchanged", "to be changed or exchanged"]
+    english: ["be changed", "change"]
     koreanForms: [{"text": "바뀐다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "바뀌어", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "바뀌어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "바뀝니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "바뀌는", "honorific": false, "attributive": true}, {"text": "바뀌신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "바뀌셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "바뀌세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "바뀌셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "바뀌십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "바뀌시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to be changed or exchanged\nSource: https://en.wiktionary.org/wiki/바뀌다#Korean · NIKL level B, frequency rank 759"
+    promptCue: "undergo a change"
   - id: "mal.general.a44d74b45bf17a00"
     lemma: "심하다"
     partOfSpeech: "adjective"
-    english: ["be severe", "to be severe", "be extreme", "to be extreme"]
+    english: ["severe", "be severe"]
     koreanForms: [{"text": "심하다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "심해", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "심해요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "심합니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "심한", "honorific": false, "attributive": true}, {"text": "심하시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "심하셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "심하세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "심하셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "심하십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "심하신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to be severe, to be extreme\nSource: https://en.wiktionary.org/wiki/심하다#Korean · NIKL level B, frequency rank 761"
@@ -164,7 +167,7 @@ entries:
   - id: "mal.general.36b6739d1ba0ee38"
     lemma: "기회"
     partOfSpeech: "noun"
-    english: ["opportunity"]
+    english: ["opportunity", "chance"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: opportunity\nSource: https://en.wiktionary.org/wiki/기회#Korean · NIKL level B, frequency rank 770"
@@ -178,7 +181,7 @@ entries:
   - id: "mal.general.05c942aa443bbba1"
     lemma: "소비자"
     partOfSpeech: "noun"
-    english: ["consumer or consumers"]
+    english: ["consumer", "consumers"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: consumer or consumers\nSource: https://en.wiktionary.org/wiki/소비자#Korean · NIKL level B, frequency rank 775"
@@ -199,28 +202,28 @@ entries:
   - id: "mal.general.6409e5c63f22a336"
     lemma: "꺼내다"
     partOfSpeech: "verb"
-    english: ["pull something out", "to pull something out"]
+    english: ["take out", "pull out", "to take out"]
     koreanForms: [{"text": "꺼낸다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "꺼내", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "꺼내요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "꺼내어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "꺼냅니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "꺼내는", "honorific": false, "attributive": true}, {"text": "꺼내신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "꺼내셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "꺼내세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "꺼내셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "꺼내십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "꺼내시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to pull something out\nSource: https://en.wiktionary.org/wiki/꺼내다#Korean · NIKL level B, frequency rank 791"
   - id: "mal.general.1426afb7be611c12"
     lemma: "노동자"
     partOfSpeech: "noun"
-    english: ["worker"]
+    english: ["worker", "laborer", "labourer"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: worker\nSource: https://en.wiktionary.org/wiki/노동자#Korean · NIKL level B, frequency rank 792"
   - id: "mal.general.983528af7c56b09f"
     lemma: "동네"
     partOfSpeech: "noun"
-    english: ["neighborhood"]
+    english: ["neighborhood", "neighbourhood"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: neighborhood\nSource: https://en.wiktionary.org/wiki/동네#Korean · NIKL level B, frequency rank 793"
   - id: "mal.general.672dcc49347a0b0d"
     lemma: "완전히"
     partOfSpeech: "adverb"
-    english: ["completely", "totally"]
+    english: ["completely", "fully"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: completely, totally\nSource: https://en.wiktionary.org/wiki/완전히#Korean · NIKL level B, frequency rank 795"

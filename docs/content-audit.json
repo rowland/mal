@@ -1,0 +1,707 @@
+{
+  "date": "2026-09-12",
+  "description": "Automated triage only; not a correctness verdict",
+  "issues": [
+    {
+      "id": "mal.novice.02d5803f62a0d9c8",
+      "lemma": "그래서",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.novice.27a910b1e93744ad",
+      "lemma": "날",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.novice.89f365f1fc788872",
+      "lemma": "역사",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.novice.b39c4e7b1716ea8c",
+      "lemma": "자리",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.novice.b249474266e04c29",
+      "lemma": "생기다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.novice.a64ee974939b337c",
+      "lemma": "높다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.novice.1330b7df0184ceb6",
+      "lemma": "바꾸다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.novice.d52398df6e6c18fb",
+      "lemma": "못하다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.novice.0a5fc71c6b827605",
+      "lemma": "살",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.novice.e06552cdc3fcc54e",
+      "lemma": "가깝다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.novice.7b46c464a1e7a1e3",
+      "lemma": "밑",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.novice.07c2194bb8c017d2",
+      "lemma": "나쁘다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.novice.575e2ed90f6f570a",
+      "lemma": "내려가다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.114a0a365bb5a5a5",
+      "lemma": "않다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.af44583ba0fbc563",
+      "lemma": "도와주다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.cde6f6ef20ff34aa",
+      "lemma": "김치",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.e30b3041a554b5bd",
+      "lemma": "카메라",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.10e3d3e72bb93c49",
+      "lemma": "오랜만",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.7b8b03a52c8dec0f",
+      "lemma": "켜다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.1749d4cf7481c70c",
+      "lemma": "끄다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.2188fce912837ec7",
+      "lemma": "구두",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.8fe458c93783030d",
+      "lemma": "불고기",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.42c1b178b8c68c6d",
+      "lemma": "저것",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.a726c75e8974d559",
+      "lemma": "중학생",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.6dad53d3997317ae",
+      "lemma": "스키",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.22d09964bfd615df",
+      "lemma": "의하다",
+      "issues": [
+        "predicate has no accepted inflections"
+      ]
+    },
+    {
+      "id": "mal.technician.3f2d6d1580ede45b",
+      "lemma": "짓다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.b13cfc238108615b",
+      "lemma": "얻다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.4b635685ec43734d",
+      "lemma": "프로그램",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.af6c240d20f22890",
+      "lemma": "세우다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.4bbe5cdc75e83f69",
+      "lemma": "노력",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.technician.669f40726de8803f",
+      "lemma": "훨씬",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.ec8af4d734c25422",
+      "lemma": "그만",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.cef827489dbd1292",
+      "lemma": "선수",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.a198c9ab0f474b88",
+      "lemma": "그룹",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.aa0941c660ecb061",
+      "lemma": "달라지다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.233c580ce5567a77",
+      "lemma": "공동",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.69de049731ce2485",
+      "lemma": "서양",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.4ba0c526d9f3fdb1",
+      "lemma": "살리다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.8714a5adb48867fe",
+      "lemma": "이기다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.1d0e4645d278b5ae",
+      "lemma": "데리다",
+      "issues": [
+        "long English prompt",
+        "predicate has no accepted inflections"
+      ]
+    },
+    {
+      "id": "mal.general.4ec48b85d8f635ab",
+      "lemma": "놀이",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.1825a311d0111df5",
+      "lemma": "과제",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.24a91020c9f783ac",
+      "lemma": "나머지",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.bb43f1bc02ffd62a",
+      "lemma": "형님",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.26a73c0508cabb04",
+      "lemma": "바닥",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.dd2008e2e937329f",
+      "lemma": "관련하다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.312ff9bdcaf3fccd",
+      "lemma": "바르다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.7695b2f03fa83845",
+      "lemma": "다하다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.1f1ac307d01ce5b0",
+      "lemma": "싣다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.18bfed2ee229c097",
+      "lemma": "치료",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.e7c1e41a80c69f1a",
+      "lemma": "꽤",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.5b22ddac1132610a",
+      "lemma": "높아지다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.0e6f8519f8f80955",
+      "lemma": "떠올리다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.0bca87c5c0b362a5",
+      "lemma": "잘못하다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.general.3cc748fa343a8129",
+      "lemma": "굽다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.91fb9ebbbbce663a",
+      "lemma": "놓치다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.4adf1330c330dab9",
+      "lemma": "마음속",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.372514ea5e3b559d",
+      "lemma": "차다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.561ac1832feb85a5",
+      "lemma": "대단히",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.26e0ae21a5c75ef7",
+      "lemma": "출연하다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.5560911a30e01e90",
+      "lemma": "깨다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.4f753a38f0e91931",
+      "lemma": "약간",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.55b6a2cec6850b2d",
+      "lemma": "세워지다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.314318784608e267",
+      "lemma": "코너",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.002a30911fbe99f2",
+      "lemma": "성적",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.bc960b0be0ca76ae",
+      "lemma": "인터넷",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.ba4d45279d10208d",
+      "lemma": "지붕",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.58d77c98ed8a7548",
+      "lemma": "수상",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.651145feda9e9d44",
+      "lemma": "내지",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.fda313fc8a764a70",
+      "lemma": "소리치다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.a6373a704a08ded7",
+      "lemma": "보람",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.b12fb5487c4fe36a",
+      "lemma": "아무렇다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.aeb985eb92c68a61",
+      "lemma": "콤플렉스",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.6e2125b600210e7a",
+      "lemma": "허용하다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.a82750f54ca4ef92",
+      "lemma": "부탁하다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.068503d3b5c0bfd9",
+      "lemma": "뒤집다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.74ae196d4e901856",
+      "lemma": "판매하다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.c97c942668bbfe02",
+      "lemma": "형부",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.ae1d9195a560fdfc",
+      "lemma": "계산기",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.advanced.24635c26c4d12d86",
+      "lemma": "얇다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.8315f81d6509b099",
+      "lemma": "시기",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.abcc49c7ab65d70c",
+      "lemma": "대다",
+      "issues": [
+        "predicate has no accepted inflections"
+      ]
+    },
+    {
+      "id": "mal.extra.ee1c1ab03e24c273",
+      "lemma": "갖추다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.cb6f9d8bcbbc4167",
+      "lemma": "걸치다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.014f772be1dfff11",
+      "lemma": "사정",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.1dd34be8bcc81242",
+      "lemma": "체험",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.b01d37b4f87fe965",
+      "lemma": "안정",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.646b74338182e674",
+      "lemma": "바람직하다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.a625d2610b24856b",
+      "lemma": "자네",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.5cd90c5eb6540834",
+      "lemma": "지켜보다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.67c062331eb9236e",
+      "lemma": "핵심",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.6d45bece47b0c8f3",
+      "lemma": "익히다",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.f728b7465c1fa164",
+      "lemma": "제사",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.aaf4a9a90cb0c315",
+      "lemma": "육체",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.332f7475a4fe5a9b",
+      "lemma": "독립",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.bfcaf3bd52cd7c7c",
+      "lemma": "코드",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.182c6ad631c6843e",
+      "lemma": "더욱이",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.d4eb1c4a89589036",
+      "lemma": "도저히",
+      "issues": [
+        "long English prompt"
+      ]
+    },
+    {
+      "id": "mal.extra.1d63d61ac73bef57",
+      "lemma": "운전사",
+      "issues": [
+        "long English prompt"
+      ]
+    }
+  ]
+}

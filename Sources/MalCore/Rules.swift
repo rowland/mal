@@ -70,11 +70,11 @@ public enum Scheduler {
     }
 }
 public enum StudyQueue {
-    public static func select(entries: [Entry], states: [CardKey: LearningState], settings: StudySettings, context: QueueContext) -> Selection? {
+    public static func select(entries: [Entry], states: [CardKey: LearningState], settings: StudySettings, context: QueueContext, activeEntryIDs: Set<String>? = nil) -> Selection? {
         let key: (Entry) -> CardKey = { CardKey($0.id, settings.direction, settings.mode) }
         let eligible = entries.filter { settings.parts.contains($0.partOfSpeech) && $0.id != context.previousSense }
         // Count the entire mode/direction pool, including filtered and deselected banks.
-        let active = states.filter { $0.key.direction == settings.direction && $0.key.mode == settings.mode && $0.value.phase != .review }.count
+        let active = states.filter { $0.key.direction == settings.direction && $0.key.mode == settings.mode && $0.value.phase != .review && (activeEntryIDs?.contains($0.key.entryID) ?? true) }.count
         let due = eligible.filter { states[key($0)].map { $0.due <= context.now } ?? false }.sorted {
             let a = states[key($0)]!, b = states[key($1)]!
             let rank: (LearningState) -> Int = { $0.phase == .relearning ? 0 : $0.phase == .review ? 1 : 2 }
@@ -97,5 +97,19 @@ public enum StudyQueue {
         // Intervening cards are unavailable; the minimum retry time still applies.
         if let next = due.first { return Selection(next.id, isNew: false) }
         return nil
+    }
+}
+
+public enum InputRules {
+    public static func shouldSubmit(composingAtKeyDown: Bool, currentlyComposing: Bool, isRepeat: Bool) -> Bool {
+        !composingAtKeyDown && !currentlyComposing && !isRepeat
+    }
+}
+
+extension InputRules {
+    public static func ignoreRepeatedStudyKey(isRepeat: Bool, modified: Bool, key: String, multipleChoice: Bool, waitingForContinue: Bool) -> Bool {
+        guard isRepeat, !modified else { return false }
+        if key == "\r" || key == "\n" { return waitingForContinue || multipleChoice }
+        return multipleChoice && key.count == 1 && "0123456789".contains(key)
     }
 }

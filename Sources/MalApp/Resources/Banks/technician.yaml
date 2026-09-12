@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: "mal.technician"
-contentVersion: 1
+contentVersion: 2
 title: "Technician"
 provenance:
   source: "NIKL Korean learner vocabulary (2003); English Wiktionary contributors via Kaikki, 2026-09-02 dump"
@@ -10,42 +10,45 @@ entries:
   - id: "mal.technician.f7ba52afe16b7159"
     lemma: "둘째"
     partOfSpeech: "other"
-    english: ["second, next after the first; the ordinal number for two"]
+    english: ["second"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: second, next after the first; the ordinal number for two\nSource: https://en.wiktionary.org/wiki/둘째#Korean · NIKL level A, frequency rank 1660"
+    promptCue: "ordinal number"
   - id: "mal.technician.62cf029cb3c0f9fa"
     lemma: "무겁다"
     partOfSpeech: "adjective"
-    english: ["be heavy", "to be heavy"]
+    english: ["heavy", "be heavy"]
     koreanForms: [{"text": "무겁다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "무거워", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "무거워요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "무겁습니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "무거운", "honorific": false, "attributive": true}, {"text": "무거우시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "무거우셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "무거우세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "무거우셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "무거우십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "무거우신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to be heavy\nSource: https://en.wiktionary.org/wiki/무겁다#Korean · NIKL level A, frequency rank 1662"
   - id: "mal.technician.e2f6c18342c3a958"
     lemma: "침대"
     partOfSpeech: "noun"
-    english: ["bed (furniture)"]
+    english: ["bed"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: bed (furniture)\nSource: https://en.wiktionary.org/wiki/침대#Korean · NIKL level A, frequency rank 1670"
+    promptCue: "furniture"
   - id: "mal.technician.7271015b194ddc68"
     lemma: "권"
     partOfSpeech: "other"
-    english: ["volumes"]
+    english: ["volume", "volumes", "counter for books"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: volumes\nSource: https://en.wiktionary.org/wiki/권#Korean · NIKL level A, frequency rank 1672"
+    promptCue: "book counter"
   - id: "mal.technician.f4e0b4578d32a651"
     lemma: "잎"
     partOfSpeech: "noun"
-    english: ["leaf", "leafage", "foliage"]
+    english: ["leaf", "leaves"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: leaf, leafage, foliage\nSource: https://en.wiktionary.org/wiki/잎#Korean · NIKL level A, frequency rank 1680"
   - id: "mal.technician.58a865966cadd5f5"
     lemma: "스포츠"
     partOfSpeech: "noun"
-    english: ["sports"]
+    english: ["sports", "sport"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: sports\nSource: https://en.wiktionary.org/wiki/스포츠#Korean · NIKL level A, frequency rank 1689"
@@ -56,6 +59,7 @@ entries:
     koreanForms: []
     verification: "draft"
     notes: "Source sense: over there\nSource: https://en.wiktionary.org/wiki/저기#Korean · NIKL level A, frequency rank 1692"
+    promptCue: "distant location"
   - id: "mal.technician.b994638c975587d9"
     lemma: "교회"
     partOfSpeech: "noun"
@@ -66,7 +70,7 @@ entries:
   - id: "mal.technician.a4a64ed21961fe9f"
     lemma: "화"
     partOfSpeech: "noun"
-    english: ["anger", "rage"]
+    english: ["anger"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: anger; rage\nSource: https://en.wiktionary.org/wiki/화#Korean · NIKL level A, frequency rank 1714"
@@ -80,10 +84,11 @@ entries:
   - id: "mal.technician.dfdd0aef5abca430"
     lemma: "첫째"
     partOfSpeech: "other"
-    english: ["first (ordinal number)"]
+    english: ["first"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: first (ordinal number)\nSource: https://en.wiktionary.org/wiki/첫째#Korean · NIKL level A, frequency rank 1728"
+    promptCue: "ordinal number"
   - id: "mal.technician.b56740953ca70b9f"
     lemma: "도서관"
     partOfSpeech: "noun"
@@ -108,21 +113,21 @@ entries:
   - id: "mal.technician.29fc6d3236a0d957"
     lemma: "위험"
     partOfSpeech: "noun"
-    english: ["danger"]
+    english: ["danger", "risk"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: danger\nSource: https://en.wiktionary.org/wiki/위험#Korean · NIKL level A, frequency rank 1744"
   - id: "mal.technician.aea29def7c56d44d"
     lemma: "지하"
     partOfSpeech: "noun"
-    english: ["below ground"]
+    english: ["underground", "below ground"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: below ground\nSource: https://en.wiktionary.org/wiki/지하#Korean · NIKL level A, frequency rank 1745"
   - id: "mal.technician.93fc0a6f1c6e38b6"
     lemma: "지하철"
     partOfSpeech: "noun"
-    english: ["subway"]
+    english: ["subway", "metro"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: subway\nSource: https://en.wiktionary.org/wiki/지하철#Korean · NIKL level A, frequency rank 1755"
@@ -157,21 +162,21 @@ entries:
   - id: "mal.technician.8bb422a44f138187"
     lemma: "비싸다"
     partOfSpeech: "adjective"
-    english: ["expensive"]
+    english: ["expensive", "be expensive"]
     koreanForms: [{"text": "비싸다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "비싸", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "비싸요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "비쌉니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "비싼", "honorific": false, "attributive": true}, {"text": "비싸시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "비싸셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "비싸세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "비싸셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "비싸십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "비싸신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: expensive\nSource: https://en.wiktionary.org/wiki/비싸다#Korean · NIKL level A, frequency rank 1819"
   - id: "mal.technician.4346412fbe4c27d6"
     lemma: "왼쪽"
     partOfSpeech: "noun"
-    english: ["left side"]
+    english: ["left", "left side"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: left side\nSource: https://en.wiktionary.org/wiki/왼쪽#Korean · NIKL level A, frequency rank 1822"
   - id: "mal.technician.53e362eeb81d4a05"
     lemma: "택시"
     partOfSpeech: "noun"
-    english: ["taxi"]
+    english: ["taxi", "cab"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: taxi\nSource: https://en.wiktionary.org/wiki/택시#Korean · NIKL level A, frequency rank 1824"
@@ -199,21 +204,23 @@ entries:
   - id: "mal.technician.dffe5f245f7a7c66"
     lemma: "댁"
     partOfSpeech: "noun"
-    english: ["house", "home", "residence"]
+    english: ["house", "home"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: house, home, residence\nSource: https://en.wiktionary.org/wiki/댁#Korean · NIKL level A, frequency rank 1867"
+    promptCue: "honorific"
   - id: "mal.technician.3f4ca46e62cafabf"
     lemma: "반갑다"
     partOfSpeech: "adjective"
-    english: ["be glad", "to be glad", "happy", "pleasant", "welcome"]
+    english: ["glad", "be glad"]
     koreanForms: [{"text": "반갑다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "반가워", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "반가워요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "반갑습니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "반가운", "honorific": false, "attributive": true}, {"text": "반가우시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "반가우셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "반가우세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "반가우셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "반가우십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "반가우신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to be glad, happy; pleasant; welcome\nSource: https://en.wiktionary.org/wiki/반갑다#Korean · NIKL level A, frequency rank 1868"
+    promptCue: "pleased to meet or see someone"
   - id: "mal.technician.2eaf905a51d34349"
     lemma: "다녀오다"
     partOfSpeech: "verb"
-    english: ["return; to come back; to go and then come back", "to return; to come back; to go and then come back"]
+    english: ["go and come back", "make a round trip"]
     koreanForms: [{"text": "다녀온다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "다녀와", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "다녀와요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "다녀옵니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "다녀오는", "honorific": false, "attributive": true}, {"text": "다녀오신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "다녀오셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "다녀오세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "다녀오셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "다녀오십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "다녀오시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to return; to come back; to go and then come back\nSource: https://en.wiktionary.org/wiki/다녀오다#Korean · NIKL level A, frequency rank 1876"
@@ -227,24 +234,25 @@ entries:
   - id: "mal.technician.56bd20346ef30a8d"
     lemma: "이쪽"
     partOfSpeech: "other"
-    english: ["This side"]
+    english: ["this side", "this way"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: This side\nSource: https://en.wiktionary.org/wiki/이쪽#Korean · NIKL level A, frequency rank 1885"
   - id: "mal.technician.6f299152e6f3e524"
     lemma: "연습"
     partOfSpeech: "noun"
-    english: ["practice", "exercise"]
+    english: ["practice"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: practice, exercise\nSource: https://en.wiktionary.org/wiki/연습#Korean · NIKL level A, frequency rank 1896"
   - id: "mal.technician.5c534e6d3e421fdb"
     lemma: "오른쪽"
     partOfSpeech: "noun"
-    english: ["right-hand", "the right side"]
+    english: ["right", "right side"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: right-hand; the right side\nSource: https://en.wiktionary.org/wiki/오른쪽#Korean · NIKL level A, frequency rank 1897"
+    promptCue: "direction"
   - id: "mal.technician.7d2525c43f494c06"
     lemma: "지도"
     partOfSpeech: "noun"

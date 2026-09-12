@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: "mal.extra"
-contentVersion: 1
+contentVersion: 2
 title: "Extra"
 provenance:
   source: "NIKL Korean learner vocabulary (2003); English Wiktionary contributors via Kaikki, 2026-09-02 dump"
@@ -10,45 +10,48 @@ entries:
   - id: "mal.extra.58946abd180deb65"
     lemma: "그녀"
     partOfSpeech: "other"
-    english: ["she"]
+    english: ["she", "her"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: she\nSource: https://en.wiktionary.org/wiki/그녀#Korean · NIKL level C, frequency rank 69"
+    promptCue: "third-person female pronoun"
   - id: "mal.extra.88f8dbb4ef7fd41e"
     lemma: "그러다"
     partOfSpeech: "verb"
-    english: ["do so", "to do so", "do it", "to do it"]
+    english: ["do so", "do that"]
     koreanForms: [{"text": "그런다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "그래", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "그래요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "그럽니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "그러는", "honorific": false, "attributive": true}, {"text": "그러신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "그러셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "그러세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "그러셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "그러십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "그러시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to do so; to do it\nSource: https://en.wiktionary.org/wiki/그러다#Korean · NIKL level C, frequency rank 79"
   - id: "mal.extra.8b40496bce55eb8e"
     lemma: "정부"
     partOfSpeech: "noun"
-    english: ["national government", "particularly the executive branch"]
+    english: ["government"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: national government, particularly the executive branch\nSource: https://en.wiktionary.org/wiki/정부#Korean · NIKL level C, frequency rank 136"
+    promptCue: "national government"
   - id: "mal.extra.dd0b449f0b779871"
     lemma: "새롭다"
     partOfSpeech: "adjective"
-    english: ["be new", "to be new"]
+    english: ["new", "be new"]
     koreanForms: [{"text": "새롭다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "새로워", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "새로워요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "새롭습니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "새로운", "honorific": false, "attributive": true}, {"text": "새로우시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "새로우셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "새로우세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "새로우셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "새로우십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "새로우신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to be new\nSource: https://en.wiktionary.org/wiki/새롭다#Korean · NIKL level C, frequency rank 180"
   - id: "mal.extra.a479631f362b2ec9"
     lemma: "과정"
     partOfSpeech: "noun"
-    english: ["process", "a course of events"]
+    english: ["process"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: process, a course of events\nSource: https://en.wiktionary.org/wiki/과정#Korean · NIKL level C, frequency rank 188"
   - id: "mal.extra.5f3f01c1fefb4670"
     lemma: "삶"
     partOfSpeech: "noun"
-    english: ["life", "living"]
+    english: ["life"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: life; living\nSource: https://en.wiktionary.org/wiki/삶#Korean · NIKL level C, frequency rank 189"
+    promptCue: "living or existence"
   - id: "mal.extra.5fb569fe1f26ea4f"
     lemma: "생명"
     partOfSpeech: "noun"
@@ -56,52 +59,53 @@ entries:
     koreanForms: []
     verification: "draft"
     notes: "Source sense: life\nSource: https://en.wiktionary.org/wiki/생명#Korean · NIKL level C, frequency rank 236"
+    promptCue: "being alive"
   - id: "mal.extra.157279d52839ebfa"
     lemma: "상황"
     partOfSpeech: "noun"
-    english: ["conditions", "the situation"]
+    english: ["situation", "circumstances"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: conditions, the situation\nSource: https://en.wiktionary.org/wiki/상황#Korean · NIKL level C, frequency rank 263"
   - id: "mal.extra.57608ff3425bcb91"
     lemma: "따라서"
     partOfSpeech: "adverb"
-    english: ["therefore", "in accordance with"]
+    english: ["therefore", "accordingly"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: therefore; in accordance with\nSource: https://en.wiktionary.org/wiki/따라서#Korean · NIKL level C, frequency rank 268"
   - id: "mal.extra.5f1a9f31eac20f9d"
     lemma: "상태"
     partOfSpeech: "noun"
-    english: ["condition", "status"]
+    english: ["state", "condition"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: condition, status\nSource: https://en.wiktionary.org/wiki/상태#Korean · NIKL level C, frequency rank 269"
   - id: "mal.extra.1f4501caa11f8a9b"
     lemma: "더욱"
     partOfSpeech: "adverb"
-    english: ["more so", "even more"]
+    english: ["even more", "all the more"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: more so, even more\nSource: https://en.wiktionary.org/wiki/더욱#Korean · NIKL level C, frequency rank 273"
   - id: "mal.extra.aff144835d716b39"
     lemma: "채"
     partOfSpeech: "other"
-    english: ["Counter for houses"]
+    english: ["counter for houses", "house counter"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: Counter for houses.\nSource: https://en.wiktionary.org/wiki/채#Korean · NIKL level C, frequency rank 279"
   - id: "mal.extra.6e3fe633390a4ac5"
     lemma: "현실"
     partOfSpeech: "noun"
-    english: ["reality", "the actual case"]
+    english: ["reality"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: reality; the actual case\nSource: https://en.wiktionary.org/wiki/현실#Korean · NIKL level C, frequency rank 280"
   - id: "mal.extra.863d95bdfc5953af"
     lemma: "기업"
     partOfSpeech: "noun"
-    english: ["business in general"]
+    english: ["enterprise", "business"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: business in general\nSource: https://en.wiktionary.org/wiki/기업#Korean · NIKL level C, frequency rank 292"
@@ -115,7 +119,7 @@ entries:
   - id: "mal.extra.a63eb42088366c32"
     lemma: "오히려"
     partOfSpeech: "adverb"
-    english: ["rather", "on the contrary", "unexpectedly"]
+    english: ["rather", "on the contrary"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: rather; on the contrary; unexpectedly\nSource: https://en.wiktionary.org/wiki/오히려#Korean · NIKL level C, frequency rank 355"
@@ -129,7 +133,7 @@ entries:
   - id: "mal.extra.b9f1df46d95014ab"
     lemma: "알아보다"
     partOfSpeech: "verb"
-    english: ["recognize", "to recognize"]
+    english: ["recognize", "recognise"]
     koreanForms: [{"text": "알아본다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "알아봐", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "알아봐요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "알아보아요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "알아봅니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "알아보는", "honorific": false, "attributive": true}, {"text": "알아보신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "알아보셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "알아보세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "알아보셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "알아보십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "알아보시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to recognize\nSource: https://en.wiktionary.org/wiki/알아보다#Korean · NIKL level C, frequency rank 388"
@@ -143,14 +147,14 @@ entries:
   - id: "mal.extra.948dcb5675a8a605"
     lemma: "형태"
     partOfSpeech: "noun"
-    english: ["shape"]
+    english: ["form", "shape"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: shape\nSource: https://en.wiktionary.org/wiki/형태#Korean · NIKL level C, frequency rank 421"
   - id: "mal.extra.01cdeb5c124dd4dc"
     lemma: "작업"
     partOfSpeech: "noun"
-    english: ["work", "working"]
+    english: ["work", "task"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: work, working\nSource: https://en.wiktionary.org/wiki/작업#Korean · NIKL level C, frequency rank 424"
@@ -178,10 +182,11 @@ entries:
   - id: "mal.extra.8ce2331c70eac36e"
     lemma: "입장"
     partOfSpeech: "noun"
-    english: ["standpoint", "perspective"]
+    english: ["standpoint", "position"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: standpoint; perspective\nSource: https://en.wiktionary.org/wiki/입장#Korean · NIKL level C, frequency rank 450"
+    promptCue: "point of view"
   - id: "mal.extra.397b79b6dbf545ea"
     lemma: "영향"
     partOfSpeech: "noun"
@@ -192,35 +197,36 @@ entries:
   - id: "mal.extra.7b82b2781a032ce0"
     lemma: "단계"
     partOfSpeech: "noun"
-    english: ["stage of progress"]
+    english: ["stage", "step"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: stage of progress\nSource: https://en.wiktionary.org/wiki/단계#Korean · NIKL level C, frequency rank 471"
+    promptCue: "progression"
   - id: "mal.extra.63f32a9c3dc4f86c"
     lemma: "올리다"
     partOfSpeech: "verb"
-    english: ["raise", "to raise", "increase", "to increase"]
+    english: ["raise", "lift", "to raise", "to lift"]
     koreanForms: [{"text": "올린다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "올려", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "올려요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "올리어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "올립니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "올리는", "honorific": false, "attributive": true}, {"text": "올리신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "올리셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "올리세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "올리셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "올리십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "올리시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to raise, to increase\nSource: https://en.wiktionary.org/wiki/올리다#Korean · NIKL level C, frequency rank 472"
   - id: "mal.extra.9201a9792b85aa00"
     lemma: "지니다"
     partOfSpeech: "verb"
-    english: ["keep or preserve", "to keep or preserve"]
+    english: ["keep", "possess"]
     koreanForms: [{"text": "지닌다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "지녀", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "지녀요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "지니어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "지닙니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "지니는", "honorific": false, "attributive": true}, {"text": "지니신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "지니셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "지니세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "지니셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "지니십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "지니시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to keep or preserve\nSource: https://en.wiktionary.org/wiki/지니다#Korean · NIKL level C, frequency rank 477"
   - id: "mal.extra.366998a6bf6c8fb4"
     lemma: "의원"
     partOfSpeech: "noun"
-    english: ["member of a parliament or assembly"]
+    english: ["legislator", "member of parliament"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: member of a parliament or assembly\nSource: https://en.wiktionary.org/wiki/의원#Korean · NIKL level C, frequency rank 492"
   - id: "mal.extra.5938d742ed7e7107"
     lemma: "주민"
     partOfSpeech: "noun"
-    english: ["residents in a place"]
+    english: ["resident", "residents"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: residents in a place\nSource: https://en.wiktionary.org/wiki/주민#Korean · NIKL level C, frequency rank 507"
@@ -234,21 +240,22 @@ entries:
   - id: "mal.extra.c6fbe63515fb1bca"
     lemma: "분야"
     partOfSpeech: "noun"
-    english: ["sector; field of business or study"]
+    english: ["field", "area"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: sector; field of business or study\nSource: https://en.wiktionary.org/wiki/분야#Korean · NIKL level C, frequency rank 517"
+    promptCue: "study or activity"
   - id: "mal.extra.ab8337b09785084c"
     lemma: "기능"
     partOfSpeech: "noun"
-    english: ["function or functionality"]
+    english: ["function", "functionality"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: function or functionality\nSource: https://en.wiktionary.org/wiki/기능#Korean · NIKL level C, frequency rank 531"
   - id: "mal.extra.5e8e6d9c1de84f9c"
     lemma: "노동"
     partOfSpeech: "noun"
-    english: ["labor", "especially industrial"]
+    english: ["labor", "labour"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: labor, especially industrial\nSource: https://en.wiktionary.org/wiki/노동#Korean · NIKL level C, frequency rank 547"

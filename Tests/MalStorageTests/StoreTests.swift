@@ -155,3 +155,13 @@ private func fixture(version: Int = 1) -> Bank {
     for value in ["빨간", "빨개요", "빨갛습니다", "붉다", "붉은", "붉어요", "붉습니다"] { #expect(Grader.isCorrect(value, entry: red, direction: .englishToKorean)) }
     #expect(!Grader.isCorrect("붉었어요", entry: red, direction: .englishToKorean))
 }
+@Test @MainActor func nestedBankCannotTakeOwnershipOfAnEntry() throws {
+    let store = try temporaryStore(); defer { store.close() }
+    let original = Bank(id: "custom.parent", title: "Original", entries: [Entry(id: "custom.parent.child.word", lemma: "집", partOfSpeech: .noun, english: ["house"])])
+    _ = try store.importBank(original)
+    let conflicting = Bank(id: "custom.parent.child", title: "Conflicting", entries: [Entry(id: "custom.parent.child.word", lemma: "책", partOfSpeech: .noun, english: ["book"])])
+    #expect(throws: StoreError.self) { try store.importBank(conflicting) }
+    #expect(try store.banks() == [original])
+    let reserved = Bank(id: "mal", title: "Reserved", entries: [Entry(id: "mal.fake", lemma: "집", partOfSpeech: .noun, english: ["house"])])
+    #expect(throws: ValidationFailure.self) { try store.importBank(reserved) }
+}

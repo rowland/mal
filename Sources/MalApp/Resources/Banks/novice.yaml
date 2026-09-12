@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: "mal.novice"
-contentVersion: 2
+contentVersion: 3
 title: "Novice"
 provenance:
   source: "NIKL Korean learner vocabulary (2003); English Wiktionary contributors via Kaikki, 2026-09-02 dump"
@@ -363,10 +363,11 @@ entries:
   - id: "mal.novice.d6edb15e94033620"
     lemma: "있다"
     partOfSpeech: "adjective"
-    english: ["be (in a place); to exist", "to be (in a place); to exist"]
+    english: ["exist", "be present"]
     koreanForms: [{"text": "있다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "있어", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "있어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "있습니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "있는", "honorific": false, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to be (in a place); to exist\nSource: https://en.wiktionary.org/wiki/있다#Korean · NIKL level A, frequency rank 4"
+    promptCue: "existence or presence"
   - id: "mal.novice.3daf3b98e7a9d94c"
     lemma: "되다"
     partOfSpeech: "verb"
@@ -377,31 +378,35 @@ entries:
   - id: "mal.novice.05414eee476f78ca"
     lemma: "나"
     partOfSpeech: "other"
-    english: ["I, me; the first-person singular plain (non-polite) pronoun"]
+    english: ["I", "me"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: I, me; the first-person singular plain (non-polite) pronoun\nSource: https://en.wiktionary.org/wiki/나#Korean · NIKL level A, frequency rank 8"
+    promptCue: "plain first-person pronoun"
   - id: "mal.novice.3feb7ede2ff19f86"
     lemma: "그"
     partOfSpeech: "other"
-    english: ["that (of what has been already said or known)"]
+    english: ["that"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: that (of what has been already said or known)\nSource: https://en.wiktionary.org/wiki/그#Korean · NIKL level A, frequency rank 9"
+    promptCue: "previously mentioned"
   - id: "mal.novice.c25d775c901de829"
     lemma: "없다"
     partOfSpeech: "adjective"
-    english: ["have none; (to be) lacking; (to be) nonexistent", "to have none; (to be) lacking; (to be) nonexistent"]
+    english: ["not exist", "be absent"]
     koreanForms: [{"text": "없다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "없어", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "없어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "없습니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "없는", "honorific": false, "attributive": true}, {"text": "없으시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "없으셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "없으세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "없으셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "없으십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "없으신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to have none; (to be) lacking; (to be) nonexistent\nSource: https://en.wiktionary.org/wiki/없다#Korean · NIKL level A, frequency rank 10"
+    promptCue: "absence or nonexistence"
   - id: "mal.novice.61bff100d7d45871"
     lemma: "아니다"
     partOfSpeech: "adjective"
-    english: ["not be (something)", "to not be (something)"]
+    english: ["not be"]
     koreanForms: [{"text": "아니다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "아니야", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "아니에요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "아닙니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "아닌", "honorific": false, "attributive": true}, {"text": "아니시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "아니셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "아니세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "아니셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "아니십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "아니신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to not be (something)\nSource: https://en.wiktionary.org/wiki/아니다#Korean · NIKL level A, frequency rank 16"
+    promptCue: "negative copula"
   - id: "mal.novice.4ebe3d1cfa867df2"
     lemma: "때"
     partOfSpeech: "noun"
@@ -409,10 +414,11 @@ entries:
     koreanForms: []
     verification: "draft"
     notes: "Source sense: time; occasion\nSource: https://en.wiktionary.org/wiki/때#Korean · NIKL level A, frequency rank 19"
+    promptCue: "a time or occasion"
   - id: "mal.novice.1fd79b0ecbf75bc3"
     lemma: "같다"
     partOfSpeech: "adjective"
-    english: ["like or similar (often used with 와 (wa)/과 (gwa))"]
+    english: ["be similar", "be alike", "similar", "alike"]
     koreanForms: [{"text": "같다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "같아", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "같아요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "같습니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "같은", "honorific": false, "attributive": true}, {"text": "같으시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "같으셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "같으세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "같으셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "같으십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "같으신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: like or similar (often used with 와 (wa)/과 (gwa))\nSource: https://en.wiktionary.org/wiki/같다#Korean · NIKL level A, frequency rank 22"
@@ -423,6 +429,7 @@ entries:
     koreanForms: []
     verification: "draft"
     notes: "Source sense: year\nSource: https://en.wiktionary.org/wiki/년#Korean · NIKL level A, frequency rank 26"
+    promptCue: "year unit"
   - id: "mal.novice.ca6eda981941b6c4"
     lemma: "한"
     partOfSpeech: "other"
@@ -433,14 +440,15 @@ entries:
   - id: "mal.novice.eb325ed3d6373fd5"
     lemma: "말"
     partOfSpeech: "noun"
-    english: ["speech"]
+    english: ["speech", "words"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: speech\nSource: https://en.wiktionary.org/wiki/말#Korean · NIKL level A, frequency rank 28"
+    promptCue: "spoken language"
   - id: "mal.novice.d1f3ae7d4bf0f546"
     lemma: "말하다"
     partOfSpeech: "verb"
-    english: ["speak", "to speak", "talk", "to talk"]
+    english: ["speak", "say", "to speak", "to say"]
     koreanForms: [{"text": "말한다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "말해", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "말해요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "말합니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "말하는", "honorific": false, "attributive": true}, {"text": "말하신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "말하셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "말하세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "말하셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "말하십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "말하시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to speak, to talk\nSource: https://en.wiktionary.org/wiki/말하다#Korean · NIKL level A, frequency rank 32"
@@ -454,21 +462,21 @@ entries:
   - id: "mal.novice.dc1f31c1d88ac638"
     lemma: "알다"
     partOfSpeech: "verb"
-    english: ["know; realize (to realize or feel a fact or situation through awareness or senses.)", "to know; realize (to realize or feel a fact or situation through awareness or senses.)"]
+    english: ["know", "to know"]
     koreanForms: [{"text": "안다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "알아", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "알아요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "압니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "아는", "honorific": false, "attributive": true}, {"text": "아신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "아셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "아세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "아셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "아십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "아시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to know; realize (to realize or feel a fact or situation through awareness or senses.)\nSource: https://en.wiktionary.org/wiki/알다#Korean · NIKL level A, frequency rank 36"
   - id: "mal.novice.5f523d68d4e61e0a"
     lemma: "그렇다"
     partOfSpeech: "adjective"
-    english: ["be thus", "to be thus", "in that way", "be correct", "to be correct"]
+    english: ["be so", "be like that"]
     koreanForms: [{"text": "그렇다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "그래", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "그래요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "그렇습니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "그런", "honorific": false, "attributive": true}, {"text": "그러시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "그러셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "그러세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "그러셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "그러십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "그러신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to be thus, in that way; to be correct\nSource: https://en.wiktionary.org/wiki/그렇다#Korean · NIKL level A, frequency rank 38"
   - id: "mal.novice.755266cdcc7015ee"
     lemma: "또"
     partOfSpeech: "adverb"
-    english: ["also"]
+    english: ["also", "again"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: also\nSource: https://en.wiktionary.org/wiki/또#Korean · NIKL level A, frequency rank 40"
@@ -479,48 +487,52 @@ entries:
     koreanForms: []
     verification: "draft"
     notes: "Source sense: not\nSource: https://en.wiktionary.org/wiki/안#Korean · NIKL level A, frequency rank 44"
+    promptCue: "negation"
   - id: "mal.novice.f971247684885b27"
     lemma: "더"
     partOfSpeech: "adverb"
-    english: ["more, -er (to a greater extent)"]
+    english: ["more"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: more, -er (to a greater extent)\nSource: https://en.wiktionary.org/wiki/더#Korean · NIKL level A, frequency rank 46"
+    promptCue: "to a greater extent"
   - id: "mal.novice.f5986f0988fc142d"
     lemma: "받다"
     partOfSpeech: "verb"
-    english: ["get", "to get", "receive", "take", "obtain"]
+    english: ["receive", "get", "to receive", "to get"]
     koreanForms: [{"text": "받는다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "받아", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "받아요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "받습니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "받는", "honorific": false, "attributive": true}, {"text": "받으신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "받으셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "받으세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "받으셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "받으십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "받으시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to get, receive, take, obtain\nSource: https://en.wiktionary.org/wiki/받다#Korean · NIKL level A, frequency rank 47"
   - id: "mal.novice.2fa57ae26c669edf"
     lemma: "그것"
     partOfSpeech: "other"
-    english: ["that (thing near the listener)"]
+    english: ["that"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: that (thing near the listener)\nSource: https://en.wiktionary.org/wiki/그것#Korean · NIKL level A, frequency rank 48"
+    promptCue: "thing near the listener"
   - id: "mal.novice.cc8d12dd838b4564"
     lemma: "나오다"
     partOfSpeech: "verb"
-    english: ["come out", "to come out", "come forth"]
+    english: ["come out", "to come out"]
     koreanForms: [{"text": "나온다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "나와", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "나와요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "나옵니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "나오는", "honorific": false, "attributive": true}, {"text": "나오신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "나오셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "나오세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "나오셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "나오십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "나오시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to come out, come forth\nSource: https://en.wiktionary.org/wiki/나오다#Korean · NIKL level A, frequency rank 50"
   - id: "mal.novice.33bdaa99ed5e7900"
     lemma: "그리고"
     partOfSpeech: "adverb"
-    english: ["and, also, in addition (often used at the beginning of a sentence)"]
+    english: ["and", "also", "and then"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: and, also, in addition (often used at the beginning of a sentence)\nSource: https://en.wiktionary.org/wiki/그리고#Korean · NIKL level A, frequency rank 52"
   - id: "mal.novice.9845672321845845"
     lemma: "문제"
     partOfSpeech: "noun"
-    english: ["problem", "issue", "question"]
+    english: ["problem", "question"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: problem, issue, question\nSource: https://en.wiktionary.org/wiki/문제#Korean · NIKL level A, frequency rank 53"
+    promptCue: "a problem or question"
   - id: "mal.novice.9d094cb70f4237e1"
     lemma: "살다"
     partOfSpeech: "verb"
@@ -545,7 +557,7 @@ entries:
   - id: "mal.novice.f1f0f61dfb9468ed"
     lemma: "모르다"
     partOfSpeech: "verb"
-    english: ["not know", "to not know", "be ignorant of", "to be ignorant of"]
+    english: ["not know", "be unaware"]
     koreanForms: [{"text": "모른다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "몰라", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "몰라요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "모릅니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "모르는", "honorific": false, "attributive": true}, {"text": "모르신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "모르셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "모르세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "모르셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "모르십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "모르시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to not know, to be ignorant of\nSource: https://en.wiktionary.org/wiki/모르다#Korean · NIKL level A, frequency rank 59"
@@ -559,21 +571,22 @@ entries:
   - id: "mal.novice.0895eb2e01f40625"
     lemma: "만들다"
     partOfSpeech: "verb"
-    english: ["make", "to make"]
+    english: ["make", "create", "to make", "to create"]
     koreanForms: [{"text": "만든다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "만들어", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "만들어요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "만듭니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "만드는", "honorific": false, "attributive": true}, {"text": "만드신다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "만드셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "만드세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "만드셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "만드십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "만드시는", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to make\nSource: https://en.wiktionary.org/wiki/만들다#Korean · NIKL level A, frequency rank 61"
   - id: "mal.novice.5af6b40a07cb9760"
     lemma: "앞"
     partOfSpeech: "noun"
-    english: ["fore", "front"]
+    english: ["front"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: fore, front\nSource: https://en.wiktionary.org/wiki/앞#Korean · NIKL level A, frequency rank 64"
+    promptCue: "position in front"
   - id: "mal.novice.fe629c0f209edfe3"
     lemma: "어떤"
     partOfSpeech: "other"
-    english: ["what kind of"]
+    english: ["what kind of", "which kind of"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: what kind of\nSource: https://en.wiktionary.org/wiki/어떤#Korean · NIKL level A, frequency rank 67"
@@ -584,10 +597,11 @@ entries:
     koreanForms: []
     verification: "draft"
     notes: "Source sense: well\nSource: https://en.wiktionary.org/wiki/잘#Korean · NIKL level A, frequency rank 68"
+    promptCue: "in a good manner"
   - id: "mal.novice.81a6e785d52edc3f"
     lemma: "생각"
     partOfSpeech: "noun"
-    english: ["thought"]
+    english: ["thought", "idea"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: thought\nSource: https://en.wiktionary.org/wiki/생각#Korean · NIKL level A, frequency rank 75"
@@ -601,7 +615,7 @@ entries:
   - id: "mal.novice.87742b93918baedc"
     lemma: "다시"
     partOfSpeech: "adverb"
-    english: ["again", "once more"]
+    english: ["again"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: again, once more\nSource: https://en.wiktionary.org/wiki/다시#Korean · NIKL level A, frequency rank 81"

@@ -133,3 +133,29 @@ private struct Seeded: RandomNumberGenerator {
     #expect(StudyQueue.select(entries: [a,b], states: states, settings: settings, context: .init(now: epoch, sequence: 8))?.entryID == "b")
     #expect(StudyQueue.select(entries: [a], states: states, settings: settings, context: .init(now: epoch, sequence: 8))?.entryID == "a")
 }
+@Test func retiredCardsDoNotConsumeLearningCapacity() {
+    let a = entry("a", "가", "a")
+    var settings = StudySettings(); settings.learningLimit = 1
+    let states = [CardKey("retired", settings.direction, settings.mode): LearningState(due: epoch)]
+    #expect(StudyQueue.select(entries: [a], states: states, settings: settings, context: .init(now: epoch), activeEntryIDs: [a.id]) == Selection(a.id, isNew: true))
+}
+@Test func returnCompositionAndRepeatGuard() {
+    #expect(InputRules.shouldSubmit(composingAtKeyDown: false, currentlyComposing: false, isRepeat: false))
+    #expect(!InputRules.shouldSubmit(composingAtKeyDown: true, currentlyComposing: false, isRepeat: false))
+    #expect(!InputRules.shouldSubmit(composingAtKeyDown: false, currentlyComposing: true, isRepeat: false))
+    #expect(!InputRules.shouldSubmit(composingAtKeyDown: false, currentlyComposing: false, isRepeat: true))
+}
+@Test func repeatedChoiceKeysDoNotCascadeGrades() {
+    #expect(InputRules.ignoreRepeatedStudyKey(isRepeat: true, modified: false, key: "8", multipleChoice: true, waitingForContinue: false))
+    #expect(!InputRules.ignoreRepeatedStudyKey(isRepeat: false, modified: false, key: "8", multipleChoice: true, waitingForContinue: false))
+    #expect(!InputRules.ignoreRepeatedStudyKey(isRepeat: true, modified: false, key: "8", multipleChoice: false, waitingForContinue: false))
+    #expect(!InputRules.ignoreRepeatedStudyKey(isRepeat: true, modified: true, key: "8", multipleChoice: true, waitingForContinue: false))
+    #expect(InputRules.ignoreRepeatedStudyKey(isRepeat: true, modified: false, key: "\r", multipleChoice: false, waitingForContinue: true))
+}
+@Test func reversePromptDoesNotRevealEnglishAnswer() {
+    var government = entry("gov", "정부", "government"); government.promptCue = "national government"
+    #expect(government.prompt(.koreanToEnglish) == "정부")
+    #expect(government.prompt(.englishToKorean) == "government (national government)")
+    var hat = entry("wear", "쓰다", "wear", .verb); hat.promptCue = "a hat"
+    #expect(hat.prompt(.koreanToEnglish) == "쓰다 (a hat)")
+}

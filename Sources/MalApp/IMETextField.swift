@@ -1,8 +1,9 @@
 import SwiftUI
 import AppKit
+import MalNative
 
-// AppKit consumes Return while marked text exists. The delegate submits only
-// a later Return after composition has committed, avoiding accidental grading.
+// The custom editor remembers whether Return began inside IME composition.
+// The control delegate submits only an independent, unmarked Return.
 struct IMETextField: NSViewRepresentable {
     @Binding var text: String
     var enabled: Bool
@@ -10,6 +11,9 @@ struct IMETextField: NSViewRepresentable {
     func makeCoordinator() -> Coordinator { Coordinator(self) }
     func makeNSView(context: Context) -> NSTextField {
         let field = NSTextField(string: "")
+        field.cell = AnswerCell(textCell: "")
+        field.isBezeled = true
+        field.isEditable = true
         field.placeholderString = "Type your answer"
         field.font = .systemFont(ofSize: 24)
         field.bezelStyle = .roundedBezel
@@ -19,7 +23,7 @@ struct IMETextField: NSViewRepresentable {
     }
     func updateNSView(_ field: NSTextField, context: Context) {
         context.coordinator.parent = self
-        if field.stringValue != text { field.stringValue = text }
+        if (field.currentEditor() as? NSTextView)?.hasMarkedText() != true, field.stringValue != text { field.stringValue = text }
         field.isEnabled = enabled
         if enabled, field.window?.firstResponder is NSTextView == false {
             DispatchQueue.main.async { if field.window?.isKeyWindow == true { field.window?.makeFirstResponder(field) } }
@@ -32,7 +36,8 @@ struct IMETextField: NSViewRepresentable {
             if let field = notification.object as? NSTextField { parent.text = field.stringValue }
         }
         func control(_ control: NSControl, textView: NSTextView, doCommandBy selector: Selector) -> Bool {
-            if selector == #selector(NSResponder.insertNewline(_:)), !textView.hasMarkedText() {
+            if selector == #selector(NSResponder.insertNewline(_:)) {
+                guard (textView as? AnswerEditor)?.canSubmit ?? !textView.hasMarkedText() else { return true }
                 parent.text = control.stringValue; parent.onSubmit(); return true
             }
             return false

@@ -22,7 +22,7 @@ public enum BankCodec {
         require(bank.schemaVersion == 1, "Unsupported schemaVersion: \(bank.schemaVersion)")
         require(bank.contentVersion > 0, "contentVersion must be positive.")
         require(bank.id.range(of: idPattern, options: .regularExpression) != nil, "Invalid bank ID.")
-        require(allowBuiltIn || !bank.id.hasPrefix("mal."), "The mal. namespace is reserved for built-in banks.")
+        require(allowBuiltIn || (bank.id != "mal" && !bank.id.hasPrefix("mal.")), "The mal. namespace is reserved for built-in banks.")
         require(!bank.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "Bank title is required.")
         require(!bank.provenance.source.isEmpty && !bank.provenance.license.isEmpty, "Source and license are required.")
         require(!bank.entries.isEmpty, "Bank must contain entries.")

@@ -40,3 +40,6 @@ Use a disposable data directory. Do not reset the user's normal database.
 - User acceptance: not yet performed. Do not mark manual tests passed based on unit tests.
 - 2026-09-12: Migration-expanded suite: 24 tests passed. Native smoke test confirmed launch, eight choices, correct/wrong answer flow, undo, independent write-in, Hangul paste/submission, library opening and Korean search. Actual IME and user acceptance remain untested.
 - 2026-09-12 final: **25 tests passed**. Optimized app package and strict code-signature verification passed. Repeat packaging permission failure (DEF-003) fixed and verified. Sample custom-bank validation passed.
+- 2026-09-12 continuation: **31 tests passed**, including AppKit marked-text preservation, composition/held-key guards, retired-card capacity, nested-namespace ownership, and reverse-cue leakage.
+- Native UI: sample YAML import reports 2 added; native backup reports saved; restoring the test backup reports restored and retains selected banks/progress. Actual Korean input-method composition remains open.
+- Refined packaged app relaunched with isolated data; the custom AnswerEditor accepted `물` on Return and immediately advanced to the next card. This still does not substitute for testing a real Korean IME composition session.

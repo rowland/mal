@@ -25,3 +25,7 @@
 - D-018: Dataset matching is not linguistic verification. Bundled candidate vocabulary remains draft until sense, aliases, labels and forms are checked. No silent promotion to verified based on automated schema checks.
 - D-019: “Accept my answer” replaces the last wrong grade transactionally, retaining an undone audit record. Saving an alias is part of that transaction. Undoing the corrected grade does not delete an explicitly saved alias.
 - D-020: Mode/filter changes exclude the currently presented sense, even if ungraded. Source attribution stays in the bank browser; study feedback shows usage notes only.
+- D-021: Retired entries retain history but do not count against the active learning pool. Still-active entries in deselected banks/categories do count.
+- D-022: Native field editor captures marked-text state at the beginning of Return handling; both pre-event and current composition states prevent submission. Repeated study keys do not cascade grades.
+- D-023: Imported IDs cannot change bank ownership, including when bank namespaces are nested. The `mal` root is also reserved.
+- D-024: Package into a temporary staging directory, verify the signature, then publish. Retain the previous app for rollback. Never overwrite a working package with a partially built one.
