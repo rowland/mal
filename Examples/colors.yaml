@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: personal.colors
+contentVersion: 1
+title: My Colors
+provenance:
+  source: Original personal word bank
+  license: Personal use
+entries:
+  - id: personal.colors.red
+    lemma: 빨갛다
+    partOfSpeech: adjective
+    english: [red, be red]
+    koreanForms:
+      - text: 빨간
+        attributive: true
+      - text: 빨개
+        speechLevel: informal
+      - text: 빨개요
+        speechLevel: informal-polite
+      - text: 빨갛습니다
+        speechLevel: formal-polite
+    verification: checked
+    notes: Present affirmative forms; 빨갛다 is a ㅎ-irregular descriptive verb.
+  - id: personal.colors.blue
+    lemma: 파랗다
+    partOfSpeech: adjective
+    english: [blue, be blue]
+    koreanForms:
+      - text: 파란
+        attributive: true
+      - text: 파래
+        speechLevel: informal
+      - text: 파래요
+        speechLevel: informal-polite
+      - text: 파랗습니다
+        speechLevel: formal-polite
+    verification: checked

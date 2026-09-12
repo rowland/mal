@@ -1,0 +1,27 @@
+# Decision log
+
+## 2026-09-12 — accepted product decisions
+
+- D-001: Working name is Mal (말).
+- D-002: Personal offline macOS app; five banks of 500 sense entries each.
+- D-003: YAML authoring, strict grading with override, system pronunciation in v1.
+- D-004: Eight multiple-choice options, configurable to 4/6/8/10. Distractors use full selected banks.
+- D-005: Manual answer-mode switching; independent scheduling and mastery for every direction × mode.
+- D-006: Parts of speech are filters, not weights. Default all.
+- D-007: Continuous rotation, not daily budgets. Correct answers auto-advance.
+- D-008: Repository Markdown project tracking; no external issue service.
+
+## 2026-09-12 — implementation decisions
+
+- D-009: Swift Package Manager provides an Xcode-openable project and CLI build/test. A packaging script produces a native ad-hoc-signed app. No generated Xcode project dependency.
+- D-010: MalCore imports only Foundation. All grading, choice selection, queue and schedule decisions are pure functions. Tests inject timestamps and seeded randomness.
+- D-011: SQLite via the system C library, serialized on the main actor for this local app. JSON domain payloads are stored in separate content/state/event tables. Versioned schema and event scheduler version support future migration.
+- D-012: Backups use SQLite's backup API and finish with DELETE journal mode so a read-only backup needs no WAL/SHM sidecars. This fixed DEF-001 caught by integration tests.
+- D-013: The initial scheduler is the explicitly specified transparent algorithm, not FSRS. Changes require a new scheduler version and regression fixtures.
+- D-014: Learning-pool limits count all stored learning/relearning cards for a track, including deselected banks/categories; settings explain this. No progress is deleted when filtering.
+- D-015: Retry spacing yields to available alternative cards. With no alternatives, minimum time still applies. The immediately previous sense remains excluded until an explicit Check again when idle.
+- D-016: The 50-card batch counts submitted answers in the current session; it is a pause point, not a daily limit. Pool sizes and schedules survive restart; session batch counters do not.
+- D-017: YAML entries use bank-namespaced stable IDs; do not regenerate published IDs or move entries between namespaces. Semantic replacements receive new IDs. The first content manifest freezes assignments for later editorial updates.
+- D-018: Dataset matching is not linguistic verification. Bundled candidate vocabulary remains draft until sense, aliases, labels and forms are checked. No silent promotion to verified based on automated schema checks.
+- D-019: “Accept my answer” replaces the last wrong grade transactionally, retaining an undone audit record. Saving an alias is part of that transaction. Undoing the corrected grade does not delete an explicitly saved alias.
+- D-020: Mode/filter changes exclude the currently presented sense, even if ungraded. Source attribution stays in the bank browser; study feedback shows usage notes only.

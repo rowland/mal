@@ -1,0 +1,32 @@
+# Mal requirements baseline
+
+Accepted 2026-09-12. Working name Mal (말). This file preserves user decisions across iterations. Change requirements explicitly and record the reason in DECISIONS.md.
+
+| ID | Requirement |
+|---|---|
+| UX-01 | Native macOS 26, personal offline use; no account, gamification, or daily caps. |
+| UX-02 | Independent direction and answer-mode switches. Eight choices by default, configurable 4/6/8/10. |
+| UX-03 | Distractors from all selected banks, not restricted to active rotation; prefer same part of speech, exclude valid alternatives. |
+| UX-04 | All parts of speech by default; selectable filters preserve progress. |
+| UX-05 | Immediate correct-answer advancement, compact feedback, paused errors, undo, grade override and optional personal aliases. |
+| UX-06 | Keyboard-only study; Return committing Hangul composition must not grade. |
+| UX-07 | On-demand installed Korean system voice; missing voice does not block study. |
+| DATA-01 | Sense-based stable IDs, Korean lemma/POS, English aliases/cues, explicit labeled Korean forms, notes and verification status. |
+| DATA-02 | Accept curated synonyms and present affirmative common speech levels/attributives; reject unlisted tense/negative/typo variants. |
+| DATA-03 | NFC and surrounding-whitespace normalization; English capitalization ignored. |
+| DATA-04 | Five nonoverlapping 500-entry banks: Novice, Technician, General, Advanced, Extra; frequency and learner difficulty inform tiers. |
+| DATA-05 | Provenance, redistribution terms, and linguistic review tracked. Draft/generated content is not release-ready. |
+| DATA-06 | YAML v1, sample file, validator, atomic import, stable-ID updates, version checks, protected built-in namespace, retirement without history deletion. |
+| LEARN-01 | Four independent tracks per sense (direction × mode). Manual switching; recognized words prioritized for new write-in cards. |
+| LEARN-02 | Continuous rotation; default 10 learning cards per track. Introduce one per five answers, or when no eligible card exists. |
+| LEARN-03 | Learning: immediate → 10 minutes → 1 day; three consecutive due successes graduate to 3-day review. |
+| LEARN-04 | Review multiplier typed 1.5+accuracy, choice 1.2+0.5×accuracy; smoothed latest 20 accuracy; max 365 days. |
+| LEARN-05 | Failure resets learning, or relearns at 10 minutes and 1 day; preserve lifetime history. |
+| LEARN-06 | Due relearning, then overdue reviews; configurable 50-answer batches; no future reviews pulled forward. |
+| LEARN-07 | Separate presentation and grade records; atomic grade+schedule; undo restores prior state. |
+| STORE-01 | Content, aliases, events, settings and schedules separated; progress survives app/bank replacement. |
+| STORE-02 | Standalone backups, transactional restore, pre-migration/pre-restore recovery backups. |
+| ENG-01 | Pure testable rules module, injected time/randomness, unit and integration tests. |
+| ENG-02 | Git and repository Markdown track requirements, decisions, milestones, defects, evidence and handoffs. |
+
+Deferred: cloud sync, distribution/notarization, in-app vocabulary editor, AI/URL bank generation, romanized answers, sentence-cloze exercises.
