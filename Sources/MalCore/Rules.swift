@@ -90,7 +90,9 @@ public enum StudyQueue {
                 return recognizedA == recognizedB ? a.offset < b.offset : recognizedA
             }.map(\.element)
         }
-        if active < settings.learningLimit, let new = unseen.first, ready.isEmpty || context.answersSinceIntroduction >= 5 {
+        // The pool target controls mixing, never blocks continuous study.
+        // When no review is ready, introduce unseen vocabulary even above target.
+        if let new = unseen.first, ready.isEmpty || (active < settings.learningLimit && context.answersSinceIntroduction >= 5) {
             return Selection(new.id, isNew: true)
         }
         if let next = ready.first { return Selection(next.id, isNew: false) }

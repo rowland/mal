@@ -29,3 +29,10 @@
 - D-022: Native field editor captures marked-text state at the beginning of Return handling; both pre-event and current composition states prevent submission. Repeated study keys do not cascade grades.
 - D-023: Imported IDs cannot change bank ownership, including when bank namespaces are nested. The `mal` root is also reserved.
 - D-024: Package into a temporary staging directory, verify the signature, then publish. Retain the previous app for rollback. Never overwrite a working package with a partially built one.
+
+## User feedback — 2026-09-12
+
+- D-025: Increase multiple-choice words to 30 points for beginner Hangul readability; preserve wrapping rather than shrinking long answers.
+- D-026: Supersedes the hard-cap interpretation in D-014/D-021. The learning pool is a mixing target: if no eligible review is ready, introduce another unseen word regardless of pool size. Existing due dates, graduation requirements and independent tracks remain intact. When the pool is full and reviews are ready, review first.
+- D-027: Supersedes D-016. Remove automatic 50-answer batch pauses and the batch-size setting. Retain the stored reviewBatch field only for settings/backup compatibility.
+- D-028: Incorrect-answer feedback assumes the vocabulary is right: show Incorrect, the submitted answer, the correct answer and Continue. Replace the disabled choice grid with feedback so Continue remains easy to reach. Put override/alias actions in a small Answer options menu.

@@ -73,16 +73,12 @@ struct ContentView: View {
                 Divider()
                 if let entry = model.current {
                     ScrollView { studyCard(entry) }.scrollIndicators(.hidden)
-                } else if model.batchPaused {
-                    ContentUnavailableView {
-                        Label("Review batch complete", systemImage: "checkmark")
-                    } description: { Text("Continue whenever you like.") } actions: { Button("Continue", action: model.continueBatch).keyboardShortcut(.defaultAction) }
                 } else {
                     ContentUnavailableView {
                         Label("Nothing ready right now", systemImage: "cup.and.saucer")
                     } description: {
                         if let due = model.nextDue { Text("Next review: \(due.formatted(date: .abbreviated, time: .shortened))") }
-                        Text("Select banks and word categories, or check again later. Learning limits also include words in other banks.")
+                        Text("No unseen words remain in the selected banks and categories. Select more vocabulary, or return when a review is due.")
                     } actions: { Button("Check again", action: model.checkAgain) }
                 }
                 Spacer(minLength: 0)
@@ -107,31 +103,37 @@ struct ContentView: View {
             }
             Text(entry.prompt(model.settings.direction)).font(.system(size: 38, weight: .medium)).textSelection(.enabled)
                 .accessibilityIdentifier("studyPrompt")
-            if model.settings.mode == .multipleChoice {
+            if !model.waiting && model.settings.mode == .multipleChoice {
                 if model.choices.count < 2 {
                     Text("This bank has no distinct distractor. Switch to write-in or select another bank.").foregroundStyle(.secondary)
                 } else {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
                         ForEach(Array(model.choices.enumerated()), id: \.offset) { index, choice in
                             Button { model.submit(choice) } label: {
-                                HStack { Text(index == 9 ? "0" : String(index + 1)).font(.caption.monospaced()).foregroundStyle(.secondary); Text(choice).font(.title3); Spacer() }.padding(10).frame(maxWidth: .infinity, minHeight: 38)
+                                HStack { Text(index == 9 ? "0" : String(index + 1)).font(.caption.monospaced()).foregroundStyle(.secondary); Text(choice).font(.system(size: 30)).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true); Spacer() }.padding(10).frame(maxWidth: .infinity, minHeight: 48)
                             }.buttonStyle(.bordered).keyboardShortcut(KeyEquivalent(Character(index == 9 ? "0" : String(index + 1))), modifiers: []).disabled(model.waiting)
                         }
                     }
                     if model.choices.count < model.settings.choiceCount { Text("\(model.choices.count) distinct choices available in the selected banks.").font(.caption).foregroundStyle(.secondary) }
                 }
-            } else {
+            } else if !model.waiting {
                 IMETextField(text: $model.answer, enabled: !model.waiting) { model.submit() }.frame(height: 48)
                 if !model.waiting { Text("Return to submit · Hangul spelling matters").font(.caption).foregroundStyle(.secondary) }
             }
             if model.waiting {
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Accepted: " + Grader.accepted(entry, direction: model.settings.direction).sorted().joined(separator: " · ")).textSelection(.enabled)
+                    Label("Incorrect", systemImage: "xmark.circle.fill").font(.headline).foregroundStyle(.red)
+                    Text("Your answer: " + model.answer).foregroundStyle(.secondary).textSelection(.enabled)
+                    Text(entry.answer(model.settings.direction)).font(.system(size: 30)).textSelection(.enabled)
                     if let notes = entry.notes?.components(separatedBy: "\n").filter({ !$0.hasPrefix("Source:") && !$0.hasPrefix("Source sense:") }).joined(separator: "\n"), !notes.isEmpty { Text(notes).font(.callout).foregroundStyle(.secondary) }
                     HStack {
-                        Button("Continue", action: model.next).keyboardShortcut(.defaultAction)
-                        Button("Accept my answer", action: model.acceptAnswer)
-                        Toggle("Save as alias", isOn: $model.saveAlias).toggleStyle(.checkbox)
+                        Button("Continue", action: model.next).buttonStyle(.borderedProminent).keyboardShortcut(.defaultAction)
+                        Spacer()
+                        Menu {
+                            Button("Count my answer as correct") { model.saveAlias = false; model.acceptAnswer() }
+                            Button("Count as correct and remember this answer") { model.saveAlias = true; model.acceptAnswer() }
+                        } label: { Image(systemName: "ellipsis") }
+                        .menuStyle(.borderlessButton).fixedSize().help("Answer options").accessibilityLabel("Answer options")
                     }
                 }.padding().background(.quaternary, in: RoundedRectangle(cornerRadius: 10))
             }
@@ -143,9 +145,8 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Picker("Multiple-choice answers", selection: $model.settings.choiceCount) { ForEach([4,6,8,10], id: \.self) { Text("\($0)").tag($0) } }
-            Stepper("Learning pool: \(model.settings.learningLimit)", value: $model.settings.learningLimit, in: 1...100)
-            Stepper("Review batch: \(model.settings.reviewBatch)", value: $model.settings.reviewBatch, in: 5...500, step: 5)
-            Text("Each direction and answer mode has its own learning pool. Filters preserve progress.").font(.caption).foregroundStyle(.secondary)
+            Stepper("Learning pool target: \(model.settings.learningLimit)", value: $model.settings.learningLimit, in: 1...100)
+            Text("The pool target limits new-word mixing while reviews are ready. When nothing is due, new words continue automatically. Each direction and answer mode keeps separate progress.").font(.caption).foregroundStyle(.secondary)
             Button("Back Up Progress…", action: model.backup)
         }.onChange(of: model.settings) { _, _ in model.changeSettings() }
     }

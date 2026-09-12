@@ -86,3 +86,15 @@ Keep commits focused. Update this status file after each iteration with exact ch
 2. Review the 100 triaged vocabulary entries, then continue source/sense/form verification of the entire corpus. Do not promote statuses based solely on the editorial gloss pass.
 3. Audit tier placement and correct ambiguous source matches with explicit semantic ID migrations where needed.
 - Refined package built and signature-verified successfully. Relaunched against the same isolated database; the new native field editor accepted a Korean answer and advanced correctly.
+
+## Readability and continuous-study feedback — 2026-09-12
+
+Implemented the user's three requested corrections:
+
+- Multiple-choice answers use 30-point type and wrap without shrinking.
+- Learning-pool size no longer produces an artificial stop when unseen words remain and no review is ready. Removed the automatic 50-answer pause. No progress reset or schema migration required.
+- Wrong answers now show Incorrect, the user's answer, a large correct answer and Continue. Correction controls moved to a secondary options menu.
+
+Validation: **33 tests passed**. Added 120-word correct-answer simulations in all four direction/mode combinations, plus a regression verifying that due failed cards take priority over new words at a full pool. Updated the filtered-pool regression to reflect continuous-study behavior. Existing grading, persistence, migration, input and content tests pass.
+
+Release app rebuilt and signature-verified at `build/Mal.app`. Visual acceptance of the larger choices and revised incorrect-answer layout remains for user testing; automated results do not substitute for that check.

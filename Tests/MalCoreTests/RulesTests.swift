@@ -99,11 +99,11 @@ private struct Seeded: RandomNumberGenerator {
     #expect(StudyQueue.select(entries: [a,b], states: states, settings: settings, context: .init(now: epoch)) == Selection(a.id, isNew: true))
     #expect(states[CardKey(b.id, .englishToKorean, .writeIn)] == nil)
 }
-@Test func filtersAndGlobalLearningLimit() {
+@Test func filtersPreserveProgressWithoutBlockingUnseenWords() {
     let noun = entry("noun", "개", "dog"), verb = entry("verb", "가다", "go", .verb)
     var settings = StudySettings(); settings.parts = [.verb]; settings.learningLimit = 1
     let states = [CardKey(noun.id, settings.direction, settings.mode): LearningState(due: epoch)]
-    #expect(StudyQueue.select(entries: [noun, verb], states: states, settings: settings, context: .init(now: epoch)) == nil)
+    #expect(StudyQueue.select(entries: [noun, verb], states: states, settings: settings, context: .init(now: epoch)) == Selection(verb.id, isNew: true))
     #expect(states.count == 1)
     settings.learningLimit = 2
     #expect(StudyQueue.select(entries: [noun, verb], states: states, settings: settings, context: .init(now: epoch)) == Selection(verb.id, isNew: true))
@@ -158,4 +158,33 @@ private struct Seeded: RandomNumberGenerator {
     #expect(government.prompt(.englishToKorean) == "government (national government)")
     var hat = entry("wear", "쓰다", "wear", .verb); hat.promptCue = "a hat"
     #expect(hat.prompt(.koreanToEnglish) == "쓰다 (a hat)")
+}
+
+@Test(arguments: Direction.allCases, AnswerMode.allCases)
+func speedRunContinuesPastPoolAndFormerBatchLimits(direction: Direction, mode: AnswerMode) throws {
+    let entries = (0..<120).map { entry("speed.\($0)", "단어\($0)", "word \($0)") }
+    var settings = StudySettings(); settings.direction = direction; settings.mode = mode
+    var states: [CardKey: LearningState] = [:]
+    var previous: String?
+    for (index, expected) in entries.enumerated() {
+        // Fixed clock: all successful cards remain in their 10-minute waiting step.
+        let selection = try #require(StudyQueue.select(entries: entries, states: states, settings: settings,
+            context: .init(now: epoch, sequence: index, answersSinceIntroduction: 1, previousSense: previous)))
+        #expect(selection == Selection(expected.id, isNew: true))
+        states[CardKey(expected.id, direction, mode)] = Scheduler.grade(LearningState(due: epoch), correct: true, mode: mode, now: epoch, sequence: index + 1)
+        previous = expected.id
+    }
+    #expect(states.count == 120)
+    #expect(StudyQueue.select(entries: entries, states: states, settings: settings, context: .init(now: epoch, previousSense: previous)) == nil)
+    #expect(states.values.allSatisfy { !$0.graduated && $0.due == epoch.addingTimeInterval(600) })
+}
+
+@Test func fullPoolStillPrioritizesDueFailuresOverUnseenWords() {
+    let entries = (0..<12).map { entry("failure.\($0)", "단어\($0)", "word \($0)") }
+    let settings = StudySettings()
+    var states: [CardKey: LearningState] = [:]
+    for e in entries.prefix(10) { states[CardKey(e.id, settings.direction, settings.mode)] = LearningState(due: epoch.addingTimeInterval(600)) }
+    var failed = LearningState(due: epoch); failed.phase = .relearning
+    states[CardKey(entries[0].id, settings.direction, settings.mode)] = failed
+    #expect(StudyQueue.select(entries: entries, states: states, settings: settings, context: .init(now: epoch, answersSinceIntroduction: 5)) == Selection(entries[0].id, isNew: false))
 }

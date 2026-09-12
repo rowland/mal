@@ -16,9 +16,9 @@ The first build downloads the pinned Yams 6.2.2 dependency. The app itself requi
 
 ## Study
 
-Select banks and parts of speech in the sidebar. Choose either translation direction and multiple choice or write-in. Multiple choice defaults to eight choices; press 1–9 or 0 for the tenth choice. Return submits typed answers. Correct answers advance immediately; wrong answers pause. ⌘Z undoes the latest grade. ⌘P pronounces the Korean word. ⌘L opens the searchable bank browser.
+Select banks and parts of speech in the sidebar. Choose either translation direction and multiple choice or write-in. Multiple choice defaults to eight choices; press 1–9 or 0 for the tenth choice. Return submits typed answers. Correct answers advance immediately; wrong answers show the correct answer and pause for Return. Grading corrections are available in the small answer-options menu. ⌘Z undoes the latest grade. ⌘P pronounces the Korean word. ⌘L opens the searchable bank browser.
 
-Use Mal → Settings (⌘,) for choice count, active learning pool, and review batch size. Recognition and write-in progress are independent. Newly introduced write-in cards prioritize recognized words.
+Use Mal → Settings (⌘,) for choice count and learning-pool target. Recognition and write-in progress are independent. Newly introduced write-in cards prioritize recognized words. When no reviews are ready, unseen words continue automatically, even above the pool target. There are no automatic session pauses.
 
 Progress lives in `~/Library/Application Support/Mal/Mal.sqlite`, independently of the app bundle. Use File → Back Up Progress before moving machines. Replacing the app preserves progress. For isolated testing, launch the executable with `MAL_DATA_DIRECTORY=/tmp/mal-sandbox`.
 

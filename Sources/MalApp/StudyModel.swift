@@ -18,8 +18,6 @@ import MalStorage
     var history: [HistoryItem] = []
     var sequence = 0
     var sinceIntroduction = 5
-    var batchAnswered = 0
-    var batchPaused = false
     var search = ""
     var showLibrary = false
     var showHistory = false
@@ -84,12 +82,11 @@ import MalStorage
         lastSense = current?.id ?? lastSense
         do { try store?.saveSettings(settings); aliases = try store?.aliases(direction: settings.direction) ?? [:] }
         catch { self.error = error.localizedDescription }
-        batchAnswered = 0; batchPaused = false; waiting = false
+        waiting = false
         next()
     }
     func next() {
         waiting = false; answer = ""; saveAlias = false
-        if batchAnswered >= settings.reviewBatch { batchPaused = true; current = nil; return }
         let context = QueueContext(now: Date(), sequence: sequence, answersSinceIntroduction: sinceIntroduction, previousSense: lastSense)
         guard let selection = StudyQueue.select(entries: selectedEntries, states: states, settings: settings, context: context, activeEntryIDs: Set(allEntries.map(\.id))),
               let entry = selectedEntries.first(where: { $0.id == selection.entryID }) else { current = nil; return }
@@ -112,9 +109,9 @@ import MalStorage
         do {
             let key = CardKey(entry.id, settings.direction, settings.mode)
             _ = try store?.grade(key, answer: value, correct: correct, at: Date(), sequence: sequence + 1)
-            try reload(includeContent: false); sinceIntroduction += 1; batchAnswered += 1
+            try reload(includeContent: false); sinceIntroduction += 1
             lastSense = entry.id; lastGraded = entry
-            feedback = "\(correct ? "Correct" : "Not quite") · \(entry.lemma) — \(entry.english.joined(separator: "; "))"
+            feedback = "\(correct ? "Correct" : "Incorrect") · \(entry.lemma) — \(entry.english.joined(separator: "; "))"
             if correct { next() } else { waiting = true }
         } catch { self.error = error.localizedDescription }
     }
@@ -134,12 +131,11 @@ import MalStorage
             aliases = try store?.aliases(direction: key.direction) ?? [:]
             try store?.saveSettings(settings)
             current = allEntries.first { $0.id == key.entryID } ?? lastGraded
-            waiting = false; batchPaused = false; answer = ""; feedback = "Previous grade undone."
-            batchAnswered = max(0, batchAnswered - 1); sinceIntroduction = max(0, sinceIntroduction - 1); lastSense = nil
+            waiting = false; answer = ""; feedback = "Previous grade undone."
+            sinceIntroduction = max(0, sinceIntroduction - 1); lastSense = nil
             if let current { choices = ChoiceBuilder.choices(target: current, pool: selectedEntries, direction: settings.direction, count: settings.choiceCount, aliases: aliases, using: &random) }
         } catch { self.error = error.localizedDescription }
     }
-    func continueBatch() { batchAnswered = 0; batchPaused = false; next() }
     func checkAgain() { lastSense = nil; next() }
     func speak(_ entry: Entry) {
         guard let voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.language.hasPrefix("ko") }) else {
@@ -171,7 +167,7 @@ import MalStorage
         alert.informativeText = "The current database will be backed up automatically before replacement."
         alert.addButton(withTitle: "Restore"); alert.addButton(withTitle: "Cancel")
         guard alert.runModal() == .alertFirstButtonReturn else { return }
-        do { try store?.restore(from: url); settings = try store?.settings() ?? StudySettings(); try reload(); lastSense = nil; batchAnswered = 0; next(); feedback = "Backup restored." }
+        do { try store?.restore(from: url); settings = try store?.settings() ?? StudySettings(); try reload(); lastSense = nil; next(); feedback = "Backup restored." }
         catch { self.error = error.localizedDescription }
     }
 }

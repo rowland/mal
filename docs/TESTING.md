@@ -22,7 +22,7 @@ Use a disposable data directory. Do not reset the user's normal database.
 | UI-04 | Undo, then answer again | Prior state restored; original attempt retained as undone; corrected attempt active. |
 | UI-05 | Switch both direction and answer mode | Distinct progress; no automatic graduation transfer or immediate same-sense repeat. |
 | UI-06 | Enable macOS 2-Set Korean keyboard; compose a word and press Return | First Return commits composition only; a subsequent Return submits. Test consonant/vowel recomposition and backspace. |
-| UI-07 | Type incorrect answer, select Save as alias, Accept my answer | Wrong grade replaced atomically; alias accepted in future. |
+| UI-07 | Type incorrect answer, open Answer options, choose Count as correct and remember this answer | Wrong grade replaced atomically; alias accepted in future. |
 | UI-08 | Switch POS filters and bank selections | Only eligible targets; progress retained; distractors can be outside active rotation. |
 | UI-09 | Set 4/6/8/10 choices, inspect keyboard labels | Requested count or clear small-bank explanation; no duplicate correct alternatives. |
 | UI-10 | Pronounce with/without Korean voice installed | Speech or actionable voice-install message; study unaffected. |
@@ -30,7 +30,7 @@ Use a disposable data directory. Do not reset the user's normal database.
 | UI-12 | Back up, answer cards, restore | Content, settings, aliases and progress match backup; automatic pre-restore copy retained. |
 | UI-13 | Quit while card is unanswered; relaunch | No failure recorded. Settings and graded progress preserved. |
 | UI-14 | Hold a choice key/Return and type rapidly | No unintended cascading grades; record hardware-repeat issues. |
-| UI-15 | Reach learning cap and batch pause | No excess introductions; Continue resumes; future reviews not pulled forward. |
+| UI-15 | Answer 120 words correctly in a row | New words continue beyond the pool target and 50 answers; due reviews resume when ready. |
 
 ## Evidence ledger
 
