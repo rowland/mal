@@ -55,3 +55,7 @@ Confirm five choices appear on first updated launch, numbered 1–5 in a single 
 ### Compact layout regression
 
 At approximately 1050 × 750 window size, verify all five short choices are visible without scrolling; repeat with one long two-line English choice. Confirm long labels wrap without ellipses, full rows remain clickable, number shortcuts work, and previous-answer feedback/Undo remain visible. At smaller sizes or with many multiline answers, verify scrolling reaches every option.
+
+### Wrong-answer feedback revision
+
+In both directions and answer modes, deliberately answer incorrectly. Confirm the prompt stays visible; Correct answer and Your answer are clearly labeled and wrap for long text; Continue and Return advance once. Check pronunciation, footer Undo, and both Grading options actions still work. Verify the footer does not repeat the current error and normal previous-answer feedback returns after continuing. Check light/dark appearance and a narrow window.

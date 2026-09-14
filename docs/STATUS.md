@@ -121,3 +121,11 @@ Release app rebuilt and signature-verified at `build/Mal.app`. Visual acceptance
 - Validation: UI-only change; no rules/storage tests required. Build result recorded below. Next acceptance: reproduce the screenshot's window size and long answer, confirm five choices fit when content permits and long text wraps. Scrolling remains available for unusually long sets. Personal progress unchanged.
 
 - Release build and signature verification passed; `git diff --check` passed. Visual acceptance remains pending.
+
+## Wrong-answer presentation — 2026-09-14
+
+- Replaced the gray error slab with a labeled correct-answer panel, a readable separate submitted answer, and a larger Continue action with Return hint. Current prompt and pronunciation remain in place.
+- Removed redundant footer error while paused. Moved correction commands into a labeled secondary Grading options menu beside Undo. No grading/scheduling/persistence changes.
+- Next acceptance: exercise the wrong-answer manual script in both modes/directions, with long answers and dark appearance. Visual acceptance remains pending; no new unit tests for this UI-only change.
+
+- Validation: release build and signature verification passed; `git diff --check` passed.

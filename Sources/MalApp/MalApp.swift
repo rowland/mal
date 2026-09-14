@@ -83,8 +83,17 @@ struct ContentView: View {
                 }
                 Divider()
                 HStack {
-                    Text(model.feedback.isEmpty ? "A little Korean, at your pace." : model.feedback).font(.callout).textSelection(.enabled)
+                    if !model.waiting {
+                        Text(model.feedback.isEmpty ? "A little Korean, at your pace." : model.feedback).font(.callout).textSelection(.enabled)
+                    }
                     Spacer()
+                    if model.waiting {
+                        Menu("Grading options") {
+                            Button("Count my answer as correct") { model.saveAlias = false; model.acceptAnswer() }
+                            Button("Count as correct and remember this answer") { model.saveAlias = true; model.acceptAnswer() }
+                        }.menuStyle(.borderlessButton).fixedSize()
+                            .foregroundStyle(.secondary)
+                    }
                     Button("Undo", action: model.undo).disabled(model.history.allSatisfy(\.undone))
                 }.frame(minHeight: 24)
             }.padding(.horizontal, 24).padding(.vertical, 16)
@@ -134,21 +143,42 @@ struct ContentView: View {
                 if !model.waiting { Text("Return to submit · Hangul spelling matters").font(.caption).foregroundStyle(.secondary) }
             }
             if model.waiting {
-                VStack(alignment: .leading, spacing: 12) {
-                    Label("Incorrect", systemImage: "xmark.circle.fill").font(.headline).foregroundStyle(.red)
-                    Text("Your answer: " + model.answer).foregroundStyle(.secondary).textSelection(.enabled)
-                    Text(entry.answer(model.settings.direction)).font(.system(size: 30)).textSelection(.enabled)
-                    if let notes = entry.notes?.components(separatedBy: "\n").filter({ !$0.hasPrefix("Source:") && !$0.hasPrefix("Source sense:") }).joined(separator: "\n"), !notes.isEmpty { Text(notes).font(.callout).foregroundStyle(.secondary) }
-                    HStack {
-                        Button("Continue", action: model.next).buttonStyle(.borderedProminent).keyboardShortcut(.defaultAction)
-                        Spacer()
-                        Menu {
-                            Button("Count my answer as correct") { model.saveAlias = false; model.acceptAnswer() }
-                            Button("Count as correct and remember this answer") { model.saveAlias = true; model.acceptAnswer() }
-                        } label: { Image(systemName: "ellipsis") }
-                        .menuStyle(.borderlessButton).fixedSize().help("Answer options").accessibilityLabel("Answer options")
+                VStack(alignment: .leading, spacing: 18) {
+                    Label("Incorrect", systemImage: "xmark.circle.fill")
+                        .font(.system(size: 16, weight: .semibold)).foregroundStyle(.red)
+
+                    VStack(alignment: .leading, spacing: 6) {
+                        Label("Correct answer", systemImage: "checkmark.circle")
+                            .font(.callout.weight(.semibold)).foregroundStyle(.secondary)
+                        Text(entry.answer(model.settings.direction))
+                            .font(.system(size: 34, weight: .medium))
+                            .lineLimit(nil).fixedSize(horizontal: false, vertical: true)
+                            .textSelection(.enabled)
+                    }.frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(16)
+                        .background(Color.accentColor.opacity(0.08), in: RoundedRectangle(cornerRadius: 8))
+
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Your answer").font(.callout).foregroundStyle(.secondary)
+                        Text(model.answer).font(.system(size: 26))
+                            .lineLimit(nil).fixedSize(horizontal: false, vertical: true)
+                            .textSelection(.enabled)
+                    }.padding(.horizontal, 16)
+
+                    if let notes = entry.notes?.components(separatedBy: "\n").filter({ !$0.hasPrefix("Source:") && !$0.hasPrefix("Source sense:") }).joined(separator: "\n"), !notes.isEmpty {
+                        Text(notes).font(.callout).foregroundStyle(.secondary)
+                            .lineLimit(nil).fixedSize(horizontal: false, vertical: true)
+                            .padding(.horizontal, 16)
                     }
-                }.padding().background(.quaternary, in: RoundedRectangle(cornerRadius: 10))
+                    HStack(spacing: 12) {
+                        Button("Continue", action: model.next)
+                            .buttonStyle(.borderedProminent).controlSize(.large)
+                            .keyboardShortcut(.defaultAction)
+                        Text("Press Return ↵").font(.callout).foregroundStyle(.secondary)
+                        Spacer()
+                    }
+                }.padding(.top, 8)
+
             }
         }
     }
