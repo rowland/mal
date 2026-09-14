@@ -60,6 +60,11 @@ import MalStorage
                 if existing == nil || existing!.contentVersion < bank.contentVersion { _ = try storage.importBank(bank, builtIn: true) }
             }
             settings = try storage.settings()
+            if settings.singleColumnDefaultApplied != true {
+                settings.choiceCount = 5
+                settings.singleColumnDefaultApplied = true
+                try storage.saveSettings(settings)
+            }
             try reload()
             next()
             keyMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in

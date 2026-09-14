@@ -22,7 +22,7 @@ private struct Seeded: RandomNumberGenerator {
     #expect(!Grader.isCorrect("reddish", entry: red, direction: .koreanToEnglish))
     #expect(Grader.isCorrect("붉다", entry: red, direction: .englishToKorean, aliases: ["붉다"]))
 }
-@Test(arguments: [4, 6, 8, 10]) func requestedChoices(_ count: Int) {
+@Test(arguments: [4, 5, 6, 8, 10]) func requestedChoices(_ count: Int) {
     let pool = (0..<30).map { entry("\($0)", "단어\($0)", "word \($0)") }
     var rng = Seeded()
     let values = ChoiceBuilder.choices(target: pool[0], pool: pool, direction: .englishToKorean, count: count, using: &rng)

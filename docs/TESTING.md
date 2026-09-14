@@ -47,3 +47,7 @@ Use a disposable data directory. Do not reset the user's normal database.
 ### Choice numbering regression
 
 Use an isolated `MAL_DATA_DIRECTORY` for destructive QA. At 4, 6, 8 and 10 choices, verify numbering runs down the left column then the right; 0 selects the tenth answer. Across successive cards and direction changes, press each displayed number and compare the recorded submitted answer in History with that choice. Check an odd-sized custom bank, legibility at minimum window size, and that held keys do not answer subsequent cards. Record user/UI results separately from build verification.
+
+### Single-column acceptance (supersedes two-column expectations above)
+
+Confirm five choices appear on first updated launch, numbered 1–5 in a single column. Check long English and Korean answers wrap at minimum window width and all five keyboard keys select the displayed answer. Change choice count, restart, and verify the choice-count preference persists. Personal progress must remain intact.

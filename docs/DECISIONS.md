@@ -41,3 +41,5 @@
 
 - D-029: Display choices in two explicit columns, numbered top to bottom then continuing in the next column. Use 28-point semibold, primary-color number labels. Ten-choice mode retains 0 as the tenth keyboard key.
 - D-030: Choice button actions read the current answer by index; rebuild shortcut controls when the choice list changes to avoid reusing bindings across cards.
+
+- D-031 (2026-09-14): Supersedes D-029's two-column layout. Use one full-width column and default to five choices to reduce truncation. On first launch after this change, set existing installations to five once; retain other settings and all learning history. A persisted optional marker preserves subsequent manual choice-count changes and decodes older backups.

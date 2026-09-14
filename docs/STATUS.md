@@ -106,3 +106,10 @@ Release app rebuilt and signature-verified at `build/Mal.app`. Visual acceptance
 - Button/keyboard actions resolve the current indexed answer, and controls receive a fresh identity when choices change.
 - Validation: release build and app signature verification passed; `git diff --check` passed. No rules/storage changes; unit suite was not rerun for this UI-only patch.
 - Next acceptance: verify each numeric key matches its visible answer across multiple cards, both directions, and all choice counts; check odd-sized custom banks. UI acceptance remains pending. Personal progress untouched.
+
+## Five-choice single column — 2026-09-14
+
+- Replaced two columns with one full-width wrapping column; default and first-updated-launch choice count is five. Subsequent manual choice-count changes persist. No progress reset.
+- Added five-choice case to the parameterized choice-construction test.
+- Validation: clean `swift test --scratch-path /tmp/mal-five-choice-tests` passed all 33 tests, including settings backup/restore. Initial incremental test build failed the settings equality check after the struct changed; clean recompilation resolved it. Release app build and signature verification passed.
+- Next: user acceptance of long-answer wrapping and numeric keys 1–5 at the preferred window size. Actual visual acceptance remains pending.
