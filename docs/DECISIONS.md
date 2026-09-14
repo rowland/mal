@@ -43,3 +43,5 @@
 - D-030: Choice button actions read the current answer by index; rebuild shortcut controls when the choice list changes to avoid reusing bindings across cards.
 
 - D-031 (2026-09-14): Supersedes D-029's two-column layout. Use one full-width column and default to five choices to reduce truncation. On first launch after this change, set existing installations to five once; retain other settings and all learning history. A persisted optional marker preserves subsequent manual choice-count changes and decodes older backups.
+
+- D-032: Tighten study chrome instead of reducing readable type: 10-point main/card spacing, 16-point vertical outer padding, compact feedback footer, no redundant spacer below the scroll view. Choice buttons use a plain style with an explicit full-width background and unlimited wrapping, avoiding the native bordered button's single-line label treatment. Keep scrolling available for unusually long answers and smaller windows.

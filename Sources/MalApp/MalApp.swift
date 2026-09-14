@@ -57,7 +57,7 @@ struct ContentView: View {
                 }
             }.navigationTitle("말  Mal").navigationSplitViewColumnWidth(min: 230, ideal: 250)
         } detail: {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: 10) {
                 HStack {
                     Picker("Direction", selection: $model.settings.direction) { ForEach(Direction.allCases, id: \.self) { Text($0.label).tag($0) } }.labelsHidden()
                     Picker("Answer mode", selection: $model.settings.mode) { ForEach(AnswerMode.allCases, id: \.self) { Text($0.label).tag($0) } }.labelsHidden()
@@ -72,7 +72,7 @@ struct ContentView: View {
                 }.font(.callout).foregroundStyle(.secondary)
                 Divider()
                 if let entry = model.current {
-                    ScrollView { studyCard(entry) }.scrollIndicators(.hidden)
+                    ScrollView { studyCard(entry).frame(maxWidth: .infinity, alignment: .leading) }
                 } else {
                     ContentUnavailableView {
                         Label("Nothing ready right now", systemImage: "cup.and.saucer")
@@ -81,21 +81,20 @@ struct ContentView: View {
                         Text("No unseen words remain in the selected banks and categories. Select more vocabulary, or return when a review is due.")
                     } actions: { Button("Check again", action: model.checkAgain) }
                 }
-                Spacer(minLength: 0)
                 Divider()
                 HStack {
                     Text(model.feedback.isEmpty ? "A little Korean, at your pace." : model.feedback).font(.callout).textSelection(.enabled)
                     Spacer()
                     Button("Undo", action: model.undo).disabled(model.history.allSatisfy(\.undone))
-                }.frame(minHeight: 36)
-            }.padding(32)
+                }.frame(minHeight: 24)
+            }.padding(.horizontal, 24).padding(.vertical, 16)
         }
         .alert("Mal", isPresented: Binding(get: { model.error != nil }, set: { if !$0 { model.error = nil } })) { Button("OK") { model.error = nil } } message: { Text(model.error ?? "") }
         .sheet(isPresented: $model.showLibrary) { LibraryView(model: model) }
         .sheet(isPresented: $model.showHistory) { HistoryView(model: model) }
     }
     @ViewBuilder private func studyCard(_ entry: Entry) -> some View {
-        VStack(alignment: .leading, spacing: 22) {
+        VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Text(entry.partOfSpeech.label.uppercased()).font(.caption).tracking(1.5).foregroundStyle(.secondary)
                 Spacer()
@@ -107,7 +106,7 @@ struct ContentView: View {
                 if model.choices.count < 2 {
                     Text("This bank has no distinct distractor. Switch to write-in or select another bank.").foregroundStyle(.secondary)
                 } else {
-                    VStack(spacing: 10) {
+                    VStack(spacing: 8) {
                         ForEach(model.choices.indices, id: \.self) { index in
                         let key = index == 9 ? "0" : String(index + 1)
                         Button { model.submit(model.choices[index]) } label: {
@@ -115,10 +114,15 @@ struct ContentView: View {
                                 Text(key).font(.system(size: 28, weight: .semibold, design: .monospaced))
                                     .frame(minWidth: 24)
                                 Text(model.choices[index]).font(.system(size: 30))
-                                    .multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+                                    .lineLimit(nil).multilineTextAlignment(.leading)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .fixedSize(horizontal: false, vertical: true)
                                 Spacer(minLength: 0)
-                            }.padding(10).frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
-                        }.buttonStyle(.bordered)
+                            }.padding(.horizontal, 14).padding(.vertical, 8)
+                                .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
+                                .background(.quaternary, in: RoundedRectangle(cornerRadius: 6))
+                                .contentShape(RoundedRectangle(cornerRadius: 6))
+                        }.buttonStyle(.plain)
                             .keyboardShortcut(KeyEquivalent(Character(key)), modifiers: [])
                             .accessibilityLabel("Choice \(key): \(model.choices[index])")
                         }

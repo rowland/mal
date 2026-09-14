@@ -113,3 +113,11 @@ Release app rebuilt and signature-verified at `build/Mal.app`. Visual acceptance
 - Added five-choice case to the parameterized choice-construction test.
 - Validation: clean `swift test --scratch-path /tmp/mal-five-choice-tests` passed all 33 tests, including settings backup/restore. Initial incremental test build failed the settings equality check after the struct changed; clean recompilation resolved it. Release app build and signature verification passed.
 - Next: user acceptance of long-answer wrapping and numeric keys 1–5 at the preferred window size. Actual visual acceptance remains pending.
+
+## Compact study layout — 2026-09-14
+
+- User screenshot showed choice 5 below the fold and a long English option truncated. Reduced excessive header/card/footer spacing and outer padding; removed the extra flexible spacer competing with the study scroll view. Kept 30-point answers and 28-point numbers.
+- Replaced native bordered answer buttons with plain buttons and explicit backgrounds, unlimited text lines, and full-width wrapping labels.
+- Validation: UI-only change; no rules/storage tests required. Build result recorded below. Next acceptance: reproduce the screenshot's window size and long answer, confirm five choices fit when content permits and long text wraps. Scrolling remains available for unusually long sets. Personal progress unchanged.
+
+- Release build and signature verification passed; `git diff --check` passed. Visual acceptance remains pending.

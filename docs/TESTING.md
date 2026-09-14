@@ -51,3 +51,7 @@ Use an isolated `MAL_DATA_DIRECTORY` for destructive QA. At 4, 6, 8 and 10 choic
 ### Single-column acceptance (supersedes two-column expectations above)
 
 Confirm five choices appear on first updated launch, numbered 1–5 in a single column. Check long English and Korean answers wrap at minimum window width and all five keyboard keys select the displayed answer. Change choice count, restart, and verify the choice-count preference persists. Personal progress must remain intact.
+
+### Compact layout regression
+
+At approximately 1050 × 750 window size, verify all five short choices are visible without scrolling; repeat with one long two-line English choice. Confirm long labels wrap without ellipses, full rows remain clickable, number shortcuts work, and previous-answer feedback/Undo remain visible. At smaller sizes or with many multiline answers, verify scrolling reaches every option.
