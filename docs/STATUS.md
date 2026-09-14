@@ -129,3 +129,10 @@ Release app rebuilt and signature-verified at `build/Mal.app`. Visual acceptance
 - Next acceptance: exercise the wrong-answer manual script in both modes/directions, with long answers and dark appearance. Visual acceptance remains pending; no new unit tests for this UI-only change.
 
 - Validation: release build and signature verification passed; `git diff --check` passed.
+
+## Optional hints and ambiguous reverse prompts — 2026-09-14
+
+- Korean-to-English prompts now omit English cues entirely, with Show hint available on demand and cue disclosure after an incorrect answer. English-to-Korean context stays visible.
+- Pure prompt-answer rules accept other catalogued meanings of the same lemma/POS across installed banks, and choice construction excludes their synonyms even outside selected banks. Only the presented sense receives progress. No content IDs or stored history changed.
+- Validation: 34 tests passed via `swift test --scratch-path /tmp/mal-five-choice-tests`, including new ambiguous-meaning/distractor coverage and updated cue assertions. Release build and signature verification passed.
+- Next: user acceptance of the optional-hint flow. Existing draft vocabulary still requires linguistic review; this change uses explicit stored meanings and does not infer new ones.

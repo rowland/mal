@@ -59,3 +59,7 @@ At approximately 1050 × 750 window size, verify all five short choices are visi
 ### Wrong-answer feedback revision
 
 In both directions and answer modes, deliberately answer incorrectly. Confirm the prompt stays visible; Correct answer and Your answer are clearly labeled and wrap for long text; Continue and Return advance once. Check pronunciation, footer Undo, and both Grading options actions still work. Verify the footer does not repeat the current error and normal previous-answer feedback returns after continuing. Check light/dark appearance and a narrow window.
+
+### Optional reverse hints
+
+Check 없다 displays without its English cue. Show hint should reveal it without submitting; the next card and an undone card should start hidden. Wrong answers reveal the cue. Switch direction and confirm English-to-Korean context remains visible. With a custom bank containing two senses of one lemma/POS, verify either curated English meaning grades correctly but only the presented track changes; neither alternate meaning nor its synonyms appear as distractors.

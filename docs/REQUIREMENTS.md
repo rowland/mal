@@ -10,6 +10,7 @@ Accepted 2026-09-12. Working name Mal (말). This file preserves user decisions 
 | UX-04 | All parts of speech by default; selectable filters preserve progress. |
 | UX-05 | Immediate correct-answer advancement; incorrect answers emphasize the correct answer and Continue. Undo remains available; grade overrides/aliases are secondary menu actions. |
 | UX-06 | Keyboard-only study; Return committing Hangul composition must not grade. |
+| UX-08 | Korean-to-English cues are opt-in hints; accept catalogued meanings for the same lemma/POS and exclude them from distractors. English-to-Korean cues remain visible. |
 | UX-07 | On-demand installed Korean system voice; missing voice does not block study. |
 | DATA-01 | Sense-based stable IDs, Korean lemma/POS, English aliases/cues, explicit labeled Korean forms, notes and verification status. |
 | DATA-02 | Accept curated synonyms and present affirmative common speech levels/attributives; reject unlisted tense/negative/typo variants. |

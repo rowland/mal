@@ -111,6 +111,15 @@ struct ContentView: View {
             }
             Text(entry.prompt(model.settings.direction)).font(.system(size: 38, weight: .medium)).textSelection(.enabled)
                 .accessibilityIdentifier("studyPrompt")
+            if model.settings.direction == .koreanToEnglish, let cue = entry.promptCue, !cue.isEmpty {
+                if model.hintRevealed || model.waiting {
+                    Text("Hint: " + cue).font(.callout).foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                } else {
+                    Button("Show hint") { model.hintRevealed = true }
+                        .buttonStyle(.borderless).font(.callout)
+                }
+            }
             if !model.waiting && model.settings.mode == .multipleChoice {
                 if model.choices.count < 2 {
                     Text("This bank has no distinct distractor. Switch to write-in or select another bank.").foregroundStyle(.secondary)

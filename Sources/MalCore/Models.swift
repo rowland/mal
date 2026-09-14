@@ -38,10 +38,7 @@ public struct Entry: Codable, Equatable, Identifiable, Sendable {
     public func prompt(_ direction: Direction) -> String {
         let base = direction == .englishToKorean ? (english.first ?? "") : lemma
         guard let cue = promptCue else { return base }
-        // A disambiguation cue must not give away an accepted English answer.
-        if direction == .koreanToEnglish && english.contains(where: {
-            cue.range(of: "\\b" + NSRegularExpression.escapedPattern(for: $0) + "\\b", options: .caseInsensitive.union(.regularExpression)) != nil
-        }) { return base }
+        if direction == .koreanToEnglish { return base }
         return "\(base) (\(cue))"
     }
     public func answer(_ direction: Direction) -> String { direction == .englishToKorean ? lemma : (english.first ?? "") }

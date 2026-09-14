@@ -9,13 +9,22 @@ public enum Grader {
         let values = direction == .englishToKorean ? [entry.lemma] + entry.koreanForms.map(\.text) : entry.english
         return Set((values + aliases).map { normalize($0, direction: direction) })
     }
+    // With no sense cue, all catalogued meanings of the displayed lemma/POS are valid.
+    public static func promptAnswers(_ entry: Entry, direction: Direction, pool: [Entry], aliases: [String: [String]] = [:]) -> Set<String> {
+        let senses = direction == .koreanToEnglish ? pool.filter {
+            $0.lemma.precomposedStringWithCanonicalMapping == entry.lemma.precomposedStringWithCanonicalMapping && $0.partOfSpeech == entry.partOfSpeech
+        } : []
+        return (senses + [entry]).reduce(into: Set<String>()) { result, sense in
+            result.formUnion(accepted(sense, direction: direction, aliases: aliases[sense.id] ?? []))
+        }
+    }
     public static func isCorrect(_ answer: String, entry: Entry, direction: Direction, aliases: [String] = []) -> Bool {
         accepted(entry, direction: direction, aliases: aliases).contains(normalize(answer, direction: direction))
     }
 }
 public enum ChoiceBuilder {
-    public static func choices<R: RandomNumberGenerator>(target: Entry, pool: [Entry], direction: Direction, count: Int, aliases: [String: [String]] = [:], using random: inout R) -> [String] {
-        let targetAnswers = Grader.accepted(target, direction: direction, aliases: aliases[target.id] ?? [])
+    public static func choices<R: RandomNumberGenerator>(target: Entry, pool: [Entry], direction: Direction, count: Int, sensePool: [Entry]? = nil, aliases: [String: [String]] = [:], using random: inout R) -> [String] {
+        let targetAnswers = Grader.promptAnswers(target, direction: direction, pool: sensePool ?? pool, aliases: aliases)
         // Exclude equivalent senses in either language, even when their preferred gloss differs.
         let targetEnglish = Grader.accepted(target, direction: .koreanToEnglish)
         let targetKorean = Grader.accepted(target, direction: .englishToKorean)

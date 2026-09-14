@@ -157,7 +157,7 @@ private struct Seeded: RandomNumberGenerator {
     #expect(government.prompt(.koreanToEnglish) == "정부")
     #expect(government.prompt(.englishToKorean) == "government (national government)")
     var hat = entry("wear", "쓰다", "wear", .verb); hat.promptCue = "a hat"
-    #expect(hat.prompt(.koreanToEnglish) == "쓰다 (a hat)")
+    #expect(hat.prompt(.koreanToEnglish) == "쓰다")
 }
 
 @Test(arguments: Direction.allCases, AnswerMode.allCases)
@@ -187,4 +187,22 @@ func speedRunContinuesPastPoolAndFormerBatchLimits(direction: Direction, mode: A
     var failed = LearningState(due: epoch); failed.phase = .relearning
     states[CardKey(entries[0].id, settings.direction, settings.mode)] = failed
     #expect(StudyQueue.select(entries: entries, states: states, settings: settings, context: .init(now: epoch, answersSinceIntroduction: 5)) == Selection(entries[0].id, isNew: false))
+}
+
+@Test func uncuedMeaningsAndDistractors() {
+    var target = entry("a", "눈", "eye")
+    target.promptCue = "vision organ"
+    let other = entry("b", "눈", "snow")
+    let synonym = entry("c", "다른말", "snow")
+    let unrelated = entry("d", "집", "house")
+    let wrongPOS = entry("e", "눈", "unrelated", .adverb)
+    let pool = [target, other, synonym, unrelated, wrongPOS]
+    #expect(target.prompt(.koreanToEnglish) == "눈")
+    #expect(target.prompt(.englishToKorean) == "eye (vision organ)")
+    let accepted = Grader.promptAnswers(target, direction: .koreanToEnglish, pool: pool)
+    #expect(accepted == ["eye", "snow"])
+    #expect(Grader.promptAnswers(target, direction: .englishToKorean, pool: pool) == ["눈"])
+    var rng = Seeded()
+    let choices = ChoiceBuilder.choices(target: target, pool: [target, synonym, unrelated], direction: .koreanToEnglish, count: 5, sensePool: pool, using: &rng)
+    #expect(Set(choices) == ["eye", "house"])
 }

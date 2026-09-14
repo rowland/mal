@@ -14,6 +14,7 @@ import MalStorage
     var answer = ""
     var feedback = ""
     var waiting = false
+    var hintRevealed = false
     var error: String?
     var history: [HistoryItem] = []
     var sequence = 0
@@ -91,13 +92,13 @@ import MalStorage
         next()
     }
     func next() {
-        waiting = false; answer = ""; saveAlias = false
+        waiting = false; hintRevealed = false; answer = ""; saveAlias = false
         let context = QueueContext(now: Date(), sequence: sequence, answersSinceIntroduction: sinceIntroduction, previousSense: lastSense)
         guard let selection = StudyQueue.select(entries: selectedEntries, states: states, settings: settings, context: context, activeEntryIDs: Set(allEntries.map(\.id))),
               let entry = selectedEntries.first(where: { $0.id == selection.entryID }) else { current = nil; return }
         current = entry
         if selection.isNew { sinceIntroduction = 0 }
-        choices = ChoiceBuilder.choices(target: entry, pool: selectedEntries, direction: settings.direction, count: settings.choiceCount, aliases: aliases, using: &random)
+        choices = ChoiceBuilder.choices(target: entry, pool: selectedEntries, direction: settings.direction, count: settings.choiceCount, sensePool: allEntries, aliases: aliases, using: &random)
         do { try store?.present(CardKey(entry.id, settings.direction, settings.mode), at: Date()) }
         catch { self.error = error.localizedDescription }
     }
@@ -107,7 +108,7 @@ import MalStorage
         let value = text ?? answer
         guard !value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
         answer = value
-        let correct = Grader.isCorrect(value, entry: entry, direction: settings.direction, aliases: aliases[entry.id] ?? [])
+        let correct = Grader.promptAnswers(entry, direction: settings.direction, pool: allEntries, aliases: aliases).contains(Grader.normalize(value, direction: settings.direction))
         record(entry, value, correct: correct)
     }
     private func record(_ entry: Entry, _ value: String, correct: Bool) {
@@ -136,9 +137,9 @@ import MalStorage
             aliases = try store?.aliases(direction: key.direction) ?? [:]
             try store?.saveSettings(settings)
             current = allEntries.first { $0.id == key.entryID } ?? lastGraded
-            waiting = false; answer = ""; feedback = "Previous grade undone."
+            waiting = false; hintRevealed = false; answer = ""; feedback = "Previous grade undone."
             sinceIntroduction = max(0, sinceIntroduction - 1); lastSense = nil
-            if let current { choices = ChoiceBuilder.choices(target: current, pool: selectedEntries, direction: settings.direction, count: settings.choiceCount, aliases: aliases, using: &random) }
+            if let current { choices = ChoiceBuilder.choices(target: current, pool: selectedEntries, direction: settings.direction, count: settings.choiceCount, sensePool: allEntries, aliases: aliases, using: &random) }
         } catch { self.error = error.localizedDescription }
     }
     func checkAgain() { lastSense = nil; next() }
