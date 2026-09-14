@@ -43,3 +43,7 @@ Use a disposable data directory. Do not reset the user's normal database.
 - 2026-09-12 continuation: **31 tests passed**, including AppKit marked-text preservation, composition/held-key guards, retired-card capacity, nested-namespace ownership, and reverse-cue leakage.
 - Native UI: sample YAML import reports 2 added; native backup reports saved; restoring the test backup reports restored and retains selected banks/progress. Actual Korean input-method composition remains open.
 - Refined packaged app relaunched with isolated data; the custom AnswerEditor accepted `물` on Return and immediately advanced to the next card. This still does not substitute for testing a real Korean IME composition session.
+
+### Choice numbering regression
+
+Use an isolated `MAL_DATA_DIRECTORY` for destructive QA. At 4, 6, 8 and 10 choices, verify numbering runs down the left column then the right; 0 selects the tenth answer. Across successive cards and direction changes, press each displayed number and compare the recorded submitted answer in History with that choice. Check an odd-sized custom bank, legibility at minimum window size, and that held keys do not answer subsequent cards. Record user/UI results separately from build verification.

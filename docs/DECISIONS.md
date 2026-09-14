@@ -36,3 +36,8 @@
 - D-026: Supersedes the hard-cap interpretation in D-014/D-021. The learning pool is a mixing target: if no eligible review is ready, introduce another unseen word regardless of pool size. Existing due dates, graduation requirements and independent tracks remain intact. When the pool is full and reviews are ready, review first.
 - D-027: Supersedes D-016. Remove automatic 50-answer batch pauses and the batch-size setting. Retain the stored reviewBatch field only for settings/backup compatibility.
 - D-028: Incorrect-answer feedback assumes the vocabulary is right: show Incorrect, the submitted answer, the correct answer and Continue. Replace the disabled choice grid with feedback so Continue remains easy to reach. Put override/alias actions in a small Answer options menu.
+
+## Choice numbering feedback — 2026-09-14
+
+- D-029: Display choices in two explicit columns, numbered top to bottom then continuing in the next column. Use 28-point semibold, primary-color number labels. Ten-choice mode retains 0 as the tenth keyboard key.
+- D-030: Choice button actions read the current answer by index; rebuild shortcut controls when the choice list changes to avoid reusing bindings across cards.

@@ -5,7 +5,7 @@ Accepted 2026-09-12. Working name Mal (말). This file preserves user decisions 
 | ID | Requirement |
 |---|---|
 | UX-01 | Native macOS 26, personal offline use; no account, gamification, or daily caps. |
-| UX-02 | Independent direction and answer-mode switches. Eight choices by default, configurable 4/6/8/10; 30-point choice text. |
+| UX-02 | Independent direction and answer-mode switches. Eight choices by default, configurable 4/6/8/10; 30-point choice text and 28-point number labels; number choices down the first column, then down the second. |
 | UX-03 | Distractors from all selected banks, not restricted to active rotation; prefer same part of speech, exclude valid alternatives. |
 | UX-04 | All parts of speech by default; selectable filters preserve progress. |
 | UX-05 | Immediate correct-answer advancement; incorrect answers emphasize the correct answer and Continue. Undo remains available; grade overrides/aliases are secondary menu actions. |

@@ -107,13 +107,27 @@ struct ContentView: View {
                 if model.choices.count < 2 {
                     Text("This bank has no distinct distractor. Switch to write-in or select another bank.").foregroundStyle(.secondary)
                 } else {
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                        ForEach(Array(model.choices.enumerated()), id: \.offset) { index, choice in
-                            Button { model.submit(choice) } label: {
-                                HStack { Text(index == 9 ? "0" : String(index + 1)).font(.caption.monospaced()).foregroundStyle(.secondary); Text(choice).font(.system(size: 30)).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true); Spacer() }.padding(10).frame(maxWidth: .infinity, minHeight: 48)
-                            }.buttonStyle(.bordered).keyboardShortcut(KeyEquivalent(Character(index == 9 ? "0" : String(index + 1))), modifiers: []).disabled(model.waiting)
+                    HStack(alignment: .top, spacing: 10) {
+                        ForEach(0..<2) { column in
+                            VStack(spacing: 10) {
+                                let rows = (model.choices.count + 1) / 2
+                                ForEach((column * rows)..<min((column + 1) * rows, model.choices.count), id: \.self) { index in
+                                    let key = index == 9 ? "0" : String(index + 1)
+                                    Button { model.submit(model.choices[index]) } label: {
+                                        HStack(alignment: .firstTextBaseline, spacing: 14) {
+                                            Text(key).font(.system(size: 28, weight: .semibold, design: .monospaced))
+                                                .frame(minWidth: 24)
+                                            Text(model.choices[index]).font(.system(size: 30))
+                                                .multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+                                            Spacer(minLength: 0)
+                                        }.padding(10).frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
+                                    }.buttonStyle(.bordered)
+                                        .keyboardShortcut(KeyEquivalent(Character(key)), modifiers: [])
+                                        .accessibilityLabel("Choice \(key): \(model.choices[index])")
+                                }
+                            }.frame(maxWidth: .infinity)
                         }
-                    }
+                    }.id(model.choices)
                     if model.choices.count < model.settings.choiceCount { Text("\(model.choices.count) distinct choices available in the selected banks.").font(.caption).foregroundStyle(.secondary) }
                 }
             } else if !model.waiting {

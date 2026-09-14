@@ -98,3 +98,11 @@ Implemented the user's three requested corrections:
 Validation: **33 tests passed**. Added 120-word correct-answer simulations in all four direction/mode combinations, plus a regression verifying that due failed cards take priority over new words at a full pool. Updated the filtered-pool regression to reflect continuous-study behavior. Existing grading, persistence, migration, input and content tests pass.
 
 Release app rebuilt and signature-verified at `build/Mal.app`. Visual acceptance of the larger choices and revised incorrect-answer layout remains for user testing; automated results do not substitute for that check.
+
+## Choice numbering correction — 2026-09-14
+
+- User reported unreadable number labels and keyboard selections not matching displayed choices.
+- Replaced row-major lazy grid with explicit top-to-bottom columns: default left 1–4, right 5–8. Number labels are now 28-point semibold with primary contrast.
+- Button/keyboard actions resolve the current indexed answer, and controls receive a fresh identity when choices change.
+- Validation: release build and app signature verification passed; `git diff --check` passed. No rules/storage changes; unit suite was not rerun for this UI-only patch.
+- Next acceptance: verify each numeric key matches its visible answer across multiple cards, both directions, and all choice counts; check odd-sized custom banks. UI acceptance remains pending. Personal progress untouched.
