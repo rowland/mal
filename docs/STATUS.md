@@ -136,3 +136,11 @@ Release app rebuilt and signature-verified at `build/Mal.app`. Visual acceptance
 - Pure prompt-answer rules accept other catalogued meanings of the same lemma/POS across installed banks, and choice construction excludes their synonyms even outside selected banks. Only the presented sense receives progress. No content IDs or stored history changed.
 - Validation: 34 tests passed via `swift test --scratch-path /tmp/mal-five-choice-tests`, including new ambiguous-meaning/distractor coverage and updated cue assertions. Release build and signature verification passed.
 - Next: user acceptance of the optional-hint flow. Existing draft vocabulary still requires linguistic review; this change uses explicit stored meanings and does not infer new ones.
+
+## Automatic pronunciation — 2026-09-14
+
+- Added a default-off Auto checkbox beside the speaker, persisted in settings with backward-compatible optional decoding. Toggle saves without changing the card or recording another presentation.
+- Korean-to-English speaks on new-card presentation (or enabling Auto). English-to-Korean speaks the selected/submitted answer, including incorrect responses, without revealing the next answer. Manual speaker remains available.
+- Automatic missing-voice feedback is nonmodal. Rapid requests replace speech; turning Auto off stops it.
+- Validation: 35 tests passed in a fresh scratch build, including pure pronunciation timing rules. Extended backup preference coverage to include Auto and reran that test successfully. Release build/signature and diff checks passed.
+- Next: manual listening test with installed Korean voices, keyboard choices, write-in, rapid answers, and restart. Audio/UI acceptance remains pending.

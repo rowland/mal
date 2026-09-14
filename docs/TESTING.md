@@ -63,3 +63,7 @@ In both directions and answer modes, deliberately answer incorrectly. Confirm th
 ### Optional reverse hints
 
 Check 없다 displays without its English cue. Show hint should reveal it without submitting; the next card and an undone card should start hidden. Wrong answers reveal the cue. Switch direction and confirm English-to-Korean context remains visible. With a custom bank containing two senses of one lemma/POS, verify either curated English meaning grades correctly but only the presented track changes; neither alternate meaning nor its synonyms appear as distractors.
+
+### Automatic pronunciation
+
+Enable Auto beside the speaker: Korean-to-English should speak the current/new prompt once; manual speaker replays it. English-to-Korean must stay silent until selection/submission, then speak that answer even when wrong. Try keyboard choices, typed answers, rapid advancement, both directions, toggling off during speech, and restart/backup restoration of the preference. No installed voice must not block automatic study.

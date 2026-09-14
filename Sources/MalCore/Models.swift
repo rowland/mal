@@ -89,6 +89,7 @@ public struct StudySettings: Codable, Equatable, Sendable {
     public var choiceCount: Int = 5
     // Optional so existing settings and backups decode without a schema migration.
     public var singleColumnDefaultApplied: Bool?
+    public var automaticPronunciation: Bool?
     public var learningLimit: Int = 10
     // Retained for compatibility with existing settings/backups; no automatic pauses.
     public var reviewBatch: Int = 50

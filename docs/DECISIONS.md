@@ -50,3 +50,5 @@
 
 - D-034: Korean-to-English prompts omit all English cues (including paraphrases). Show hint explicitly reveals the cue; wrong-answer feedback reveals it automatically. English-to-Korean cues stay visible. Hint use does not alter grading in this trial.
 - D-035: For uncued Korean prompts, accept catalogued English meanings/aliases of the identical NFC lemma and displayed part of speech across installed banks. Exclude those meanings from distractors, including synonyms attached to another lemma. Grade only the presented sense/track; do not transfer mastery to related senses. No automatic conjugation or semantic inference.
+
+- D-036: Add a persisted, default-off Auto checkbox beside pronunciation. Speak the presented lemma in Korean-to-English; speak the selected/submitted Korean answer in English-to-Korean, even when wrong. Enabling Auto speaks the current Korean prompt; disabling stops speech. Manual replay remains unchanged. Replace ongoing speech on rapid selection rather than accumulating a queue. Missing voices show nonmodal feedback for automatic requests.

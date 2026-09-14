@@ -124,3 +124,12 @@ extension InputRules {
         return multipleChoice && key.count == 1 && "0123456789".contains(key)
     }
 }
+
+public enum PronunciationRules {
+    public static func automaticText(enabled: Bool, direction: Direction, lemma: String, submittedAnswer: String? = nil) -> String? {
+        guard enabled else { return nil }
+        if direction == .koreanToEnglish { return submittedAnswer == nil ? lemma : nil }
+        guard let answer = submittedAnswer?.trimmingCharacters(in: .whitespacesAndNewlines), !answer.isEmpty else { return nil }
+        return answer
+    }
+}

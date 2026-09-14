@@ -206,3 +206,12 @@ func speedRunContinuesPastPoolAndFormerBatchLimits(direction: Direction, mode: A
     let choices = ChoiceBuilder.choices(target: target, pool: [target, synonym, unrelated], direction: .koreanToEnglish, count: 5, sensePool: pool, using: &rng)
     #expect(Set(choices) == ["eye", "house"])
 }
+
+@Test func automaticPronunciationTiming() {
+    #expect(PronunciationRules.automaticText(enabled: false, direction: .koreanToEnglish, lemma: "집") == nil)
+    #expect(PronunciationRules.automaticText(enabled: true, direction: .koreanToEnglish, lemma: "집") == "집")
+    #expect(PronunciationRules.automaticText(enabled: true, direction: .koreanToEnglish, lemma: "집", submittedAnswer: "house") == nil)
+    #expect(PronunciationRules.automaticText(enabled: true, direction: .englishToKorean, lemma: "집") == nil)
+    #expect(PronunciationRules.automaticText(enabled: true, direction: .englishToKorean, lemma: "집", submittedAnswer: " 물 ") == "물")
+    #expect(PronunciationRules.automaticText(enabled: true, direction: .englishToKorean, lemma: "집", submittedAnswer: " ") == nil)
+}

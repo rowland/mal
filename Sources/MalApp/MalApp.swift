@@ -107,6 +107,10 @@ struct ContentView: View {
             HStack {
                 Text(entry.partOfSpeech.label.uppercased()).font(.caption).tracking(1.5).foregroundStyle(.secondary)
                 Spacer()
+                Toggle("Auto", isOn: Binding(get: { model.settings.automaticPronunciation == true }, set: { model.setAutomaticPronunciation($0) }))
+                    .toggleStyle(.checkbox).fixedSize()
+                    .help("Automatically speak Korean prompts or your selected/entered Korean answer")
+                    .accessibilityLabel("Automatic Korean pronunciation")
                 Button { model.speak(entry) } label: { Image(systemName: "speaker.wave.2") }.help("Pronounce Korean · ⌘P")
             }
             Text(entry.prompt(model.settings.direction)).font(.system(size: 38, weight: .medium)).textSelection(.enabled)
