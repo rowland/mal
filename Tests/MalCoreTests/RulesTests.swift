@@ -215,3 +215,11 @@ func speedRunContinuesPastPoolAndFormerBatchLimits(direction: Direction, mode: A
     #expect(PronunciationRules.automaticText(enabled: true, direction: .englishToKorean, lemma: "집", submittedAnswer: " 물 ") == "물")
     #expect(PronunciationRules.automaticText(enabled: true, direction: .englishToKorean, lemma: "집", submittedAnswer: " ") == nil)
 }
+
+@Test func incorrectKoreanSpeechSequence() {
+    #expect(PronunciationRules.automaticSequence(enabled: true, direction: .englishToKorean, lemma: "집", submittedAnswer: " 물 ", correct: false) == ["물?", "집"])
+    #expect(PronunciationRules.automaticSequence(enabled: true, direction: .englishToKorean, lemma: "집", submittedAnswer: "집", correct: true) == ["집"])
+    #expect(PronunciationRules.automaticSequence(enabled: false, direction: .englishToKorean, lemma: "집", submittedAnswer: "물", correct: false).isEmpty)
+    #expect(PronunciationRules.automaticSequence(enabled: true, direction: .koreanToEnglish, lemma: "집", submittedAnswer: "water", correct: false).isEmpty)
+    #expect(PronunciationRules.automaticSequence(enabled: true, direction: .koreanToEnglish, lemma: "집") == ["집"])
+}

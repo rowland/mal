@@ -110,7 +110,7 @@ import MalStorage
         guard !value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
         answer = value
         let correct = Grader.promptAnswers(entry, direction: settings.direction, pool: allEntries, aliases: aliases).contains(Grader.normalize(value, direction: settings.direction))
-        pronounceAutomatically(entry, submittedAnswer: value)
+        pronounceAutomatically(entry, submittedAnswer: value, correct: correct)
         record(entry, value, correct: correct)
     }
     private func record(_ entry: Entry, _ value: String, correct: Bool) {
@@ -151,21 +151,24 @@ import MalStorage
         if !enabled { speech.stopSpeaking(at: .immediate) }
         else if let current, !waiting { pronounceAutomatically(current) }
     }
-    private func pronounceAutomatically(_ entry: Entry, submittedAnswer: String? = nil) {
-        if let text = PronunciationRules.automaticText(enabled: settings.automaticPronunciation == true, direction: settings.direction, lemma: entry.lemma, submittedAnswer: submittedAnswer) {
-            speakText(text, automatic: true)
-        }
+    private func pronounceAutomatically(_ entry: Entry, submittedAnswer: String? = nil, correct: Bool? = nil) {
+        let sequence = PronunciationRules.automaticSequence(enabled: settings.automaticPronunciation == true, direction: settings.direction, lemma: entry.lemma, submittedAnswer: submittedAnswer, correct: correct)
+        if !sequence.isEmpty { speakSequence(sequence, automatic: true) }
     }
-    func speak(_ entry: Entry) { speakText(entry.lemma) }
-    private func speakText(_ text: String, automatic: Bool = false) {
+    func speak(_ entry: Entry) { speakSequence([entry.lemma]) }
+    private func speakSequence(_ texts: [String], automatic: Bool = false) {
         guard let voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.language.hasPrefix("ko") }) else {
             let message = "Install a Korean voice in System Settings → Accessibility → Read & Speak → System voice. Study works without a voice."
             if automatic { feedback = message } else { error = message }
             return
         }
         speech.stopSpeaking(at: .immediate)
-        let utterance = AVSpeechUtterance(string: text); utterance.voice = voice; utterance.rate = 0.4
-        speech.speak(utterance)
+        for (index, text) in texts.enumerated() {
+            let utterance = AVSpeechUtterance(string: text)
+            utterance.voice = voice; utterance.rate = 0.4
+            utterance.postUtteranceDelay = index < texts.count - 1 ? 0.35 : 0
+            speech.speak(utterance)
+        }
     }
     func importBank() {
         let panel = NSOpenPanel(); panel.allowedContentTypes = [.yaml, .plainText]; panel.allowsMultipleSelection = false

@@ -144,3 +144,9 @@ Release app rebuilt and signature-verified at `build/Mal.app`. Visual acceptance
 - Automatic missing-voice feedback is nonmodal. Rapid requests replace speech; turning Auto off stops it.
 - Validation: 35 tests passed in a fresh scratch build, including pure pronunciation timing rules. Extended backup preference coverage to include Auto and reran that test successfully. Release build/signature and diff checks passed.
 - Next: manual listening test with installed Korean voices, keyboard choices, write-in, rapid answers, and restart. Audio/UI acceptance remains pending.
+
+## Spoken correction — 2026-09-14
+
+- Incorrect English-to-Korean automatic speech now queues the submitted word as a question, then the correct lemma after a 0.35-second pause. Auto-off and reverse-direction behavior unchanged. Both multiple-choice and write-in use the pure sequence rule.
+- Validation: 36 tests passed, including correction order, correct answers, disabled Auto and reverse-direction exclusion. Release app and signature verification passed; diff check passed.
+- Next: listen with the installed Korean voice to assess question intonation and pause length. Actual acoustic acceptance remains pending; question punctuation is interpreted by the system voice. No stored progress changes.

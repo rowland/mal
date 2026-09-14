@@ -126,6 +126,15 @@ extension InputRules {
 }
 
 public enum PronunciationRules {
+    public static func automaticSequence(enabled: Bool, direction: Direction, lemma: String, submittedAnswer: String? = nil, correct: Bool? = nil) -> [String] {
+        guard let text = automaticText(enabled: enabled, direction: direction, lemma: lemma, submittedAnswer: submittedAnswer) else { return [] }
+        if direction == .englishToKorean, correct == false {
+            let question = text.trimmingCharacters(in: CharacterSet(charactersIn: "?!？！.。")) + "?"
+            return [question, lemma]
+        }
+        return [text]
+    }
+
     public static func automaticText(enabled: Bool, direction: Direction, lemma: String, submittedAnswer: String? = nil) -> String? {
         guard enabled else { return nil }
         if direction == .koreanToEnglish { return submittedAnswer == nil ? lemma : nil }

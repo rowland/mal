@@ -67,3 +67,7 @@ Check 없다 displays without its English cue. Show hint should reveal it withou
 ### Automatic pronunciation
 
 Enable Auto beside the speaker: Korean-to-English should speak the current/new prompt once; manual speaker replays it. English-to-Korean must stay silent until selection/submission, then speak that answer even when wrong. Try keyboard choices, typed answers, rapid advancement, both directions, toggling off during speech, and restart/backup restoration of the preference. No installed voice must not block automatic study.
+
+### Spoken correction
+
+With Auto on in English-to-Korean, choose a wrong answer: hear the selected Korean word as a question, a short pause, then the correct lemma. Repeat in write-in mode. Confirm correct answers speak once, Auto off is silent, and manual replay/toggling off cancels the queued correction. Assess question intonation with the installed Korean voice; punctuation-based prosody varies by voice.
