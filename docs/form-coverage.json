@@ -1,0 +1,251 @@
+{
+  "status": "Coverage only; unverified content remains unverified.",
+  "banks": {
+    "advanced": {
+      "predicates": 177,
+      "styles": {
+        "casual": {
+          "available": 177,
+          "missing": []
+        },
+        "polite": {
+          "available": 177,
+          "missing": []
+        },
+        "formalPolite": {
+          "available": 177,
+          "missing": []
+        },
+        "plain": {
+          "available": 177,
+          "missing": []
+        },
+        "honorificPolite": {
+          "available": 177,
+          "missing": []
+        },
+        "honorificFormal": {
+          "available": 177,
+          "missing": []
+        },
+        "attributive": {
+          "available": 177,
+          "missing": []
+        }
+      }
+    },
+    "extra": {
+      "predicates": 147,
+      "styles": {
+        "casual": {
+          "available": 146,
+          "missing": [
+            "대다"
+          ]
+        },
+        "polite": {
+          "available": 146,
+          "missing": [
+            "대다"
+          ]
+        },
+        "formalPolite": {
+          "available": 146,
+          "missing": [
+            "대다"
+          ]
+        },
+        "plain": {
+          "available": 146,
+          "missing": [
+            "대다"
+          ]
+        },
+        "honorificPolite": {
+          "available": 146,
+          "missing": [
+            "대다"
+          ]
+        },
+        "honorificFormal": {
+          "available": 146,
+          "missing": [
+            "대다"
+          ]
+        },
+        "attributive": {
+          "available": 146,
+          "missing": [
+            "대다"
+          ]
+        }
+      }
+    },
+    "general": {
+      "predicates": 222,
+      "styles": {
+        "casual": {
+          "available": 221,
+          "missing": [
+            "데리다"
+          ]
+        },
+        "polite": {
+          "available": 221,
+          "missing": [
+            "데리다"
+          ]
+        },
+        "formalPolite": {
+          "available": 221,
+          "missing": [
+            "데리다"
+          ]
+        },
+        "plain": {
+          "available": 221,
+          "missing": [
+            "데리다"
+          ]
+        },
+        "honorificPolite": {
+          "available": 219,
+          "missing": [
+            "미치다",
+            "데리다",
+            "모시다"
+          ]
+        },
+        "honorificFormal": {
+          "available": 219,
+          "missing": [
+            "미치다",
+            "데리다",
+            "모시다"
+          ]
+        },
+        "attributive": {
+          "available": 221,
+          "missing": [
+            "데리다"
+          ]
+        }
+      }
+    },
+    "novice": {
+      "predicates": 159,
+      "styles": {
+        "casual": {
+          "available": 159,
+          "missing": []
+        },
+        "polite": {
+          "available": 159,
+          "missing": []
+        },
+        "formalPolite": {
+          "available": 159,
+          "missing": []
+        },
+        "plain": {
+          "available": 137,
+          "missing": [
+            "가다",
+            "오다",
+            "하다",
+            "먹다",
+            "마시다",
+            "보다",
+            "읽다",
+            "듣다",
+            "걷다",
+            "입다",
+            "쓰다",
+            "빨갛다",
+            "하얗다",
+            "파랗다",
+            "좋다",
+            "크다",
+            "작다",
+            "춥다",
+            "덥다",
+            "빠르다",
+            "예쁘다",
+            "많다"
+          ]
+        },
+        "honorificPolite": {
+          "available": 156,
+          "missing": [
+            "있다",
+            "죽다",
+            "자다"
+          ]
+        },
+        "honorificFormal": {
+          "available": 156,
+          "missing": [
+            "있다",
+            "죽다",
+            "자다"
+          ]
+        },
+        "attributive": {
+          "available": 159,
+          "missing": []
+        }
+      }
+    },
+    "technician": {
+      "predicates": 125,
+      "styles": {
+        "casual": {
+          "available": 124,
+          "missing": [
+            "의하다"
+          ]
+        },
+        "polite": {
+          "available": 124,
+          "missing": [
+            "의하다"
+          ]
+        },
+        "formalPolite": {
+          "available": 124,
+          "missing": [
+            "의하다"
+          ]
+        },
+        "plain": {
+          "available": 124,
+          "missing": [
+            "의하다"
+          ]
+        },
+        "honorificPolite": {
+          "available": 122,
+          "missing": [
+            "배고프다",
+            "잡수시다",
+            "의하다"
+          ]
+        },
+        "honorificFormal": {
+          "available": 122,
+          "missing": [
+            "배고프다",
+            "잡수시다",
+            "의하다"
+          ]
+        },
+        "attributive": {
+          "available": 124,
+          "missing": [
+            "의하다"
+          ]
+        }
+      }
+    }
+  }
+}

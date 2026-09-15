@@ -61,9 +61,15 @@ struct ContentView: View {
                 HStack {
                     Picker("Direction", selection: $model.settings.direction) { ForEach(Direction.allCases, id: \.self) { Text($0.label).tag($0) } }.labelsHidden()
                     Picker("Answer mode", selection: $model.settings.mode) { ForEach(AnswerMode.allCases, id: \.self) { Text($0.label).tag($0) } }.labelsHidden()
+                    Picker("Practice form", selection: Binding(get: { model.practiceStyle }, set: { model.settings.formStyle = $0; model.changeSettings() })) {
+                        ForEach(KoreanPracticeStyle.allCases, id: \.self) { Text($0.label).tag($0) }
+                    }.labelsHidden().fixedSize().help(model.practiceStyle.explanation)
                 }
                 .onChange(of: model.settings.direction) { _, _ in model.changeSettings() }
                 .onChange(of: model.settings.mode) { _, _ in model.changeSettings() }
+                if model.unavailableFormCount > 0 {
+                    Text("\(model.unavailableFormCount) words have no listed form for this style and are skipped.").font(.caption).foregroundStyle(.secondary)
+                }
                 HStack(spacing: 18) {
                     Label("\(model.dueCount) due", systemImage: "clock")
                     Text("\(model.learningCount) learning")
@@ -90,7 +96,7 @@ struct ContentView: View {
                     if model.waiting {
                         Menu("Grading options") {
                             Button("Count my answer as correct") { model.saveAlias = false; model.acceptAnswer() }
-                            Button("Count as correct and remember this answer") { model.saveAlias = true; model.acceptAnswer() }
+                            if !model.focusedForm { Button("Count as correct and remember this answer") { model.saveAlias = true; model.acceptAnswer() } }
                         }.menuStyle(.borderlessButton).fixedSize()
                             .foregroundStyle(.secondary)
                     }
@@ -113,8 +119,13 @@ struct ContentView: View {
                     .accessibilityLabel("Automatic Korean pronunciation")
                 Button { model.speak(entry) } label: { Image(systemName: "speaker.wave.2") }.help("Pronounce Korean · ⌘P")
             }
-            Text(entry.prompt(model.settings.direction)).font(.system(size: 38, weight: .medium)).textSelection(.enabled)
+            Text(model.studyPrompt(entry)).font(.system(size: 38, weight: .medium)).textSelection(.enabled)
                 .accessibilityIdentifier("studyPrompt")
+            if model.focusedForm {
+                Text(model.practiceStyle.label + (model.practiceStyle == .attributive ? " · before a noun" : " · present affirmative"))
+                    .font(.callout).foregroundStyle(.secondary)
+                    .help(model.practiceStyle.explanation)
+            }
             if model.settings.direction == .koreanToEnglish, let cue = entry.promptCue, !cue.isEmpty {
                 if model.hintRevealed || model.waiting {
                     Text("Hint: " + cue).font(.callout).foregroundStyle(.secondary)
@@ -163,7 +174,7 @@ struct ContentView: View {
                     VStack(alignment: .leading, spacing: 6) {
                         Label("Correct answer", systemImage: "checkmark.circle")
                             .font(.callout.weight(.semibold)).foregroundStyle(.secondary)
-                        Text(entry.answer(model.settings.direction))
+                        Text(model.correctAnswer(entry))
                             .font(.system(size: 34, weight: .medium))
                             .lineLimit(nil).fixedSize(horizontal: false, vertical: true)
                             .textSelection(.enabled)
@@ -216,7 +227,14 @@ struct LibraryView: View {
             List(model.filteredLibrary) { entry in
                 VStack(alignment: .leading, spacing: 5) {
                     HStack { Text(entry.lemma).font(.title3); Text(entry.english.joined(separator: "; ")); Spacer(); Text(entry.verification).font(.caption).foregroundStyle(.secondary); Button { model.speak(entry) } label: { Image(systemName: "speaker.wave.2") } }
-                    Text(entry.koreanForms.map(\.text).joined(separator: " · ")).foregroundStyle(.secondary)
+                    if !entry.koreanForms.isEmpty {
+                        DisclosureGroup("Listed forms") {
+                            ForEach(KoreanPracticeStyle.allCases.filter { $0 != .dictionary && FormPractice.applies(entry, style: $0) }, id: \.self) { style in
+                                let forms = FormPractice.forms(entry, style: style)
+                                if !forms.isEmpty { Text(style.label + ": " + forms.joined(separator: " · ")).foregroundStyle(.secondary) }
+                            }
+                        }
+                    }
                     if let cue = entry.promptCue { Text(cue).font(.caption) }
                     if let notes = entry.notes { Text(notes).font(.caption) }
                 }.textSelection(.enabled).padding(.vertical, 4)
@@ -235,7 +253,7 @@ struct HistoryView: View {
                     Image(systemName: item.undone ? "arrow.uturn.backward" : item.correct ? "checkmark" : "xmark")
                     VStack(alignment: .leading) {
                         Text(item.answer)
-                        Text("\(item.key.direction.label) · \(item.key.mode.label) · \(item.key.entryID)").font(.caption).foregroundStyle(.secondary)
+                        Text("\(item.key.direction.label) · \(item.key.mode.label) · \(item.key.formStyle?.label ?? "Vocabulary") · \(item.key.entryID)").font(.caption).foregroundStyle(.secondary)
                     }
                     Spacer(); Text(item.timestamp, style: .date); Text(item.timestamp, style: .time)
                 }

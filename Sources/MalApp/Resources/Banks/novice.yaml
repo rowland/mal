@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: "mal.novice"
-contentVersion: 3
+contentVersion: 4
 title: "Novice"
 provenance:
   source: "NIKL Korean learner vocabulary (2003); English Wiktionary contributors via Kaikki, 2026-09-02 dump"
@@ -130,7 +130,7 @@ entries:
     lemma: "마시다"
     partOfSpeech: "verb"
     english: ["drink", "to drink"]
-    koreanForms: [{"text": "마셔", "speechLevel": "informal"}, {"text": "마셔요", "honorific": true, "speechLevel": "informal-polite"}, {"text": "마십니다", "honorific": true, "speechLevel": "formal-polite"}, {"text": "마시세요", "honorific": true, "speechLevel": "informal-polite"}, {"text": "마시십니다", "honorific": true, "speechLevel": "formal-polite"}, {"text": "마시는", "attributive": true}]
+    koreanForms: [{"text": "마셔", "speechLevel": "informal"}, {"text": "마셔요", "honorific": false, "speechLevel": "informal-polite"}, {"text": "마십니다", "honorific": false, "speechLevel": "formal-polite"}, {"text": "마시세요", "honorific": true, "speechLevel": "informal-polite"}, {"text": "마시십니다", "honorific": true, "speechLevel": "formal-polite"}, {"text": "마시는", "attributive": true}]
     verification: "checked"
     notes: "Source: https://en.wiktionary.org/wiki/마시다#Korean · NIKL level A, frequency rank 365"
   - id: "mal.novice.ad6ca285120a5df4"
@@ -2170,7 +2170,7 @@ entries:
     lemma: "가깝다"
     partOfSpeech: "adjective"
     english: ["be close, to be near (in distance, time, emotional rapport, kinship, etc.)", "to be close, to be near (in distance, time, emotional rapport, kinship, etc.)"]
-    koreanForms: [{"text": "가깝다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "가까워", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "가까워요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "가깝습니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "가까운", "honorific": true, "attributive": true}, {"text": "가까우시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "가까우셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "가까우세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "가까우셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "가까우십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "가까우신", "honorific": true, "attributive": true}]
+    koreanForms: [{"text": "가깝다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "가까워", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "가까워요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "가깝습니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "가까운", "honorific": false, "attributive": true}, {"text": "가까우시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "가까우셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "가까우세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "가까우셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "가까우십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "가까우신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: to be close, to be near (in distance, time, emotional rapport, kinship, etc.)\nSource: https://en.wiktionary.org/wiki/가깝다#Korean · NIKL level A, frequency rank 648"
   - id: "mal.novice.12428d256e4ee1cc"
@@ -2534,7 +2534,7 @@ entries:
     lemma: "고맙다"
     partOfSpeech: "adjective"
     english: ["thankful"]
-    koreanForms: [{"text": "고맙다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "고마워", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "고마워요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "고맙습니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "고마운", "honorific": true, "attributive": true}, {"text": "고마우시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "고마우셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "고마우세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "고마우셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "고마우십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "고마우신", "honorific": true, "attributive": true}]
+    koreanForms: [{"text": "고맙다", "honorific": false, "attributive": false, "speechLevel": "formal"}, {"text": "고마워", "honorific": false, "attributive": false, "speechLevel": "informal"}, {"text": "고마워요", "honorific": false, "attributive": false, "speechLevel": "informal-polite"}, {"text": "고맙습니다", "honorific": false, "attributive": false, "speechLevel": "formal-polite"}, {"text": "고마운", "honorific": false, "attributive": true}, {"text": "고마우시다", "honorific": true, "attributive": false, "speechLevel": "formal"}, {"text": "고마우셔", "honorific": true, "attributive": false, "speechLevel": "informal"}, {"text": "고마우세요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "고마우셔요", "honorific": true, "attributive": false, "speechLevel": "informal-polite"}, {"text": "고마우십니다", "honorific": true, "attributive": false, "speechLevel": "formal-polite"}, {"text": "고마우신", "honorific": true, "attributive": true}]
     verification: "draft"
     notes: "Source sense: thankful\nSource: https://en.wiktionary.org/wiki/고맙다#Korean · NIKL level A, frequency rank 857"
   - id: "mal.novice.5b53d1ff572fd86a"

@@ -61,7 +61,7 @@ private func fixture(version: Int = 1) -> Bank {
     let key = CardKey("custom.test.house", .koreanToEnglish, .writeIn)
     let state = try store.grade(key, answer: "home", correct: true, at: Date(), sequence: 1)
     try store.addAlias(entryID: key.entryID, direction: key.direction, answer: "dwelling")
-    var settings = StudySettings(); settings.mode = .writeIn; settings.parts = [.noun]; settings.choiceCount = 10; settings.automaticPronunciation = true
+    var settings = StudySettings(); settings.mode = .writeIn; settings.parts = [.noun]; settings.choiceCount = 10; settings.automaticPronunciation = true; settings.formStyle = .polite
     try store.saveSettings(settings)
     let backup = store.url.deletingLastPathComponent().appendingPathComponent("backup.sqlite")
     try store.backup(to: backup)

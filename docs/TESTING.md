@@ -71,3 +71,15 @@ Enable Auto beside the speaker: Korean-to-English should speak the current/new p
 ### Spoken correction
 
 With Auto on in English-to-Korean, choose a wrong answer: hear the selected Korean word as a question, a short pause, then the correct lemma. Repeat in write-in mode. Confirm correct answers speak once, Auto off is silent, and manual replay/toggling off cancels the queued correction. Assess question intonation with the installed Korean voice; punctuation-based prosody varies by voice.
+
+### Form practice acceptance
+
+1. Quit earlier builds, launch the new app, and confirm Everyday polite is selected. Existing vocabulary history remains; predicate form tracks start fresh. A v1 database receives a pre-migration backup beside it.
+2. With action verbs selected, confirm Korean choices are actual polite forms, e.g. 가요; switching direction presents conjugated Korean. All five choices should fit at the usual window size.
+3. Switch to casual/formal/plain/attributive/honorific categories. Check labels, eligible words and new progress pools; missing-category counts must not silently fall back to dictionary forms.
+4. In formal English-to-Korean write-in, enter 오다 for come: reject it and show 옵니다. Undo, then enter 옵니다: accept. Repeat with equivalent listed variants and an irregular predicate. Paste testing is separate from IME acceptance.
+5. Auto and manual speech should pronounce the presented/selected form; wrong-answer correction should speak the correct form rather than the lemma.
+6. Return to Dictionary / any answer to see original vocabulary progress and permissive listed-form grading. Noun progress is shared across categories. Check history shows form identity, and restart restores the selected style.
+7. Back up form progress, restore a pre-upgrade v1 backup, then restore the v2 backup. Check independent states, overrides and undo. Never test this against personal progress without a separate backup.
+
+Automated UI smoke (2026-09-14): isolated `/tmp/Mal Forms QA.app` with `MAL_DATA_DIRECTORY=/tmp/mal-forms-ui`. Verified five visible polite choices, numeric correct advancement, reverse 가요 prompt, switching to formal 옵니다, formal write-in rejecting 오다, Undo retaining the category, then accepting 옵니다. Closed the disposable app. No personal database was used. Broader listening/IME testing remains open.

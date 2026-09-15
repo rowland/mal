@@ -11,6 +11,21 @@ import MalStorage
     var settings = StudySettings()
     var current: Entry?
     var choices: [String] = []
+    private var koreanDisplays: [String: String] = [:]
+    var practiceStyle: KoreanPracticeStyle { settings.formStyle ?? .dictionary }
+    var practiceEntries: [Entry] { selectedEntries.filter { !FormPractice.forms($0, style: practiceStyle).isEmpty } }
+    var unavailableFormCount: Int { selectedEntries.filter { settings.parts.contains($0.partOfSpeech) && FormPractice.forms($0, style: practiceStyle).isEmpty }.count }
+    func studyKey(_ entry: Entry) -> CardKey { FormPractice.key(entry, direction: settings.direction, mode: settings.mode, style: practiceStyle) }
+    func koreanText(_ entry: Entry) -> String { koreanDisplays[entry.id] ?? FormPractice.forms(entry, style: practiceStyle).first ?? entry.lemma }
+    func studyPrompt(_ entry: Entry) -> String { settings.direction == .koreanToEnglish ? koreanText(entry) : entry.prompt(settings.direction) }
+    func correctAnswer(_ entry: Entry) -> String { settings.direction == .englishToKorean ? koreanText(entry) : entry.answer(settings.direction) }
+    var focusedForm: Bool { current.map { practiceStyle != .dictionary && FormPractice.applies($0, style: practiceStyle) } ?? false }
+    private func prepareChoices(_ entry: Entry) {
+        koreanDisplays = FormPractice.displayForms(practiceEntries, style: practiceStyle, using: &random)
+        if koreanDisplays[entry.id] == nil { koreanDisplays[entry.id] = FormPractice.forms(entry, style: practiceStyle).first ?? entry.lemma }
+        let accepted = settings.direction == .koreanToEnglish ? FormPractice.accepted(entry, direction: settings.direction, style: practiceStyle, pool: allEntries, displayedKorean: koreanText(entry), aliases: aliases) : nil
+        choices = ChoiceBuilder.choices(target: entry, pool: practiceEntries, direction: settings.direction, count: settings.choiceCount, koreanAnswers: koreanDisplays, acceptedAnswers: accepted, sensePool: allEntries, aliases: aliases, using: &random)
+    }
     var answer = ""
     var feedback = ""
     var waiting = false
@@ -35,16 +50,14 @@ import MalStorage
     var filteredLibrary: [Entry] {
         selectedEntries.filter { settings.parts.contains($0.partOfSpeech) && (search.isEmpty || $0.lemma.localizedCaseInsensitiveContains(search) || $0.english.joined(separator: " ").localizedCaseInsensitiveContains(search)) }
     }
-    var dueCount: Int {
-        let ids = Set(selectedEntries.filter { settings.parts.contains($0.partOfSpeech) }.map(\.id))
-        return states.filter { ids.contains($0.key.entryID) && $0.key.direction == settings.direction && $0.key.mode == settings.mode && $0.value.due <= Date() }.count
+    private var visibleKeys: Set<CardKey> { Set(practiceEntries.filter { settings.parts.contains($0.partOfSpeech) }.map(studyKey)) }
+    var dueCount: Int { let keys = visibleKeys; let now = Date(); return states.filter { keys.contains($0.key) && $0.value.due <= now }.count }
+    var nextDue: Date? { let keys = visibleKeys; let now = Date(); return states.filter { keys.contains($0.key) && $0.value.due > now }.map(\.value.due).min() }
+    var learningCount: Int { let keys = visibleKeys; return states.filter { keys.contains($0.key) && $0.value.phase != .review }.count }
+    var recognizedCount: Int {
+        let keys = Set(practiceEntries.filter { settings.parts.contains($0.partOfSpeech) }.map { FormPractice.key($0, direction: settings.direction, mode: .multipleChoice, style: practiceStyle) })
+        return states.filter { keys.contains($0.key) && $0.value.graduated }.count
     }
-    var nextDue: Date? {
-        let ids = Set(selectedEntries.filter { settings.parts.contains($0.partOfSpeech) }.map(\.id))
-        return states.filter { ids.contains($0.key.entryID) && $0.key.direction == settings.direction && $0.key.mode == settings.mode && $0.value.due > Date() }.map(\.value.due).min()
-    }
-    var learningCount: Int { let active = Set(allEntries.map(\.id)); return states.filter { active.contains($0.key.entryID) && $0.key.direction == settings.direction && $0.key.mode == settings.mode && $0.value.phase != .review }.count }
-    var recognizedCount: Int { states.filter { $0.key.direction == settings.direction && $0.key.mode == .multipleChoice && $0.value.graduated }.count }
     init() {
         do {
             let override = ProcessInfo.processInfo.environment["MAL_DATA_DIRECTORY"]
@@ -66,6 +79,7 @@ import MalStorage
                 settings.singleColumnDefaultApplied = true
                 try storage.saveSettings(settings)
             }
+            if settings.formStyle == nil { settings.formStyle = .polite; try storage.saveSettings(settings) }
             try reload()
             next()
             keyMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
@@ -94,13 +108,13 @@ import MalStorage
     func next() {
         waiting = false; hintRevealed = false; answer = ""; saveAlias = false
         let context = QueueContext(now: Date(), sequence: sequence, answersSinceIntroduction: sinceIntroduction, previousSense: lastSense)
-        guard let selection = StudyQueue.select(entries: selectedEntries, states: states, settings: settings, context: context, activeEntryIDs: Set(allEntries.map(\.id))),
+        guard let selection = StudyQueue.select(entries: practiceEntries, states: states, settings: settings, context: context, activeEntryIDs: Set(allEntries.map(\.id)), activeEntries: allEntries),
               let entry = selectedEntries.first(where: { $0.id == selection.entryID }) else { current = nil; return }
         current = entry
+        prepareChoices(entry)
         pronounceAutomatically(entry)
         if selection.isNew { sinceIntroduction = 0 }
-        choices = ChoiceBuilder.choices(target: entry, pool: selectedEntries, direction: settings.direction, count: settings.choiceCount, sensePool: allEntries, aliases: aliases, using: &random)
-        do { try store?.present(CardKey(entry.id, settings.direction, settings.mode), at: Date()) }
+        do { try store?.present(studyKey(entry), at: Date()) }
         catch { self.error = error.localizedDescription }
     }
     func submit(_ text: String? = nil) {
@@ -109,26 +123,26 @@ import MalStorage
         let value = text ?? answer
         guard !value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
         answer = value
-        let correct = Grader.promptAnswers(entry, direction: settings.direction, pool: allEntries, aliases: aliases).contains(Grader.normalize(value, direction: settings.direction))
+        let correct = FormPractice.accepted(entry, direction: settings.direction, style: practiceStyle, pool: allEntries, displayedKorean: koreanText(entry), aliases: aliases).contains(Grader.normalize(value, direction: settings.direction))
         pronounceAutomatically(entry, submittedAnswer: value, correct: correct)
         record(entry, value, correct: correct)
     }
     private func record(_ entry: Entry, _ value: String, correct: Bool) {
         do {
-            let key = CardKey(entry.id, settings.direction, settings.mode)
+            let key = studyKey(entry)
             _ = try store?.grade(key, answer: value, correct: correct, at: Date(), sequence: sequence + 1)
             try reload(includeContent: false); sinceIntroduction += 1
             lastSense = entry.id; lastGraded = entry
-            feedback = "\(correct ? "Correct" : "Incorrect") · \(entry.lemma) — \(entry.english.joined(separator: "; "))"
+            feedback = "\(correct ? "Correct" : "Incorrect") · \(koreanText(entry)) — \(entry.english.joined(separator: "; "))"
             if correct { next() } else { waiting = true }
         } catch { self.error = error.localizedDescription }
     }
     func acceptAnswer() {
         guard waiting, let entry = current else { return }
         do {
-            _ = try store?.correctLastAnswer(expectedKey: CardKey(entry.id, settings.direction, settings.mode), saveAlias: saveAlias)
+            _ = try store?.correctLastAnswer(expectedKey: studyKey(entry), saveAlias: saveAlias)
             try reload(includeContent: false)
-            feedback = "Accepted · \(entry.lemma) — \(entry.english.joined(separator: "; "))"
+            feedback = "Accepted · \(koreanText(entry)) — \(entry.english.joined(separator: "; "))"
             next()
         } catch { self.error = error.localizedDescription }
     }
@@ -139,9 +153,12 @@ import MalStorage
             aliases = try store?.aliases(direction: key.direction) ?? [:]
             try store?.saveSettings(settings)
             current = allEntries.first { $0.id == key.entryID } ?? lastGraded
+            if let style = key.formStyle { settings.formStyle = style }
+            else if let current, FormPractice.applies(current, style: practiceStyle) { settings.formStyle = .dictionary }
+            try store?.saveSettings(settings)
             waiting = false; hintRevealed = false; answer = ""; feedback = "Previous grade undone."
             sinceIntroduction = max(0, sinceIntroduction - 1); lastSense = nil
-            if let current { choices = ChoiceBuilder.choices(target: current, pool: selectedEntries, direction: settings.direction, count: settings.choiceCount, sensePool: allEntries, aliases: aliases, using: &random) }
+            if let current { prepareChoices(current) }
         } catch { self.error = error.localizedDescription }
     }
     func checkAgain() { lastSense = nil; next() }
@@ -152,10 +169,10 @@ import MalStorage
         else if let current, !waiting { pronounceAutomatically(current) }
     }
     private func pronounceAutomatically(_ entry: Entry, submittedAnswer: String? = nil, correct: Bool? = nil) {
-        let sequence = PronunciationRules.automaticSequence(enabled: settings.automaticPronunciation == true, direction: settings.direction, lemma: entry.lemma, submittedAnswer: submittedAnswer, correct: correct)
+        let sequence = PronunciationRules.automaticSequence(enabled: settings.automaticPronunciation == true, direction: settings.direction, lemma: koreanText(entry), submittedAnswer: submittedAnswer, correct: correct)
         if !sequence.isEmpty { speakSequence(sequence, automatic: true) }
     }
-    func speak(_ entry: Entry) { speakSequence([entry.lemma]) }
+    func speak(_ entry: Entry) { speakSequence([entry.id == current?.id ? koreanText(entry) : entry.lemma]) }
     private func speakSequence(_ texts: [String], automatic: Bool = false) {
         guard let voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.language.hasPrefix("ko") }) else {
             let message = "Install a Korean voice in System Settings → Accessibility → Read & Speak → System voice. Study works without a voice."

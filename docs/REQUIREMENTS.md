@@ -13,12 +13,12 @@ Accepted 2026-09-12. Working name Mal (말). This file preserves user decisions 
 | UX-08 | Korean-to-English cues are opt-in hints; accept catalogued meanings for the same lemma/POS and exclude them from distractors. English-to-Korean cues remain visible. |
 | UX-07 | On-demand installed Korean system voice plus persisted Auto checkbox: speak Korean-to-English presentations and English-to-Korean selected/submitted answers. Missing voice does not block study. |
 | DATA-01 | Sense-based stable IDs, Korean lemma/POS, English aliases/cues, explicit labeled Korean forms, notes and verification status. |
-| DATA-02 | Accept curated synonyms and present affirmative common speech levels/attributives; reject unlisted tense/negative/typo variants. |
+| DATA-02 | Present and practice curated present affirmative speech levels/attributives. Focused write-in requires the chosen category; Dictionary / any answer accepts all curated forms. Reject unlisted tense/negative/typo variants. |
 | DATA-03 | NFC and surrounding-whitespace normalization; English capitalization ignored. |
 | DATA-04 | Five nonoverlapping 500-entry banks: Novice, Technician, General, Advanced, Extra; frequency and learner difficulty inform tiers. |
 | DATA-05 | Provenance, redistribution terms, and linguistic review tracked. Draft/generated content is not release-ready. |
 | DATA-06 | YAML v1, sample file, validator, atomic import, stable-ID updates, version checks, protected built-in namespace, retirement without history deletion. |
-| LEARN-01 | Four independent tracks per sense (direction × mode). Manual switching; recognized words prioritized for new write-in cards. |
+| LEARN-01 | Four independent tracks per sense and form category (direction × mode). Manual switching; recognition priority applies only within the same form category. |
 | LEARN-02 | Continuous rotation; default learning-pool target 10 per track controls mixing while reviews are ready. Always introduce unseen words when no review is ready, even above target. |
 | LEARN-03 | Learning: immediate → 10 minutes → 1 day; three consecutive due successes graduate to 3-day review. |
 | LEARN-04 | Review multiplier typed 1.5+accuracy, choice 1.2+0.5×accuracy; smoothed latest 20 accuracy; max 365 days. |

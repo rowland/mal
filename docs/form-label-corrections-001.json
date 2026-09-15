@@ -1,0 +1,83 @@
+{
+  "sources": [
+    "https://en.wiktionary.org/wiki/마시다#Conjugation",
+    "https://en.wiktionary.org/wiki/가깝다#Conjugation",
+    "https://en.wiktionary.org/wiki/고맙다#Conjugation",
+    "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=64682"
+  ],
+  "changes": [
+    {
+      "lemma": "마시다",
+      "text": "마셔요",
+      "honorificBefore": true,
+      "honorificAfter": false
+    },
+    {
+      "lemma": "마시다",
+      "text": "마십니다",
+      "honorificBefore": true,
+      "honorificAfter": false
+    },
+    {
+      "lemma": "가깝다",
+      "text": "가깝다",
+      "honorificBefore": true,
+      "honorificAfter": false
+    },
+    {
+      "lemma": "가깝다",
+      "text": "가까워",
+      "honorificBefore": true,
+      "honorificAfter": false
+    },
+    {
+      "lemma": "가깝다",
+      "text": "가까워요",
+      "honorificBefore": true,
+      "honorificAfter": false
+    },
+    {
+      "lemma": "가깝다",
+      "text": "가깝습니다",
+      "honorificBefore": true,
+      "honorificAfter": false
+    },
+    {
+      "lemma": "가깝다",
+      "text": "가까운",
+      "honorificBefore": true,
+      "honorificAfter": false
+    },
+    {
+      "lemma": "고맙다",
+      "text": "고맙다",
+      "honorificBefore": true,
+      "honorificAfter": false
+    },
+    {
+      "lemma": "고맙다",
+      "text": "고마워",
+      "honorificBefore": true,
+      "honorificAfter": false
+    },
+    {
+      "lemma": "고맙다",
+      "text": "고마워요",
+      "honorificBefore": true,
+      "honorificAfter": false
+    },
+    {
+      "lemma": "고맙다",
+      "text": "고맙습니다",
+      "honorificBefore": true,
+      "honorificAfter": false
+    },
+    {
+      "lemma": "고맙다",
+      "text": "고마운",
+      "honorificBefore": true,
+      "honorificAfter": false
+    }
+  ],
+  "verification": "Label corrections only; overall entry verification status unchanged."
+}

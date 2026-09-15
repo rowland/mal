@@ -64,8 +64,9 @@ public struct CardKey: Codable, Hashable, Sendable {
     public var entryID: String
     public var direction: Direction
     public var mode: AnswerMode
-    public init(_ entryID: String, _ direction: Direction, _ mode: AnswerMode) { self.entryID = entryID; self.direction = direction; self.mode = mode }
-    public var storageID: String { "\(entryID)|\(direction.rawValue)|\(mode.rawValue)" }
+    public var formStyle: KoreanPracticeStyle?
+    public init(_ entryID: String, _ direction: Direction, _ mode: AnswerMode, formStyle: KoreanPracticeStyle? = nil) { self.entryID = entryID; self.direction = direction; self.mode = mode; self.formStyle = formStyle == .dictionary ? nil : formStyle }
+    public var storageID: String { "\(entryID)|\(direction.rawValue)|\(mode.rawValue)" + (formStyle.map { "|form:" + $0.rawValue } ?? "") }
 }
 public enum Phase: String, Codable, Sendable { case learning, review, relearning }
 public struct LearningState: Codable, Equatable, Sendable {
@@ -90,6 +91,7 @@ public struct StudySettings: Codable, Equatable, Sendable {
     // Optional so existing settings and backups decode without a schema migration.
     public var singleColumnDefaultApplied: Bool?
     public var automaticPronunciation: Bool?
+    public var formStyle: KoreanPracticeStyle?
     public var learningLimit: Int = 10
     // Retained for compatibility with existing settings/backups; no automatic pauses.
     public var reviewBatch: Int = 50

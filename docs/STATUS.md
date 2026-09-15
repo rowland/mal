@@ -1,6 +1,6 @@
 # Mal implementation status
 
-Last updated: 2026-09-12. This is the handoff entry point. Read REQUIREMENTS.md and DECISIONS.md before changing behavior.
+Last updated: 2026-09-14. This is the handoff entry point. Read REQUIREMENTS.md and DECISIONS.md before changing behavior.
 
 ## Delivered development build
 
@@ -150,3 +150,15 @@ Release app rebuilt and signature-verified at `build/Mal.app`. Visual acceptance
 - Incorrect English-to-Korean automatic speech now queues the submitted word as a question, then the correct lemma after a 0.35-second pause. Auto-off and reverse-direction behavior unchanged. Both multiple-choice and write-in use the pure sequence rule.
 - Validation: 36 tests passed, including correction order, correct answers, disabled Auto and reverse-direction exclusion. Release app and signature verification passed; diff check passed.
 - Next: listen with the installed Korean voice to assess question intonation and pause length. Actual acoustic acceptance remains pending; question punctuation is interpreted by the system voice. No stored progress changes.
+
+## Actual Korean form practice — 2026-09-14
+
+- Added the form selector, defaulting to everyday polite on first upgraded launch. Casual, formal polite, plain statement, noun-modifying, subject-honorific polite/formal, and legacy Dictionary / any answer are available. Focused Korean grading requires the selected labeled category. Korean prompts, distractors, feedback and speech all use the displayed form.
+- Independent category × direction × mode progress; dictionary mastery never graduates a form track. Ordinary nouns/adverbs keep their base track. Missing listed forms are skipped with a visible count. Labeled variants within a category share one schedule and are randomized for presentation.
+- SQLite version 2 uses optional stable category keys. A v1 pre-migration backup is created before updating the version. Old history and keys remain intact; v1/v2 restores, restart and undo are covered. Earlier builds reject the upgraded database. YAML v1 needs no structural change.
+- Corrected 12 erroneous honorific labels in three Novice entries (contentVersion 4), preserving IDs/status. Coverage audit: 830 predicates total; 827 have casual/polite/formal-polite and attributive forms, 805 have plain statements, 820 have the two exposed honorific styles. All 159 Novice predicates have everyday-polite forms. Exact missing lists: form-coverage.json, reproducible with scripts/audit-forms.py. This is coverage, not linguistic verification.
+- Tests: 44 passed, including explicit form selection, irregulars/variants, strict grading, noun identity, focused choices, recognized-first isolation, missing-form exclusion, legacy decoding, version-1 migration, backup/restore and undo. Final rerun/build results below.
+- Native UI smoke succeeded in a disposable database: polite choices and reverse prompts, formal category switch, rejection of dictionary write-in, Undo and correct-form acceptance. Five choices fit the QA window. Screenshots/AX were inspected; this is distinct from user acceptance.
+- Remaining: complete linguistic verification of draft forms (including lexical honorific substitutions and sense-dependent naturalness), fill missing listed categories, and exercise actual voices/IME. Present affirmative practice is now implemented; tense, negation, commands, questions and connective forms are future scope. No mixed-category scheduler is included; choose categories manually.
+
+- Final regression addition handles identical conjugations from different lemmas, including exclusion of their English synonyms. Final suite: **45 tests passed**. Optimized app packaging and signature verification passed. Earlier interim compile errors (SwiftUI FormStyle name collision and a test-file edit error) were corrected before this final run.

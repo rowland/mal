@@ -36,7 +36,7 @@ public struct HistoryItem: Identifiable, Sendable {
         sqlite3_busy_timeout(db, 5000)
         do {
             let version = Int(try rows("PRAGMA user_version").first?.first ?? "0") ?? 0
-            guard version <= 1 else { throw StoreError(message: "This database requires a newer Mal version.") }
+            guard version <= 2 else { throw StoreError(message: "This database requires a newer Mal version.") }
             if version == 0 {
                 if !(try rows("SELECT name FROM sqlite_master WHERE type='table'")).isEmpty {
                     try backup(to: url.appendingPathExtension("pre-migration"))
@@ -49,8 +49,12 @@ public struct HistoryItem: Identifiable, Sendable {
                     try execute("CREATE TABLE IF NOT EXISTS presentations(id INTEGER PRIMARY KEY, key_data TEXT NOT NULL, timestamp REAL NOT NULL)")
                     try execute("CREATE TABLE IF NOT EXISTS attempts(id INTEGER PRIMARY KEY, key_data TEXT NOT NULL, answer TEXT NOT NULL, correct INTEGER NOT NULL, timestamp REAL NOT NULL, before_data TEXT, after_data TEXT NOT NULL, undone INTEGER NOT NULL DEFAULT 0, scheduler_version INTEGER NOT NULL)")
                     try execute("CREATE TABLE IF NOT EXISTS preferences(id TEXT PRIMARY KEY, data TEXT NOT NULL)")
-                    try execute("PRAGMA user_version=1")
+                    try execute("PRAGMA user_version=2")
                 }
+            }
+            if version == 1 {
+                try backup(to: url.appendingPathExtension("pre-migration-v1-" + UUID().uuidString))
+                try transaction { try execute("PRAGMA user_version=2") }
             }
             try execute("PRAGMA journal_mode=WAL")
             try execute("PRAGMA synchronous=FULL")
@@ -197,7 +201,7 @@ public struct HistoryItem: Identifiable, Sendable {
             guard sqlite3_step(statement) == SQLITE_ROW, let value = sqlite3_column_text(statement, 0) else { throw StoreError(message: "Invalid backup.") }
             return String(cString: value)
         }
-        guard try scalar("PRAGMA integrity_check") == "ok", try scalar("PRAGMA user_version") == "1",
+        guard try scalar("PRAGMA integrity_check") == "ok", ["1", "2"].contains(try scalar("PRAGMA user_version")),
               try scalar("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name IN ('banks','entries','states','aliases','presentations','attempts','preferences')") == "7" else { throw StoreError(message: "Unsupported or corrupt Mal backup.") }
         // Decode every persisted domain record before replacing anything.
         for (table, column, validate) in [
@@ -227,6 +231,7 @@ public struct HistoryItem: Identifiable, Sendable {
         let status = sqlite3_backup_step(operation, -1)
         let finish = sqlite3_backup_finish(operation)
         guard status == SQLITE_DONE && finish == SQLITE_OK else { throw StoreError(message: "Restore failed; original backup retained.") }
+        try transaction { try execute("PRAGMA user_version=2") }
         try execute("PRAGMA journal_mode=WAL")
     }
     public func close() { if db != nil { sqlite3_close(db); db = nil } }

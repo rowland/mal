@@ -23,8 +23,8 @@ public enum Grader {
     }
 }
 public enum ChoiceBuilder {
-    public static func choices<R: RandomNumberGenerator>(target: Entry, pool: [Entry], direction: Direction, count: Int, sensePool: [Entry]? = nil, aliases: [String: [String]] = [:], using random: inout R) -> [String] {
-        let targetAnswers = Grader.promptAnswers(target, direction: direction, pool: sensePool ?? pool, aliases: aliases)
+    public static func choices<R: RandomNumberGenerator>(target: Entry, pool: [Entry], direction: Direction, count: Int, koreanAnswers: [String: String] = [:], acceptedAnswers: Set<String>? = nil, sensePool: [Entry]? = nil, aliases: [String: [String]] = [:], using random: inout R) -> [String] {
+        let targetAnswers = acceptedAnswers ?? Grader.promptAnswers(target, direction: direction, pool: sensePool ?? pool, aliases: aliases)
         // Exclude equivalent senses in either language, even when their preferred gloss differs.
         let targetEnglish = Grader.accepted(target, direction: .koreanToEnglish)
         let targetKorean = Grader.accepted(target, direction: .englishToKorean)
@@ -36,10 +36,10 @@ public enum ChoiceBuilder {
         }
         let preferred = candidates.filter { $0.partOfSpeech == target.partOfSpeech }.shuffled(using: &random)
         let others = candidates.filter { $0.partOfSpeech != target.partOfSpeech }.shuffled(using: &random)
-        var result = [target.answer(direction)]
+        var result = [direction == .englishToKorean ? (koreanAnswers[target.id] ?? target.lemma) : target.answer(direction)]
         var seen = Set(result.map { Grader.normalize($0, direction: direction) })
         for entry in preferred + others where result.count < max(2, count) {
-            let value = entry.answer(direction)
+            let value = direction == .englishToKorean ? (koreanAnswers[entry.id] ?? entry.lemma) : entry.answer(direction)
             if seen.insert(Grader.normalize(value, direction: direction)).inserted { result.append(value) }
         }
         return result.shuffled(using: &random)
@@ -79,11 +79,13 @@ public enum Scheduler {
     }
 }
 public enum StudyQueue {
-    public static func select(entries: [Entry], states: [CardKey: LearningState], settings: StudySettings, context: QueueContext, activeEntryIDs: Set<String>? = nil) -> Selection? {
-        let key: (Entry) -> CardKey = { CardKey($0.id, settings.direction, settings.mode) }
-        let eligible = entries.filter { settings.parts.contains($0.partOfSpeech) && $0.id != context.previousSense }
+    public static func select(entries: [Entry], states: [CardKey: LearningState], settings: StudySettings, context: QueueContext, activeEntryIDs: Set<String>? = nil, activeEntries: [Entry]? = nil) -> Selection? {
+        let style = settings.formStyle ?? .dictionary
+        let key: (Entry) -> CardKey = { FormPractice.key($0, direction: settings.direction, mode: settings.mode, style: style) }
+        let eligible = entries.filter { settings.parts.contains($0.partOfSpeech) && $0.id != context.previousSense && !FormPractice.forms($0, style: style).isEmpty }
         // Count the entire mode/direction pool, including filtered and deselected banks.
-        let active = states.filter { $0.key.direction == settings.direction && $0.key.mode == settings.mode && $0.value.phase != .review && (activeEntryIDs?.contains($0.key.entryID) ?? true) }.count
+        let activeKeys = Set((activeEntries ?? entries).map(key))
+        let active = states.filter { $0.key.direction == settings.direction && $0.key.mode == settings.mode && activeKeys.contains($0.key) && $0.value.phase != .review && (activeEntryIDs?.contains($0.key.entryID) ?? true) }.count
         let due = eligible.filter { states[key($0)].map { $0.due <= context.now } ?? false }.sorted {
             let a = states[key($0)]!, b = states[key($1)]!
             let rank: (LearningState) -> Int = { $0.phase == .relearning ? 0 : $0.phase == .review ? 1 : 2 }
@@ -94,8 +96,8 @@ public enum StudyQueue {
         var unseen = eligible.filter { states[key($0)] == nil }
         if settings.mode == .writeIn {
             unseen = unseen.enumerated().sorted { a, b in
-                let recognizedA = states[CardKey(a.element.id, settings.direction, .multipleChoice)]?.graduated == true
-                let recognizedB = states[CardKey(b.element.id, settings.direction, .multipleChoice)]?.graduated == true
+                let recognizedA = states[FormPractice.key(a.element, direction: settings.direction, mode: .multipleChoice, style: style)]?.graduated == true
+                let recognizedB = states[FormPractice.key(b.element, direction: settings.direction, mode: .multipleChoice, style: style)]?.graduated == true
                 return recognizedA == recognizedB ? a.offset < b.offset : recognizedA
             }.map(\.element)
         }
