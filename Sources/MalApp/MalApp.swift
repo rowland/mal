@@ -119,14 +119,17 @@ struct ContentView: View {
                     .accessibilityLabel("Automatic Korean pronunciation")
                 Button { model.speak(entry) } label: { Image(systemName: "speaker.wave.2") }.help("Pronounce Korean · ⌘P")
             }
-            Text(model.studyPrompt(entry)).font(.system(size: 38, weight: .medium)).textSelection(.enabled)
+            if model.introducing {
+                Text("INTRODUCTION").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
+            }
+            Text(model.introducing ? model.koreanText(entry) : model.studyPrompt(entry)).font(.system(size: 38, weight: .medium)).textSelection(.enabled)
                 .accessibilityIdentifier("studyPrompt")
             if model.focusedForm {
                 Text(model.practiceStyle.label + (model.practiceStyle == .attributive ? " · before a noun" : " · present affirmative"))
                     .font(.callout).foregroundStyle(.secondary)
                     .help(model.practiceStyle.explanation)
             }
-            if model.settings.direction == .koreanToEnglish, let cue = entry.promptCue, !cue.isEmpty {
+            if !model.introducing && model.settings.direction == .koreanToEnglish, let cue = entry.promptCue, !cue.isEmpty {
                 if model.hintRevealed || model.waiting {
                     Text("Hint: " + cue).font(.callout).foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
@@ -135,7 +138,27 @@ struct ContentView: View {
                         .buttonStyle(.borderless).font(.callout)
                 }
             }
-            if !model.waiting && model.settings.mode == .multipleChoice {
+            if model.introducing {
+                VStack(alignment: .leading, spacing: 16) {
+                    Text(entry.english.joined(separator: "; "))
+                        .font(.system(size: 30)).textSelection(.enabled)
+                        .fixedSize(horizontal: false, vertical: true)
+                    if model.koreanText(entry) != entry.lemma {
+                        Text("Dictionary form: " + entry.lemma).font(.callout).foregroundStyle(.secondary)
+                    }
+                    if let cue = entry.promptCue, !cue.isEmpty {
+                        Text(cue).font(.callout).foregroundStyle(.secondary)
+                    }
+                    Text("Take a moment to learn this word, then continue to practice.")
+                        .font(.callout).foregroundStyle(.secondary)
+                    HStack(spacing: 12) {
+                        Button("Continue", action: model.continueIntroduction)
+                            .buttonStyle(.borderedProminent).controlSize(.large)
+                            .keyboardShortcut(.defaultAction)
+                        Text("Press Return ↵").font(.callout).foregroundStyle(.secondary)
+                    }
+                }.padding(.top, 8)
+            } else if !model.waiting && model.settings.mode == .multipleChoice {
                 if model.choices.count < 2 {
                     Text("This bank has no distinct distractor. Switch to write-in or select another bank.").foregroundStyle(.secondary)
                 } else {

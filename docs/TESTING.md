@@ -83,3 +83,9 @@ With Auto on in English-to-Korean, choose a wrong answer: hear the selected Kore
 7. Back up form progress, restore a pre-upgrade v1 backup, then restore the v2 backup. Check independent states, overrides and undo. Never test this against personal progress without a separate backup.
 
 Automated UI smoke (2026-09-14): isolated `/tmp/Mal Forms QA.app` with `MAL_DATA_DIRECTORY=/tmp/mal-forms-ui`. Verified five visible polite choices, numeric correct advancement, reverse 가요 prompt, switching to formal 옵니다, formal write-in rejecting 오다, Undo retaining the category, then accepting 옵니다. Closed the disposable app. No personal database was used. Broader listening/IME testing remains open.
+
+### New-card introductions
+
+In both directions and answer modes, introduce an unseen track. Verify Korean form, English meanings, optional lemma/cue, replay and Continue. Number keys must not grade; Return reveals the same quiz without changing accuracy or learning counts. First submitted answer starts the first learning step. Restart before grading should reintroduce the word; already graded reviews should quiz directly. Check held Return, mode/form switching, and Undo.
+
+Native smoke, 2026-09-16: `/tmp/Mal Introduction QA.app`, data `/tmp/mal-introduction-ui`. Verified 집 → house/home introduction, ignored numeric key, Return to unchanged house quiz with zero learning count, correct numeric answer, then 물 → water introduction. Screenshot inspected; closed QA copy. No personal database used.

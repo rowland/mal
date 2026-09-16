@@ -16,7 +16,7 @@ The first build downloads the pinned Yams 6.2.2 dependency. The app itself requi
 
 ## Study
 
-Select banks and parts of speech in the sidebar. Choose either translation direction and multiple choice or write-in. Multiple choice defaults to five choices; press 1–9 or 0 for the tenth choice. Return submits typed answers. Correct answers advance immediately; wrong answers show the correct answer and pause for Return. Grading corrections are available in the Grading options menu. ⌘Z undoes the latest grade. ⌘P pronounces the Korean word. ⌘L opens the searchable bank browser.
+Select banks and parts of speech in the sidebar. Choose either translation direction and multiple choice or write-in. Multiple choice defaults to five choices; press 1–9 or 0 for the tenth choice. New cards first show the Korean form and English meanings; Continue/Return begins the quiz without recording a grade. Return submits typed answers. Correct answers advance immediately; wrong answers show the correct answer and pause for Return. Grading corrections are available in the Grading options menu. ⌘Z undoes the latest grade. ⌘P pronounces the Korean word. ⌘L opens the searchable bank browser.
 
 The practice-form selector defaults to **Everyday polite**. Choose casual, formal polite, plain statement, noun-modifying, or subject-honorific practice. Conjugated forms appear in Korean prompts, choices, corrections and pronunciation. Focused write-in requires the selected form; **Dictionary / any answer** keeps the original vocabulary behavior. Each form category has independent progress. Ordinary nouns and adverbs retain their existing vocabulary track. Missing forms are counted and skipped. The bank browser's Listed forms section shows the available labeled variants.
 

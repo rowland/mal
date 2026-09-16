@@ -165,3 +165,23 @@ private func fixture(version: Int = 1) -> Bank {
     let reserved = Bank(id: "mal", title: "Reserved", entries: [Entry(id: "mal.fake", lemma: "집", partOfSpeech: .noun, english: ["house"])])
     #expect(throws: ValidationFailure.self) { try store.importBank(reserved) }
 }
+
+@Test @MainActor func introductionPresentationDoesNotGradeOrGraduate() throws {
+    let store = try temporaryStore()
+    let path = store.url
+    _ = try store.importBank(fixture())
+    let key = CardKey("custom.test.house", .englishToKorean, .multipleChoice)
+    try store.present(key, at: Date(timeIntervalSince1970: 1000))
+    #expect(try store.states().isEmpty)
+    #expect(try store.history().isEmpty)
+    #expect(try store.answerSequence() == 0)
+    store.close()
+    let reopened = try Store(url: path); defer { reopened.close() }
+    #expect(try reopened.states().isEmpty)
+    #expect(try reopened.history().isEmpty)
+    let first = try reopened.grade(key, answer: "집", correct: true, at: Date(timeIntervalSince1970: 1001), sequence: 1)
+    #expect(first.step == 1)
+    #expect(first.totalCorrect == 1)
+    #expect(first.totalWrong == 0)
+    #expect(first.graduated == false)
+}

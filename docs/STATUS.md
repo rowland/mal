@@ -1,6 +1,6 @@
 # Mal implementation status
 
-Last updated: 2026-09-14. This is the handoff entry point. Read REQUIREMENTS.md and DECISIONS.md before changing behavior.
+Last updated: 2026-09-16. This is the handoff entry point. Read REQUIREMENTS.md and DECISIONS.md before changing behavior.
 
 ## Delivered development build
 
@@ -162,3 +162,10 @@ Release app rebuilt and signature-verified at `build/Mal.app`. Visual acceptance
 - Remaining: complete linguistic verification of draft forms (including lexical honorific substitutions and sense-dependent naturalness), fill missing listed categories, and exercise actual voices/IME. Present affirmative practice is now implemented; tense, negation, commands, questions and connective forms are future scope. No mixed-category scheduler is included; choose categories manually.
 
 - Final regression addition handles identical conjugations from different lemmas, including exclusion of their English synonyms. Final suite: **45 tests passed**. Optimized app packaging and signature verification passed. Earlier interim compile errors (SwiftUI FormStyle name collision and a test-file edit error) were corrected before this final run.
+
+## Teach new cards before quizzing — 2026-09-16
+
+- New queue selections display Korean form and English meanings first, including the lemma for inflected forms and sense cue when present. Continue begins the same quiz without recording an answer. Auto speaks the introduction in either direction. Existing graded tracks retain their normal review flow. No database/content migration or progress reset.
+- Native smoke verified introduction, numeric-input guard, Return transition without grading, correct answer, and introduction of the next word. Tested in a disposable database; user acceptance remains separate.
+- Validation: **46 tests passed**, including a presentation/restart regression proving no answer history, accuracy or graduation is created before grading. Release build/signature verification and diff check passed.
+- Next: user testing of introductions in normal study, both directions/modes and Auto pronunciation; existing content/IME backlog remains open.

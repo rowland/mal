@@ -28,6 +28,7 @@ import MalStorage
     }
     var answer = ""
     var feedback = ""
+    var introducing = false
     var waiting = false
     var hintRevealed = false
     var error: String?
@@ -86,7 +87,7 @@ import MalStorage
                 let ignore = MainActor.assumeIsolated {
                     guard let self, !self.showLibrary, !self.showHistory, event.window?.title == "Mal · 말" else { return false }
                     let modified = !event.modifierFlags.intersection([.command, .control, .option, .shift]).isEmpty
-                    return InputRules.ignoreRepeatedStudyKey(isRepeat: event.isARepeat, modified: modified, key: event.charactersIgnoringModifiers ?? "", multipleChoice: self.settings.mode == .multipleChoice, waitingForContinue: self.waiting)
+                    return InputRules.ignoreRepeatedStudyKey(isRepeat: event.isARepeat, modified: modified, key: event.charactersIgnoringModifiers ?? "", multipleChoice: self.settings.mode == .multipleChoice, waitingForContinue: self.waiting || self.introducing)
                 }
                 return ignore ? nil : event
             }
@@ -106,18 +107,25 @@ import MalStorage
         next()
     }
     func next() {
-        waiting = false; hintRevealed = false; answer = ""; saveAlias = false
+        introducing = false; waiting = false; hintRevealed = false; answer = ""; saveAlias = false
         let context = QueueContext(now: Date(), sequence: sequence, answersSinceIntroduction: sinceIntroduction, previousSense: lastSense)
         guard let selection = StudyQueue.select(entries: practiceEntries, states: states, settings: settings, context: context, activeEntryIDs: Set(allEntries.map(\.id)), activeEntries: allEntries),
               let entry = selectedEntries.first(where: { $0.id == selection.entryID }) else { current = nil; return }
         current = entry
+        introducing = selection.isNew
         prepareChoices(entry)
         pronounceAutomatically(entry)
         if selection.isNew { sinceIntroduction = 0 }
         do { try store?.present(studyKey(entry), at: Date()) }
         catch { self.error = error.localizedDescription }
     }
+    func continueIntroduction() {
+        guard introducing else { return }
+        introducing = false
+        // Keep this card and its choices. Reading the introduction is not a grade.
+    }
     func submit(_ text: String? = nil) {
+        guard !introducing else { return }
         if waiting { next(); return }
         guard let entry = current else { return }
         let value = text ?? answer
@@ -156,7 +164,7 @@ import MalStorage
             if let style = key.formStyle { settings.formStyle = style }
             else if let current, FormPractice.applies(current, style: practiceStyle) { settings.formStyle = .dictionary }
             try store?.saveSettings(settings)
-            waiting = false; hintRevealed = false; answer = ""; feedback = "Previous grade undone."
+            introducing = false; waiting = false; hintRevealed = false; answer = ""; feedback = "Previous grade undone."
             sinceIntroduction = max(0, sinceIntroduction - 1); lastSense = nil
             if let current { prepareChoices(current) }
         } catch { self.error = error.localizedDescription }
@@ -169,6 +177,10 @@ import MalStorage
         else if let current, !waiting { pronounceAutomatically(current) }
     }
     private func pronounceAutomatically(_ entry: Entry, submittedAnswer: String? = nil, correct: Bool? = nil) {
+        if introducing {
+            if settings.automaticPronunciation == true { speakSequence([koreanText(entry)], automatic: true) }
+            return
+        }
         let sequence = PronunciationRules.automaticSequence(enabled: settings.automaticPronunciation == true, direction: settings.direction, lemma: koreanText(entry), submittedAnswer: submittedAnswer, correct: correct)
         if !sequence.isEmpty { speakSequence(sequence, automatic: true) }
     }
