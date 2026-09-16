@@ -57,41 +57,44 @@ private struct Seeded: RandomNumberGenerator {
 }
 @Test func learningGraduationAndRelearning() {
     var state = LearningState(due: epoch)
-    state = Scheduler.grade(state, correct: true, mode: .writeIn, now: epoch, sequence: 1)
-    #expect(state.step == 1 && state.due == epoch.addingTimeInterval(600))
-    state = Scheduler.grade(state, correct: true, mode: .writeIn, now: state.due, sequence: 2)
-    #expect(state.step == 2 && state.due == epoch.addingTimeInterval(600 + 86400))
-    state = Scheduler.grade(state, correct: true, mode: .writeIn, now: state.due, sequence: 3)
-    #expect(state.phase == .review && state.graduated && state.interval == 3 * 86400)
+    for step in 1...6 {
+        let now = state.due
+        state = Scheduler.grade(state, correct: true, mode: .writeIn, now: now, sequence: step)
+        #expect(state.step == step)
+        if step < 6 {
+            #expect(state.due == now.addingTimeInterval(Scheduler.learningTimes[step - 1]))
+            #expect(state.dueSequence == step + Scheduler.learningAnswers[step - 1])
+        }
+    }
+    #expect(state.phase == .maintenance && state.interval == 3 * 86400 && state.answerInterval == 200)
     let wrongTime = state.due
-    state = Scheduler.grade(state, correct: false, mode: .writeIn, now: wrongTime, sequence: 4)
-    #expect(state.phase == .relearning && state.due == wrongTime.addingTimeInterval(600))
-    #expect(state.totalCorrect == 3 && state.totalWrong == 1 && state.graduated)
-    state = Scheduler.grade(state, correct: true, mode: .writeIn, now: state.due, sequence: 5)
-    #expect(state.phase == .relearning && state.step == 1)
-    state = Scheduler.grade(state, correct: true, mode: .writeIn, now: state.due, sequence: 6)
-    #expect(state.phase == .review && state.interval == 3 * 86400)
+    state = Scheduler.grade(state, correct: false, mode: .writeIn, now: wrongTime, sequence: 7)
+    #expect(state.phase == .relearning && state.due == wrongTime.addingTimeInterval(30))
+    #expect(state.totalCorrect == 6 && state.totalWrong == 1 && !state.graduated)
+    for step in 1...3 { state = Scheduler.grade(state, correct: true, mode: .writeIn, now: state.due, sequence: 7 + step) }
+    #expect(state.phase == .maintenance && state.interval == 1.5 * 86400 && state.answerInterval == 100)
 }
+
 @Test func failedLearningResetsAndDelays() {
-    var prior = LearningState(due: epoch); prior.step = 2
+    var prior = LearningState(due: epoch); prior.step = 2; prior.scheduleVersion = 3
     let state = Scheduler.grade(prior, correct: false, mode: .multipleChoice, now: epoch, sequence: 10)
     #expect(state.step == 0 && state.phase == .learning)
-    #expect(state.due == epoch.addingTimeInterval(60))
-    #expect(state.retryAfterSequence == 13)
+    #expect(state.due == epoch.addingTimeInterval(30))
+    #expect(state.dueSequence == 13)
 }
 @Test func modeSpecificIntervalsAndHistoryCap() {
-    var state = LearningState(due: epoch); state.phase = .review; state.interval = 3 * 86400; state.recent = Array(repeating: true, count: 20)
+    var state = LearningState(due: epoch); state.phase = .maintenance; state.interval = 3 * 86400; state.recent = Array(repeating: true, count: 20)
     let typed = Scheduler.grade(state, correct: true, mode: .writeIn, now: epoch, sequence: 1)
     let choice = Scheduler.grade(state, correct: true, mode: .multipleChoice, now: epoch, sequence: 1)
     #expect(typed.interval > choice.interval)
     #expect(typed.recent.count == 20)
     #expect(abs(typed.interval - state.interval * (1.5 + 21.0 / 22.0)) < 0.001)
     state.interval = 365 * 86400
-    #expect(Scheduler.grade(state, correct: true, mode: .writeIn, now: epoch, sequence: 1).interval == 365 * 86400)
+    #expect(Scheduler.grade(state, correct: true, mode: .writeIn, now: epoch, sequence: 1).interval == 180 * 86400)
 }
 @Test func independentTracksAndRecognizedPriority() {
     let a = entry("a", "가", "a"), b = entry("b", "나", "b")
-    var graduated = LearningState(due: epoch.addingTimeInterval(99999)); graduated.phase = .review; graduated.graduated = true
+    var graduated = LearningState(due: epoch.addingTimeInterval(99999)); graduated.phase = .maintenance; graduated.graduated = true
     let states = [CardKey(b.id, .englishToKorean, .multipleChoice): graduated]
     var settings = StudySettings(); settings.mode = .writeIn
     #expect(StudyQueue.select(entries: [a,b], states: states, settings: settings, context: .init(now: epoch)) == Selection(b.id, isNew: true))
@@ -111,7 +114,7 @@ private struct Seeded: RandomNumberGenerator {
 @Test func priorityAndNewCadence() {
     let entries = (0..<4).map { entry("\($0)", "단어\($0)", "word \($0)") }
     let settings = StudySettings()
-    var review = LearningState(due: epoch.addingTimeInterval(-100)); review.phase = .review
+    var review = LearningState(due: epoch.addingTimeInterval(-100)); review.phase = .maintenance
     var relearning = LearningState(due: epoch); relearning.phase = .relearning
     let states = [CardKey("0", settings.direction, settings.mode): review, CardKey("1", settings.direction, settings.mode): relearning]
     #expect(StudyQueue.select(entries: entries, states: states, settings: settings, context: .init(now: epoch, answersSinceIntroduction: 0))?.entryID == "1")
@@ -126,13 +129,14 @@ private struct Seeded: RandomNumberGenerator {
     }
     #expect(StudyQueue.select(entries: [a], states: states, settings: settings, context: .init(now: epoch.addingTimeInterval(600))) != nil)
 }
-@Test func interveningCardsAndSmallPoolFallback() {
-    let a = entry("a", "가", "a"), b = entry("b", "나", "b"); let settings = StudySettings()
-    var failed = LearningState(due: epoch); failed.retryAfterSequence = 10
-    let states = [CardKey(a.id, settings.direction, settings.mode): failed, CardKey(b.id, settings.direction, settings.mode): LearningState(due: epoch)]
-    #expect(StudyQueue.select(entries: [a,b], states: states, settings: settings, context: .init(now: epoch, sequence: 8))?.entryID == "b")
-    #expect(StudyQueue.select(entries: [a], states: states, settings: settings, context: .init(now: epoch, sequence: 8))?.entryID == "a")
+@Test func eitherClockTriggersWithoutWaitingForTheOther() {
+    let state = Scheduler.grade(LearningState(due: epoch), correct: false, mode: .writeIn, now: epoch, sequence: 10)
+    #expect(!Scheduler.isDue(state, now: epoch, sequence: 12))
+    #expect(Scheduler.isDue(state, now: epoch, sequence: 13))
+    #expect(Scheduler.isDue(state, now: epoch.addingTimeInterval(30), sequence: 10))
+    #expect(Scheduler.isDue(state, now: epoch.addingTimeInterval(-1000), sequence: 13))
 }
+
 @Test func retiredCardsDoNotConsumeLearningCapacity() {
     let a = entry("a", "가", "a")
     var settings = StudySettings(); settings.learningLimit = 1
@@ -168,27 +172,30 @@ func speedRunContinuesPastPoolAndFormerBatchLimits(direction: Direction, mode: A
     var previous: String?
     var introductions = 0
     var repetitions = 0
-    for index in 0..<240 {
+    var sinceNew = 5
+    for index in 0..<1500 {
         guard let selection = StudyQueue.select(entries: entries, states: states, settings: settings,
-            context: .init(now: epoch, sequence: index, answersSinceIntroduction: 5, previousSense: previous)) else { break }
-        if selection.isNew { introductions += 1 } else { repetitions += 1 }
+            context: .init(now: epoch, sequence: index, answersSinceIntroduction: sinceNew, previousSense: previous)) else { break }
+        if selection.isNew { introductions += 1; sinceNew = 0 } else { repetitions += 1 }
+        sinceNew += 1
         if index == 4 { #expect(selection == Selection(entries[0].id, isNew: false)) }
         let key = CardKey(selection.entryID, direction, mode)
         states[key] = Scheduler.grade(states[key] ?? LearningState(due: epoch), correct: true, mode: mode, now: epoch, sequence: index + 1)
+        #expect(states.values.filter { $0.phase == .learning && $0.step <= 1 }.count <= 4)
         previous = selection.entryID
+        if introductions == 120 { break }
     }
     #expect(introductions == 120)
-    #expect(repetitions == 120)
+    #expect(repetitions > 120)
     #expect(states.count == 120)
-    #expect(StudyQueue.select(entries: entries, states: states, settings: settings, context: .init(now: epoch, previousSense: previous)) == nil)
-    #expect(states.values.allSatisfy { !$0.graduated && $0.due == epoch.addingTimeInterval(600) })
+
 }
 
 @Test func fullPoolStillPrioritizesDueFailuresOverUnseenWords() {
     let entries = (0..<12).map { entry("failure.\($0)", "단어\($0)", "word \($0)") }
     let settings = StudySettings()
     var states: [CardKey: LearningState] = [:]
-    for e in entries.prefix(10) { states[CardKey(e.id, settings.direction, settings.mode)] = LearningState(due: epoch.addingTimeInterval(600)) }
+    for e in entries.prefix(10) { states[CardKey(e.id, settings.direction, settings.mode)] = Scheduler.grade(LearningState(due: epoch), correct: true, mode: settings.mode, now: epoch, sequence: 1) }
     var failed = LearningState(due: epoch); failed.phase = .relearning
     states[CardKey(entries[0].id, settings.direction, settings.mode)] = failed
     #expect(StudyQueue.select(entries: entries, states: states, settings: settings, context: .init(now: epoch, answersSinceIntroduction: 5)) == Selection(entries[0].id, isNew: false))
@@ -229,26 +236,42 @@ func speedRunContinuesPastPoolAndFormerBatchLimits(direction: Direction, mode: A
     #expect(PronunciationRules.automaticSequence(enabled: true, direction: .koreanToEnglish, lemma: "집") == ["집"])
 }
 
-@Test func shortReinforcementPreservesLongerLearningSteps() throws {
+@Test func dualDeadlinesSurviveEncodingAndAdvanceOneStep() throws {
     var state = Scheduler.grade(LearningState(due: epoch), correct: true, mode: .writeIn, now: epoch, sequence: 1)
-    #expect(state.reinforceAfterSequence == 4)
+    #expect(state.dueSequence == 4)
     #expect(!Scheduler.isDue(state, now: epoch, sequence: 3))
     #expect(Scheduler.isDue(state, now: epoch, sequence: 4))
     state = try JSONDecoder().decode(LearningState.self, from: JSONEncoder().encode(state))
-    #expect(Scheduler.isDue(state, now: epoch, sequence: 4))
-    state = Scheduler.grade(state, correct: true, mode: .writeIn, now: epoch.addingTimeInterval(20), sequence: 5)
-    #expect(state.step == 1 && state.reinforceAfterSequence == nil)
-    #expect(state.due == epoch.addingTimeInterval(620))
-    #expect(!Scheduler.isDue(state, now: epoch.addingTimeInterval(30), sequence: 100))
-    state = Scheduler.grade(state, correct: true, mode: .writeIn, now: state.due, sequence: 6)
-    #expect(state.step == 2 && !state.graduated)
-    state = Scheduler.grade(state, correct: true, mode: .writeIn, now: state.due, sequence: 7)
-    #expect(state.graduated && state.interval == 3 * 86400)
+    state = Scheduler.grade(state, correct: true, mode: .writeIn, now: epoch, sequence: 1000)
+    #expect(state.step == 2 && state.dueSequence == 1008)
+    #expect(state.due == epoch.addingTimeInterval(300))
 }
+
 @Test func failedReinforcementResetsWithoutGraduation() {
     let first = Scheduler.grade(LearningState(due: epoch), correct: true, mode: .multipleChoice, now: epoch, sequence: 1)
     let failed = Scheduler.grade(first, correct: false, mode: .multipleChoice, now: epoch, sequence: 5)
     #expect(failed.step == 0 && failed.reinforceAfterSequence == nil)
-    #expect(failed.due == epoch.addingTimeInterval(60))
+    #expect(failed.due == epoch.addingTimeInterval(30))
     #expect(!failed.graduated && failed.totalWrong == 1)
+}
+
+@Test func maintenanceContinuesAndCapsBothClocks() {
+    var state = LearningState(due: epoch)
+    state.scheduleVersion = 3; state.phase = .maintenance
+    state.interval = 180 * 86400; state.answerInterval = 1000
+    let small = Scheduler.grade(state, correct: true, mode: .writeIn, now: epoch, sequence: 10)
+    #expect(small.phase == .maintenance && small.interval == 180 * 86400)
+    #expect(small.answerInterval == 1000 && small.dueSequence == 1010)
+    let large = Scheduler.grade(state, correct: true, mode: .writeIn, now: epoch, sequence: 10, introducedCount: 500)
+    #expect(large.answerInterval == 2000)
+}
+@Test func queueUsesTheStatesOwnClock() {
+    let word = entry("a", "가", "a")
+    let key = CardKey(word.id, .englishToKorean, .multipleChoice)
+    var state = Scheduler.grade(LearningState(due: epoch), correct: true, mode: key.mode, now: epoch, sequence: 1)
+    state.phase = .maintenance; state.clockTrackID = key.trackID
+    let states = [key: state]
+    let settings = StudySettings()
+    #expect(StudyQueue.select(entries: [word], states: states, settings: settings, context: .init(now: epoch, sequence: 999, trackSequences: [key.trackID: 1])) == nil)
+    #expect(StudyQueue.select(entries: [word], states: states, settings: settings, context: .init(now: epoch, trackSequences: [key.trackID: 4]))?.entryID == word.id)
 }

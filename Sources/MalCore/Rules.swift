@@ -46,47 +46,67 @@ public enum ChoiceBuilder {
     }
 }
 public enum Scheduler {
+    public static let learningTimes: [TimeInterval] = [60, 300, 1200, 21600, 86400]
+    public static let learningAnswers = [3, 8, 20, 50, 100]
     public static func isDue(_ state: LearningState, now: Date, sequence: Int) -> Bool {
-        state.due <= now || (state.phase == .learning && state.reinforceAfterSequence.map { sequence >= $0 } == true)
+        state.due <= now || state.dueSequence.map { sequence >= $0 } == true
     }
-
-    public static func grade(_ prior: LearningState, correct: Bool, mode: AnswerMode, now: Date, sequence: Int) -> LearningState {
+    public static func upgrade(_ prior: LearningState, sequence: Int) -> LearningState {
+        guard prior.scheduleVersion != 3 else { return prior }
         var state = prior
+        if state.phase == .learning {
+            state.step = state.step >= 2 ? 4 : state.step
+        }
+        state.answerInterval = state.phase == .maintenance ? 200 : state.phase == .relearning ? 3 : learningAnswers[max(0, min(4, state.step - 1))]
+        state.dueSequence = sequence + state.answerInterval!
+        state.reinforceAfterSequence = nil; state.retryAfterSequence = 0
+        state.scheduleVersion = 3; state.graduated = state.phase == .maintenance
+        return state
+    }
+    public static func grade(_ prior: LearningState, correct: Bool, mode: AnswerMode, now: Date, sequence: Int, introducedCount: Int = 0) -> LearningState {
+        var state = upgrade(prior, sequence: sequence - 1)
         state.recent = Array((state.recent + [correct]).suffix(20))
         if correct { state.totalCorrect += 1 } else { state.totalWrong += 1 }
-        state.retryAfterSequence = 0
-        state.reinforceAfterSequence = nil
+        state.lastAnsweredSequence = sequence
+        func schedule(_ seconds: TimeInterval, _ answers: Int) {
+            state.due = now.addingTimeInterval(seconds)
+            state.dueSequence = sequence + answers
+            state.answerInterval = answers
+        }
         if !correct {
-            state.step = 0
-            if state.phase == .review || state.phase == .relearning {
-                state.phase = .relearning; state.due = now.addingTimeInterval(600)
-            } else {
-                state.due = now.addingTimeInterval(60); state.retryAfterSequence = sequence + 3
-            }
+            if state.phase == .maintenance {
+                state.lapseTimeInterval = state.interval
+                state.lapseAnswerInterval = state.answerInterval
+                state.phase = .relearning; state.step = 0
+            } else if state.phase == .relearning { state.step = 0 }
+            else { state.step = max(0, state.step - 2) }
+            state.graduated = false
+            schedule(30, 3)
             return state
         }
         switch state.phase {
         case .learning:
-            // Short reinforcement is an extra recall, not the ten-minute learning step.
-            if prior.reinforceAfterSequence != nil && now < prior.due {
-                state.due = now.addingTimeInterval(600)
-                return state
-            }
             state.step += 1
-            if state.step >= 3 { state.phase = .review; state.graduated = true; state.interval = 3 * 86400; state.due = now.addingTimeInterval(state.interval) }
-            else {
-                state.due = now.addingTimeInterval(state.step == 1 ? 600 : 86400)
-                if state.step == 1 { state.reinforceAfterSequence = sequence + 3 }
-            }
+            if state.step >= 6 {
+                state.phase = .maintenance; state.graduated = true; state.interval = 3 * 86400
+                schedule(state.interval, 200)
+            } else { schedule(learningTimes[state.step - 1], learningAnswers[state.step - 1]) }
         case .relearning:
             state.step += 1
-            if state.step >= 2 { state.phase = .review; state.interval = 3 * 86400; state.due = now.addingTimeInterval(state.interval) }
-            else { state.due = now.addingTimeInterval(86400) }
-        case .review:
+            if state.step == 1 { schedule(300, 8) }
+            else if state.step == 2 { schedule(1200, 20) }
+            else {
+                state.phase = .maintenance; state.graduated = true
+                state.interval = min(180 * 86400, max(86400, (state.lapseTimeInterval ?? state.interval) / 2))
+                schedule(state.interval, max(50, Int(ceil(Double(state.lapseAnswerInterval ?? 200) / 2))))
+                state.lapseTimeInterval = nil; state.lapseAnswerInterval = nil
+            }
+        case .maintenance:
             let accuracy = Double(state.recent.filter { $0 }.count + 1) / Double(state.recent.count + 2)
             let multiplier = mode == .writeIn ? 1.5 + accuracy : 1.2 + 0.5 * accuracy
-            state.interval = min(365 * 86400, max(86400, state.interval * multiplier))
-            state.due = now.addingTimeInterval(state.interval)
+            state.interval = min(180 * 86400, max(86400, state.interval * multiplier))
+            let answers = min(max(1000, 4 * introducedCount), Int(ceil(Double(state.answerInterval ?? 200) * multiplier)))
+            schedule(state.interval, answers)
         }
         return state
     }
@@ -95,44 +115,43 @@ public enum StudyQueue {
     public static func select(entries: [Entry], states: [CardKey: LearningState], settings: StudySettings, context: QueueContext, activeEntryIDs: Set<String>? = nil, activeEntries: [Entry]? = nil) -> Selection? {
         let style = settings.formStyle ?? .dictionary
         let key: (Entry) -> CardKey = { FormPractice.key($0, direction: settings.direction, mode: settings.mode, style: style) }
-        let eligible = entries.filter { settings.parts.contains($0.partOfSpeech) && $0.id != context.previousSense && !FormPractice.forms($0, style: style).isEmpty }
-        // Count the entire mode/direction pool, including filtered and deselected banks.
-        let activeKeys = Set((activeEntries ?? entries).map(key))
-        let active = states.filter { $0.key.direction == settings.direction && $0.key.mode == settings.mode && activeKeys.contains($0.key) && $0.value.phase != .review && (activeEntryIDs?.contains($0.key.entryID) ?? true) }.count
-        let due = eligible.filter { states[key($0)].map { Scheduler.isDue($0, now: context.now, sequence: context.sequence) } ?? false }.sorted {
-            let a = states[key($0)]!, b = states[key($1)]!
-            let rank: (LearningState) -> Int = { $0.phase == .relearning ? 0 : $0.phase == .review ? 1 : 2 }
-            if rank(a) != rank(b) { return rank(a) < rank(b) }
-            return a.due == b.due ? $0.id < $1.id : a.due < b.due
+        let candidates = entries.filter { settings.parts.contains($0.partOfSpeech) && !FormPractice.forms($0, style: style).isEmpty }
+        let eligible = candidates.count > 1 ? candidates.filter { $0.id != context.previousSense } : candidates
+        let activeKeys = Set(entries.filter { settings.parts.contains($0.partOfSpeech) }.map(key))
+        let awaiting = states.filter { activeKeys.contains($0.key) && $0.value.phase == .learning && $0.value.step <= 1 && $0.value.totalCorrect + $0.value.totalWrong > 0 && (activeEntryIDs?.contains($0.key.entryID) ?? true) }
+        let firstLimit = max(1, settings.firstRepeatLimit ?? 4)
+        func count(_ entry: Entry, _ state: LearningState) -> Int {
+            context.trackSequences.map { $0[state.clockTrackID ?? key(entry).trackID, default: 0] } ?? context.sequence
         }
-        let ready = due.filter { states[key($0)]!.retryAfterSequence <= context.sequence }
+        let ready = eligible.filter { entry in
+            states[key(entry)].map { Scheduler.isDue($0, now: context.now, sequence: count(entry, $0)) } ?? false
+        }.sorted {
+            let a = states[key($0)]!, b = states[key($1)]!
+            let rank: (LearningState) -> Int = { $0.phase == .relearning ? 0 : $0.phase == .maintenance ? 1 : 2 }
+            if rank(a) != rank(b) { return rank(a) < rank(b) }
+            let overdueA = max(context.now.timeIntervalSince(a.due) / max(30, a.interval), Double(count($0, a) - (a.dueSequence ?? Int.max)) / Double(max(1, a.answerInterval ?? 1)))
+            let overdueB = max(context.now.timeIntervalSince(b.due) / max(30, b.interval), Double(count($1, b) - (b.dueSequence ?? Int.max)) / Double(max(1, b.answerInterval ?? 1)))
+            return overdueA == overdueB ? $0.id < $1.id : overdueA > overdueB
+        }
         var unseen = eligible.filter { states[key($0)] == nil }
         if settings.mode == .writeIn {
             unseen = unseen.enumerated().sorted { a, b in
-                let recognizedA = states[FormPractice.key(a.element, direction: settings.direction, mode: .multipleChoice, style: style)]?.graduated == true
-                let recognizedB = states[FormPractice.key(b.element, direction: settings.direction, mode: .multipleChoice, style: style)]?.graduated == true
+                let recognizedA = states[FormPractice.key(a.element, direction: settings.direction, mode: .multipleChoice, style: style)]?.phase == .maintenance
+                let recognizedB = states[FormPractice.key(b.element, direction: settings.direction, mode: .multipleChoice, style: style)]?.phase == .maintenance
                 return recognizedA == recognizedB ? a.offset < b.offset : recognizedA
             }.map(\.element)
         }
-        // Reinforce a newly learned answer before adding further vocabulary.
-        // Preserve due relearning and review priority ahead of this extra recall.
-        if let reinforcement = ready.first(where: { states[key($0)]!.reinforceAfterSequence != nil }) {
-            let urgent = ready.first { states[key($0)]!.phase != .learning }
-            return Selection((urgent ?? reinforcement).id, isNew: false)
-        }
-        // The pool target controls mixing, never blocks continuous study.
-        // When no review is ready, introduce unseen vocabulary even above target.
-        if let new = unseen.first, ready.isEmpty || (active < settings.learningLimit && context.answersSinceIntroduction >= 5) {
+        if let new = unseen.first, awaiting.count < firstLimit,
+           ready.isEmpty || context.answersSinceIntroduction >= 5 {
             return Selection(new.id, isNew: true)
         }
         if let next = ready.first { return Selection(next.id, isNew: false) }
-        // Intervening cards are unavailable; the minimum retry time still applies.
-        if let next = due.first { return Selection(next.id, isNew: false) }
-        // Small banks may not contain three other cards. Reinforce an alternative
-        // sense rather than stop, without pulling a scheduled review forward.
-        if let pending = eligible.filter({ states[key($0)]?.reinforceAfterSequence != nil })
-            .min(by: { states[key($0)]!.reinforceAfterSequence! < states[key($1)]!.reinforceAfterSequence! }) {
-            return Selection(pending.id, isNew: false)
+        if awaiting.count >= firstLimit || unseen.isEmpty {
+            let pending = eligible.filter { awaiting[key($0)] != nil }.min {
+                let a = states[key($0)]!, b = states[key($1)]!
+                return (a.lastAnsweredSequence ?? 0) == (b.lastAnsweredSequence ?? 0) ? $0.id < $1.id : (a.lastAnsweredSequence ?? 0) < (b.lastAnsweredSequence ?? 0)
+            }
+            if let pending { return Selection(pending.id, isNew: false) }
         }
         return nil
     }

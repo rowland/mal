@@ -49,7 +49,7 @@ private struct FormRandom: RandomNumberGenerator { mutating func next() -> UInt6
 }
 @Test func formTracksDoNotInheritDictionaryMastery() throws {
     let now = Date(timeIntervalSince1970: 1000)
-    var graduated = LearningState(due: now.addingTimeInterval(1000)); graduated.graduated = true; graduated.phase = .review
+    var graduated = LearningState(due: now.addingTimeInterval(1000)); graduated.graduated = true; graduated.phase = .maintenance
     let oldKey = CardKey(go.id, .englishToKorean, .multipleChoice)
     let politeKey = FormPractice.key(go, direction: .englishToKorean, mode: .multipleChoice, style: .polite)
     #expect(oldKey != politeKey)
@@ -63,7 +63,7 @@ private struct FormRandom: RandomNumberGenerator { mutating func next() -> UInt6
 @Test func recognizedPriorityUsesMatchingFormOnly() {
     var second = go; second.id = "test.second"
     let now = Date(timeIntervalSince1970: 1000)
-    var mastered = LearningState(due: now); mastered.graduated = true; mastered.phase = .review
+    var mastered = LearningState(due: now); mastered.graduated = true; mastered.phase = .maintenance
     var settings = StudySettings(); settings.formStyle = .polite; settings.mode = .writeIn
     let otherStyle = FormPractice.key(second, direction: settings.direction, mode: .multipleChoice, style: .casual)
     #expect(StudyQueue.select(entries: [go, second], states: [otherStyle: mastered], settings: settings, context: .init(now: now))?.entryID == go.id)

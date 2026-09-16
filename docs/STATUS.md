@@ -4,7 +4,7 @@ Last updated: 2026-09-16. This is the handoff entry point. Read REQUIREMENTS.md 
 
 ## Delivered development build
 
-- SwiftUI app with all four study combinations, eight-choice default and 4/6/8/10 settings, full-bank distractors, part-of-speech filters, write-in field, immediate correct advancement, paused errors, override/alias and undo.
+- SwiftUI app with all four study combinations, five-choice default and 4/5/6/8/10 settings, full-bank distractors, part-of-speech filters, write-in field, immediate correct advancement, paused errors, override/alias and undo.
 - Searchable bank browser, system pronunciation, settings and history.
 - Pure MalCore rules module: grading, distractors, queue, scheduling and independent direction/mode state.
 - SQLite content, aliases, presentations, attempts, schedules and settings; atomic grades/overrides, versioned bank updates, retirement/reactivation, standalone backups and pre-restore recovery.
@@ -177,3 +177,21 @@ Release app rebuilt and signature-verified at `build/Mal.app`. Visual acceptance
 - Small banks can repeat earlier when no alternatives remain, still excluding the previous sense. Existing stored due dates/progress are preserved; newly graded first successes receive reinforcement. No schema migration/reset. Introductions do not count as answers.
 - Validation: **49 tests passed** in a fresh scratch build. Four direction/mode simulations now introduce 120 words and perform 120 reinforcement recalls, beginning with a repeat on the fifth answer, without artificial caps or premature graduation. Timing, failure, restart/undo, and existing review/clock tests pass. Release build/signature verification passed.
 - Next: user study acceptance of the cadence, especially slow sessions, failures and small banks. Native layout unchanged except explanatory settings text; no new UI smoke run for this rules change.
+
+
+## Dual-clock iteration — 2026-09-16
+
+Implemented scheduler v3 and SQLite v3: granular time/answer spacing, perpetual maintenance, lapse recovery, four-word first-repeat capacity, persisted local clocks, undo and backed-up migration. Status tooltips explain due/recognized; previous-answer feedback includes the next date or answer distance. Settings exposes first-repeat capacity.
+
+Automated verification: `swift test --scratch-path /tmp/mal-dual-clock-tests`: **53 tests passed**, including four speed-run cases, dual deadlines, clock rollback, caps, track isolation, legacy migration, undo, restart and backup restoration. Build verification recorded below. No personal database was reset or used for automated tests.
+
+Manual acceptance pending (separate from automated results):
+1. In a temporary data directory, answer rapidly; the first word should recur after three intervening answers, then after eight. At most four words await the early repeat.
+2. Switch direction, form and answer mode; check that unrelated practice does not consume a card's answer deadline. Nouns share schedules, attached to their last-used style clock.
+3. Wait past a short deadline without answering; Check again should make it due. Recognized words remain eligible for periodic review.
+4. Make a mistake, Continue, undo, restart, and confirm the displayed next check and history. Verify five wrapped choices still fit the study window with the new footer line.
+5. Use a disposable v2 database copy: open, confirm backup, progress and due dates; restore an older backup and repeat.
+
+Next concrete action: user acceptance of the pacing and footer layout; adjust defaults from actual study feedback. Remaining release gates are unchanged: independent vocabulary verification and full Korean IME/UI acceptance. No manual UI acceptance is claimed for this iteration.
+
+Build verification: `./scripts/build-app.sh` succeeded; release executable and ad-hoc signature verified; published `build/Mal.app`. Final repeat of the suite: 53 tests passed (0 failures). `git diff --check` passed. Manual user testing remains pending.

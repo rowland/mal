@@ -66,11 +66,13 @@ public struct CardKey: Codable, Hashable, Sendable {
     public var mode: AnswerMode
     public var formStyle: KoreanPracticeStyle?
     public init(_ entryID: String, _ direction: Direction, _ mode: AnswerMode, formStyle: KoreanPracticeStyle? = nil) { self.entryID = entryID; self.direction = direction; self.mode = mode; self.formStyle = formStyle == .dictionary ? nil : formStyle }
+    public var trackID: String { "\(direction.rawValue)|\(mode.rawValue)|\(formStyle?.rawValue ?? "dictionary")" }
     public var storageID: String { "\(entryID)|\(direction.rawValue)|\(mode.rawValue)" + (formStyle.map { "|form:" + $0.rawValue } ?? "") }
 }
-public enum Phase: String, Codable, Sendable { case learning, review, relearning }
+public enum Phase: String, Codable, Sendable { case learning, relearning
+    case maintenance = "review" }
 public struct LearningState: Codable, Equatable, Sendable {
-    public static let schedulerVersion = 2
+    public static let schedulerVersion = 3
     public var phase: Phase = .learning
     public var step: Int = 0
     public var due: Date
@@ -80,6 +82,14 @@ public struct LearningState: Codable, Equatable, Sendable {
     public var totalWrong: Int = 0
     public var retryAfterSequence: Int = 0
     public var reinforceAfterSequence: Int?
+    public var dueSequence: Int?
+    public var answerInterval: Int?
+    public var clockTrackID: String?
+    public var lastAnsweredSequence: Int?
+    public var lapseTimeInterval: TimeInterval?
+    public var lapseAnswerInterval: Int?
+    public var scheduleVersion: Int?
+    // Legacy serialized compatibility only; maintenance is determined by phase.
     public var graduated: Bool = false
     public init(due: Date) { self.due = due }
 }
@@ -94,6 +104,7 @@ public struct StudySettings: Codable, Equatable, Sendable {
     public var automaticPronunciation: Bool?
     public var formStyle: KoreanPracticeStyle?
     public var learningLimit: Int = 10
+    public var firstRepeatLimit: Int?
     // Retained for compatibility with existing settings/backups; no automatic pauses.
     public var reviewBatch: Int = 50
     public init() {}
@@ -103,8 +114,9 @@ public struct QueueContext: Sendable {
     public var sequence: Int
     public var answersSinceIntroduction: Int
     public var previousSense: String?
-    public init(now: Date, sequence: Int = 0, answersSinceIntroduction: Int = 5, previousSense: String? = nil) {
-        self.now = now; self.sequence = sequence; self.answersSinceIntroduction = answersSinceIntroduction; self.previousSense = previousSense
+    public var trackSequences: [String: Int]?
+    public init(now: Date, sequence: Int = 0, answersSinceIntroduction: Int = 5, previousSense: String? = nil, trackSequences: [String: Int]? = nil) {
+        self.now = now; self.sequence = sequence; self.answersSinceIntroduction = answersSinceIntroduction; self.previousSense = previousSense; self.trackSequences = trackSequences
     }
 }
 public struct Selection: Equatable, Sendable {

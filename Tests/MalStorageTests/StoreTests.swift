@@ -197,5 +197,28 @@ private func fixture(version: Int = 1) -> Bank {
     store.close()
     let reopened = try Store(url: path); defer { reopened.close() }
     #expect(try reopened.states()[key] == first)
-    #expect(try reopened.states()[key]?.reinforceAfterSequence == 4)
+    #expect(try reopened.states()[key]?.dueSequence == 4)
+}
+
+@Test @MainActor func localClocksSurviveOverrideUndoAndRestore() throws {
+    let store = try temporaryStore(); defer { store.close() }
+    let key = CardKey("word", .englishToKorean, .writeIn, formStyle: .polite)
+    let other = CardKey("word", .koreanToEnglish, .multipleChoice, formStyle: .casual)
+    let now = Date(timeIntervalSince1970: 1000)
+    _ = try store.grade(key, answer: "a", correct: false, at: now, sequence: 999)
+    for n in 0..<25 { _ = try store.grade(other, answer: "b", correct: true, at: now, sequence: n) }
+    #expect(try store.answerSequences()[key.trackID] == 1)
+    #expect(try store.states()[key]?.dueSequence == 4)
+    _ = try store.grade(key, answer: "a", correct: false, at: now, sequence: 999)
+    _ = try store.correctLastAnswer(expectedKey: key, saveAlias: false)
+    #expect(try store.answerSequences()[key.trackID] == 2)
+    #expect(try store.answersSinceIntroduction(trackID: key.trackID) == 2)
+    _ = try store.undo()
+    #expect(try store.answerSequences()[key.trackID] == 1)
+    let backup = store.url.deletingLastPathComponent().appendingPathComponent("clocks.sqlite")
+    try store.backup(to: backup)
+    _ = try store.grade(key, answer: "a", correct: true, at: now, sequence: 999)
+    try store.restore(from: backup)
+    #expect(try store.answerSequences()[key.trackID] == 1)
+    #expect(try store.answerSequences()[other.trackID] == 25)
 }

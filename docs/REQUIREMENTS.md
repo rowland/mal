@@ -20,12 +20,12 @@ Accepted 2026-09-12. Working name Mal (말). This file preserves user decisions 
 | DATA-05 | Provenance, redistribution terms, and linguistic review tracked. Draft/generated content is not release-ready. |
 | DATA-06 | YAML v1, sample file, validator, atomic import, stable-ID updates, version checks, protected built-in namespace, retirement without history deletion. |
 | LEARN-01 | Four independent tracks per sense and form category (direction × mode). Manual switching; recognition priority applies only within the same form category. |
-| LEARN-02 | Continuous rotation; default learning-pool target 10 per track controls mixing while reviews are ready. Due short reinforcement precedes new insertion. Introduce unseen words when nothing is ready, even above target. |
-| LEARN-03 | Learning: first answer → short reinforcement after three intervening answers → 10 minutes → 1 day → 3-day review. Early reinforcement does not advance the timed step; if ten minutes already elapsed, the timed step can proceed. |
-| LEARN-04 | Review multiplier typed 1.5+accuracy, choice 1.2+0.5×accuracy; smoothed latest 20 accuracy; max 365 days. |
-| LEARN-05 | Failure resets learning, or relearns at 10 minutes and 1 day; preserve lifetime history. |
-| LEARN-06 | Due relearning, then overdue reviews; no automatic batch or daily pauses; no future reviews pulled forward. |
-| LEARN-07 | Separate presentation and grade records; atomic grade+schedule; undo restores prior state. |
+| LEARN-02 | Continuous rotation without daily caps; at most four words awaiting a first repeat by default (configurable). Introduce at most one new word per five answers while due cards exist; introduce immediately when none are due and capacity permits. |
+| LEARN-03 | Dual deadlines: after successive correct learning answers, 1 minute/3 answers, 5 minutes/8, 20 minutes/20, 6 hours/50, 1 day/100, then maintenance at 3 days/200. Either deadline suffices; advance only one step per success. |
+| LEARN-04 | Indefinite maintenance: multiply both intervals by typed 1.5+accuracy or choice 1.2+0.5×accuracy; smoothed latest 20 accuracy. Cap time at 180 days and answers at max(1000, four times introduced cards in track). |
+| LEARN-05 | Learning failure steps back two stages, retry 30 seconds/3 answers. Maintenance failure relearns at 30 seconds/3, 5 minutes/8, 20 minutes/20; three successes resume half prior intervals, minimum 1 day/50 answers. Preserve history. |
+| LEARN-06 | Due relearning, then overdue maintenance, then learning; either clock establishes due status. At first-repeat capacity with nothing due, repeat the least recently answered early-learning card. Avoid previous sense when alternatives exist. |
+| LEARN-07 | Presentation and grade records separate; atomically persist grades, schedules and track-local answer clocks. Undo restores prior state and counter. Recognized means ongoing multiple-choice maintenance, never exemption from review. |
 | STORE-01 | Content, aliases, events, settings and schedules separated; progress survives app/bank replacement. |
 | STORE-02 | Standalone backups, transactional restore, pre-migration/pre-restore recovery backups. |
 | ENG-01 | Pure testable rules module, injected time/randomness, unit and integration tests. |

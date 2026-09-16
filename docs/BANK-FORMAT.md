@@ -62,3 +62,8 @@ SQLite user_version is now 2. Card keys add optional `formStyle`, a stable categ
 Opening a version-1 database makes a `Mal.sqlite.pre-migration-v1-<UUID>` backup before the transactional version update. Existing bank content, keys, aliases and history remain in place. Version-1 and version-2 backups can be restored; the live database is always marked version 2 afterward. Older Mal builds reject version 2 rather than silently discarding form identity. To use an older build, use the pre-migration backup with that build, not the upgraded database.
 
 For uncued Korean-to-English form prompts, other catalogued lemmas of the same part of speech that share the displayed form contribute valid English meanings. Those meanings also cannot be distractors. The presented sense/category alone receives progress.
+
+
+### Progress v3
+
+YAML remains v1. SQLite v3 stores each attempt's direction/form/mode clock identity. Learning state adds optional dueSequence, answerInterval, clockTrackID, lastAnsweredSequence, lapseTimeInterval, lapseAnswerInterval and scheduleVersion fields. Time and count deadlines use OR. Existing records retain their dates and history through a backed-up migration; undo and restore preserve counters. See D-048 through D-052 for scheduling and migration policy.

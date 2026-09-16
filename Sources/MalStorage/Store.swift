@@ -36,7 +36,7 @@ public struct HistoryItem: Identifiable, Sendable {
         sqlite3_busy_timeout(db, 5000)
         do {
             let version = Int(try rows("PRAGMA user_version").first?.first ?? "0") ?? 0
-            guard version <= 2 else { throw StoreError(message: "This database requires a newer Mal version.") }
+            guard version <= 3 else { throw StoreError(message: "This database requires a newer Mal version.") }
             if version == 0 {
                 if !(try rows("SELECT name FROM sqlite_master WHERE type='table'")).isEmpty {
                     try backup(to: url.appendingPathExtension("pre-migration"))
@@ -52,13 +52,40 @@ public struct HistoryItem: Identifiable, Sendable {
                     try execute("PRAGMA user_version=2")
                 }
             }
-            if version == 1 {
-                try backup(to: url.appendingPathExtension("pre-migration-v1-" + UUID().uuidString))
-                try transaction { try execute("PRAGMA user_version=2") }
+            if version > 0 && version < 3 {
+                try backup(to: url.appendingPathExtension("pre-migration-v\(version)-" + UUID().uuidString))
             }
+            try migrateClocks()
             try execute("PRAGMA journal_mode=WAL")
             try execute("PRAGMA synchronous=FULL")
         } catch { sqlite3_close(db); db = nil; throw error }
+    }
+    private func migrateClocks() throws {
+        try transaction {
+            if !(try rows("PRAGMA table_info(attempts)")).contains(where: { $0[1] == "clock_track" }) {
+                try execute("ALTER TABLE attempts ADD COLUMN clock_track TEXT")
+            }
+            for row in try rows("SELECT id,key_data FROM attempts WHERE clock_track IS NULL") {
+                let key = try decode(CardKey.self, row[1])
+                try execute("UPDATE attempts SET clock_track=? WHERE id=?", [key.trackID, row[0]])
+            }
+            try execute("CREATE INDEX IF NOT EXISTS attempt_clocks ON attempts(clock_track,undone)")
+            let clocks = try answerSequences()
+            for (key, prior) in try states() where prior.scheduleVersion != LearningState.schedulerVersion {
+                let track = prior.clockTrackID ?? key.trackID
+                var state = Scheduler.upgrade(prior, sequence: clocks[track, default: 0])
+                state.clockTrackID = track
+                try execute("UPDATE states SET data=? WHERE id=?", [try json(state), key.storageID])
+            }
+            try execute("PRAGMA user_version=3")
+        }
+    }
+    public func answerSequences() throws -> [String: Int] {
+        Dictionary(uniqueKeysWithValues: try rows("SELECT clock_track,COUNT(*) FROM attempts WHERE undone=0 GROUP BY clock_track").map { ($0[0], Int($0[1])!) })
+    }
+    public func answersSinceIntroduction(trackID: String) throws -> Int {
+        let attempts = try rows("SELECT before_data FROM attempts WHERE undone=0 AND clock_track=? ORDER BY id DESC", [trackID])
+        return attempts.firstIndex(where: { $0[0].isEmpty }).map { $0 + 1 } ?? 5
     }
     private func json<T: Encodable>(_ value: T) throws -> String { String(decoding: try encoder.encode(value), as: UTF8.self) }
     private func decode<T: Decodable>(_ type: T.Type, _ value: String) throws -> T { try decoder.decode(type, from: Data(value.utf8)) }
@@ -141,13 +168,17 @@ public struct HistoryItem: Identifiable, Sendable {
     public func present(_ key: CardKey, at date: Date) throws {
         try execute("INSERT INTO presentations(key_data,timestamp) VALUES(?,?)", [try json(key), String(date.timeIntervalSince1970)])
     }
-    @discardableResult public func grade(_ key: CardKey, answer: String, correct: Bool, at now: Date, sequence: Int) throws -> LearningState {
+    @discardableResult public func grade(_ key: CardKey, answer: String, correct: Bool, at now: Date, sequence: Int, clockTrackID: String? = nil) throws -> LearningState {
         try transaction {
             let before = try rows("SELECT data FROM states WHERE id=?", [key.storageID]).first?.first
             let prior = try before.map { try decode(LearningState.self, $0) } ?? LearningState(due: now)
-            let after = Scheduler.grade(prior, correct: correct, mode: key.mode, now: now, sequence: sequence)
+            let track = clockTrackID ?? key.trackID
+            let localSequence = try answerSequences()[track, default: 0] + 1
+            let introduced = try states().filter { ($0.value.clockTrackID ?? $0.key.trackID) == track }.count + (before == nil ? 1 : 0)
+            var after = Scheduler.grade(prior, correct: correct, mode: key.mode, now: now, sequence: localSequence, introducedCount: introduced)
+            after.clockTrackID = track
             try execute("INSERT INTO states VALUES(?,?,?) ON CONFLICT(id) DO UPDATE SET data=excluded.data", [key.storageID, try json(key), try json(after)])
-            try execute("INSERT INTO attempts(key_data,answer,correct,timestamp,before_data,after_data,scheduler_version) VALUES(?,?,?,?,?,?,?)", [try json(key), answer, correct ? "1" : "0", String(now.timeIntervalSince1970), before, try json(after), String(LearningState.schedulerVersion)])
+            try execute("INSERT INTO attempts(key_data,answer,correct,timestamp,before_data,after_data,scheduler_version,clock_track) VALUES(?,?,?,?,?,?,?,?)", [try json(key), answer, correct ? "1" : "0", String(now.timeIntervalSince1970), before, try json(after), String(LearningState.schedulerVersion), track])
             return after
         }
     }
@@ -158,16 +189,17 @@ public struct HistoryItem: Identifiable, Sendable {
             if row[2].isEmpty { try execute("DELETE FROM states WHERE id=?", [key.storageID]) }
             else { try execute("UPDATE states SET data=? WHERE id=?", [row[2], key.storageID]) }
             try execute("UPDATE attempts SET undone=1 WHERE id=?", [row[0]])
+            try migrateClocks()
             return key
         }
     }
     @discardableResult public func correctLastAnswer(expectedKey: CardKey, saveAlias: Bool) throws -> LearningState {
         try transaction {
-            guard let row = try rows("SELECT key_data,answer,timestamp,correct FROM attempts WHERE undone=0 ORDER BY id DESC LIMIT 1").first,
+            guard let row = try rows("SELECT key_data,answer,timestamp,correct,clock_track FROM attempts WHERE undone=0 ORDER BY id DESC LIMIT 1").first,
                   try decode(CardKey.self, row[0]) == expectedKey, row[3] == "0" else { throw StoreError(message: "The last answer has changed; it cannot be overridden.") }
             _ = try undo()
             if saveAlias { try addAlias(entryID: expectedKey.entryID, direction: expectedKey.direction, answer: row[1]) }
-            return try grade(expectedKey, answer: row[1], correct: true, at: Date(timeIntervalSince1970: Double(row[2])!), sequence: answerSequence() + 1)
+            return try grade(expectedKey, answer: row[1], correct: true, at: Date(timeIntervalSince1970: Double(row[2])!), sequence: answerSequence() + 1, clockTrackID: row[4])
         }
     }
     public func history(limit: Int = 200) throws -> [HistoryItem] {
@@ -201,7 +233,7 @@ public struct HistoryItem: Identifiable, Sendable {
             guard sqlite3_step(statement) == SQLITE_ROW, let value = sqlite3_column_text(statement, 0) else { throw StoreError(message: "Invalid backup.") }
             return String(cString: value)
         }
-        guard try scalar("PRAGMA integrity_check") == "ok", ["1", "2"].contains(try scalar("PRAGMA user_version")),
+        guard try scalar("PRAGMA integrity_check") == "ok", ["1", "2", "3"].contains(try scalar("PRAGMA user_version")),
               try scalar("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name IN ('banks','entries','states','aliases','presentations','attempts','preferences')") == "7" else { throw StoreError(message: "Unsupported or corrupt Mal backup.") }
         // Decode every persisted domain record before replacing anything.
         for (table, column, validate) in [
@@ -231,7 +263,7 @@ public struct HistoryItem: Identifiable, Sendable {
         let status = sqlite3_backup_step(operation, -1)
         let finish = sqlite3_backup_finish(operation)
         guard status == SQLITE_DONE && finish == SQLITE_OK else { throw StoreError(message: "Restore failed; original backup retained.") }
-        try transaction { try execute("PRAGMA user_version=2") }
+        try migrateClocks()
         try execute("PRAGMA journal_mode=WAL")
     }
     public func close() { if db != nil { sqlite3_close(db); db = nil } }

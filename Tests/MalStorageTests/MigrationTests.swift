@@ -76,3 +76,21 @@ private func raw(_ path: URL, _ sql: String) throws {
     #expect(try reopened.history().first?.key == casualKey)
     #expect(try reopened.history().first?.undone == true)
 }
+
+@Test @MainActor func legacySchedulerMigrationPreservesDueAndAccuracy() throws {
+    let dir = FileManager.default.temporaryDirectory.appendingPathComponent("mal-clock-migration-\(UUID().uuidString)")
+    let path = dir.appendingPathComponent("legacy.sqlite")
+    let key = CardKey("old", .englishToKorean, .writeIn)
+    let now = Date(timeIntervalSince1970: 1000)
+    let original = try Store(url: path)
+    _ = try original.grade(key, answer: "old", correct: true, at: now, sequence: 1)
+    original.close()
+    try raw(path, "UPDATE states SET data=json_remove(data,'$.scheduleVersion','$.dueSequence','$.answerInterval','$.clockTrackID'); DROP INDEX attempt_clocks; ALTER TABLE attempts DROP COLUMN clock_track; PRAGMA user_version=2;")
+    let store = try Store(url: path); defer { store.close() }
+    let state = try #require(store.states()[key])
+    #expect(state.totalCorrect == 1 && state.recent == [true])
+    #expect(state.due == now.addingTimeInterval(60))
+    #expect(state.dueSequence == 4 && state.scheduleVersion == 3)
+    #expect(try store.answerSequences()[key.trackID] == 1)
+    #expect(try FileManager.default.contentsOfDirectory(atPath: dir.path).contains { $0.contains("pre-migration-v2-") })
+}

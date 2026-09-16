@@ -33,7 +33,10 @@ import MalStorage
     var hintRevealed = false
     var error: String?
     var history: [HistoryItem] = []
-    var sequence = 0
+    var trackSequences: [String: Int] = [:]
+    var clockTrackID: String { CardKey("", settings.direction, settings.mode, formStyle: practiceStyle == .dictionary ? nil : practiceStyle).trackID }
+    var sequence: Int { trackSequences[clockTrackID, default: 0] }
+    func count(for key: CardKey, state: LearningState) -> Int { trackSequences[state.clockTrackID ?? key.trackID, default: 0] }
     var sinceIntroduction = 5
     var search = ""
     var showLibrary = false
@@ -52,12 +55,12 @@ import MalStorage
         selectedEntries.filter { settings.parts.contains($0.partOfSpeech) && (search.isEmpty || $0.lemma.localizedCaseInsensitiveContains(search) || $0.english.joined(separator: " ").localizedCaseInsensitiveContains(search)) }
     }
     private var visibleKeys: Set<CardKey> { Set(practiceEntries.filter { settings.parts.contains($0.partOfSpeech) }.map(studyKey)) }
-    var dueCount: Int { let keys = visibleKeys; let now = Date(); return states.filter { keys.contains($0.key) && Scheduler.isDue($0.value, now: now, sequence: sequence) }.count }
-    var nextDue: Date? { let keys = visibleKeys; let now = Date(); return states.filter { keys.contains($0.key) && !Scheduler.isDue($0.value, now: now, sequence: sequence) }.map(\.value.due).min() }
-    var learningCount: Int { let keys = visibleKeys; return states.filter { keys.contains($0.key) && $0.value.phase != .review }.count }
+    var dueCount: Int { let keys = visibleKeys; let now = Date(); return states.filter { keys.contains($0.key) && Scheduler.isDue($0.value, now: now, sequence: count(for: $0.key, state: $0.value)) }.count }
+    var nextDue: Date? { let keys = visibleKeys; let now = Date(); return states.filter { keys.contains($0.key) && !Scheduler.isDue($0.value, now: now, sequence: count(for: $0.key, state: $0.value)) }.map(\.value.due).min() }
+    var learningCount: Int { let keys = visibleKeys; return states.filter { keys.contains($0.key) && $0.value.phase != .maintenance }.count }
     var recognizedCount: Int {
         let keys = Set(practiceEntries.filter { settings.parts.contains($0.partOfSpeech) }.map { FormPractice.key($0, direction: settings.direction, mode: .multipleChoice, style: practiceStyle) })
-        return states.filter { keys.contains($0.key) && $0.value.graduated }.count
+        return states.filter { keys.contains($0.key) && $0.value.phase == .maintenance }.count
     }
     init() {
         do {
@@ -97,7 +100,7 @@ import MalStorage
         guard let store else { return }
         if includeContent { banks = try store.banks() }
         states = try store.states(); aliases = try store.aliases(direction: settings.direction)
-        history = try store.history(); sequence = try store.answerSequence()
+        history = try store.history(); trackSequences = try store.answerSequences(); sinceIntroduction = try store.answersSinceIntroduction(trackID: clockTrackID)
     }
     func changeSettings() {
         lastSense = current?.id ?? lastSense
@@ -108,7 +111,8 @@ import MalStorage
     }
     func next() {
         introducing = false; waiting = false; hintRevealed = false; answer = ""; saveAlias = false
-        let context = QueueContext(now: Date(), sequence: sequence, answersSinceIntroduction: sinceIntroduction, previousSense: lastSense)
+        sinceIntroduction = (try? store?.answersSinceIntroduction(trackID: clockTrackID)) ?? 5
+        let context = QueueContext(now: Date(), sequence: sequence, answersSinceIntroduction: sinceIntroduction, previousSense: lastSense, trackSequences: trackSequences)
         guard let selection = StudyQueue.select(entries: practiceEntries, states: states, settings: settings, context: context, activeEntryIDs: Set(allEntries.map(\.id)), activeEntries: allEntries),
               let entry = selectedEntries.first(where: { $0.id == selection.entryID }) else { current = nil; return }
         current = entry
@@ -138,8 +142,8 @@ import MalStorage
     private func record(_ entry: Entry, _ value: String, correct: Bool) {
         do {
             let key = studyKey(entry)
-            _ = try store?.grade(key, answer: value, correct: correct, at: Date(), sequence: sequence + 1)
-            try reload(includeContent: false); sinceIntroduction += 1
+            _ = try store?.grade(key, answer: value, correct: correct, at: Date(), sequence: sequence + 1, clockTrackID: clockTrackID)
+            try reload(includeContent: false)
             lastSense = entry.id; lastGraded = entry
             feedback = "\(correct ? "Correct" : "Incorrect") · \(koreanText(entry)) — \(entry.english.joined(separator: "; "))"
             if correct { next() } else { waiting = true }
@@ -168,6 +172,11 @@ import MalStorage
             sinceIntroduction = max(0, sinceIntroduction - 1); lastSense = nil
             if let current { prepareChoices(current) }
         } catch { self.error = error.localizedDescription }
+    }
+    var nextCheckDescription: String? {
+        guard let entry = lastGraded, let state = states[studyKey(entry)] else { return nil }
+        let remaining = max(0, (state.dueSequence ?? 0) - count(for: studyKey(entry), state: state))
+        return "Next check: \(state.due.formatted(date: .abbreviated, time: .shortened)) or \(remaining) more answers."
     }
     func checkAgain() { lastSense = nil; next() }
     func setAutomaticPronunciation(_ enabled: Bool) {

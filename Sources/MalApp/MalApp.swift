@@ -71,9 +71,9 @@ struct ContentView: View {
                     Text("\(model.unavailableFormCount) words have no listed form for this style and are skipped.").font(.caption).foregroundStyle(.secondary)
                 }
                 HStack(spacing: 18) {
-                    Label("\(model.dueCount) due", systemImage: "clock")
+                    Label("\(model.dueCount) due", systemImage: "clock").help("Ready by elapsed time or intervening answers, whichever comes first.")
                     Text("\(model.learningCount) learning")
-                    Text("\(model.recognizedCount) recognized")
+                    Text("\(model.recognizedCount) recognized").help("Words in ongoing multiple-choice review, including those due again. Recognition never ends review.")
                     Spacer()
                 }.font(.callout).foregroundStyle(.secondary)
                 Divider()
@@ -90,7 +90,10 @@ struct ContentView: View {
                 Divider()
                 HStack {
                     if !model.waiting {
-                        Text(model.feedback.isEmpty ? "A little Korean, at your pace." : model.feedback).font(.callout).textSelection(.enabled)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(model.feedback.isEmpty ? "A little Korean, at your pace." : model.feedback).font(.callout).textSelection(.enabled)
+                            if let next = model.nextCheckDescription { Text(next).font(.caption).foregroundStyle(.secondary) }
+                        }
                     }
                     Spacer()
                     if model.waiting {
@@ -235,8 +238,8 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Picker("Multiple-choice answers", selection: $model.settings.choiceCount) { ForEach([4,5,6,8,10], id: \.self) { Text("\($0)").tag($0) } }
-            Stepper("Learning pool target: \(model.settings.learningLimit)", value: $model.settings.learningLimit, in: 1...100)
-            Text("The pool target limits new-word mixing while reviews are ready. New words return after three intervening answers for an early recall check. When nothing is ready, new words continue automatically. Each direction and answer mode keeps separate progress.").font(.caption).foregroundStyle(.secondary)
+            Stepper("Words awaiting first repeat: \(model.settings.firstRepeatLimit ?? 4)", value: Binding(get: { model.settings.firstRepeatLimit ?? 4 }, set: { model.settings.firstRepeatLimit = $0 }), in: 1...20)
+            Text("Words return when either their time or answer-count deadline arrives. New words are mixed gradually, with at most this many awaiting an early repeat. Recognized words remain in ongoing review. Each direction, form style and answer mode has its own answer clock.").font(.caption).foregroundStyle(.secondary)
             Button("Back Up Progress…", action: model.backup)
         }.onChange(of: model.settings) { _, _ in model.changeSettings() }
     }
