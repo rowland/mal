@@ -169,3 +169,11 @@ Release app rebuilt and signature-verified at `build/Mal.app`. Visual acceptance
 - Native smoke verified introduction, numeric-input guard, Return transition without grading, correct answer, and introduction of the next word. Tested in a disposable database; user acceptance remains separate.
 - Validation: **46 tests passed**, including a presentation/restart regression proving no answer history, accuracy or graduation is created before grading. Release build/signature verification and diff check passed.
 - Next: user testing of introductions in normal study, both directions/modes and Auto pronunciation; existing content/IME backlog remains open.
+
+## Early reinforcement before new vocabulary — 2026-09-16
+
+- Root cause: the first successful answer waited ten minutes, while the continuous-study fallback introduced unseen words throughout that gap.
+- Scheduler v2 adds a persisted three-intervening-answer reinforcement trigger after first success. Due reinforcement precedes new insertion; due relearning/reviews retain priority. A short correct repeat keeps step 1 and schedules the timed ten-minute check. The one-day check, three-day first review, accuracy-based growing intervals and failure behavior remain. Waiting ten minutes naturally can satisfy the timed step without a separate short repeat.
+- Small banks can repeat earlier when no alternatives remain, still excluding the previous sense. Existing stored due dates/progress are preserved; newly graded first successes receive reinforcement. No schema migration/reset. Introductions do not count as answers.
+- Validation: **49 tests passed** in a fresh scratch build. Four direction/mode simulations now introduce 120 words and perform 120 reinforcement recalls, beginning with a repeat on the fifth answer, without artificial caps or premature graduation. Timing, failure, restart/undo, and existing review/clock tests pass. Release build/signature verification passed.
+- Next: user study acceptance of the cadence, especially slow sessions, failures and small banks. Native layout unchanged except explanatory settings text; no new UI smoke run for this rules change.

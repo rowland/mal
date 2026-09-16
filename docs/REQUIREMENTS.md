@@ -20,8 +20,8 @@ Accepted 2026-09-12. Working name Mal (말). This file preserves user decisions 
 | DATA-05 | Provenance, redistribution terms, and linguistic review tracked. Draft/generated content is not release-ready. |
 | DATA-06 | YAML v1, sample file, validator, atomic import, stable-ID updates, version checks, protected built-in namespace, retirement without history deletion. |
 | LEARN-01 | Four independent tracks per sense and form category (direction × mode). Manual switching; recognition priority applies only within the same form category. |
-| LEARN-02 | Continuous rotation; default learning-pool target 10 per track controls mixing while reviews are ready. Always introduce unseen words when no review is ready, even above target. |
-| LEARN-03 | Learning: immediate → 10 minutes → 1 day; three consecutive due successes graduate to 3-day review. |
+| LEARN-02 | Continuous rotation; default learning-pool target 10 per track controls mixing while reviews are ready. Due short reinforcement precedes new insertion. Introduce unseen words when nothing is ready, even above target. |
+| LEARN-03 | Learning: first answer → short reinforcement after three intervening answers → 10 minutes → 1 day → 3-day review. Early reinforcement does not advance the timed step; if ten minutes already elapsed, the timed step can proceed. |
 | LEARN-04 | Review multiplier typed 1.5+accuracy, choice 1.2+0.5×accuracy; smoothed latest 20 accuracy; max 365 days. |
 | LEARN-05 | Failure resets learning, or relearns at 10 minutes and 1 day; preserve lifetime history. |
 | LEARN-06 | Due relearning, then overdue reviews; no automatic batch or daily pauses; no future reviews pulled forward. |

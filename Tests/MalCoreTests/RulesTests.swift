@@ -166,14 +166,19 @@ func speedRunContinuesPastPoolAndFormerBatchLimits(direction: Direction, mode: A
     var settings = StudySettings(); settings.direction = direction; settings.mode = mode
     var states: [CardKey: LearningState] = [:]
     var previous: String?
-    for (index, expected) in entries.enumerated() {
-        // Fixed clock: all successful cards remain in their 10-minute waiting step.
-        let selection = try #require(StudyQueue.select(entries: entries, states: states, settings: settings,
-            context: .init(now: epoch, sequence: index, answersSinceIntroduction: 1, previousSense: previous)))
-        #expect(selection == Selection(expected.id, isNew: true))
-        states[CardKey(expected.id, direction, mode)] = Scheduler.grade(LearningState(due: epoch), correct: true, mode: mode, now: epoch, sequence: index + 1)
-        previous = expected.id
+    var introductions = 0
+    var repetitions = 0
+    for index in 0..<240 {
+        guard let selection = StudyQueue.select(entries: entries, states: states, settings: settings,
+            context: .init(now: epoch, sequence: index, answersSinceIntroduction: 5, previousSense: previous)) else { break }
+        if selection.isNew { introductions += 1 } else { repetitions += 1 }
+        if index == 4 { #expect(selection == Selection(entries[0].id, isNew: false)) }
+        let key = CardKey(selection.entryID, direction, mode)
+        states[key] = Scheduler.grade(states[key] ?? LearningState(due: epoch), correct: true, mode: mode, now: epoch, sequence: index + 1)
+        previous = selection.entryID
     }
+    #expect(introductions == 120)
+    #expect(repetitions == 120)
     #expect(states.count == 120)
     #expect(StudyQueue.select(entries: entries, states: states, settings: settings, context: .init(now: epoch, previousSense: previous)) == nil)
     #expect(states.values.allSatisfy { !$0.graduated && $0.due == epoch.addingTimeInterval(600) })
@@ -222,4 +227,28 @@ func speedRunContinuesPastPoolAndFormerBatchLimits(direction: Direction, mode: A
     #expect(PronunciationRules.automaticSequence(enabled: false, direction: .englishToKorean, lemma: "집", submittedAnswer: "물", correct: false).isEmpty)
     #expect(PronunciationRules.automaticSequence(enabled: true, direction: .koreanToEnglish, lemma: "집", submittedAnswer: "water", correct: false).isEmpty)
     #expect(PronunciationRules.automaticSequence(enabled: true, direction: .koreanToEnglish, lemma: "집") == ["집"])
+}
+
+@Test func shortReinforcementPreservesLongerLearningSteps() throws {
+    var state = Scheduler.grade(LearningState(due: epoch), correct: true, mode: .writeIn, now: epoch, sequence: 1)
+    #expect(state.reinforceAfterSequence == 4)
+    #expect(!Scheduler.isDue(state, now: epoch, sequence: 3))
+    #expect(Scheduler.isDue(state, now: epoch, sequence: 4))
+    state = try JSONDecoder().decode(LearningState.self, from: JSONEncoder().encode(state))
+    #expect(Scheduler.isDue(state, now: epoch, sequence: 4))
+    state = Scheduler.grade(state, correct: true, mode: .writeIn, now: epoch.addingTimeInterval(20), sequence: 5)
+    #expect(state.step == 1 && state.reinforceAfterSequence == nil)
+    #expect(state.due == epoch.addingTimeInterval(620))
+    #expect(!Scheduler.isDue(state, now: epoch.addingTimeInterval(30), sequence: 100))
+    state = Scheduler.grade(state, correct: true, mode: .writeIn, now: state.due, sequence: 6)
+    #expect(state.step == 2 && !state.graduated)
+    state = Scheduler.grade(state, correct: true, mode: .writeIn, now: state.due, sequence: 7)
+    #expect(state.graduated && state.interval == 3 * 86400)
+}
+@Test func failedReinforcementResetsWithoutGraduation() {
+    let first = Scheduler.grade(LearningState(due: epoch), correct: true, mode: .multipleChoice, now: epoch, sequence: 1)
+    let failed = Scheduler.grade(first, correct: false, mode: .multipleChoice, now: epoch, sequence: 5)
+    #expect(failed.step == 0 && failed.reinforceAfterSequence == nil)
+    #expect(failed.due == epoch.addingTimeInterval(60))
+    #expect(!failed.graduated && failed.totalWrong == 1)
 }

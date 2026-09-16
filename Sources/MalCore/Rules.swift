@@ -46,11 +46,16 @@ public enum ChoiceBuilder {
     }
 }
 public enum Scheduler {
+    public static func isDue(_ state: LearningState, now: Date, sequence: Int) -> Bool {
+        state.due <= now || (state.phase == .learning && state.reinforceAfterSequence.map { sequence >= $0 } == true)
+    }
+
     public static func grade(_ prior: LearningState, correct: Bool, mode: AnswerMode, now: Date, sequence: Int) -> LearningState {
         var state = prior
         state.recent = Array((state.recent + [correct]).suffix(20))
         if correct { state.totalCorrect += 1 } else { state.totalWrong += 1 }
         state.retryAfterSequence = 0
+        state.reinforceAfterSequence = nil
         if !correct {
             state.step = 0
             if state.phase == .review || state.phase == .relearning {
@@ -62,9 +67,17 @@ public enum Scheduler {
         }
         switch state.phase {
         case .learning:
+            // Short reinforcement is an extra recall, not the ten-minute learning step.
+            if prior.reinforceAfterSequence != nil && now < prior.due {
+                state.due = now.addingTimeInterval(600)
+                return state
+            }
             state.step += 1
             if state.step >= 3 { state.phase = .review; state.graduated = true; state.interval = 3 * 86400; state.due = now.addingTimeInterval(state.interval) }
-            else { state.due = now.addingTimeInterval(state.step == 1 ? 600 : 86400) }
+            else {
+                state.due = now.addingTimeInterval(state.step == 1 ? 600 : 86400)
+                if state.step == 1 { state.reinforceAfterSequence = sequence + 3 }
+            }
         case .relearning:
             state.step += 1
             if state.step >= 2 { state.phase = .review; state.interval = 3 * 86400; state.due = now.addingTimeInterval(state.interval) }
@@ -86,7 +99,7 @@ public enum StudyQueue {
         // Count the entire mode/direction pool, including filtered and deselected banks.
         let activeKeys = Set((activeEntries ?? entries).map(key))
         let active = states.filter { $0.key.direction == settings.direction && $0.key.mode == settings.mode && activeKeys.contains($0.key) && $0.value.phase != .review && (activeEntryIDs?.contains($0.key.entryID) ?? true) }.count
-        let due = eligible.filter { states[key($0)].map { $0.due <= context.now } ?? false }.sorted {
+        let due = eligible.filter { states[key($0)].map { Scheduler.isDue($0, now: context.now, sequence: context.sequence) } ?? false }.sorted {
             let a = states[key($0)]!, b = states[key($1)]!
             let rank: (LearningState) -> Int = { $0.phase == .relearning ? 0 : $0.phase == .review ? 1 : 2 }
             if rank(a) != rank(b) { return rank(a) < rank(b) }
@@ -101,6 +114,12 @@ public enum StudyQueue {
                 return recognizedA == recognizedB ? a.offset < b.offset : recognizedA
             }.map(\.element)
         }
+        // Reinforce a newly learned answer before adding further vocabulary.
+        // Preserve due relearning and review priority ahead of this extra recall.
+        if let reinforcement = ready.first(where: { states[key($0)]!.reinforceAfterSequence != nil }) {
+            let urgent = ready.first { states[key($0)]!.phase != .learning }
+            return Selection((urgent ?? reinforcement).id, isNew: false)
+        }
         // The pool target controls mixing, never blocks continuous study.
         // When no review is ready, introduce unseen vocabulary even above target.
         if let new = unseen.first, ready.isEmpty || (active < settings.learningLimit && context.answersSinceIntroduction >= 5) {
@@ -109,6 +128,12 @@ public enum StudyQueue {
         if let next = ready.first { return Selection(next.id, isNew: false) }
         // Intervening cards are unavailable; the minimum retry time still applies.
         if let next = due.first { return Selection(next.id, isNew: false) }
+        // Small banks may not contain three other cards. Reinforce an alternative
+        // sense rather than stop, without pulling a scheduled review forward.
+        if let pending = eligible.filter({ states[key($0)]?.reinforceAfterSequence != nil })
+            .min(by: { states[key($0)]!.reinforceAfterSequence! < states[key($1)]!.reinforceAfterSequence! }) {
+            return Selection(pending.id, isNew: false)
+        }
         return nil
     }
 }

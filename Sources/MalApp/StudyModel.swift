@@ -52,8 +52,8 @@ import MalStorage
         selectedEntries.filter { settings.parts.contains($0.partOfSpeech) && (search.isEmpty || $0.lemma.localizedCaseInsensitiveContains(search) || $0.english.joined(separator: " ").localizedCaseInsensitiveContains(search)) }
     }
     private var visibleKeys: Set<CardKey> { Set(practiceEntries.filter { settings.parts.contains($0.partOfSpeech) }.map(studyKey)) }
-    var dueCount: Int { let keys = visibleKeys; let now = Date(); return states.filter { keys.contains($0.key) && $0.value.due <= now }.count }
-    var nextDue: Date? { let keys = visibleKeys; let now = Date(); return states.filter { keys.contains($0.key) && $0.value.due > now }.map(\.value.due).min() }
+    var dueCount: Int { let keys = visibleKeys; let now = Date(); return states.filter { keys.contains($0.key) && Scheduler.isDue($0.value, now: now, sequence: sequence) }.count }
+    var nextDue: Date? { let keys = visibleKeys; let now = Date(); return states.filter { keys.contains($0.key) && !Scheduler.isDue($0.value, now: now, sequence: sequence) }.map(\.value.due).min() }
     var learningCount: Int { let keys = visibleKeys; return states.filter { keys.contains($0.key) && $0.value.phase != .review }.count }
     var recognizedCount: Int {
         let keys = Set(practiceEntries.filter { settings.parts.contains($0.partOfSpeech) }.map { FormPractice.key($0, direction: settings.direction, mode: .multipleChoice, style: practiceStyle) })

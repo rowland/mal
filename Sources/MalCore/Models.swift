@@ -70,7 +70,7 @@ public struct CardKey: Codable, Hashable, Sendable {
 }
 public enum Phase: String, Codable, Sendable { case learning, review, relearning }
 public struct LearningState: Codable, Equatable, Sendable {
-    public static let schedulerVersion = 1
+    public static let schedulerVersion = 2
     public var phase: Phase = .learning
     public var step: Int = 0
     public var due: Date
@@ -79,6 +79,7 @@ public struct LearningState: Codable, Equatable, Sendable {
     public var totalCorrect: Int = 0
     public var totalWrong: Int = 0
     public var retryAfterSequence: Int = 0
+    public var reinforceAfterSequence: Int?
     public var graduated: Bool = false
     public init(due: Date) { self.due = due }
 }

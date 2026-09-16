@@ -236,7 +236,7 @@ struct SettingsView: View {
         Form {
             Picker("Multiple-choice answers", selection: $model.settings.choiceCount) { ForEach([4,5,6,8,10], id: \.self) { Text("\($0)").tag($0) } }
             Stepper("Learning pool target: \(model.settings.learningLimit)", value: $model.settings.learningLimit, in: 1...100)
-            Text("The pool target limits new-word mixing while reviews are ready. When nothing is due, new words continue automatically. Each direction and answer mode keeps separate progress.").font(.caption).foregroundStyle(.secondary)
+            Text("The pool target limits new-word mixing while reviews are ready. New words return after three intervening answers for an early recall check. When nothing is ready, new words continue automatically. Each direction and answer mode keeps separate progress.").font(.caption).foregroundStyle(.secondary)
             Button("Back Up Progress…", action: model.backup)
         }.onChange(of: model.settings) { _, _ in model.changeSettings() }
     }

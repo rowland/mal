@@ -89,3 +89,7 @@ Automated UI smoke (2026-09-14): isolated `/tmp/Mal Forms QA.app` with `MAL_DATA
 In both directions and answer modes, introduce an unseen track. Verify Korean form, English meanings, optional lemma/cue, replay and Continue. Number keys must not grade; Return reveals the same quiz without changing accuracy or learning counts. First submitted answer starts the first learning step. Restart before grading should reintroduce the word; already graded reviews should quiz directly. Check held Return, mode/form switching, and Undo.
 
 Native smoke, 2026-09-16: `/tmp/Mal Introduction QA.app`, data `/tmp/mal-introduction-ui`. Verified 집 → house/home introduction, ignored numeric key, Return to unchanged house quiz with zero learning count, correct numeric answer, then 물 → water introduction. Screenshot inspected; closed QA copy. No personal database used.
+
+### Early reinforcement cadence
+
+With a fresh track and at least eight words, correctly answer introductions A, B, C, D quickly. The next quiz should repeat A (without another introduction), followed by ready reinforcement ahead of new words. Verify short repeats do not graduate cards: subsequent checks remain ten minutes, one day, then review. Test wrong reinforcement, a two-word custom bank, mode switches, restart, and Undo. Future review cards must never be pulled forward.

@@ -185,3 +185,17 @@ private func fixture(version: Int = 1) -> Bank {
     #expect(first.totalWrong == 0)
     #expect(first.graduated == false)
 }
+
+@Test @MainActor func reinforcementSurvivesRestartAndUndo() throws {
+    let store = try temporaryStore(); let path = store.url
+    let key = CardKey("test.go", .englishToKorean, .writeIn, formStyle: .polite)
+    let now = Date(timeIntervalSince1970: 1000)
+    let first = try store.grade(key, answer: "가요", correct: true, at: now, sequence: 1)
+    _ = try store.grade(key, answer: "가요", correct: true, at: now.addingTimeInterval(20), sequence: 5)
+    #expect(try store.states()[key]?.reinforceAfterSequence == nil)
+    #expect(try store.undo() == key)
+    store.close()
+    let reopened = try Store(url: path); defer { reopened.close() }
+    #expect(try reopened.states()[key] == first)
+    #expect(try reopened.states()[key]?.reinforceAfterSequence == 4)
+}
