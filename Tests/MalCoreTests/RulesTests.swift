@@ -111,14 +111,14 @@ private struct Seeded: RandomNumberGenerator {
     settings.learningLimit = 2
     #expect(StudyQueue.select(entries: [noun, verb], states: states, settings: settings, context: .init(now: epoch)) == Selection(verb.id, isNew: true))
 }
-@Test func priorityAndNewCadence() {
+@Test func dueCardsAlwaysPrecedeIntroductions() {
     let entries = (0..<4).map { entry("\($0)", "단어\($0)", "word \($0)") }
     let settings = StudySettings()
     var review = LearningState(due: epoch.addingTimeInterval(-100)); review.phase = .maintenance
     var relearning = LearningState(due: epoch); relearning.phase = .relearning
     let states = [CardKey("0", settings.direction, settings.mode): review, CardKey("1", settings.direction, settings.mode): relearning]
     #expect(StudyQueue.select(entries: entries, states: states, settings: settings, context: .init(now: epoch, answersSinceIntroduction: 0))?.entryID == "1")
-    #expect(StudyQueue.select(entries: entries, states: states, settings: settings, context: .init(now: epoch, answersSinceIntroduction: 5)) == Selection("2", isNew: true))
+    #expect(StudyQueue.select(entries: entries, states: states, settings: settings, context: .init(now: epoch, answersSinceIntroduction: 5)) == Selection("1", isNew: false))
     #expect(StudyQueue.select(entries: entries, states: states, settings: settings, context: .init(now: epoch, answersSinceIntroduction: 0, previousSense: "1"))?.entryID == "0")
 }
 @Test func futureCardsAndClockRollback() {
@@ -274,4 +274,18 @@ func speedRunContinuesPastPoolAndFormerBatchLimits(direction: Direction, mode: A
     let settings = StudySettings()
     #expect(StudyQueue.select(entries: [word], states: states, settings: settings, context: .init(now: epoch, sequence: 999, trackSequences: [key.trackID: 1])) == nil)
     #expect(StudyQueue.select(entries: [word], states: states, settings: settings, context: .init(now: epoch, trackSequences: [key.trackID: 4]))?.entryID == word.id)
+}
+
+
+@Test(arguments: [Phase.learning, .relearning, .maintenance], [false, true])
+func introductionsResumeOnlyAfterDueCardsClear(phase: Phase, iterationDue: Bool) {
+    let words = [entry("old", "집", "house"), entry("new", "책", "book")]
+    let settings = StudySettings()
+    let key = CardKey("old", settings.direction, settings.mode)
+    var state = LearningState(due: epoch.addingTimeInterval(iterationDue ? 600 : -1))
+    state.phase = phase; state.step = 2; state.dueSequence = iterationDue ? 10 : 100
+    let context = QueueContext(now: epoch, sequence: 10, answersSinceIntroduction: 1000)
+    #expect(StudyQueue.select(entries: words, states: [key: state], settings: settings, context: context) == Selection("old", isNew: false))
+    state.due = epoch.addingTimeInterval(600); state.dueSequence = 100
+    #expect(StudyQueue.select(entries: words, states: [key: state], settings: settings, context: context) == Selection("new", isNew: true))
 }

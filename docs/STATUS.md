@@ -195,3 +195,9 @@ Manual acceptance pending (separate from automated results):
 Next concrete action: user acceptance of the pacing and footer layout; adjust defaults from actual study feedback. Remaining release gates are unchanged: independent vocabulary verification and full Korean IME/UI acceptance. No manual UI acceptance is claimed for this iteration.
 
 Build verification: `./scripts/build-app.sh` succeeded; release executable and ad-hoc signature verified; published `build/Mal.app`. Final repeat of the suite: 53 tests passed (0 failures). `git diff --check` passed. Manual user testing remains pending.
+
+## Due-first introductions — 2026-09-16
+
+User observed a new introduction with 59 cards due. Removed the five-answer exception: eligible due learning/relearning/maintenance cards now always precede unseen cards. New introductions resume when no eligible cards are due and first-repeat capacity permits. Scheduling intervals, history and database format are unchanged.
+
+Verification: `swift test --scratch-path /tmp/mal-dual-clock-tests` passed **54 tests**, including six phase/clock combinations asserting due priority and resumption, plus all four speed-run cases. `./scripts/build-app.sh` succeeded and published `build/Mal.app`; `git diff --check` passed. No personal data touched. Manual user acceptance pending: reopen the app with a due backlog, answer beyond five cards and confirm no introduction until eligible due cards clear; then confirm introductions resume. Next action: user verification of that pacing. Existing vocabulary/IME release gates remain open.

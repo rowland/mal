@@ -142,7 +142,7 @@ public enum StudyQueue {
             }.map(\.element)
         }
         if let new = unseen.first, awaiting.count < firstLimit,
-           ready.isEmpty || context.answersSinceIntroduction >= 5 {
+           ready.isEmpty {
             return Selection(new.id, isNew: true)
         }
         if let next = ready.first { return Selection(next.id, isNew: false) }
