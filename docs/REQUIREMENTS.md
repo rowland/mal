@@ -32,3 +32,5 @@ Accepted 2026-09-12. Working name Mal (말). This file preserves user decisions 
 | ENG-02 | Git and repository Markdown track requirements, decisions, milestones, defects, evidence and handoffs. |
 
 Deferred: cloud sync, distribution/notarization, in-app vocabulary editor, AI/URL bank generation, romanized answers, sentence-cloze exercises.
+
+UX-10: During a quiz, offer I don’t know (⌘K). Reveal the word’s introduction, record unsuccessful recall, and continue to another card before a later retry. Show a distinct history label and support Undo. Keep Show hint independent.

@@ -19,6 +19,8 @@ public struct HistoryItem: Identifiable, Sendable {
     public let key: CardKey
     public let answer: String
     public let correct: Bool
+    // Empty answers are reserved for explicit unsuccessful recall, never submitted text.
+    public var didNotKnow: Bool { !correct && answer.isEmpty }
     public let timestamp: Date
     public let undone: Bool
 }
@@ -181,6 +183,9 @@ public struct HistoryItem: Identifiable, Sendable {
             try execute("INSERT INTO attempts(key_data,answer,correct,timestamp,before_data,after_data,scheduler_version,clock_track) VALUES(?,?,?,?,?,?,?,?)", [try json(key), answer, correct ? "1" : "0", String(now.timeIntervalSince1970), before, try json(after), String(LearningState.schedulerVersion), track])
             return after
         }
+    }
+    @discardableResult public func didNotKnow(_ key: CardKey, at now: Date, clockTrackID: String? = nil) throws -> LearningState {
+        try grade(key, answer: "", correct: false, at: now, sequence: 0, clockTrackID: clockTrackID)
     }
     @discardableResult public func undo() throws -> CardKey? {
         try transaction {

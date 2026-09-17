@@ -28,6 +28,8 @@ import MalStorage
     }
     var answer = ""
     var feedback = ""
+    var reintroducing = false
+    private var skipNextSense: String?
     var introducing = false
     var waiting = false
     var hintRevealed = false
@@ -110,10 +112,12 @@ import MalStorage
         next()
     }
     func next() {
+        reintroducing = false
+        let excluded = skipNextSense; skipNextSense = nil
         introducing = false; waiting = false; hintRevealed = false; answer = ""; saveAlias = false
         sinceIntroduction = (try? store?.answersSinceIntroduction(trackID: clockTrackID)) ?? 5
         let context = QueueContext(now: Date(), sequence: sequence, answersSinceIntroduction: sinceIntroduction, previousSense: lastSense, trackSequences: trackSequences)
-        guard let selection = StudyQueue.select(entries: practiceEntries, states: states, settings: settings, context: context, activeEntryIDs: Set(allEntries.map(\.id)), activeEntries: allEntries),
+        guard let selection = StudyQueue.select(entries: practiceEntries.filter { $0.id != excluded }, states: states, settings: settings, context: context, activeEntryIDs: Set(allEntries.map(\.id)), activeEntries: allEntries),
               let entry = selectedEntries.first(where: { $0.id == selection.entryID }) else { current = nil; return }
         current = entry
         introducing = selection.isNew
@@ -125,8 +129,20 @@ import MalStorage
     }
     func continueIntroduction() {
         guard introducing else { return }
+        if reintroducing { skipNextSense = current?.id; next(); return }
         introducing = false
         // Keep this card and its choices. Reading the introduction is not a grade.
+    }
+    func dontKnow() {
+        guard !introducing, !waiting, let entry = current else { return }
+        do {
+            _ = try store?.didNotKnow(studyKey(entry), at: Date(), clockTrackID: clockTrackID)
+            try reload(includeContent: false)
+            lastSense = entry.id; lastGraded = entry
+            answer = ""; introducing = true; reintroducing = true
+            feedback = "I don’t know · \(koreanText(entry)) — \(entry.english.joined(separator: "; "))"
+            pronounceAutomatically(entry)
+        } catch { self.error = error.localizedDescription }
     }
     func submit(_ text: String? = nil) {
         guard !introducing else { return }
@@ -168,7 +184,7 @@ import MalStorage
             if let style = key.formStyle { settings.formStyle = style }
             else if let current, FormPractice.applies(current, style: practiceStyle) { settings.formStyle = .dictionary }
             try store?.saveSettings(settings)
-            introducing = false; waiting = false; hintRevealed = false; answer = ""; feedback = "Previous grade undone."
+            reintroducing = false; introducing = false; waiting = false; hintRevealed = false; answer = ""; feedback = "Previous grade undone."
             sinceIntroduction = max(0, sinceIntroduction - 1); lastSense = nil
             if let current { prepareChoices(current) }
         } catch { self.error = error.localizedDescription }

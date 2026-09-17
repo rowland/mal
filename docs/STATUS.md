@@ -201,3 +201,13 @@ Build verification: `./scripts/build-app.sh` succeeded; release executable and a
 User observed a new introduction with 59 cards due. Removed the five-answer exception: eligible due learning/relearning/maintenance cards now always precede unseen cards. New introductions resume when no eligible cards are due and first-repeat capacity permits. Scheduling intervals, history and database format are unchanged.
 
 Verification: `swift test --scratch-path /tmp/mal-dual-clock-tests` passed **54 tests**, including six phase/clock combinations asserting due priority and resumption, plus all four speed-run cases. `./scripts/build-app.sh` succeeded and published `build/Mal.app`; `git diff --check` passed. No personal data touched. Manual user acceptance pending: reopen the app with a due backlog, answer beyond five cards and confirm no introduction until eligible due cards clear; then confirm introductions resume. Next action: user verification of that pacing. Existing vocabulary/IME release gates remain open.
+
+## Explicit unsuccessful recall — 2026-09-17
+
+Added I don’t know below choices/write-in, with ⌘K. Reveals actual Korean form, meanings, cue and dictionary form where applicable; keeps manual pronunciation and honors Auto. Continue advances and excludes this sense from the next selection. Uses normal failure spacing (30 seconds or three answers), distinct history label, and existing atomic grade/undo. Progress format unchanged.
+
+Automated: `swift test --scratch-path /tmp/mal-dual-clock-tests` passed **55 tests**. New storage regression verifies failure timing, accuracy/count, distinct history across restart, and exact schedule/counter restoration by undo. `git diff --check` passed. Manual/UI acceptance remains pending: in both directions and modes, activate by button and ⌘K; verify one recorded failure, readable introduction, Return advances, Auto/manual pronunciation, history label and Undo. Check a single-word bank shows a waiting state rather than an immediate quiz. No personal database used.
+
+Next action: user acceptance of button placement, shortcut with Korean IME active, and reintroduction pacing. Vocabulary verification and broader IME acceptance remain open.
+
+Build: `./scripts/build-app.sh` succeeded, publishing the signed local `build/Mal.app`. Native manual smoke not performed in this iteration; the script above is pending user acceptance.

@@ -222,3 +222,23 @@ private func fixture(version: Int = 1) -> Bank {
     #expect(try store.answerSequences()[key.trackID] == 1)
     #expect(try store.answerSequences()[other.trackID] == 25)
 }
+
+@Test @MainActor func unknownRecallPersistsAndUndoRestoresSchedule() throws {
+    let store = try temporaryStore(); let path = store.url
+    let key = CardKey("test.go", .englishToKorean, .writeIn, formStyle: .polite)
+    let now = Date(timeIntervalSince1970: 1000)
+    let before = try store.grade(key, answer: "가요", correct: true, at: now, sequence: 1)
+    let after = try store.didNotKnow(key, at: now, clockTrackID: key.trackID)
+    #expect(after.totalWrong == 1 && after.totalCorrect == 1)
+    #expect(after.due == now.addingTimeInterval(30) && after.dueSequence == 5)
+    #expect(try store.history().first?.didNotKnow == true)
+    #expect(try store.answerSequences()[key.trackID] == 2)
+    store.close()
+    let reopened = try Store(url: path); defer { reopened.close() }
+    #expect(try reopened.history().first?.didNotKnow == true)
+    #expect(try reopened.states()[key] == after)
+    _ = try reopened.undo()
+    #expect(try reopened.states()[key] == before)
+    #expect(try reopened.answerSequences()[key.trackID] == 1)
+    #expect(try reopened.history().first?.undone == true)
+}

@@ -123,7 +123,7 @@ struct ContentView: View {
                 Button { model.speak(entry) } label: { Image(systemName: "speaker.wave.2") }.help("Pronounce Korean · ⌘P")
             }
             if model.introducing {
-                Text("INTRODUCTION").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
+                Text(model.reintroducing ? "LET’S REVIEW" : "INTRODUCTION").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
             }
             Text(model.introducing ? model.koreanText(entry) : model.studyPrompt(entry)).font(.system(size: 38, weight: .medium)).textSelection(.enabled)
                 .accessibilityIdentifier("studyPrompt")
@@ -152,7 +152,7 @@ struct ContentView: View {
                     if let cue = entry.promptCue, !cue.isEmpty {
                         Text(cue).font(.callout).foregroundStyle(.secondary)
                     }
-                    Text("Take a moment to learn this word, then continue to practice.")
+                    Text(model.reintroducing ? "Review this word, then continue. We’ll ask again later." : "Take a moment to learn this word, then continue to practice.")
                         .font(.callout).foregroundStyle(.secondary)
                     HStack(spacing: 12) {
                         Button("Continue", action: model.continueIntroduction)
@@ -191,6 +191,12 @@ struct ContentView: View {
             } else if !model.waiting {
                 IMETextField(text: $model.answer, enabled: !model.waiting) { model.submit() }.frame(height: 48)
                 if !model.waiting { Text("Return to submit · Hangul spelling matters").font(.caption).foregroundStyle(.secondary) }
+            }
+            if !model.introducing && !model.waiting {
+                Button("I don’t know", action: model.dontKnow)
+                    .buttonStyle(.borderless).font(.callout)
+                    .keyboardShortcut("k", modifiers: .command)
+                    .help("Review the meaning and try again later · ⌘K")
             }
             if model.waiting {
                 VStack(alignment: .leading, spacing: 18) {
@@ -278,7 +284,7 @@ struct HistoryView: View {
                 HStack {
                     Image(systemName: item.undone ? "arrow.uturn.backward" : item.correct ? "checkmark" : "xmark")
                     VStack(alignment: .leading) {
-                        Text(item.answer)
+                        Text(item.didNotKnow ? "I don’t know" : item.answer)
                         Text("\(item.key.direction.label) · \(item.key.mode.label) · \(item.key.formStyle?.label ?? "Vocabulary") · \(item.key.entryID)").font(.caption).foregroundStyle(.secondary)
                     }
                     Spacer(); Text(item.timestamp, style: .date); Text(item.timestamp, style: .time)
