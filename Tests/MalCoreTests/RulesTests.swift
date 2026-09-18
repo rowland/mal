@@ -289,3 +289,28 @@ func introductionsResumeOnlyAfterDueCardsClear(phase: Phase, iterationDue: Bool)
     state.due = epoch.addingTimeInterval(600); state.dueSequence = 100
     #expect(StudyQueue.select(entries: words, states: [key: state], settings: settings, context: context) == Selection("new", isNew: true))
 }
+
+@Test func semicolonMeaningsAcceptIndividualAnswersWithoutDroppingQualifiers() {
+    let meet = Entry(id: "meet", lemma: "만나다", partOfSpeech: .verb, english: ["meet; to see (someone)", "to meet; to see (someone)"], koreanForms: [KoreanForm("만나요", speechLevel: "informal-polite")])
+    let accepted = FormPractice.accepted(meet, direction: .koreanToEnglish, style: .polite, pool: [meet], displayedKorean: "만나요")
+    for text in ["meet", "to meet", "see (someone)", "to see (someone)", "meet; to see (someone)"] { #expect(accepted.contains(text)) }
+    for text in ["someone", "see", "meet to see", "not meet"] { #expect(!accepted.contains(text)) }
+    let qualified = Entry(id: "q", lemma: "말", partOfSpeech: .noun, english: ["speech (formal; informal); language", "a long, detailed explanation"])
+    let meanings = Grader.accepted(qualified, direction: .koreanToEnglish)
+    #expect(meanings.contains("language"))
+    #expect(!meanings.contains("informal)"))
+    #expect(!meanings.contains("detailed explanation"))
+    var rng = Seeded()
+    let choices = ChoiceBuilder.choices(target: meet, pool: [meet, entry("same", "대면하다", "meet", .verb), entry("other", "가다", "go", .verb)], direction: .koreanToEnglish, count: 5, using: &rng)
+    #expect(!choices.contains("meet"))
+    #expect(choices.count == 2)
+}
+
+@Test func englishAliasesAreAvailableInEveryFormStyle() {
+    for style in KoreanPracticeStyle.allCases {
+        #expect(FormPractice.canRememberAlias(red, direction: .koreanToEnglish, style: style))
+        #expect(FormPractice.accepted(red, direction: .koreanToEnglish, style: style, pool: [red], aliases: [red.id: ["reddish"]]).contains("reddish"))
+    }
+    #expect(!FormPractice.canRememberAlias(red, direction: .englishToKorean, style: .polite))
+    #expect(FormPractice.canRememberAlias(red, direction: .englishToKorean, style: .dictionary))
+}

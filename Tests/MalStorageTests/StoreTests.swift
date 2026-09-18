@@ -242,3 +242,20 @@ private func fixture(version: Int = 1) -> Bank {
     #expect(try reopened.answerSequences()[key.trackID] == 1)
     #expect(try reopened.history().first?.undone == true)
 }
+
+@Test @MainActor func bundledMeetAndRememberedEnglishAliasWorkInPolitePractice() throws {
+    let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let bank = try BankCodec.decode(String(contentsOf: root.appendingPathComponent("Sources/MalApp/Resources/Banks/novice.yaml"), encoding: .utf8), allowBuiltIn: true)
+    let meet = try #require(bank.entries.first { $0.lemma == "만나다" })
+    #expect(FormPractice.accepted(meet, direction: .koreanToEnglish, style: .polite, pool: bank.entries, displayedKorean: "만나요").contains("meet"))
+    let store = try temporaryStore(); let path = store.url
+    let key = FormPractice.key(meet, direction: .koreanToEnglish, mode: .writeIn, style: .polite)
+    _ = try store.grade(key, answer: "encounter", correct: false, at: Date(), sequence: 1)
+    _ = try store.correctLastAnswer(expectedKey: key, saveAlias: true)
+    store.close()
+    let reopened = try Store(url: path); defer { reopened.close() }
+    let accepted = FormPractice.accepted(meet, direction: .koreanToEnglish, style: .polite, pool: bank.entries, displayedKorean: "만나요", aliases: try reopened.aliases(direction: .koreanToEnglish))
+    #expect(accepted.contains("encounter"))
+    #expect(try reopened.states()[key]?.totalCorrect == 1)
+    #expect(try reopened.states()[key]?.totalWrong == 0)
+}

@@ -25,6 +25,9 @@ public enum KoreanPracticeStyle: String, Codable, CaseIterable, Sendable {
 }
 
 public enum FormPractice {
+    public static func canRememberAlias(_ entry: Entry, direction: Direction, style: KoreanPracticeStyle) -> Bool {
+        direction == .koreanToEnglish || style == .dictionary || !applies(entry, style: style)
+    }
     public static func applies(_ entry: Entry, style: KoreanPracticeStyle) -> Bool {
         entry.partOfSpeech == .verb || entry.partOfSpeech == .adjective ||
         (style == .attributive && entry.koreanForms.contains { $0.attributive == true })

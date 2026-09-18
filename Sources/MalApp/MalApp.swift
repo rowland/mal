@@ -99,7 +99,7 @@ struct ContentView: View {
                     if model.waiting {
                         Menu("Grading options") {
                             Button("Count my answer as correct") { model.saveAlias = false; model.acceptAnswer() }
-                            if !model.focusedForm { Button("Count as correct and remember this answer") { model.saveAlias = true; model.acceptAnswer() } }
+                            if model.canRememberAnswer { Button("Count as correct and remember this answer") { model.saveAlias = true; model.acceptAnswer() } }
                         }.menuStyle(.borderlessButton).fixedSize()
                             .foregroundStyle(.secondary)
                     }

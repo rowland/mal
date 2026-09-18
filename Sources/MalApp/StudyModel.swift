@@ -19,6 +19,7 @@ import MalStorage
     func koreanText(_ entry: Entry) -> String { koreanDisplays[entry.id] ?? FormPractice.forms(entry, style: practiceStyle).first ?? entry.lemma }
     func studyPrompt(_ entry: Entry) -> String { settings.direction == .koreanToEnglish ? koreanText(entry) : entry.prompt(settings.direction) }
     func correctAnswer(_ entry: Entry) -> String { settings.direction == .englishToKorean ? koreanText(entry) : entry.answer(settings.direction) }
+    var canRememberAnswer: Bool { current.map { FormPractice.canRememberAlias($0, direction: settings.direction, style: practiceStyle) } ?? false }
     var focusedForm: Bool { current.map { practiceStyle != .dictionary && FormPractice.applies($0, style: practiceStyle) } ?? false }
     private func prepareChoices(_ entry: Entry) {
         koreanDisplays = FormPractice.displayForms(practiceEntries, style: practiceStyle, using: &random)

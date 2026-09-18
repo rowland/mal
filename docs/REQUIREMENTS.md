@@ -40,3 +40,5 @@ UX-11: English→Korean write-in offers Korean speech input (⌘⇧R), with expl
 UX-12: Spoken practice uses a 5-second recording timeout and a 2-second finalization bound. Correct spoken-mode submissions have no automatic answer replay; incorrect submissions retain correction audio when Auto is enabled. Return remains immediate.
 
 UX-13: Automatically select an enabled Korean/English input source when the corresponding answer field gains focus, including speech correction editing. Preserve manual overrides during editing and restore the previous source on leaving. Never interrupt Hangul composition; if no matching enabled source exists, leave input unchanged.
+
+DATA-07: English grading accepts top-level semicolon-separated meanings and optional leading infinitive “to ” for predicates; retain qualifiers and avoid arbitrary punctuation/comma splitting. English personal aliases can be saved in any Korean form category, with shared grading/distractor exclusion semantics.

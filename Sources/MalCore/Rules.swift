@@ -7,7 +7,24 @@ public enum Grader {
     }
     public static func accepted(_ entry: Entry, direction: Direction, aliases: [String] = []) -> Set<String> {
         let values = direction == .englishToKorean ? [entry.lemma] + entry.koreanForms.map(\.text) : entry.english
-        return Set((values + aliases).map { normalize($0, direction: direction) })
+        let expanded = direction == .koreanToEnglish ? values.flatMap { englishAlternatives($0, predicate: entry.partOfSpeech == .verb || entry.partOfSpeech == .adjective) } : values
+        // Personal aliases are literal user decisions, not dictionary gloss syntax.
+        return Set((expanded + aliases).map { normalize($0, direction: direction) })
+    }
+    private static func englishAlternatives(_ gloss: String, predicate: Bool) -> [String] {
+        var result = [gloss]
+        var fragment = ""
+        var depth = 0
+        for character in gloss {
+            if character == "(" || character == "[" { depth += 1 }
+            if character == ")" || character == "]" { depth = max(0, depth - 1) }
+            if character == ";", depth == 0 {
+                result.append(fragment); fragment = ""
+            } else { fragment.append(character) }
+        }
+        result.append(fragment)
+        let parts = result.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }
+        return parts + (predicate ? parts.compactMap { $0.lowercased().hasPrefix("to ") ? String($0.dropFirst(3)) : nil } : [])
     }
     // With no sense cue, all catalogued meanings of the displayed lemma/POS are valid.
     public static func promptAnswers(_ entry: Entry, direction: Direction, pool: [Entry], aliases: [String: [String]] = [:]) -> Set<String> {
