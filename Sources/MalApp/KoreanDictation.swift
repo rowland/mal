@@ -136,7 +136,7 @@ import MalNative
             engine.prepare(); try engine.start()
             listening = true; status = "Listening… Return submits now · Escape edits."
             timeout = Task { [weak self] in
-                do { try await Task.sleep(for: .seconds(8)) } catch { return }
+                do { try await Task.sleep(for: .seconds(5)) } catch { return }
                 guard let self, self.draft.sessionID == id else { return }; self.stop()
             }
         } catch { if draft.sessionID == id { fail("Could not start recognition: \(error.localizedDescription)") } }

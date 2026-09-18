@@ -241,3 +241,7 @@ Recording timeout reduced 20→8 seconds; finalization bound 5→2 seconds. Corr
 Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **61 tests passed**, including quiet spoken successes, spoken-error correction, Auto off, typed success audio and reverse prompts. `git diff --check` passed. Live microphone timing/audio acceptance was not performed; next action is user verification of the shorter cutoff and silent successes during normal study. Existing vocabulary/IME release gates remain open.
 
 Build: `./scripts/build-app.sh` succeeded and published the signed local `build/Mal.app`.
+
+## Five-second speech timeout — 2026-09-17
+
+Reduced recording timeout 8→5 seconds at user request. Finalization remains bounded at 2 seconds; Return still submits immediately. Release build via `./scripts/build-app.sh` and `git diff --check` passed. Unit suite not rerun for this single timing-constant change; previous suite remains 61 passing tests. Live microphone timing acceptance pending. Next action: user checks whether five seconds accommodates recall/speaking while reducing waiting. No progress or schema changes; existing release gates remain open.

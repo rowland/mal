@@ -37,4 +37,4 @@ UX-10: During a quiz, offer I don’t know (⌘K). Reveal the word’s introduct
 
 UX-11: English→Korean write-in offers Korean speech input (⌘⇧R), with explicit microphone permission and visible listening/stopped states. Keep Speak Korean selected across cards/restarts until Write-in is selected. Listen automatically on quizzes; submit when the recognizer finalizes a nonempty utterance, or immediately on Return using the visible transcript. Escape stops recognition and edits this answer; speech resumes on the next quiz. Provide explicit model download/setup when needed, typing fallback, no cloud audio fallback, and no pronunciation scoring.
 
-UX-12: Spoken practice uses an 8-second recording timeout and a 2-second finalization bound. Correct spoken-mode submissions have no automatic answer replay; incorrect submissions retain correction audio when Auto is enabled. Return remains immediate.
+UX-12: Spoken practice uses a 5-second recording timeout and a 2-second finalization bound. Correct spoken-mode submissions have no automatic answer replay; incorrect submissions retain correction audio when Auto is enabled. Return remains immediate.
