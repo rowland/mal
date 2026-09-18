@@ -108,6 +108,10 @@ struct ContentView: View {
             }.padding(.horizontal, 24).padding(.vertical, 16)
         }
         .alert("Mal", isPresented: Binding(get: { model.error != nil }, set: { if !$0 { model.error = nil } })) { Button("OK") { model.error = nil } } message: { Text(model.error ?? "") }
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didResignActiveNotification)) { _ in model.dictation.stop(clearStatus: true) }
+        .onChange(of: model.showLibrary) { _, _ in model.dictation.stop(clearStatus: true) }
+        .onChange(of: model.showHistory) { _, _ in model.dictation.stop(clearStatus: true) }
+        .onDisappear { model.dictation.stop(clearStatus: true) }
         .sheet(isPresented: $model.showLibrary) { LibraryView(model: model) }
         .sheet(isPresented: $model.showHistory) { HistoryView(model: model) }
     }
@@ -189,7 +193,22 @@ struct ContentView: View {
                     if model.choices.count < model.settings.choiceCount { Text("\(model.choices.count) distinct choices available in the selected banks.").font(.caption).foregroundStyle(.secondary) }
                 }
             } else if !model.waiting {
-                IMETextField(text: $model.answer, enabled: !model.waiting) { model.submit() }.frame(height: 48)
+                IMETextField(text: $model.answer, enabled: !model.waiting && !model.dictation.active) { model.submit() }.frame(height: 48)
+                if model.settings.direction == .englishToKorean {
+                    HStack {
+                        Button(action: model.toggleDictation) {
+                            Label(model.dictation.active ? "Stop" : "Speak Korean", systemImage: model.dictation.active ? "stop.circle" : "mic")
+                        }.keyboardShortcut("r", modifiers: [.command, .shift])
+                        Text("⌘⇧R · Review before submitting").font(.caption).foregroundStyle(.secondary)
+                    }
+                    if model.dictation.needsDownload && !model.dictation.active {
+                        Button("Download Korean speech model") { Task { await model.dictation.installModel() } }
+                    }
+                    if !model.dictation.status.isEmpty {
+                        Text(model.dictation.status).font(.callout).foregroundStyle(.secondary)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
                 if !model.waiting { Text("Return to submit · Hangul spelling matters").font(.caption).foregroundStyle(.secondary) }
             }
             if !model.introducing && !model.waiting {

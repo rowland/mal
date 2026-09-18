@@ -211,3 +211,17 @@ Automated: `swift test --scratch-path /tmp/mal-dual-clock-tests` passed **55 tes
 Next action: user acceptance of button placement, shortcut with Korean IME active, and reintroduction pacing. Vocabulary verification and broader IME acceptance remain open.
 
 Build: `./scripts/build-app.sh` succeeded, publishing the signed local `build/Mal.app`. Native manual smoke not performed in this iteration; the script above is pending user acceptance.
+
+## Korean speech input — 2026-09-17
+
+Implemented Speak Korean / Stop (⌘⇧R) for English→Korean write-in. Uses macOS 26 SpeechAnalyzer/SpeechTranscriber; no cloud recognition. Drafts remain editable after stopping and require Return to grade. Auto playback is suppressed while active. Card/mode transitions, undo, unknown-word action, sheets and app deactivation cancel capture and reject late results. Recording is bounded to 20 seconds; finalization to five. Explicit first-use model download and microphone permission; microphone usage description included in app packaging. No schema/progress changes.
+
+Read-only capability probes on this Mac: legacy ko-KR recognizer available=true, supportsOnDeviceRecognition=false; newer SpeechTranscriber lists ko_KR among supported locales, but installed locales were English only. Therefore an Apple Korean model download is necessary before live use. The model has not been downloaded or a microphone recording attempted during this iteration.
+
+Automated: `swift test --scratch-path /tmp/mal-speech-tests`: **58 tests passed**, including stale-result rejection, draft retention/cleanup, and stereo 48 kHz→mono 16 kHz conversion into independently owned buffers. Existing grading/storage/IME tests passed. No compiler warnings in the final test run. These tests do not verify speech accuracy or actual microphone capture.
+
+Manual acceptance script: choose English→Korean + Write-in, continue an introduction, click Speak Korean. If prompted, use Download Korean speech model (internet required once), then retry. Allow microphone access, speak the displayed category of Korean answer, Stop (or ⌘⇧R), edit as necessary, and Return to grade. Test denial, no speech, permission cancellation, stopping during setup, switching cards/modes while listening, 20-second auto-stop, and use with network disabled after model installation. Confirm no grade is recorded until submission and no audio playback contaminates listening. Check Korean IME composition after dictation.
+
+Next action: install the model through Mal and perform live microphone/offline acceptance. Speech accuracy and device/permission handling remain unverified end-to-end; existing vocabulary verification and broader UI/IME acceptance gates remain open.
+
+Build verification: `./scripts/build-app.sh` succeeded and published the signed local `build/Mal.app`; final `git diff --check` passed. Native smoke used `/tmp/Mal Speech QA.app` (distinct bundle ID) with `MAL_DATA_DIRECTORY=/tmp/mal-speech-qa-data`: switched to English→Korean write-in, continued introduction, confirmed Speak Korean, used ⌘⇧R, confirmed Download Korean speech model and local-processing guidance, and confirmed answer field remained enabled with zero grades. Closed test app. No download or microphone capture performed; user data untouched.

@@ -25,6 +25,7 @@ cat > "$app_path/Contents/Info.plist" <<'PLIST'
 <key>CFBundleShortVersionString</key><string>0.1.0</string>
 <key>CFBundleVersion</key><string>1</string>
 <key>LSMinimumSystemVersion</key><string>26.0</string>
+<key>NSMicrophoneUsageDescription</key><string>Mal uses your microphone only when you choose to dictate a Korean answer.</string>
 <key>NSHighResolutionCapable</key><true/>
 </dict></plist>
 PLIST

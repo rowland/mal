@@ -26,6 +26,7 @@ import MalStorage
         let accepted = settings.direction == .koreanToEnglish ? FormPractice.accepted(entry, direction: settings.direction, style: practiceStyle, pool: allEntries, displayedKorean: koreanText(entry), aliases: aliases) : nil
         choices = ChoiceBuilder.choices(target: entry, pool: practiceEntries, direction: settings.direction, count: settings.choiceCount, koreanAnswers: koreanDisplays, acceptedAnswers: accepted, sensePool: allEntries, aliases: aliases, using: &random)
     }
+    let dictation = KoreanDictation()
     var answer = ""
     var feedback = ""
     var reintroducing = false
@@ -105,6 +106,7 @@ import MalStorage
         history = try store.history(); trackSequences = try store.answerSequences(); sinceIntroduction = try store.answersSinceIntroduction(trackID: clockTrackID)
     }
     func changeSettings() {
+        dictation.stop(clearStatus: true)
         lastSense = current?.id ?? lastSense
         do { try store?.saveSettings(settings); aliases = try store?.aliases(direction: settings.direction) ?? [:] }
         catch { self.error = error.localizedDescription }
@@ -112,6 +114,7 @@ import MalStorage
         next()
     }
     func next() {
+        dictation.stop(clearStatus: true)
         reintroducing = false
         let excluded = skipNextSense; skipNextSense = nil
         introducing = false; waiting = false; hintRevealed = false; answer = ""; saveAlias = false
@@ -134,6 +137,7 @@ import MalStorage
         // Keep this card and its choices. Reading the introduction is not a grade.
     }
     func dontKnow() {
+        dictation.stop(clearStatus: true)
         guard !introducing, !waiting, let entry = current else { return }
         do {
             _ = try store?.didNotKnow(studyKey(entry), at: Date(), clockTrackID: clockTrackID)
@@ -144,7 +148,19 @@ import MalStorage
             pronounceAutomatically(entry)
         } catch { self.error = error.localizedDescription }
     }
+    func toggleDictation() {
+        if dictation.active { dictation.stop(); return }
+        guard settings.direction == .englishToKorean, settings.mode == .writeIn,
+              !introducing, !waiting, current != nil, !showLibrary, !showHistory else { return }
+        speech.stopSpeaking(at: .immediate)
+        let key = current.map(studyKey)
+        Task {
+            guard current.map(studyKey) == key, !introducing, !waiting, !showLibrary, !showHistory else { return }
+            await dictation.start { [weak self] text in self?.answer = text }
+        }
+    }
     func submit(_ text: String? = nil) {
+        if dictation.active { dictation.stop(); return }
         guard !introducing else { return }
         if waiting { next(); return }
         guard let entry = current else { return }
@@ -175,6 +191,7 @@ import MalStorage
         } catch { self.error = error.localizedDescription }
     }
     func undo() {
+        dictation.stop(clearStatus: true)
         do {
             guard let key = try store?.undo() else { return }
             try reload(includeContent: false); settings.direction = key.direction; settings.mode = key.mode
@@ -211,6 +228,7 @@ import MalStorage
     }
     func speak(_ entry: Entry) { speakSequence([entry.id == current?.id ? koreanText(entry) : entry.lemma]) }
     private func speakSequence(_ texts: [String], automatic: Bool = false) {
+        if dictation.active { return }
         guard let voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.language.hasPrefix("ko") }) else {
             let message = "Install a Korean voice in System Settings → Accessibility → Read & Speak → System voice. Study works without a voice."
             if automatic { feedback = message } else { error = message }

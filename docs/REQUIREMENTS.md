@@ -34,3 +34,5 @@ Accepted 2026-09-12. Working name Mal (말). This file preserves user decisions 
 Deferred: cloud sync, distribution/notarization, in-app vocabulary editor, AI/URL bank generation, romanized answers, sentence-cloze exercises.
 
 UX-10: During a quiz, offer I don’t know (⌘K). Reveal the word’s introduction, record unsuccessful recall, and continue to another card before a later retry. Show a distinct history label and support Undo. Keep Show hint independent.
+
+UX-11: English→Korean write-in offers Korean speech input (⌘⇧R), with explicit microphone permission and visible listening/stopped states. Transcribe locally into an editable draft; require normal user submission. Provide explicit model download/setup when needed, typing fallback, no cloud audio fallback, and no pronunciation scoring.
