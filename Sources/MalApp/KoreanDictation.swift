@@ -36,12 +36,12 @@ import MalNative
                 await resultTask?.value
                 guard draft.sessionID == id else { return }
                 cancel()
-                status = "Stopped. Review or edit your answer, then press Return."
+                status = "Listening paused. Return submits · Escape edits · ⌘⇧R resumes."
             }
             return
         }
         cancel()
-        status = clearStatus ? "" : "Stopped. Review or edit your answer, then press Return."
+        status = clearStatus ? "" : "Listening paused. Return submits · Escape edits · ⌘⇧R resumes."
     }
     private func cancel() {
         draft.end()
@@ -74,7 +74,7 @@ import MalNative
             status = "Korean speech model ready. Click Speak Korean to begin."
         } catch { if draft.sessionID == id { fail("Could not install Korean speech: \(error.localizedDescription)") } }
     }
-    func start(onText: @escaping @MainActor (String) -> Void) async {
+    func start(onText: @escaping @MainActor (String) -> Void, onUtteranceEnd: @escaping @MainActor () -> Void) async {
         guard !active else { return }
         let id = UUID(); draft.begin(id: id); active = true
         status = "Checking Korean speech recognition…"
@@ -112,7 +112,14 @@ import MalNative
                     let fragment = String(result.text.characters)
                     let text = (committed + fragment).trimmingCharacters(in: .whitespacesAndNewlines)
                     if result.isFinal { committed += fragment }
-                    if self.draft.receive(text, id: id), let cleaned = self.draft.text { onText(cleaned) }
+                    if self.draft.receive(text, id: id), let cleaned = self.draft.text {
+                        onText(cleaned)
+                        if result.isFinal {
+                            self.cancel()
+                            onUtteranceEnd()
+                            return
+                        }
+                    }
                 }
             } catch { if let self, self.draft.sessionID == id { self.fail("Recognition stopped: \(error.localizedDescription). Review the draft or try again.") } }
         }
@@ -127,7 +134,7 @@ import MalNative
                 })
             self.engine = engine
             engine.prepare(); try engine.start()
-            listening = true; status = "Listening in Korean… Click Stop or press ⌘⇧R when finished."
+            listening = true; status = "Listening… Return submits now · Escape edits."
             timeout = Task { [weak self] in
                 do { try await Task.sleep(for: .seconds(20)) } catch { return }
                 guard let self, self.draft.sessionID == id else { return }; self.stop()

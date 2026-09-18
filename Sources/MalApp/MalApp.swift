@@ -108,10 +108,11 @@ struct ContentView: View {
             }.padding(.horizontal, 24).padding(.vertical, 16)
         }
         .alert("Mal", isPresented: Binding(get: { model.error != nil }, set: { if !$0 { model.error = nil } })) { Button("OK") { model.error = nil } } message: { Text(model.error ?? "") }
-        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didResignActiveNotification)) { _ in model.dictation.stop(clearStatus: true) }
-        .onChange(of: model.showLibrary) { _, _ in model.dictation.stop(clearStatus: true) }
-        .onChange(of: model.showHistory) { _, _ in model.dictation.stop(clearStatus: true) }
-        .onDisappear { model.dictation.stop(clearStatus: true) }
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didResignActiveNotification)) { _ in model.pauseDictation() }
+        .onChange(of: model.showLibrary) { _, shown in model.pauseDictation(); if !shown { model.beginSpokenAnswer() } }
+        .onChange(of: model.showHistory) { _, shown in model.pauseDictation(); if !shown { model.beginSpokenAnswer() } }
+        .onDisappear { model.pauseDictation() }
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in model.beginSpokenAnswer() }
         .sheet(isPresented: $model.showLibrary) { LibraryView(model: model) }
         .sheet(isPresented: $model.showHistory) { HistoryView(model: model) }
     }
@@ -193,16 +194,22 @@ struct ContentView: View {
                     if model.choices.count < model.settings.choiceCount { Text("\(model.choices.count) distinct choices available in the selected banks.").font(.caption).foregroundStyle(.secondary) }
                 }
             } else if !model.waiting {
-                IMETextField(text: $model.answer, enabled: !model.waiting && !model.dictation.active) { model.submit() }.frame(height: 48)
+                IMETextField(text: $model.answer, enabled: !model.waiting && (!model.spokenPractice || model.editingSpokenAnswer)) { model.submit() }.frame(height: 48)
                 if model.settings.direction == .englishToKorean {
-                    HStack {
-                        Button(action: model.toggleDictation) {
-                            Label(model.dictation.active ? "Stop" : "Speak Korean", systemImage: model.dictation.active ? "stop.circle" : "mic")
-                        }.keyboardShortcut("r", modifiers: [.command, .shift])
-                        Text("⌘⇧R · Review before submitting").font(.caption).foregroundStyle(.secondary)
+                    Picker("Answer input", selection: Binding(get: { model.settings.spokenAnswers == true }, set: { model.setSpokenAnswers($0) })) {
+                        Text("Write-in").tag(false)
+                        Text("Speak Korean").tag(true)
+                    }.pickerStyle(.segmented).fixedSize()
+                    if model.spokenPractice {
+                        HStack {
+                            Text(model.editingSpokenAnswer ? "Editing this answer · Return submits" : "Return submits · Escape edits")
+                                .font(.caption).foregroundStyle(.secondary)
+                            Button(model.editingSpokenAnswer || !model.dictation.active ? "Resume listening" : "Edit answer", action: model.toggleDictation)
+                                .keyboardShortcut("r", modifiers: [.command, .shift])
+                        }
                     }
                     if model.dictation.needsDownload && !model.dictation.active {
-                        Button("Download Korean speech model") { Task { await model.dictation.installModel() } }
+                        Button("Download Korean speech model") { Task { await model.dictation.installModel(); model.beginSpokenAnswer() } }
                     }
                     if !model.dictation.status.isEmpty {
                         Text(model.dictation.status).font(.callout).foregroundStyle(.secondary)

@@ -188,3 +188,14 @@ public enum PronunciationRules {
         return answer
     }
 }
+
+
+public enum SpokenAnswerKey: Equatable { case submit, edit, ignore, unhandled }
+extension InputRules {
+    public static func spokenAnswerKey(_ key: String, enabled: Bool, editing: Bool, isRepeat: Bool, modified: Bool) -> SpokenAnswerKey {
+        guard enabled, !editing, !modified else { return .unhandled }
+        guard ["\r", "\n", "\u{1b}"].contains(key) else { return .unhandled }
+        if isRepeat { return .ignore }
+        return key == "\u{1b}" ? .edit : .submit
+    }
+}

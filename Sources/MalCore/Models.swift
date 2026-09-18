@@ -102,6 +102,7 @@ public struct StudySettings: Codable, Equatable, Sendable {
     // Optional so existing settings and backups decode without a schema migration.
     public var singleColumnDefaultApplied: Bool?
     public var automaticPronunciation: Bool?
+    public var spokenAnswers: Bool?
     public var formStyle: KoreanPracticeStyle?
     public var learningLimit: Int = 10
     public var firstRepeatLimit: Int?

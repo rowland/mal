@@ -27,6 +27,10 @@ import MalStorage
         choices = ChoiceBuilder.choices(target: entry, pool: practiceEntries, direction: settings.direction, count: settings.choiceCount, koreanAnswers: koreanDisplays, acceptedAnswers: accepted, sensePool: allEntries, aliases: aliases, using: &random)
     }
     let dictation = KoreanDictation()
+    var editingSpokenAnswer = false
+    private var speechGeneration = 0
+    var spokenPractice: Bool { settings.spokenAnswers == true && settings.mode == .writeIn && settings.direction == .englishToKorean }
+
     var answer = ""
     var feedback = ""
     var reintroducing = false
@@ -93,6 +97,12 @@ import MalStorage
                 let ignore = MainActor.assumeIsolated {
                     guard let self, !self.showLibrary, !self.showHistory, event.window?.title == "Mal · 말" else { return false }
                     let modified = !event.modifierFlags.intersection([.command, .control, .option, .shift]).isEmpty
+                    switch InputRules.spokenAnswerKey(event.charactersIgnoringModifiers ?? "", enabled: self.spokenPractice && !self.introducing && !self.waiting, editing: self.editingSpokenAnswer, isRepeat: event.isARepeat, modified: modified) {
+                    case .submit: self.submit(); return true
+                    case .edit: self.editSpokenAnswer(); return true
+                    case .ignore: return true
+                    case .unhandled: break
+                    }
                     return InputRules.ignoreRepeatedStudyKey(isRepeat: event.isARepeat, modified: modified, key: event.charactersIgnoringModifiers ?? "", multipleChoice: self.settings.mode == .multipleChoice, waitingForContinue: self.waiting || self.introducing)
                 }
                 return ignore ? nil : event
@@ -106,7 +116,7 @@ import MalStorage
         history = try store.history(); trackSequences = try store.answerSequences(); sinceIntroduction = try store.answersSinceIntroduction(trackID: clockTrackID)
     }
     func changeSettings() {
-        dictation.stop(clearStatus: true)
+        pauseDictation()
         lastSense = current?.id ?? lastSense
         do { try store?.saveSettings(settings); aliases = try store?.aliases(direction: settings.direction) ?? [:] }
         catch { self.error = error.localizedDescription }
@@ -114,7 +124,8 @@ import MalStorage
         next()
     }
     func next() {
-        dictation.stop(clearStatus: true)
+        pauseDictation()
+        editingSpokenAnswer = false
         reintroducing = false
         let excluded = skipNextSense; skipNextSense = nil
         introducing = false; waiting = false; hintRevealed = false; answer = ""; saveAlias = false
@@ -127,6 +138,7 @@ import MalStorage
         prepareChoices(entry)
         pronounceAutomatically(entry)
         if selection.isNew { sinceIntroduction = 0 }
+        beginSpokenAnswer()
         do { try store?.present(studyKey(entry), at: Date()) }
         catch { self.error = error.localizedDescription }
     }
@@ -134,10 +146,11 @@ import MalStorage
         guard introducing else { return }
         if reintroducing { skipNextSense = current?.id; next(); return }
         introducing = false
+        beginSpokenAnswer()
         // Keep this card and its choices. Reading the introduction is not a grade.
     }
     func dontKnow() {
-        dictation.stop(clearStatus: true)
+        pauseDictation()
         guard !introducing, !waiting, let entry = current else { return }
         do {
             _ = try store?.didNotKnow(studyKey(entry), at: Date(), clockTrackID: clockTrackID)
@@ -148,24 +161,49 @@ import MalStorage
             pronounceAutomatically(entry)
         } catch { self.error = error.localizedDescription }
     }
+    func pauseDictation() {
+        speechGeneration += 1
+        dictation.stop(clearStatus: true)
+    }
+    func setSpokenAnswers(_ enabled: Bool) {
+        pauseDictation()
+        settings.spokenAnswers = enabled; editingSpokenAnswer = false
+        do { try store?.saveSettings(settings) } catch { self.error = error.localizedDescription }
+        if enabled { beginSpokenAnswer() }
+    }
+    func editSpokenAnswer() {
+        pauseDictation(); editingSpokenAnswer = true
+    }
     func toggleDictation() {
-        if dictation.active { dictation.stop(); return }
-        guard settings.direction == .englishToKorean, settings.mode == .writeIn,
-              !introducing, !waiting, current != nil, !showLibrary, !showHistory else { return }
-        speech.stopSpeaking(at: .immediate)
-        let key = current.map(studyKey)
+        if spokenPractice && !editingSpokenAnswer && dictation.active { editSpokenAnswer() }
+        else { setSpokenAnswers(true) }
+    }
+    func beginSpokenAnswer() {
+        guard spokenPractice, !editingSpokenAnswer, !introducing, !waiting,
+              current != nil, !showLibrary, !showHistory, !dictation.active else { return }
+        speechGeneration += 1
+        let generation = speechGeneration
         Task {
-            guard current.map(studyKey) == key, !introducing, !waiting, !showLibrary, !showHistory else { return }
-            await dictation.start { [weak self] text in self?.answer = text }
+            // Let introduction/correction audio finish before reopening the microphone.
+            while speech.isSpeaking {
+                try? await Task.sleep(for: .milliseconds(100))
+                guard generation == speechGeneration else { return }
+            }
+            guard generation == speechGeneration, spokenPractice, !editingSpokenAnswer,
+                  !introducing, !waiting, !showLibrary, !showHistory else { return }
+            await dictation.start(onText: { [weak self] text in self?.answer = text }, onUtteranceEnd: { [weak self] in
+                guard let self, generation == self.speechGeneration else { return }
+                self.submit()
+            })
         }
     }
     func submit(_ text: String? = nil) {
-        if dictation.active { dictation.stop(); return }
         guard !introducing else { return }
         if waiting { next(); return }
         guard let entry = current else { return }
         let value = text ?? answer
         guard !value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        pauseDictation()
         answer = value
         let correct = FormPractice.accepted(entry, direction: settings.direction, style: practiceStyle, pool: allEntries, displayedKorean: koreanText(entry), aliases: aliases).contains(Grader.normalize(value, direction: settings.direction))
         pronounceAutomatically(entry, submittedAnswer: value, correct: correct)
@@ -191,7 +229,7 @@ import MalStorage
         } catch { self.error = error.localizedDescription }
     }
     func undo() {
-        dictation.stop(clearStatus: true)
+        pauseDictation()
         do {
             guard let key = try store?.undo() else { return }
             try reload(includeContent: false); settings.direction = key.direction; settings.mode = key.mode
@@ -203,6 +241,7 @@ import MalStorage
             try store?.saveSettings(settings)
             reintroducing = false; introducing = false; waiting = false; hintRevealed = false; answer = ""; feedback = "Previous grade undone."
             sinceIntroduction = max(0, sinceIntroduction - 1); lastSense = nil
+            editingSpokenAnswer = true
             if let current { prepareChoices(current) }
         } catch { self.error = error.localizedDescription }
     }
