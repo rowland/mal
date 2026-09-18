@@ -63,13 +63,10 @@ import MalStorage
         selectedEntries.filter { settings.parts.contains($0.partOfSpeech) && (search.isEmpty || $0.lemma.localizedCaseInsensitiveContains(search) || $0.english.joined(separator: " ").localizedCaseInsensitiveContains(search)) }
     }
     private var visibleKeys: Set<CardKey> { Set(practiceEntries.filter { settings.parts.contains($0.partOfSpeech) }.map(studyKey)) }
-    var dueCount: Int { let keys = visibleKeys; let now = Date(); return states.filter { keys.contains($0.key) && Scheduler.isDue($0.value, now: now, sequence: count(for: $0.key, state: $0.value)) }.count }
-    var nextDue: Date? { let keys = visibleKeys; let now = Date(); return states.filter { keys.contains($0.key) && !Scheduler.isDue($0.value, now: now, sequence: count(for: $0.key, state: $0.value)) }.map(\.value.due).min() }
-    var learningCount: Int { let keys = visibleKeys; return states.filter { keys.contains($0.key) && $0.value.phase != .maintenance }.count }
-    var recognizedCount: Int {
-        let keys = Set(practiceEntries.filter { settings.parts.contains($0.partOfSpeech) }.map { FormPractice.key($0, direction: settings.direction, mode: .multipleChoice, style: practiceStyle) })
-        return states.filter { keys.contains($0.key) && $0.value.phase == .maintenance }.count
+    var studyCounts: StudyCounts {
+        StudyCounts.calculate(keys: visibleKeys, states: states, sequences: trackSequences, now: Date(), introduction: introducing ? current.map(studyKey) : nil)
     }
+    var nextDue: Date? { let keys = visibleKeys; let now = Date(); return states.filter { keys.contains($0.key) && !Scheduler.isDue($0.value, now: now, sequence: count(for: $0.key, state: $0.value)) }.map(\.value.due).min() }
     init() {
         do {
             let override = ProcessInfo.processInfo.environment["MAL_DATA_DIRECTORY"]

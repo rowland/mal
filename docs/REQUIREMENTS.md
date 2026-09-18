@@ -25,7 +25,7 @@ Accepted 2026-09-12. Working name Mal (말). This file preserves user decisions 
 | LEARN-04 | Indefinite maintenance: multiply both intervals by typed 1.5+accuracy or choice 1.2+0.5×accuracy; smoothed latest 20 accuracy. Cap time at 180 days and answers at max(1000, four times introduced cards in track). |
 | LEARN-05 | Learning failure steps back two stages, retry 30 seconds/3 answers. Maintenance failure relearns at 30 seconds/3, 5 minutes/8, 20 minutes/20; three successes resume half prior intervals, minimum 1 day/50 answers. Preserve history. |
 | LEARN-06 | Due relearning, then overdue maintenance, then learning; either clock establishes due status. At first-repeat capacity with nothing due, repeat the least recently answered early-learning card. Avoid previous sense when alternatives exist. |
-| LEARN-07 | Presentation and grade records separate; atomically persist grades, schedules and track-local answer clocks. Undo restores prior state and counter. Recognized means ongoing multiple-choice maintenance, never exemption from review. |
+| LEARN-07 | Presentation and grade records separate; atomically persist grades, schedules and track-local answer clocks. Undo restores prior state and counter. Status counts use only the selected track: in play = learning + in review; due is an overlapping subset. In review is ongoing maintenance, never exemption from review. |
 | STORE-01 | Content, aliases, events, settings and schedules separated; progress survives app/bank replacement. |
 | STORE-02 | Standalone backups, transactional restore, pre-migration/pre-restore recovery backups. |
 | ENG-01 | Pure testable rules module, injected time/randomness, unit and integration tests. |

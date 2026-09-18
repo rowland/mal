@@ -263,3 +263,13 @@ Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **66 tests pass
 Next action/manual script: reopen Mal, practice Korean→English write-in with Everyday polite, answer 만나요 with “meet”; verify immediate success. On a different incorrect English response, confirm Grading options includes Count as correct and remember this answer, use it, and verify acceptance after restart. Comma-packed or heavily qualified definitions may still need explicit personal aliases or future curated content fixes; broad punctuation stripping is intentionally avoided to prevent false positives. Existing linguistic verification/IME/live-speech release gates remain open.
 
 Build: `./scripts/build-app.sh` succeeded, publishing signed `build/Mal.app`.
+
+## Reconciled study counts — 2026-09-18
+
+Confirmed status bug: recognized always counted multiple-choice maintenance, even in write-in mode. Future write-in maintenance therefore vanished from current-mode categories. Status now shows in play, learning, in review and due, all for the selected track and filters. In play = learning + in review; due is explicitly an overlapping subset. Current ungraded introduction counts as learning without a persisted grade. No scheduling/database changes.
+
+Automated: `swift test --scratch-path /tmp/mal-speech-tests`: **68 tests passed**, including future maintenance, relearning, both due clocks, mode isolation, filter preservation and introduction double-count prevention. `git diff --check` passed. Native layout/user acceptance remains pending.
+
+Next action: user verifies totals in Korean→English write-in, switches modes/filters and checks in play equals learning plus in review. Due should change independently as deadlines pass. This fixes displayed accounting, not a loss of stored progress. Existing content/IME/live-speech release gates remain open.
+
+Build: `./scripts/build-app.sh` succeeded and published signed `build/Mal.app`.

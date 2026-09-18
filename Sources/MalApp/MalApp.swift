@@ -70,10 +70,12 @@ struct ContentView: View {
                 if model.unavailableFormCount > 0 {
                     Text("\(model.unavailableFormCount) words have no listed form for this style and are skipped.").font(.caption).foregroundStyle(.secondary)
                 }
+                let counts = model.studyCounts
                 HStack(spacing: 18) {
-                    Label("\(model.dueCount) due", systemImage: "clock").help("Ready by elapsed time or intervening answers, whichever comes first.")
-                    Text("\(model.learningCount) learning")
-                    Text("\(model.recognizedCount) recognized").help("Words in ongoing multiple-choice review, including those due again. Recognition never ends review.")
+                    Text("\(counts.total) in play").help("Learning + in review for the selected banks, word focus, direction, form and answer mode. Includes the current introduction.")
+                    Text("\(counts.learning) learning").help("Initial learning and relearning, including words waiting for their next check.")
+                    Text("\(counts.review) in review").help("Ongoing maintenance in this answer mode, whether due now or later. These words are never retired from practice.")
+                    Label("\(counts.due) due", systemImage: "clock").help("A subset of the words in play, ready by time or intervening answers. Do not add this number to the total.")
                     Spacer()
                 }.font(.callout).foregroundStyle(.secondary)
                 Divider()
