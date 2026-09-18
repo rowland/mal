@@ -245,3 +245,11 @@ Build: `./scripts/build-app.sh` succeeded and published the signed local `build/
 ## Five-second speech timeout — 2026-09-17
 
 Reduced recording timeout 8→5 seconds at user request. Finalization remains bounded at 2 seconds; Return still submits immediately. Release build via `./scripts/build-app.sh` and `git diff --check` passed. Unit suite not rerun for this single timing-constant change; previous suite remains 61 passing tests. Live microphone timing acceptance pending. Next action: user checks whether five seconds accommodates recall/speaking while reducing waiting. No progress or schema changes; existing release gates remain open.
+
+## Automatic answer-field input sources
+
+Added native focus-scoped Korean/English input switching to the custom answer editor. Includes spoken-answer Escape editing, window focus loss/restoration, disabled fields and view dismantling. Existing matching Korean layouts are retained; manual changes survive SwiftUI refreshes. Only enabled/selectable sources are used, and missing languages are a no-op. No user database changes.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **63 tests passed**. Two injected-source tests cover both language directions, prior-source restoration, manual Korean layout preference, same-focus overrides, composition guards and unavailable language fallback. Existing IME Return tests pass. `./scripts/build-app.sh` succeeded and published signed `build/Mal.app`; `git diff --check` passed. Actual input-menu switching and physical Korean composition are not yet manually verified.
+
+Next action/manual acceptance: with Korean enabled in macOS, focus a Korean write-in answer and type Hangul; commit a syllable with Return without submitting, then submit separately. Repeat for English answers and Escape editing in spoken practice. Manually choose a different layout while editing and confirm it remains selected until focus leaves. Switch to another app, open history, and switch back; verify prior source is restored and Mal chooses the appropriate source on refocus. Repeat without an enabled Korean source to confirm normal typing remains available. Existing content verification and live-speech acceptance gates remain open.

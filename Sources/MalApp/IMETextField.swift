@@ -7,6 +7,7 @@ import MalNative
 struct IMETextField: NSViewRepresentable {
     @Binding var text: String
     var enabled: Bool
+    var answerLanguage: String
     var onSubmit: () -> Void
     func makeCoordinator() -> Coordinator { Coordinator(self) }
     func makeNSView(context: Context) -> NSTextField {
@@ -24,10 +25,15 @@ struct IMETextField: NSViewRepresentable {
     func updateNSView(_ field: NSTextField, context: Context) {
         context.coordinator.parent = self
         if (field.currentEditor() as? NSTextView)?.hasMarkedText() != true, field.stringValue != text { field.stringValue = text }
+        (field.cell as? AnswerCell)?.answerLanguage = answerLanguage
+        if !enabled { (field.cell as? AnswerCell)?.restoreAnswerInputSource() }
         field.isEnabled = enabled
         if enabled, field.window?.firstResponder is NSTextView == false {
             DispatchQueue.main.async { if field.window?.isKeyWindow == true { field.window?.makeFirstResponder(field) } }
         }
+    }
+    static func dismantleNSView(_ field: NSTextField, coordinator: Coordinator) {
+        (field.cell as? AnswerCell)?.restoreAnswerInputSource()
     }
     final class Coordinator: NSObject, NSTextFieldDelegate {
         var parent: IMETextField

@@ -194,7 +194,7 @@ struct ContentView: View {
                     if model.choices.count < model.settings.choiceCount { Text("\(model.choices.count) distinct choices available in the selected banks.").font(.caption).foregroundStyle(.secondary) }
                 }
             } else if !model.waiting {
-                IMETextField(text: $model.answer, enabled: !model.waiting && (!model.spokenPractice || model.editingSpokenAnswer)) { model.submit() }.frame(height: 48)
+                IMETextField(text: $model.answer, enabled: !model.waiting && (!model.spokenPractice || model.editingSpokenAnswer), answerLanguage: model.settings.direction == .englishToKorean ? "ko" : "en") { model.submit() }.frame(height: 48)
                 if model.settings.direction == .englishToKorean {
                     Picker("Answer input", selection: Binding(get: { model.settings.spokenAnswers == true }, set: { model.setSpokenAnswers($0) })) {
                         Text("Write-in").tag(false)
