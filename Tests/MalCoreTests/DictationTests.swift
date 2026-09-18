@@ -41,3 +41,11 @@ import MalCore
     let final = draft.receive("집입니다", id: id)
     #expect(!final && draft.text == "집")
 }
+
+@Test func correctSpokenAnswersStayQuietButMistakesKeepCorrectionAudio() {
+    #expect(PronunciationRules.automaticSequence(enabled: true, direction: .englishToKorean, lemma: "집", submittedAnswer: "집", correct: true, spokenAnswer: true).isEmpty)
+    #expect(PronunciationRules.automaticSequence(enabled: true, direction: .englishToKorean, lemma: "집", submittedAnswer: "물", correct: false, spokenAnswer: true) == ["물?", "집"])
+    #expect(PronunciationRules.automaticSequence(enabled: false, direction: .englishToKorean, lemma: "집", submittedAnswer: "물", correct: false, spokenAnswer: true).isEmpty)
+    #expect(PronunciationRules.automaticSequence(enabled: true, direction: .englishToKorean, lemma: "집", submittedAnswer: "집", correct: true) == ["집"])
+    #expect(PronunciationRules.automaticSequence(enabled: true, direction: .koreanToEnglish, lemma: "집", spokenAnswer: true) == ["집"])
+}

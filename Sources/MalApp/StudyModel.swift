@@ -262,7 +262,7 @@ import MalStorage
             if settings.automaticPronunciation == true { speakSequence([koreanText(entry)], automatic: true) }
             return
         }
-        let sequence = PronunciationRules.automaticSequence(enabled: settings.automaticPronunciation == true, direction: settings.direction, lemma: koreanText(entry), submittedAnswer: submittedAnswer, correct: correct)
+        let sequence = PronunciationRules.automaticSequence(enabled: settings.automaticPronunciation == true, direction: settings.direction, lemma: koreanText(entry), submittedAnswer: submittedAnswer, correct: correct, spokenAnswer: spokenPractice)
         if !sequence.isEmpty { speakSequence(sequence, automatic: true) }
     }
     func speak(_ entry: Entry) { speakSequence([entry.id == current?.id ? koreanText(entry) : entry.lemma]) }

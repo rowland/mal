@@ -233,3 +233,11 @@ Speak Korean is now a saved input preference within English→Korean write-in. N
 Verification: `swift test --scratch-path /tmp/mal-speech-tests` passed **60 tests**. Added Return/Escape, repeat/modifier/IME exclusion and late-final-result tests; existing settings backup/restore test now includes spoken preference. `./scripts/build-app.sh` succeeded and published `build/Mal.app`; `git diff --check` passed. No live microphone or new native UI acceptance performed this iteration.
 
 Next concrete action/manual script: select Speak Korean once and study several cards. Verify automatic start after introductions and correct responses, no recording during correction speech, engine-finalized automatic submission, and immediate Return submission before finalization. Escape should enable correction, Return grade that edit, and next quiz listen again. Confirm explicit Write-in persists across cards/restart, repeated Return cannot cascade grades, and missing model/permission failure remains recoverable by selecting Write-in. Test speech timing in actual room noise: engine finalization may lag; Return bypasses it. No custom silence threshold is claimed. Existing vocabulary and full IME release gates remain open.
+
+## Shorter speech timeout and quiet successes — 2026-09-17
+
+Recording timeout reduced 20→8 seconds; finalization bound 5→2 seconds. Correct answers in Speak Korean practice no longer trigger automatic answer replay. Wrong answers retain question/correct-answer audio under Auto. Introductory pronunciation and manual replay remain available; Return submission remains immediate.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **61 tests passed**, including quiet spoken successes, spoken-error correction, Auto off, typed success audio and reverse prompts. `git diff --check` passed. Live microphone timing/audio acceptance was not performed; next action is user verification of the shorter cutoff and silent successes during normal study. Existing vocabulary/IME release gates remain open.
+
+Build: `./scripts/build-app.sh` succeeded and published the signed local `build/Mal.app`.

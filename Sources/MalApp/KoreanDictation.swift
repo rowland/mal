@@ -27,7 +27,7 @@ import MalNative
             let id = draft.sessionID
             let resultTask = results
             timeout = Task { [weak self] in
-                do { try await Task.sleep(for: .seconds(5)) } catch { return }
+                do { try await Task.sleep(for: .seconds(2)) } catch { return }
                 if let self, self.draft.sessionID == id { self.fail("Transcription timed out. Review the draft or try again.") }
             }
             Task {
@@ -136,7 +136,7 @@ import MalNative
             engine.prepare(); try engine.start()
             listening = true; status = "Listening… Return submits now · Escape edits."
             timeout = Task { [weak self] in
-                do { try await Task.sleep(for: .seconds(20)) } catch { return }
+                do { try await Task.sleep(for: .seconds(8)) } catch { return }
                 guard let self, self.draft.sessionID == id else { return }; self.stop()
             }
         } catch { if draft.sessionID == id { fail("Could not start recognition: \(error.localizedDescription)") } }
