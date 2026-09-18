@@ -6,6 +6,7 @@ import MalCore
 import MalNative
 
 @MainActor @Observable final class KoreanDictation {
+    private(set) var alternatives: [String] = []
     private(set) var active = false
     private(set) var listening = false
     private(set) var needsDownload = false
@@ -55,7 +56,7 @@ import MalNative
     private func module() async -> SpeechTranscriber? {
         guard SpeechTranscriber.isAvailable,
               let locale = await SpeechTranscriber.supportedLocale(equivalentTo: Locale(identifier: "ko-KR")) else { return nil }
-        return SpeechTranscriber(locale: locale, preset: .progressiveTranscription)
+        return SpeechTranscriber(locale: locale, transcriptionOptions: [], reportingOptions: [.volatileResults, .alternativeTranscriptions], attributeOptions: [])
     }
     func installModel() async {
         guard !active else { return }
@@ -77,6 +78,7 @@ import MalNative
     func start(onText: @escaping @MainActor (String) -> Void, onUtteranceEnd: @escaping @MainActor () -> Void) async {
         guard !active else { return }
         let id = UUID(); draft.begin(id: id); active = true
+        alternatives = []
         status = "Checking Korean speech recognition…"
         guard let transcriber = await module() else {
             if draft.sessionID == id { fail("On-device Korean recognition is unsupported on this Mac. Typing still works.") }; return
@@ -111,6 +113,10 @@ import MalNative
                     guard let self, self.draft.sessionID == id else { return }
                     let fragment = String(result.text.characters)
                     let text = (committed + fragment).trimmingCharacters(in: .whitespacesAndNewlines)
+                    self.alternatives = result.alternatives.compactMap { alternative in
+                        var candidate = DictationDraft(); let candidateID = UUID(); candidate.begin(id: candidateID)
+                        return candidate.receive(committed + String(alternative.characters), id: candidateID) ? candidate.text : nil
+                    }
                     if result.isFinal { committed += fragment }
                     if self.draft.receive(text, id: id), let cleaned = self.draft.text {
                         onText(cleaned)

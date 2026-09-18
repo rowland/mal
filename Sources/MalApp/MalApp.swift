@@ -168,6 +168,19 @@ struct ContentView: View {
                         Text("Press Return ↵").font(.callout).foregroundStyle(.secondary)
                     }
                 }.padding(.top, 8)
+            } else if let candidate = model.speechConfirmation {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Recognition check").font(.headline)
+                    Text("Heard: " + model.answer).font(.title2)
+                    Text("Did you say “" + candidate + "”?").font(.title2)
+                    Text("No answer has been graded yet.").foregroundStyle(.secondary)
+                    HStack {
+                        Button("I said “" + candidate + "”", action: model.confirmSpokenAnswer).buttonStyle(.borderedProminent)
+                        Button("Try again", action: model.retrySpokenAnswer)
+                        Button("Count incorrect", action: model.rejectSpokenAnswer)
+                    }
+                    Text("Escape to edit").font(.caption).foregroundStyle(.secondary)
+                }
             } else if !model.waiting && model.settings.mode == .multipleChoice {
                 if model.choices.count < 2 {
                     Text("This bank has no distinct distractor. Switch to write-in or select another bank.").foregroundStyle(.secondary)

@@ -273,3 +273,11 @@ Automated: `swift test --scratch-path /tmp/mal-speech-tests`: **68 tests passed*
 Next action: user verifies totals in Korean→English write-in, switches modes/filters and checks in play equals learning plus in review. Due should change independently as deadlines pass. This fixes displayed accounting, not a loss of stored progress. Existing content/IME/live-speech release gates remain open.
 
 Build: `./scripts/build-app.sh` succeeded and published signed `build/Mal.app`.
+
+## Speech recognition ambiguity tolerance — 2026-09-18
+
+Added pure SpokenGrader and requested recognition alternatives. Exact accepted alternatives count correct; one initial plain/tense consonant substitution can also pass with compact interpreted/heard feedback. Other near matches (one Hangul syllable, at most two jamo changes) open an ungraded confirmation panel: I said [candidate], Try again, Count incorrect, Escape editing. Actual dictation provenance gates tolerance; Escape editing and normal typed grading remain exact. No persistent content aliases, schema changes or personal database edits.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **70 tests passed**, including recognition alternatives, all five plain/tense pairs, 한국과/한국어 confirmation, 어/아 confirmation, negation/tense/blank rejection, exact-match priority and unchanged typed grading. `./scripts/build-app.sh` succeeded and published signed `build/Mal.app`; `git diff --check` passed. Live recognition alternative quality and confirmation UI acceptance remain pending.
+
+Next action/manual script: in English→Korean Speak Korean, try a known plain/tense confusion and check Accepted as… feedback; try 한국어 and inspect any recognition-check panel for 한국과. Try again must leave history/counts unchanged, explicit confirmation must create one successful grade, Count incorrect one failure, and Undo restore prior progress. Escape should enable exact text correction with no stale speech result overwriting it. Confirm new cards clear prior alternatives/pending prompts. Existing content verification and broader speech/IME acceptance gates remain open.

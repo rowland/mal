@@ -28,6 +28,8 @@ import MalStorage
         choices = ChoiceBuilder.choices(target: entry, pool: practiceEntries, direction: settings.direction, count: settings.choiceCount, koreanAnswers: koreanDisplays, acceptedAnswers: accepted, sensePool: allEntries, aliases: aliases, using: &random)
     }
     let dictation = KoreanDictation()
+    var speechConfirmation: String?
+    private var hasSpokenDraft = false
     var editingSpokenAnswer = false
     private var speechGeneration = 0
     var spokenPractice: Bool { settings.spokenAnswers == true && settings.mode == .writeIn && settings.direction == .englishToKorean }
@@ -123,6 +125,7 @@ import MalStorage
     }
     func next() {
         pauseDictation()
+        speechConfirmation = nil; hasSpokenDraft = false
         editingSpokenAnswer = false
         reintroducing = false
         let excluded = skipNextSense; skipNextSense = nil
@@ -165,19 +168,20 @@ import MalStorage
     }
     func setSpokenAnswers(_ enabled: Bool) {
         pauseDictation()
+        speechConfirmation = nil; hasSpokenDraft = false
         settings.spokenAnswers = enabled; editingSpokenAnswer = false
         do { try store?.saveSettings(settings) } catch { self.error = error.localizedDescription }
         if enabled { beginSpokenAnswer() }
     }
     func editSpokenAnswer() {
-        pauseDictation(); editingSpokenAnswer = true
+        pauseDictation(); speechConfirmation = nil; hasSpokenDraft = false; editingSpokenAnswer = true
     }
     func toggleDictation() {
         if spokenPractice && !editingSpokenAnswer && dictation.active { editSpokenAnswer() }
         else { setSpokenAnswers(true) }
     }
     func beginSpokenAnswer() {
-        guard spokenPractice, !editingSpokenAnswer, !introducing, !waiting,
+        guard spokenPractice, !editingSpokenAnswer, speechConfirmation == nil, !introducing, !waiting,
               current != nil, !showLibrary, !showHistory, !dictation.active else { return }
         speechGeneration += 1
         let generation = speechGeneration
@@ -189,23 +193,49 @@ import MalStorage
             }
             guard generation == speechGeneration, spokenPractice, !editingSpokenAnswer,
                   !introducing, !waiting, !showLibrary, !showHistory else { return }
-            await dictation.start(onText: { [weak self] text in self?.answer = text }, onUtteranceEnd: { [weak self] in
+            await dictation.start(onText: { [weak self] text in self?.answer = text; self?.hasSpokenDraft = true }, onUtteranceEnd: { [weak self] in
                 guard let self, generation == self.speechGeneration else { return }
                 self.submit()
             })
         }
     }
     func submit(_ text: String? = nil) {
-        guard !introducing else { return }
+        guard !introducing, speechConfirmation == nil else { return }
         if waiting { next(); return }
         guard let entry = current else { return }
         let value = text ?? answer
         guard !value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
         pauseDictation()
         answer = value
-        let correct = FormPractice.accepted(entry, direction: settings.direction, style: practiceStyle, pool: allEntries, displayedKorean: koreanText(entry), aliases: aliases).contains(Grader.normalize(value, direction: settings.direction))
+        let accepted = FormPractice.accepted(entry, direction: settings.direction, style: practiceStyle, pool: allEntries, displayedKorean: koreanText(entry), aliases: aliases)
+        var correct = accepted.contains(Grader.normalize(value, direction: settings.direction))
+        var interpreted: String?
+        if spokenPractice && !editingSpokenAnswer && hasSpokenDraft {
+            switch SpokenGrader.decide(heard: value, alternatives: dictation.alternatives, accepted: accepted) {
+            case .correct(let matched): correct = true; interpreted = matched
+            case .confirm(let candidate): speechConfirmation = candidate; return
+            case .incorrect: break
+            }
+        }
         pronounceAutomatically(entry, submittedAnswer: value, correct: correct)
         record(entry, value, correct: correct)
+        if let interpreted, interpreted != value { feedback = "Accepted as \(interpreted) · heard \(value)" }
+    }
+    func confirmSpokenAnswer() {
+        guard let entry = current, let candidate = speechConfirmation else { return }
+        let heard = answer; speechConfirmation = nil
+        record(entry, heard, correct: true)
+        feedback = "Confirmed \(candidate) · heard \(heard)"
+    }
+    func retrySpokenAnswer() {
+        speechConfirmation = nil; answer = ""; hasSpokenDraft = false
+        beginSpokenAnswer()
+    }
+    func rejectSpokenAnswer() {
+        guard let entry = current, speechConfirmation != nil else { return }
+        speechConfirmation = nil
+        pronounceAutomatically(entry, submittedAnswer: answer, correct: false)
+        record(entry, answer, correct: false)
     }
     private func record(_ entry: Entry, _ value: String, correct: Bool) {
         do {
@@ -227,6 +257,7 @@ import MalStorage
         } catch { self.error = error.localizedDescription }
     }
     func undo() {
+        speechConfirmation = nil; hasSpokenDraft = false
         pauseDictation()
         do {
             guard let key = try store?.undo() else { return }
