@@ -171,14 +171,17 @@ struct ContentView: View {
                         Text("Press Return ↵").font(.callout).foregroundStyle(.secondary)
                     }
                 }.padding(.top, 8)
-            } else if let candidate = model.speechConfirmation {
+            } else if let candidates = model.speechConfirmation {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Recognition check").font(.headline)
                     Text("Heard: " + model.answer).font(.title2)
-                    Text("Did you say “" + candidate + "”?").font(.title2)
+                    Text("Which answer did you say?").font(.title2)
                     Text("No answer has been graded yet.").foregroundStyle(.secondary)
+                    ForEach(candidates, id: \.self) { candidate in
+                        Button("I said “" + candidate + "”") { model.confirmSpokenAnswer(candidate) }
+                            .buttonStyle(.borderedProminent)
+                    }
                     HStack {
-                        Button("I said “" + candidate + "”", action: model.confirmSpokenAnswer).buttonStyle(.borderedProminent)
                         Button("Try again", action: model.retrySpokenAnswer)
                         Button("Count incorrect", action: model.rejectSpokenAnswer)
                     }

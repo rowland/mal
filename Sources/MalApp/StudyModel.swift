@@ -33,7 +33,7 @@ import MalStorage
         choices = ChoiceBuilder.choices(target: entry, pool: practiceEntries, direction: settings.direction, count: settings.choiceCount, koreanAnswers: koreanDisplays, acceptedAnswers: accepted, sensePool: allEntries, aliases: aliases, using: &random)
     }
     let dictation = KoreanDictation()
-    var speechConfirmation: String?
+    var speechConfirmation: [String]?
     private var hasSpokenDraft = false
     var editingSpokenAnswer = false
     private var speechGeneration = 0
@@ -218,7 +218,7 @@ import MalStorage
         if spokenPractice && !editingSpokenAnswer && hasSpokenDraft {
             switch SpokenGrader.decide(heard: value, alternatives: dictation.alternatives, accepted: accepted, preferredAnswer: koreanText(entry)) {
             case .correct(let matched): correct = true; interpreted = matched
-            case .confirm(let candidate): speechConfirmation = candidate; return
+            case .confirm(let candidate): speechConfirmation = SpokenGrader.confirmationOptions(accepted: accepted, preferred: candidate); return
             case .incorrect: break
             }
         }
@@ -226,8 +226,8 @@ import MalStorage
         record(entry, value, correct: correct)
         if let interpreted, interpreted != value { feedback = "Accepted as \(interpreted) · heard \(value)" }
     }
-    func confirmSpokenAnswer() {
-        guard let entry = current, let candidate = speechConfirmation else { return }
+    func confirmSpokenAnswer(_ candidate: String) {
+        guard let entry = current, speechConfirmation?.contains(candidate) == true else { return }
         let heard = answer; speechConfirmation = nil
         record(entry, heard, correct: true)
         feedback = "Confirmed \(candidate) · heard \(heard)"

@@ -27,3 +27,13 @@ import MalCore
     let wear = Entry(id: "wear", lemma: "입다", partOfSpeech: .verb, english: ["wear"], koreanForms: [KoreanForm("입어요", speechLevel: "informal-polite")])
     #expect(!Grader.isCorrect("이뻐요", entry: wear, direction: .englishToKorean))
 }
+
+@Test func recognitionConfirmationOffersEveryAcceptedSynonym() {
+    let accepted: Set<String> = ["빨개요", "붉어요"]
+    let decision = SpokenGrader.decide(heard: "불까요", alternatives: [], accepted: accepted, preferredAnswer: "빨개요")
+    guard case .confirm(let preferred) = decision else { Issue.record("Expected confirmation"); return }
+    let options = SpokenGrader.confirmationOptions(accepted: accepted, preferred: preferred)
+    #expect(Set(options) == accepted)
+    #expect(options.count == 2)
+    #expect(SpokenGrader.confirmationOptions(accepted: accepted, preferred: "invalid") == accepted.sorted())
+}

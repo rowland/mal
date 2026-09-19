@@ -2,6 +2,9 @@ import Foundation
 
 public enum SpokenDecision: Equatable { case correct(String), confirm(String), incorrect }
 public enum SpokenGrader {
+    public static func confirmationOptions(accepted: Set<String>, preferred: String) -> [String] {
+        (accepted.contains(preferred) ? [preferred] : []) + accepted.filter { $0 != preferred }.sorted()
+    }
     public static func decide(heard: String, alternatives: [String], accepted: Set<String>, preferredAnswer: String? = nil) -> SpokenDecision {
         let heard = Grader.normalize(heard, direction: .englishToKorean)
         let targets = accepted.sorted()

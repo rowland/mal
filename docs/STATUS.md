@@ -301,3 +301,11 @@ Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **73 tests pass
 Next action: test red in English→Korean polite mode with both 빨개요 and 붉어요; verify either passes regardless of the displayed correction/example. Check differing object cues continue to enforce the correct sense. Existing independent content, speech and IME release gates remain open.
 
 Build: `./scripts/build-app.sh` succeeded after the alternate-answer UI addition and published signed `build/Mal.app`.
+
+## Confirm the synonym actually spoken — 2026-09-18
+
+Fixed recognition-check UI offering only 빨개요 when 붉어요 was equally accepted. Pending confirmation now retains all accepted forms, and the panel provides a button for each. Selection is validated against the pending set; feedback uses the confirmed form, history retains the heard transcript, and no grade occurs before selection. Retry/Count incorrect/Escape behaviors remain.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **74 tests passed**, including the exact 불까요→red scenario, both 빨개요/붉어요 confirmation options, uniqueness and invalid preferred-form handling. `git diff --check` passed. Native layout/live recognition acceptance pending. Next action: repeat the reported case and confirm I said 붉어요 is available and records one success without requiring spelling edits. Existing release gates remain open.
+
+Build: `./scripts/build-app.sh` succeeded and published signed `build/Mal.app`.
