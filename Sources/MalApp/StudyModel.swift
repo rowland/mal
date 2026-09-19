@@ -211,7 +211,7 @@ import MalStorage
         var correct = accepted.contains(Grader.normalize(value, direction: settings.direction))
         var interpreted: String?
         if spokenPractice && !editingSpokenAnswer && hasSpokenDraft {
-            switch SpokenGrader.decide(heard: value, alternatives: dictation.alternatives, accepted: accepted) {
+            switch SpokenGrader.decide(heard: value, alternatives: dictation.alternatives, accepted: accepted, preferredAnswer: koreanText(entry)) {
             case .correct(let matched): correct = true; interpreted = matched
             case .confirm(let candidate): speechConfirmation = candidate; return
             case .incorrect: break

@@ -43,4 +43,4 @@ UX-13: Automatically select an enabled Korean/English input source when the corr
 
 DATA-07: English grading accepts top-level semicolon-separated meanings and optional leading infinitive “to ” for predicates; retain qualifiers and avoid arbitrary punctuation/comma splitting. English personal aliases can be saved in any Korean form category, with shared grading/distractor exclusion semantics.
 
-UX-14: Spoken answers consider recognizer alternatives and limited plain/tense consonant tolerance. Other narrowly similar transcriptions offer explicit recognition confirmation/retry before grading. Typed/edited answers retain exact grading, and speech accommodations never become vocabulary aliases.
+UX-14: Spoken answers consider recognizer alternatives and limited plain/tense consonant tolerance. Every other nonempty unmatched speech transcript offers explicit recognition confirmation/retry before grading; no automatic speech failure based solely on unmatched text. Typed/edited answers retain exact grading, and speech accommodations never become vocabulary aliases.

@@ -2,9 +2,10 @@ import Foundation
 
 public enum SpokenDecision: Equatable { case correct(String), confirm(String), incorrect }
 public enum SpokenGrader {
-    public static func decide(heard: String, alternatives: [String], accepted: Set<String>) -> SpokenDecision {
+    public static func decide(heard: String, alternatives: [String], accepted: Set<String>, preferredAnswer: String? = nil) -> SpokenDecision {
         let heard = Grader.normalize(heard, direction: .englishToKorean)
         let targets = accepted.sorted()
+        guard !heard.isEmpty else { return .incorrect }
         if accepted.contains(heard) { return .correct(heard) }
         for alternative in alternatives {
             let value = Grader.normalize(alternative, direction: .englishToKorean)
@@ -14,6 +15,10 @@ public enum SpokenGrader {
         if soundsLike.count == 1 { return .correct(soundsLike[0]) }
         let near = targets.filter { difference(heard, $0) != nil }
         if let candidate = near.first { return .confirm(candidate) }
+        // A text transcript alone cannot establish that the learner spoke the wrong
+        // word. Unmatched speech requires a decision, never an automatic failure.
+        if let preferredAnswer, accepted.contains(preferredAnswer) { return .confirm(preferredAnswer) }
+        if let candidate = targets.first { return .confirm(candidate) }
         return .incorrect
     }
     // One substituted Hangul syllable only. Initial plain/tense pairs can pass;

@@ -281,3 +281,13 @@ Added pure SpokenGrader and requested recognition alternatives. Exact accepted a
 Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **70 tests passed**, including recognition alternatives, all five plain/tense pairs, 한국과/한국어 confirmation, 어/아 confirmation, negation/tense/blank rejection, exact-match priority and unchanged typed grading. `./scripts/build-app.sh` succeeded and published signed `build/Mal.app`; `git diff --check` passed. Live recognition alternative quality and confirmation UI acceptance remain pending.
 
 Next action/manual script: in English→Korean Speak Korean, try a known plain/tense confusion and check Accepted as… feedback; try 한국어 and inspect any recognition-check panel for 한국과. Try again must leave history/counts unchanged, explicit confirmation must create one successful grade, Count incorrect one failure, and Undo restore prior progress. Escape should enable exact text correction with no stale speech result overwriting it. Confirm new cards clear prior alternatives/pending prompts. Existing content verification and broader speech/IME acceptance gates remain open.
+
+## Unmatched speech does not imply learner failure — 2026-09-18
+
+User screenshot: 입어요 expected, 이뻐요 transcribed and automatically marked wrong. Previous comparison allowed only a single changed syllable; this example changes two. Updated SpokenGrader to route every nonempty unmatched transcript to the existing ungraded recognition-check panel, rather than widening automatic acceptance. I said [form] records success; Try again records nothing; Count incorrect records failure; Escape opens exact editing. Original heard text is retained in graded history. No existing grades were rewritten.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **71 tests passed**. Regression explicitly covers 입어요/이뻐요, whitespace/punctuation/larger mismatches, displayed-form preference, and strict typed rejection. Negated/past-tense speech mismatches now require confirmation rather than being silently accepted or failed. `git diff --check` passed. Live recognition/confirmation UI acceptance remains pending.
+
+Next action: repeat the reported spoken example; verify no Incorrect screen or history/counter change precedes your decision. Confirming must create one correct grade, retry none, and Count incorrect one failure. Apple transcription quality is still unresolved; this change protects grading from it. Existing linguistic/IME/live-speech acceptance gates remain open.
+
+Build: `./scripts/build-app.sh` succeeded, publishing signed `build/Mal.app`.
