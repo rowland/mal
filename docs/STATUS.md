@@ -309,3 +309,13 @@ Fixed recognition-check UI offering only 빨개요 when 붉어요 was equally ac
 Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **74 tests passed**, including the exact 불까요→red scenario, both 빨개요/붉어요 confirmation options, uniqueness and invalid preferred-form handling. `git diff --check` passed. Native layout/live recognition acceptance pending. Next action: repeat the reported case and confirm I said 붉어요 is available and records one success without requiring spelling edits. Existing release gates remain open.
 
 Build: `./scripts/build-app.sh` succeeded and published signed `build/Mal.app`.
+
+## Wait for speech, finish after quiet — 2026-09-18
+
+Removed five-second recording cutoff. Listening stays ready during thinking, reports activity once detected, and finalizes after approximately 0.8 seconds of quiet with a nonempty transcript. Final transcript segments no longer individually trigger submission while speech may continue. Return still submits the visible draft immediately; Escape edits; error/ambiguity handling unchanged. Two-second finalization bound remains. Energy/noise-floor detection is heuristic and needs microphone-specific acceptance.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **77 tests passed**, including 60 seconds of thinking silence, brief pauses/resumed speech, post-speech quiet, noise without transcription, invalid meter values and planar/interleaved stereo metering. `git diff --check` passed. No live microphone endpoint test performed.
+
+Next action/manual acceptance: wait longer than five seconds before speaking, then speak a word and pause; verify capture stays ready while thinking and submits/checks soon after finishing. Try multiword answers with a brief internal pause, soft speech and normal background noise. Verify Return bypasses waiting and Escape/card/app changes stop capture. Report premature cutoffs or failures to finish so sensitivity/quiet duration can be tuned. Existing vocabulary/IME/live-speech release gates remain open.
+
+Build: `./scripts/build-app.sh` succeeded and published signed `build/Mal.app`.

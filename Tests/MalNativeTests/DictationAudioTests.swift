@@ -20,3 +20,15 @@ import MalNative
     microphone.floatChannelData![0][1500] = 0
     #expect(converted.floatChannelData![0][500] == value)
 }
+
+@Test(arguments: [true, false]) func audioMeterHandlesBothChannelLayouts(interleaved: Bool) throws {
+    let format = try #require(AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: 48000, channels: 2, interleaved: interleaved))
+    let buffer = try #require(AVAudioPCMBuffer(pcmFormat: format, frameCapacity: 100))
+    buffer.frameLength = 100
+    for audio in UnsafeMutableAudioBufferListPointer(buffer.mutableAudioBufferList) {
+        let samples = Int(buffer.frameLength) * Int(audio.mNumberChannels)
+        let data = try #require(audio.mData).assumingMemoryBound(to: Float.self)
+        for index in 0..<samples { data[index] = 0.1 }
+    }
+    #expect(abs(AudioLevel.decibels(buffer) + 20) < 0.01)
+}

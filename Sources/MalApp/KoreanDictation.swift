@@ -12,6 +12,8 @@ import MalNative
     private(set) var needsDownload = false
     private(set) var status = ""
     private var draft = DictationDraft()
+    private var endpoint = SpeechEndpoint()
+    private var completed: (@MainActor () -> Void)?
     private var engine: AVAudioEngine?
     private var analyzer: SpeechAnalyzer?
     private var input: AsyncStream<AnalyzerInput>.Continuation?
@@ -36,8 +38,11 @@ import MalNative
                 catch { if draft.sessionID == id { fail("Transcription stopped. Review the draft or try again.") }; return }
                 await resultTask?.value
                 guard draft.sessionID == id else { return }
+                let finish = completed
+                let hasAnswer = draft.text != nil
                 cancel()
-                status = "Listening paused. Return submits · Escape edits · ⌘⇧R resumes."
+                if hasAnswer { finish?() }
+                else { status = "No answer recognized. ⌘⇧R retries · Escape edits." }
             }
             return
         }
@@ -51,7 +56,7 @@ import MalNative
         input?.finish(); input = nil
         results?.cancel(); results = nil
         if let analyzer { Task { await analyzer.cancelAndFinishNow() } }
-        analyzer = nil; active = false; listening = false
+        analyzer = nil; completed = nil; active = false; listening = false
     }
     private func module() async -> SpeechTranscriber? {
         guard SpeechTranscriber.isAvailable,
@@ -78,7 +83,7 @@ import MalNative
     func start(onText: @escaping @MainActor (String) -> Void, onUtteranceEnd: @escaping @MainActor () -> Void) async {
         guard !active else { return }
         let id = UUID(); draft.begin(id: id); active = true
-        alternatives = []
+        alternatives = []; endpoint = SpeechEndpoint(); completed = onUtteranceEnd
         status = "Checking Korean speech recognition…"
         guard let transcriber = await module() else {
             if draft.sessionID == id { fail("On-device Korean recognition is unsupported on this Mac. Typing still works.") }; return
@@ -120,11 +125,8 @@ import MalNative
                     if result.isFinal { committed += fragment }
                     if self.draft.receive(text, id: id), let cleaned = self.draft.text {
                         onText(cleaned)
-                        if result.isFinal {
-                            self.cancel()
-                            onUtteranceEnd()
-                            return
-                        }
+                        // Final segments are not necessarily the end of the user's answer.
+                        // The audio endpoint closes input before we submit the completed result.
                     }
                 }
             } catch { if let self, self.draft.sessionID == id { self.fail("Recognition stopped: \(error.localizedDescription). Review the draft or try again.") } }
@@ -133,27 +135,35 @@ import MalNative
             try await analyzer.start(inputSequence: stream)
             guard draft.sessionID == id else { return }
             engine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: source,
-                block: Self.audioTap(converter: converter, continuation: continuation) { [weak self] in
+                block: Self.audioTap(converter: converter, continuation: continuation, onLevel: { [weak self] level, duration in
+                    Task { @MainActor [weak self] in
+                        guard let self, self.draft.sessionID == id, self.listening else { return }
+                        let finished = self.endpoint.observe(decibels: level, duration: duration, hasTranscript: self.draft.text != nil)
+                        self.status = self.endpoint.speaking ? "Hearing your answer… Return submits · Escape edits." : "Ready when you are… Return submits · Escape edits."
+                        if finished { self.stop() }
+                    }
+                }) { [weak self] in
                     Task { @MainActor [weak self] in
                         if let self, self.draft.sessionID == id { self.fail("The microphone audio could not be converted. Try another input device.") }
                     }
                 })
             self.engine = engine
             engine.prepare(); try engine.start()
-            listening = true; status = "Listening… Return submits now · Escape edits."
-            timeout = Task { [weak self] in
-                do { try await Task.sleep(for: .seconds(5)) } catch { return }
-                guard let self, self.draft.sessionID == id else { return }; self.stop()
-            }
+            listening = true; status = "Ready when you are… Return submits · Escape edits."
+
         } catch { if draft.sessionID == id { fail("Could not start recognition: \(error.localizedDescription)") } }
     }
     private func fail(_ message: String) { cancel(); status = message }
     nonisolated private static func audioTap(converter: DictationAudioConverter,
         continuation: AsyncStream<AnalyzerInput>.Continuation,
+        onLevel: @escaping @Sendable (Double, Double) -> Void,
         onError: @escaping @Sendable () -> Void) -> AVAudioNodeTapBlock {
         { buffer, _ in
             do {
-                if let output = try converter.convert(buffer) { continuation.yield(AnalyzerInput(buffer: output)) }
+                if let output = try converter.convert(buffer) {
+                    continuation.yield(AnalyzerInput(buffer: output))
+                    onLevel(AudioLevel.decibels(buffer), Double(buffer.frameLength) / buffer.format.sampleRate)
+                }
             } catch { onError() }
         }
     }
