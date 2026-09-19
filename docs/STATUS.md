@@ -319,3 +319,11 @@ Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **77 tests pass
 Next action/manual acceptance: wait longer than five seconds before speaking, then speak a word and pause; verify capture stays ready while thinking and submits/checks soon after finishing. Try multiword answers with a brief internal pause, soft speech and normal background noise. Verify Return bypasses waiting and Escape/card/app changes stop capture. Report premature cutoffs or failures to finish so sensitivity/quiet duration can be tuned. Existing vocabulary/IME/live-speech release gates remain open.
 
 Build: `./scripts/build-app.sh` succeeded and published signed `build/Mal.app`.
+
+## Reduce background-noise endpoint delays — 2026-09-18
+
+Adjusted the endpoint activity threshold to account for sustained voice level, preventing substantially quieter room noise from repeatedly resetting the quiet timer. Brief clicks no longer erase accumulated quiet or raise the voice reference. First transcript evidence clears silence accumulated while thinking. Retained the 0.8-second quiet interval, indefinite thinking time, and Return submission override. No personal data or grading rules changed.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **79 tests passed**. Regression coverage includes quieter room noise after speech, a brief loud click, resumed soft speech, and long thinking silence. `./scripts/build-app.sh` succeeded and published signed `build/Mal.app`. `git diff --check` passed. Live microphone testing has not been performed; equally loud background noise can still defeat this energy heuristic.
+
+Next action/manual acceptance: reopen the rebuilt app and speak in the environment that produced the delayed cutoff. Check that normal room noise no longer extends capture, and that softer speech and short internal pauses are not cut off. Return remains available to submit immediately. Existing content, IME and live-speech release gates remain open.
