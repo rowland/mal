@@ -259,3 +259,20 @@ private func fixture(version: Int = 1) -> Bank {
     #expect(try reopened.states()[key]?.totalCorrect == 1)
     #expect(try reopened.states()[key]?.totalWrong == 0)
 }
+
+@Test func redSynonymsAreSymmetricAcrossActualBanksAndStyles() throws {
+    let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let banks = try ["novice", "general"].map { name in
+        try BankCodec.decode(String(contentsOf: root.appendingPathComponent("Sources/MalApp/Resources/Banks/\(name).yaml"), encoding: .utf8), allowBuiltIn: true)
+    }
+    let entries = banks.flatMap(\.entries)
+    let red = try #require(entries.first { $0.lemma == "빨갛다" })
+    let crimson = try #require(entries.first { $0.lemma == "붉다" })
+    for target in [red, crimson] {
+        let polite = FormPractice.accepted(target, direction: .englishToKorean, style: .polite, pool: entries)
+        #expect(polite.contains("빨개요") && polite.contains("붉어요"))
+        #expect(!polite.contains("빨간") && !polite.contains("붉다"))
+        let attributive = FormPractice.accepted(target, direction: .englishToKorean, style: .attributive, pool: entries)
+        #expect(attributive.contains("빨간") && attributive.contains("붉은"))
+    }
+}

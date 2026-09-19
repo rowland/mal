@@ -291,3 +291,13 @@ Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **71 tests pass
 Next action: repeat the reported spoken example; verify no Incorrect screen or history/counter change precedes your decision. Confirming must create one correct grade, retry none, and Count incorrect one failure. Apple transcription quality is still unresolved; this change protects grading from it. Existing linguistic/IME/live-speech acceptance gates remain open.
 
 Build: `./scripts/build-app.sh` succeeded, publishing signed `build/Mal.app`.
+
+## Symmetric Korean answers for ambiguous English prompts — 2026-09-18
+
+Investigated red: Novice 빨갛다 already accepted 붉다 variants, but General 붉다 did not reciprocate. Added same-English/POS/cue equivalence in FormPractice, with selected style preserved. Both targets now accept 빨개요/붉어요 in polite practice and 빨간/붉은 in attributive practice. Multiple-choice exclusion uses the expanded accepted set. Added Also accepted to focused Korean introductions/corrections to clarify randomized example forms.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **73 tests passed**, including both actual bank entries across polite/attributive forms, rejection of incorrect style, and separation of wear-a-hat/wear-clothes/POS. `git diff --check` passed. No bank data, IDs, verification status or user progress changed. Native Also accepted layout acceptance pending.
+
+Next action: test red in English→Korean polite mode with both 빨개요 and 붉어요; verify either passes regardless of the displayed correction/example. Check differing object cues continue to enforce the correct sense. Existing independent content, speech and IME release gates remain open.
+
+Build: `./scripts/build-app.sh` succeeded after the alternate-answer UI addition and published signed `build/Mal.app`.

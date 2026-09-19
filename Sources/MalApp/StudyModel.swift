@@ -19,12 +19,17 @@ import MalStorage
     func koreanText(_ entry: Entry) -> String { koreanDisplays[entry.id] ?? FormPractice.forms(entry, style: practiceStyle).first ?? entry.lemma }
     func studyPrompt(_ entry: Entry) -> String { settings.direction == .koreanToEnglish ? koreanText(entry) : entry.prompt(settings.direction) }
     func correctAnswer(_ entry: Entry) -> String { settings.direction == .englishToKorean ? koreanText(entry) : entry.answer(settings.direction) }
+    func alternateKoreanAnswers(_ entry: Entry) -> String? {
+        guard settings.direction == .englishToKorean, practiceStyle != .dictionary else { return nil }
+        let alternatives = FormPractice.accepted(entry, direction: .englishToKorean, style: practiceStyle, pool: allEntries, aliases: aliases).filter { $0 != koreanText(entry) }.sorted()
+        return alternatives.isEmpty ? nil : alternatives.joined(separator: ", ")
+    }
     var canRememberAnswer: Bool { current.map { FormPractice.canRememberAlias($0, direction: settings.direction, style: practiceStyle) } ?? false }
     var focusedForm: Bool { current.map { practiceStyle != .dictionary && FormPractice.applies($0, style: practiceStyle) } ?? false }
     private func prepareChoices(_ entry: Entry) {
         koreanDisplays = FormPractice.displayForms(practiceEntries, style: practiceStyle, using: &random)
         if koreanDisplays[entry.id] == nil { koreanDisplays[entry.id] = FormPractice.forms(entry, style: practiceStyle).first ?? entry.lemma }
-        let accepted = settings.direction == .koreanToEnglish ? FormPractice.accepted(entry, direction: settings.direction, style: practiceStyle, pool: allEntries, displayedKorean: koreanText(entry), aliases: aliases) : nil
+        let accepted = FormPractice.accepted(entry, direction: settings.direction, style: practiceStyle, pool: allEntries, displayedKorean: koreanText(entry), aliases: aliases)
         choices = ChoiceBuilder.choices(target: entry, pool: practiceEntries, direction: settings.direction, count: settings.choiceCount, koreanAnswers: koreanDisplays, acceptedAnswers: accepted, sensePool: allEntries, aliases: aliases, using: &random)
     }
     let dictation = KoreanDictation()

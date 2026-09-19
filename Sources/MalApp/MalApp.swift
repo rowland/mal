@@ -153,6 +153,9 @@ struct ContentView: View {
                     Text(entry.english.joined(separator: "; "))
                         .font(.system(size: 30)).textSelection(.enabled)
                         .fixedSize(horizontal: false, vertical: true)
+                    if let alternatives = model.alternateKoreanAnswers(entry) {
+                        Text("Also accepted: " + alternatives).font(.callout).foregroundStyle(.secondary)
+                    }
                     if model.koreanText(entry) != entry.lemma {
                         Text("Dictionary form: " + entry.lemma).font(.callout).foregroundStyle(.secondary)
                     }
@@ -251,6 +254,9 @@ struct ContentView: View {
                             .font(.system(size: 34, weight: .medium))
                             .lineLimit(nil).fixedSize(horizontal: false, vertical: true)
                             .textSelection(.enabled)
+                        if let alternatives = model.alternateKoreanAnswers(entry) {
+                            Text("Also accepted: " + alternatives).font(.callout).foregroundStyle(.secondary)
+                        }
                     }.frame(maxWidth: .infinity, alignment: .leading)
                         .padding(16)
                         .background(Color.accentColor.opacity(0.08), in: RoundedRectangle(cornerRadius: 8))

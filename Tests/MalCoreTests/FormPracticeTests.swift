@@ -87,3 +87,11 @@ private struct FormRandom: RandomNumberGenerator { mutating func next() -> UInt6
     let choices = ChoiceBuilder.choices(target: hear, pool: pool, direction: .koreanToEnglish, count: 5, acceptedAnswers: accepted, using: &random)
     #expect(Set(choices) == ["hear", "go"])
 }
+
+@Test func englishEquivalenceRequiresMatchingSenseCueAndPartOfSpeech() {
+    let hat = Entry(id: "hat", lemma: "쓰다", partOfSpeech: .verb, english: ["wear"], promptCue: "a hat", koreanForms: [KoreanForm("써요", speechLevel: "informal-polite")])
+    let clothes = Entry(id: "clothes", lemma: "입다", partOfSpeech: .verb, english: ["wear"], promptCue: "clothes", koreanForms: [KoreanForm("입어요", speechLevel: "informal-polite")])
+    let noun = Entry(id: "noun", lemma: "옷", partOfSpeech: .noun, english: ["wear"], promptCue: "a hat")
+    let answers = FormPractice.accepted(hat, direction: .englishToKorean, style: .polite, pool: [hat, clothes, noun])
+    #expect(answers == ["써요"])
+}

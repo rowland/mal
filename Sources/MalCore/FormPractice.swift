@@ -53,9 +53,26 @@ public enum FormPractice {
         CardKey(entry.id, direction, mode, formStyle: style != .dictionary && applies(entry, style: style) ? style : nil)
     }
     public static func accepted(_ entry: Entry, direction: Direction, style: KoreanPracticeStyle, pool: [Entry], displayedKorean: String? = nil, aliases: [String: [String]] = [:]) -> Set<String> {
-        if direction == .englishToKorean && style != .dictionary && applies(entry, style: style) {
-            // A vocabulary alias has no form label, so cannot establish a focused-form answer.
-            return Set(forms(entry, style: style).map { Grader.normalize($0, direction: direction) })
+        if direction == .englishToKorean {
+            func meaning(_ value: String) -> String {
+                let normalized = Grader.normalize(value, direction: .koreanToEnglish)
+                return entry.partOfSpeech == .adjective && normalized.hasPrefix("be ") ? String(normalized.dropFirst(3)) : normalized
+            }
+            let promptMeaning = meaning(entry.english.first ?? "")
+            let cue = Grader.normalize(entry.promptCue ?? "", direction: .koreanToEnglish)
+            let equivalents = pool.filter { candidate in
+                candidate.partOfSpeech == entry.partOfSpeech &&
+                Grader.normalize(candidate.promptCue ?? "", direction: .koreanToEnglish) == cue &&
+                Grader.accepted(candidate, direction: .koreanToEnglish).contains { meaning($0) == promptMeaning }
+            }
+            return (equivalents + [entry]).reduce(into: Set<String>()) { result, candidate in
+                if style != .dictionary && applies(candidate, style: style) {
+                    // Unlabelled personal aliases cannot establish a requested conjugation.
+                    result.formUnion(forms(candidate, style: style).map { Grader.normalize($0, direction: direction) })
+                } else {
+                    result.formUnion(Grader.accepted(candidate, direction: direction, aliases: aliases[candidate.id] ?? []))
+                }
+            }
         }
         var accepted = Grader.promptAnswers(entry, direction: direction, pool: pool, aliases: aliases)
         if direction == .koreanToEnglish {
