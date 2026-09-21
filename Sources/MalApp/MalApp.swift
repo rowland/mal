@@ -186,6 +186,23 @@ struct ContentView: View {
                         Button("Count incorrect", action: model.rejectSpokenAnswer)
                     }
                     Text("Escape to edit").font(.caption).foregroundStyle(.secondary)
+                    DisclosureGroup("Apple recognition details") {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Latest 100 updates for this attempt. Apple's alternatives include its primary choice; these are not Mal's accepted answers. Times are since preparation began.")
+                                .font(.caption).foregroundStyle(.secondary)
+                            if model.dictation.recognitionDetails.isEmpty {
+                                Text("No recognition updates captured.")
+                            } else {
+                                Text(model.dictation.recognitionDetails.joined(separator: "\n\n"))
+                                    .font(.system(.callout, design: .monospaced))
+                                    .textSelection(.enabled)
+                                Button("Copy recognition details") {
+                                    NSPasteboard.general.clearContents()
+                                    NSPasteboard.general.setString(model.dictation.recognitionDetails.joined(separator: "\n\n"), forType: .string)
+                                }
+                            }
+                        }.frame(maxWidth: .infinity, alignment: .leading).padding(.top, 6)
+                    }
                 }
             } else if !model.waiting && model.settings.mode == .multipleChoice {
                 if model.choices.count < 2 {

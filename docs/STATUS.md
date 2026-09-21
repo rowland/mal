@@ -327,3 +327,69 @@ Adjusted the endpoint activity threshold to account for sustained voice level, p
 Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **79 tests passed**. Regression coverage includes quieter room noise after speech, a brief loud click, resumed soft speech, and long thinking silence. `./scripts/build-app.sh` succeeded and published signed `build/Mal.app`. `git diff --check` passed. Live microphone testing has not been performed; equally loud background noise can still defeat this energy heuristic.
 
 Next action/manual acceptance: reopen the rebuilt app and speak in the environment that produced the delayed cutoff. Check that normal room noise no longer extends capture, and that softer speech and short internal pauses are not cut off. Return remains available to submit immediately. Existing content, IME and live-speech release gates remain open.
+
+## Progressive speech vocabulary matching — 2026-09-20 — awaiting human review
+
+User reports recognition has worsened and requests live intersection matching rather than waiting for silence on already-valid speech. Added pure SpokenGrader.matches across primary/alternative hypotheses and the existing accepted translations. Whole words/contiguous phrases may appear among extra words; embedded substrings do not match. The live callback submits only exact intersections and cancels capture; uncertain speech retains the silence/Return confirmation path. Typed grading and personal progress are unchanged. No bank content edited.
+
+Automated verification: `swift test --scratch-path /tmp/mal-speech-tests`: **81 tests passed**. Includes primary/alternative intersections, two red synonyms, self-correction “한국아, I mean 한국어!”, punctuation, NFC, phrase boundaries, substring rejection, and strict typed grading. Existing session-cancellation and endpoint tests pass. First sandboxed test invocation failed on compiler-cache permissions; authorized rerun passed. `./scripts/build-app.sh` succeeded, publishing signed `build/Mal.app`; `git diff --check` passed.
+
+Human acceptance: **pending; changes intentionally uncommitted**. No actual microphone recognition/latency verdict is claimed. Next action: user quits/reopens build/Mal.app and tests English→Korean Write-in / Speak Korean:
+
+1. Think silently, then speak a correct word. A matching live hypothesis should advance without waiting for quiet; confirm only one history entry.
+2. On red, try both 빨개요 and 붉어요 in everyday polite mode.
+3. On Korean/language, try “한국아, I mean 한국어!”; inspect Accepted as / heard feedback.
+4. Speak an unrelated answer and pause: no early success; recognition confirmation should appear after the silence/finalization path. Return and Escape must still work.
+5. Try soft speech and room noise; report whether delays persist or early matches interrupt unfinished answers. Apple may revise volatile hypotheses after the point we choose to accept; this tradeoff needs real use.
+
+Await explicit human review before committing. Existing content/IME/live-speech release gates remain open.
+
+## Speech latency trial — 2026-09-20 — awaiting human review
+
+User acceptance of the progressive-matching build found several seconds of latency after speaking. Inspection found fastResults was not enabled, and analyzer preparation was deferred until input. Enabled fastResults with alternatives/volatile results and explicitly prepare the analyzer before microphone capture/Ready. Added text-free OSLog timing events (subsystem app.mal, category SpeechTiming) to distinguish preparation, audio activity, first result, endpoint/finalization and closure. No measured microphone latency improvement is claimed. Apple's faster-results mode can reduce accuracy; this remains an experiment.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **81 tests passed**. `./scripts/build-app.sh` succeeded and published signed `build/Mal.app`. `git diff --check` passed. No changes to scheduling, database, bank data or endpoint rules this iteration. Previous progressive matching changes remain uncommitted as requested.
+
+Next action: user quits/reopens build/Mal.app and tests several short answers after Ready appears, comparing delay and accuracy. If delay persists, inspect timing with `log show --last 10m --style compact --predicate 'subsystem == "app.mal" AND category == "SpeechTiming"'` to separate model delivery from endpoint waiting. Logs contain event names/elapsed times only. Live microphone results and human review remain pending; do not commit until accepted.
+
+## Inspect Apple's alternatives — 2026-09-20
+
+Human feedback: recognition speed is now acceptable. Screenshot shows 하예요 with confirmation choices 하얘요/희어요. Those buttons are accepted vocabulary, not Apple's alternative transcripts. Previously returned alternatives were overwritten with each result and not recorded, so the historical API output cannot be verified from the screenshot.
+
+Added collapsed Apple recognition details to confirmation: latest 100 updates of the current attempt, raw primary/alternatives (including empty strings), partial/final status, elapsed time and prior finalized prefix. Text is selectable and explicitly copyable. Kept in memory only, reset at each recording; no transcript added to OSLog or storage. Grading and fast recognition settings unchanged. No new vowel tolerance rule introduced pending inspection.
+
+Next human check: reopen build/Mal.app, reproduce white/하예요, expand Apple recognition details and copy the updates. Check whether 하얘요 appears in any raw alternative, distinguishing Apple results from Mal's accepted answer buttons. UI/live capture acceptance pending. All changes remain uncommitted pending review.
+
+Verification: `./scripts/build-app.sh` succeeded and published signed `build/Mal.app`; `git diff --check` passed. This iteration changes diagnostic capture/UI only; rules/storage tests were not rerun (previous full suite: 81 passed). Native diagnostic disclosure/copy behavior remains to be checked with a real recognition attempt.
+
+## Extensible speech-only rules — 2026-09-20 — awaiting review
+
+User supplied actual API output: partial 하, partial 하예, then final alternatives 하예요., 하게요., 하이예요., 하 예요., 하에요. No 하얘요. This verifies diagnostic capture/copy through real use; user previously confirmed restored speed.
+
+Added SpeechMatchingRule/SpeechMatchingRules in pure MalCore: versioned rule identifiers, explicit live eligibility, independent predicates and candidate/answer/rule evidence. Added vowel-pairs-v1; extracted existing plain/tense accommodation into its own rule. Exact matching takes precedence; ambiguity across rules and alternatives cannot auto-grade. Rules do not compose. The vowel rule handles the reported example live, including punctuation and NFC; it does not accept changed consonants, omitted syllables or additional word suffixes. Typed/Escape-edited grading remains strict. No database/content edits.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **84 tests passed**, including the supplied five alternatives, both vowel pairs in both directions, multiple vowel substitutions, evidence/disabled rules, exact precedence, ambiguity across hypotheses, non-composition, negative cases and typed rejection. `./scripts/build-app.sh` succeeded and published signed build/Mal.app. `git diff --check` passed.
+
+Next human acceptance: reopen Mal and repeat white/하얘요; Apple 하예요 should advance with Accepted as 하얘요 feedback. Confirm no renewed latency and that unrelated speech still reaches confirmation. Changes remain uncommitted pending human review.
+
+## Live single/double consonants — 2026-09-20 — awaiting review
+
+User reports vowel-rule behavior good so far and requests relaxed single/double consonants. Enabled the existing plain-tense-initial rule during live matching; previously it only ran at submission. All five onset pairs work bidirectionally on primary/alternatives. Exact precedence, unique-answer requirement, strict typing, and non-composition retained. Screenshot 빨아요/받아요 also changes the final consonant; it intentionally remains confirmation and is covered by a regression.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **85 tests passed**. Added live pair/direction/alternative coverage, ambiguity and exact precedence, aspirated-consonant and suffix rejection, and reported screenshot behavior. `./scripts/build-app.sh` succeeded and published signed build/Mal.app; `git diff --check` passed. Personal data/content unchanged.
+
+Next action: reopen the app and test a pure single/double consonant recognition substitution. Confirm immediate acceptance while 빨아요/받아요 still requires confirmation. Changes remain uncommitted for human review; no live microphone acceptance claimed this iteration.
+
+## Contextual ㄹ/ㄷ recognition trial — 2026-09-20
+
+Added named rieul-digeut-before-a-eo-v1 rule for a single coda ㄹ/ㄷ difference immediately before an identical 아/어-vowel syllable. An optional plain/tense onset change in that same preceding syllable explicitly covers 빨아요/받아요. This supersedes the prior screenshot rejection test. No whole-word aliases; tentative 애/에 contexts, intervening spaces, unrelated consonants/vowels and syllable additions remain excluded. User-facing commentary describes this as recognition tolerance, not accepted spelling or phonetic equivalence.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **86 tests passed**, including screenshot, second context, symmetry, alternative hypotheses, negative contexts, ambiguity, exact precedence, rule evidence and strict typed rejection. `./scripts/build-app.sh` succeeded and published signed build/Mal.app. `git diff --check` passed. No personal data/content changes.
+
+Next action: reopen the app and repeat receive; 빨아요 should match 받아요 when it is the unique accepted match. Evaluate false positives and live behavior; this rule deliberately tolerates a difference that can separate real words. 애/에 expansion remains deferred. All changes remain uncommitted pending human review.
+
+## Speech checkpoint approved — 2026-09-20
+
+User reviewed the speech iterations, reported restored speed and good progress, and explicitly requested a commit. The review gate for this checkpoint is satisfied. Commit includes progressive hypothesis matching, faster/prepared recognition, inspectable Apple results and extensible speech-only vowel/consonant rules. Latest verification remains 86 passing tests plus successful signed app build; no implementation changes since those checks. Commit-time diff whitespace check passed.
+
+Next action: continue ordinary study and capture Apple recognition details for unresolved words; add narrowly tested rules only when supported by examples. Contextual ㅐ/ㅔ expansion, broader false-positive evaluation, and existing content/IME release gates remain open. Approval of this checkpoint does not constitute exhaustive linguistic or UI acceptance.

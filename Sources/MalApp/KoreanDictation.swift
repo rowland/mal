@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import OSLog
 import Speech
 @preconcurrency import AVFoundation
 import MalCore
@@ -7,10 +8,20 @@ import MalNative
 
 @MainActor @Observable final class KoreanDictation {
     private(set) var alternatives: [String] = []
+    // In-memory diagnostic only; reset per attempt, bounded, never written to logs.
+    private(set) var recognitionDetails: [String] = []
+    private var resultNumber = 0
     private(set) var active = false
     private(set) var listening = false
     private(set) var needsDownload = false
     private(set) var status = ""
+    private let timingLog = Logger(subsystem: "app.mal", category: "SpeechTiming")
+    private var timingStart = ProcessInfo.processInfo.systemUptime
+    private var reportedFirstResult = false
+    private func trace(_ event: String) {
+        let elapsed = ProcessInfo.processInfo.systemUptime - timingStart
+        timingLog.notice("\(event, privacy: .public) +\(elapsed, format: .fixed(precision: 3))s")
+    }
     private var draft = DictationDraft()
     private var endpoint = SpeechEndpoint()
     private var completed: (@MainActor () -> Void)?
@@ -22,6 +33,7 @@ import MalNative
 
     func stop(clearStatus: Bool = false) {
         if !clearStatus, listening, let analyzer {
+            trace("quiet endpoint; finalizing")
             listening = false
             engine?.stop(); engine?.inputNode.removeTap(onBus: 0); engine = nil
             input?.finish(); input = nil
@@ -38,6 +50,7 @@ import MalNative
                 catch { if draft.sessionID == id { fail("Transcription stopped. Review the draft or try again.") }; return }
                 await resultTask?.value
                 guard draft.sessionID == id else { return }
+                trace("finalization complete")
                 let finish = completed
                 let hasAnswer = draft.text != nil
                 cancel()
@@ -50,6 +63,7 @@ import MalNative
         status = clearStatus ? "" : "Listening paused. Return submits · Escape edits · ⌘⇧R resumes."
     }
     private func cancel() {
+        if active { trace("session closed") }
         draft.end()
         timeout?.cancel(); timeout = nil
         engine?.stop(); engine?.inputNode.removeTap(onBus: 0); engine = nil
@@ -61,7 +75,7 @@ import MalNative
     private func module() async -> SpeechTranscriber? {
         guard SpeechTranscriber.isAvailable,
               let locale = await SpeechTranscriber.supportedLocale(equivalentTo: Locale(identifier: "ko-KR")) else { return nil }
-        return SpeechTranscriber(locale: locale, transcriptionOptions: [], reportingOptions: [.volatileResults, .alternativeTranscriptions], attributeOptions: [])
+        return SpeechTranscriber(locale: locale, transcriptionOptions: [], reportingOptions: [.volatileResults, .alternativeTranscriptions, .fastResults], attributeOptions: [])
     }
     func installModel() async {
         guard !active else { return }
@@ -83,7 +97,10 @@ import MalNative
     func start(onText: @escaping @MainActor (String) -> Void, onUtteranceEnd: @escaping @MainActor () -> Void) async {
         guard !active else { return }
         let id = UUID(); draft.begin(id: id); active = true
-        alternatives = []; endpoint = SpeechEndpoint(); completed = onUtteranceEnd
+        timingStart = ProcessInfo.processInfo.systemUptime; reportedFirstResult = false
+        trace("preparing")
+        alternatives = []; recognitionDetails = []; resultNumber = 0
+        endpoint = SpeechEndpoint(); completed = onUtteranceEnd
         status = "Checking Korean speech recognition…"
         guard let transcriber = await module() else {
             if draft.sessionID == id { fail("On-device Korean recognition is unsupported on this Mac. Typing still works.") }; return
@@ -116,7 +133,24 @@ import MalNative
             do {
                 for try await result in transcriber.results {
                     guard let self, self.draft.sessionID == id else { return }
+                    if !self.reportedFirstResult {
+                        self.reportedFirstResult = true; self.trace("first recognition result")
+                    }
                     let fragment = String(result.text.characters)
+                    self.resultNumber += 1
+                    let elapsed = ProcessInfo.processInfo.systemUptime - self.timingStart
+                    let phase = result.isFinal ? "Final" : "Partial"
+                    let rawAlternatives = result.alternatives.map { String($0.characters) }
+                    let ranked = rawAlternatives.enumerated().map { index, value in
+                        "  \(index + 1). \(value.debugDescription)"
+                    }.joined(separator: "\n")
+                    self.recognitionDetails.append(
+                        "#\(self.resultNumber) \(phase) +\(String(format: "%.2f", elapsed))s\n" +
+                        "Primary: \(fragment.debugDescription)\n" +
+                        "Earlier finalized text: \(committed.debugDescription)\n" +
+                        "Apple alternatives (\(rawAlternatives.count)):\n" +
+                        (ranked.isEmpty ? "  None returned" : ranked))
+                    if self.recognitionDetails.count > 100 { self.recognitionDetails.removeFirst() }
                     let text = (committed + fragment).trimmingCharacters(in: .whitespacesAndNewlines)
                     self.alternatives = result.alternatives.compactMap { alternative in
                         var candidate = DictationDraft(); let candidateID = UUID(); candidate.begin(id: candidateID)
@@ -125,20 +159,26 @@ import MalNative
                     if result.isFinal { committed += fragment }
                     if self.draft.receive(text, id: id), let cleaned = self.draft.text {
                         onText(cleaned)
-                        // Final segments are not necessarily the end of the user's answer.
-                        // The audio endpoint closes input before we submit the completed result.
+                        // A live vocabulary match may synchronously cancel this session.
+                        guard self.draft.sessionID == id else { return }
+                        // Unmatched final segments wait for the audio endpoint.
                     }
                 }
             } catch { if let self, self.draft.sessionID == id { self.fail("Recognition stopped: \(error.localizedDescription). Review the draft or try again.") } }
         }
         do {
+            status = "Preparing Korean recognition…"
+            try await analyzer.prepareToAnalyze(in: format)
+            guard draft.sessionID == id else { return }
             try await analyzer.start(inputSequence: stream)
             guard draft.sessionID == id else { return }
             engine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: source,
                 block: Self.audioTap(converter: converter, continuation: continuation, onLevel: { [weak self] level, duration in
                     Task { @MainActor [weak self] in
                         guard let self, self.draft.sessionID == id, self.listening else { return }
+                        let wasSpeaking = self.endpoint.speaking
                         let finished = self.endpoint.observe(decibels: level, duration: duration, hasTranscript: self.draft.text != nil)
+                        if !wasSpeaking && self.endpoint.speaking { self.trace("first voice activity") }
                         self.status = self.endpoint.speaking ? "Hearing your answer… Return submits · Escape edits." : "Ready when you are… Return submits · Escape edits."
                         if finished { self.stop() }
                     }
@@ -149,7 +189,8 @@ import MalNative
                 })
             self.engine = engine
             engine.prepare(); try engine.start()
-            listening = true; status = "Ready when you are… Return submits · Escape edits."
+            listening = true; trace("microphone ready")
+            status = "Ready when you are… Return submits · Escape edits."
 
         } catch { if draft.sessionID == id { fail("Could not start recognition: \(error.localizedDescription)") } }
     }

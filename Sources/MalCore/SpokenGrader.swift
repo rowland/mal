@@ -2,6 +2,31 @@ import Foundation
 
 public enum SpokenDecision: Equatable { case correct(String), confirm(String), incorrect }
 public enum SpokenGrader {
+    /// Exact vocabulary matches in any current recognition hypothesis. Punctuation
+    /// separates words; never accept an arbitrary substring of a longer word.
+    /// Extra words are intentionally allowed: this is vocabulary, not sentence grading.
+    public static func matches(heard: String, alternatives: [String], accepted: Set<String>) -> Set<String> {
+        let words = SpeechMatchingRules.tokens
+        let hypotheses = ([heard] + alternatives).map(words)
+        return Set(accepted.filter { target in
+            let expected = words(target)
+            guard !expected.isEmpty else { return false }
+            return hypotheses.contains { hypothesis in
+                guard hypothesis.count >= expected.count else { return false }
+                return (0...(hypothesis.count - expected.count)).contains { start in
+                    Array(hypothesis[start..<(start + expected.count)]) == expected
+                }
+            }
+        })
+    }
+    /// Exact evidence wins; tolerant evidence must identify one accepted answer.
+    public static func liveMatch(heard: String, alternatives: [String], accepted: Set<String>) -> String? {
+        let exact = matches(heard: heard, alternatives: alternatives, accepted: accepted)
+        if let match = exact.sorted().first { return match }
+        let answers = Set(SpeechMatchingRules.evaluate(heard: heard, alternatives: alternatives,
+            accepted: accepted, live: true).map(\.answer))
+        return answers.count == 1 ? answers.first : nil
+    }
     public static func confirmationOptions(accepted: Set<String>, preferred: String) -> [String] {
         (accepted.contains(preferred) ? [preferred] : []) + accepted.filter { $0 != preferred }.sorted()
     }
@@ -9,13 +34,13 @@ public enum SpokenGrader {
         let heard = Grader.normalize(heard, direction: .englishToKorean)
         let targets = accepted.sorted()
         guard !heard.isEmpty else { return .incorrect }
-        if accepted.contains(heard) { return .correct(heard) }
-        for alternative in alternatives {
-            let value = Grader.normalize(alternative, direction: .englishToKorean)
-            if accepted.contains(value) { return .correct(value) }
-        }
-        let soundsLike = targets.filter { difference(heard, $0) == 1 }
-        if soundsLike.count == 1 { return .correct(soundsLike[0]) }
+        let matches = matches(heard: heard, alternatives: alternatives, accepted: accepted)
+        if matches.contains(heard) { return .correct(heard) }
+        if let match = matches.sorted().first { return .correct(match) }
+        let ruleAnswers = Set(SpeechMatchingRules.evaluate(heard: heard, alternatives: alternatives,
+            accepted: accepted).map(\.answer))
+        if ruleAnswers.count == 1, let match = ruleAnswers.first { return .correct(match) }
+        if let candidate = ruleAnswers.sorted().first { return .confirm(candidate) }
         let near = targets.filter { difference(heard, $0) != nil }
         if let candidate = near.first { return .confirm(candidate) }
         // A text transcript alone cannot establish that the learner spoke the wrong

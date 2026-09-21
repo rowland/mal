@@ -48,3 +48,11 @@ UX-14: Spoken answers consider recognizer alternatives and limited plain/tense c
 DATA-08: Identical English meanings with matching part of speech and sense cue accept the corresponding curated Korean answers across installed banks, filtered to the selected form style. Adjective “be X” and “X” are equivalent wording. Show other valid focused Korean forms in introductions/corrections; keep progress per presented sense.
 
 UX-15: Recognition confirmation offers all accepted Korean forms for the current sense/style, allowing the learner to confirm the synonym actually spoken. A suggested form must not hide other valid answers.
+
+UX-16 (review trial, 2026-09-20): During spoken English→Korean practice, progressively intersect each live primary/alternative recognition hypothesis with the accepted Korean set for the prompt and selected form style. An exact whole-word/contiguous-phrase match submits immediately, including within an utterance containing extra words. No match continues listening until the existing silence endpoint or Return. Typed grading remains exact. Human review is required before committing this trial.
+
+UX-17 (review trial): Speech accommodations use independently testable, named/versioned rules in MalCore, with evidence and explicit live/submission eligibility. Exact matches take precedence; automatic rule acceptance requires one distinct accepted answer across applicable rules/hypotheses. Do not chain rules or loosen typed grading. Initial rules: ㅐ/ㅔ and ㅒ/ㅖ vowel substitutions with otherwise identical syllables, plus the existing single plain/tense onset substitution.
+
+UX-17 refinement: Both initial speech rules are live-enabled. Plain/tense tolerance permits one onset substitution, preserving vowels, final consonants, and all other syllables. Other consonant differences remain subject to confirmation.
+
+UX-17 contextual trial: Permit one ㄹ/ㄷ final-consonant confusion immediately before an identical ㅇ-initial syllable with ㅏ/ㅓ, optionally with the supported plain/tense onset difference in that same preceding syllable. Preserve all other characters. Exclude ㅐ/ㅔ contexts pending evidence; retain exact precedence, ambiguity confirmation and strict typing.

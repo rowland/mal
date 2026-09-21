@@ -198,7 +198,18 @@ import MalStorage
             }
             guard generation == speechGeneration, spokenPractice, !editingSpokenAnswer,
                   !introducing, !waiting, !showLibrary, !showHistory else { return }
-            await dictation.start(onText: { [weak self] text in self?.answer = text; self?.hasSpokenDraft = true }, onUtteranceEnd: { [weak self] in
+            await dictation.start(onText: { [weak self] text in
+                guard let self, generation == self.speechGeneration else { return }
+                self.answer = text; self.hasSpokenDraft = true
+                guard let entry = self.current else { return }
+                let accepted = FormPractice.accepted(entry, direction: self.settings.direction,
+                    style: self.practiceStyle, pool: self.allEntries,
+                    displayedKorean: self.koreanText(entry), aliases: self.aliases)
+                // Exact matches or a unique live-enabled speech rule may submit.
+                // Ambiguous rule matches wait for silence or explicit Return.
+                if SpokenGrader.liveMatch(heard: text, alternatives: self.dictation.alternatives,
+                    accepted: accepted) != nil { self.submit() }
+            }, onUtteranceEnd: { [weak self] in
                 guard let self, generation == self.speechGeneration else { return }
                 self.submit()
             })
