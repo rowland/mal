@@ -276,3 +276,27 @@ private func fixture(version: Int = 1) -> Bank {
         #expect(attributive.contains("빨간") && attributive.contains("붉은"))
     }
 }
+
+@Test func bareManyAndAllAcceptAcrossCategoriesInActualBanks() throws {
+    let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let entries = try ["novice", "technician", "general", "advanced", "extra"].flatMap { name in
+        try BankCodec.decode(String(contentsOf: root.appendingPathComponent("Sources/MalApp/Resources/Banks/\(name).yaml"), encoding: .utf8), allowBuiltIn: true).entries
+    }
+    for lemma in ["많이", "많다"] {
+        let target = try #require(entries.first { $0.lemma == lemma })
+        let accepted = FormPractice.accepted(target, direction: .englishToKorean, style: .polite, pool: entries)
+        #expect(accepted.contains("많이") && accepted.contains("많아요"))
+        #expect(!accepted.contains("많다") && !accepted.contains("많았어요"))
+        #expect(SpokenGrader.liveMatch(heard: "많아요", alternatives: [], accepted: accepted) == "많아요")
+    }
+    for lemma in ["다", "모든", "모두", "온", "온갖"] {
+        let target = try #require(entries.first { $0.lemma == lemma })
+        let accepted = FormPractice.accepted(target, direction: .englishToKorean, style: .polite, pool: entries)
+        #expect(Set(["다", "모든", "모두", "온", "온갖"]).isSubset(of: accepted))
+        #expect(SpokenGrader.liveMatch(heard: "다", alternatives: [], accepted: accepted) == "다")
+        var random = SystemRandomNumberGenerator()
+        let displays = FormPractice.displayForms(entries, style: .polite, using: &random)
+        let choices = ChoiceBuilder.choices(target: target, pool: entries, direction: .englishToKorean, count: 5, koreanAnswers: displays, acceptedAnswers: accepted, using: &random)
+        #expect(choices.filter { accepted.contains($0) }.count == 1)
+    }
+}

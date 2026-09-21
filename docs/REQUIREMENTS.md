@@ -45,7 +45,7 @@ DATA-07: English grading accepts top-level semicolon-separated meanings and opti
 
 UX-14: Spoken answers consider recognizer alternatives and limited plain/tense consonant tolerance. Every other nonempty unmatched speech transcript offers explicit recognition confirmation/retry before grading; no automatic speech failure based solely on unmatched text. Typed/edited answers retain exact grading, and speech accommodations never become vocabulary aliases.
 
-DATA-08: Identical English meanings with matching part of speech and sense cue accept the corresponding curated Korean answers across installed banks, filtered to the selected form style. Adjective “be X” and “X” are equivalent wording. Show other valid focused Korean forms in introductions/corrections; keep progress per presented sense.
+DATA-08: Identical bare English meanings with no sense cue accept corresponding curated Korean answers across grammatical categories and installed banks, filtered per candidate to the selected form style. Explicitly cued prompts require matching cue and part of speech. Adjective “be X” and “X” are equivalent wording. Show other valid focused Korean forms in introductions/corrections; keep progress per presented sense.
 
 UX-15: Recognition confirmation offers all accepted Korean forms for the current sense/style, allowing the learner to confirm the synonym actually spoken. A suggested form must not hide other valid answers.
 

@@ -54,16 +54,16 @@ public enum FormPractice {
     }
     public static func accepted(_ entry: Entry, direction: Direction, style: KoreanPracticeStyle, pool: [Entry], displayedKorean: String? = nil, aliases: [String: [String]] = [:]) -> Set<String> {
         if direction == .englishToKorean {
-            func meaning(_ value: String) -> String {
+            func meaning(_ value: String, for sense: Entry) -> String {
                 let normalized = Grader.normalize(value, direction: .koreanToEnglish)
-                return entry.partOfSpeech == .adjective && normalized.hasPrefix("be ") ? String(normalized.dropFirst(3)) : normalized
+                return sense.partOfSpeech == .adjective && normalized.hasPrefix("be ") ? String(normalized.dropFirst(3)) : normalized
             }
-            let promptMeaning = meaning(entry.english.first ?? "")
+            let promptMeaning = meaning(entry.english.first ?? "", for: entry)
             let cue = Grader.normalize(entry.promptCue ?? "", direction: .koreanToEnglish)
             let equivalents = pool.filter { candidate in
-                candidate.partOfSpeech == entry.partOfSpeech &&
+                (cue.isEmpty || candidate.partOfSpeech == entry.partOfSpeech) &&
                 Grader.normalize(candidate.promptCue ?? "", direction: .koreanToEnglish) == cue &&
-                Grader.accepted(candidate, direction: .koreanToEnglish).contains { meaning($0) == promptMeaning }
+                Grader.accepted(candidate, direction: .koreanToEnglish).contains { meaning($0, for: candidate) == promptMeaning }
             }
             return (equivalents + [entry]).reduce(into: Set<String>()) { result, candidate in
                 if style != .dictionary && applies(candidate, style: style) {

@@ -404,3 +404,15 @@ At the user's request, created private https://github.com/rowland/mal and pushed
 User authorized public GitHub visibility and Apache License 2.0. Added official LICENSE, project NOTICE, README licensing scope and bundled app copies. Original application code/documentation use Apache-2.0; vocabulary data retains CC BY-SA/source attribution and Yams retains its existing notice.
 
 Verification: app build/signature verification succeeded; Apache-2.0.txt and Mal-NOTICE.txt confirmed in the packaged app. `git diff --check` passed. No rules/storage changes; unit suite not rerun (latest 86 passed). Next action: continue normal development on public rowland/mal, retaining the separate content licensing and verification gates.
+
+## Bare English prompts accept cross-category translations — 2026-09-20
+
+Removed POS restriction from English→Korean equivalence for uncued prompts. Both many entries now accept 많이 and polite 많아요; all accepts 다/모두/모든/온/온갖 across their grammatical categories. Full installed catalog already supplies answers independently of selected banks, POS filters or rotation; no scheduler/state changes needed. Per-candidate selected form and explicit sense cues remain enforced. This is shared typed/speech/choice behavior, not another recognition accommodation. No bank versions, data or progress changed.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **87 tests passed**, including actual five-bank many/all entries, symmetry, speech intersection, selected-form exclusions and valid-answer distractor exclusion. Existing wear/sense-cue regressions pass. `./scripts/build-app.sh` succeeded and published signed build/Mal.app. `git diff --check` passed.
+
+Next human acceptance: reopen Mal and answer many with either 많이 or 많아요, and all with any of the listed catalogued alternatives, regardless of which entry entered rotation. Verify choices have one accepted option and cued prompts remain specific. Changes left uncommitted for review; linguistic corpus verification remains open.
+
+## Cross-category translation checkpoint approved — 2026-09-20
+
+User reports the behavior is better and explicitly requests a commit. Review gate satisfied for this checkpoint. Latest automated verification: 87 tests passed and signed app build succeeded; no implementation changes since that run. Commit-time diff check passed. Next action: continue study and collect any remaining ambiguous-prompt examples; broader linguistic verification remains open.
