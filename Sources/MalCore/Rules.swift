@@ -18,7 +18,7 @@ public enum Grader {
         for character in gloss {
             if character == "(" || character == "[" { depth += 1 }
             if character == ")" || character == "]" { depth = max(0, depth - 1) }
-            if character == ";", depth == 0 {
+            if (character == ";" || (optionalHints && character == ",")), depth == 0 {
                 result.append(fragment); fragment = ""
             } else { fragment.append(character) }
         }

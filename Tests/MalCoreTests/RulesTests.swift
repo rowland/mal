@@ -299,7 +299,7 @@ func introductionsResumeOnlyAfterDueCardsClear(phase: Phase, iterationDue: Bool)
     let meanings = Grader.accepted(qualified, direction: .koreanToEnglish)
     #expect(meanings.contains("language"))
     #expect(!meanings.contains("informal)"))
-    #expect(!meanings.contains("detailed explanation"))
+    #expect(meanings.contains("detailed explanation")) // Top-level commas delimit English alternatives.
     var rng = Seeded()
     let choices = ChoiceBuilder.choices(target: meet, pool: [meet, entry("same", "대면하다", "meet", .verb), entry("other", "가다", "go", .verb)], direction: .koreanToEnglish, count: 5, using: &rng)
     #expect(!choices.contains("meet"))
@@ -331,4 +331,19 @@ func introductionsResumeOnlyAfterDueCardsClear(phase: Phase, iterationDue: Bool)
     // Optional English answers must not erase distinctions for Korean prompts.
     let bare = Entry(id: "bare", lemma: "빛", partOfSpeech: .noun, english: ["light"])
     #expect(FormPractice.accepted(bare, direction: .englishToKorean, style: .dictionary, pool: [bare, light]) == ["빛"])
+}
+
+@Test func commaSeparatedEnglishAlternativesIgnoreHintsIndividually() {
+    let color = Entry(id: "color", lemma: "색", partOfSpeech: .noun, english: ["colour (UK), color (US)"])
+    for answer in ["colour", "color", "colour (UK)", "color (US)", "colour (UK), color (US)"] {
+        #expect(Grader.isCorrect(answer, entry: color, direction: .koreanToEnglish))
+    }
+    for answer in ["UK", "US", "", "red"] {
+        #expect(!Grader.isCorrect(answer, entry: color, direction: .koreanToEnglish))
+    }
+    let nested = Entry(id: "nested-comma", lemma: "예", partOfSpeech: .verb, english: ["to meet (friends, family), to encounter; to see (someone)"])
+    let answers = Grader.accepted(nested, direction: .koreanToEnglish)
+    #expect(answers.contains("meet") && answers.contains("encounter") && answers.contains("see"))
+    #expect(!answers.contains("friends") && !answers.contains("family"))
+    #expect(!Grader.accepted(color, direction: .koreanToEnglish, aliases: ["tint, shade"]).contains("tint"))
 }

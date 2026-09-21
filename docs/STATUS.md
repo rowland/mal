@@ -434,3 +434,15 @@ Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **89 tests pass
 ## English-answer fixes approved — 2026-09-21
 
 User reports “Seems to work” after the soccer correction and authorizes proceeding with the pending commit. Recorded user-tested outcome separately from automated evidence: latest suite remains 89 passing tests and signed app build succeeded. No implementation changes since verification; commit-time diff check passed. This checkpoint includes optional parenthetical English hints and explicit football/soccer alternatives. Next action: continue study and collect any remaining malformed dictionary alternatives; broader content/IME verification gates remain open.
+
+## Comma-separated English alternatives — 2026-09-21
+
+Fixed generic English grading for colour (UK), color (US): each top-level comma/semicolon fragment yields its own optional-hint answer, so both colour and color pass. Full gloss still accepted; parenthetical/bracketed commas are not separators. Personal aliases and Korean grading remain literal. No bank edits or progress changes.
+
+Verification: final `swift test --scratch-path /tmp/mal-speech-tests`: **90 tests passed**. Initial run exposed the previous deliberate no-comma-splitting assertion; updated it to the requested policy and reran successfully. Tests cover colour/color, combined comma/semicolon meanings, internal commas and literal aliases. Signed app build succeeded; `git diff --check` passed.
+
+Next action: reopen Mal and retry color for 색. Native acceptance pending; changes uncommitted for review. Prose commas can now admit shorter fragments; continue reporting ambiguous content for cleanup.
+
+User acceptance follow-up: user reports “That worked” for the comma-separated colour/color fix. Recorded separately from the 90 passing automated tests. Changes remain uncommitted pending commit authorization. Next action: continue study and collect any remaining English-answer parsing defects.
+
+Commit authorization: user explicitly requested committing the tested comma-separated answer fix. Latest verification remains 90 passing tests and successful signed app build, followed by positive user acceptance. No implementation changes since verification; commit-time diff check passed. Next action: continue study and report remaining content or grading issues.
