@@ -56,7 +56,7 @@ Last updated: 2026-09-16. This is the handoff entry point. Read REQUIREMENTS.md 
 
 ## Working conventions
 
-Keep commits focused. Update this status file after each iteration with exact checks run, open defects and the next concrete action. Never erase user progress for convenience; test against temporary stores. GitHub remote: https://github.com/rowland/mal (private), with main tracking origin/main. Project tracking remains in repository Markdown; no external issue workflow is configured.
+Keep commits focused. Update this status file after each iteration with exact checks run, open defects and the next concrete action. Never erase user progress for convenience; test against temporary stores. GitHub remote: https://github.com/rowland/mal (public), with main tracking origin/main. Project tracking remains in repository Markdown; no external issue workflow is configured.
 
 ## Final checks for this iteration
 
@@ -398,3 +398,9 @@ Next action: continue ordinary study and capture Apple recognition details for u
 ## GitHub repository — 2026-09-20
 
 At the user's request, created private https://github.com/rowland/mal and pushed the existing main history. Set origin to git@github.com:rowland/mal.git and main to track origin/main. Build artifacts and personal SQLite databases remain ignored. No code changes or new test run for this repository setup; latest application verification remains 86 passing tests and successful signed build. Next action: continue project work from this repository and push reviewed commits.
+
+## Public repository and Apache license — 2026-09-20
+
+User authorized public GitHub visibility and Apache License 2.0. Added official LICENSE, project NOTICE, README licensing scope and bundled app copies. Original application code/documentation use Apache-2.0; vocabulary data retains CC BY-SA/source attribution and Yams retains its existing notice.
+
+Verification: app build/signature verification succeeded; Apache-2.0.txt and Mal-NOTICE.txt confirmed in the packaged app. `git diff --check` passed. No rules/storage changes; unit suite not rerun (latest 86 passed). Next action: continue normal development on public rowland/mal, retaining the separate content licensing and verification gates.

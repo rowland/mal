@@ -1,0 +1,13 @@
+Mal (말)
+Copyright 2026 Brent Rowland
+
+Mal's original application source code and documentation are licensed under
+Apache License 2.0. See LICENSE.
+
+Vocabulary banks and the derived source manifest retain their separate
+CC BY-SA 4.0 terms and source attribution requirements. See
+Sources/MalApp/Resources/Notices/CONTENT-SOURCES.md (CONTENT-SOURCES.md
+in the app's bundled notices).
+
+Third-party components retain their own licenses. The bundled Yams notice
+is in Sources/MalApp/Resources/Notices/Yams-LICENSE.txt.

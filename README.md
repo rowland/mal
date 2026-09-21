@@ -39,3 +39,13 @@ swift run mal-bank Examples/colors.yaml
 ```
 
 Import through File → Import Word Bank (⇧⌘I). Keep IDs stable and increase `contentVersion` for content changes. See [YAML format](docs/BANK-FORMAT.md).
+
+## License
+
+Copyright 2026 Brent Rowland. Mal's original application code and documentation
+are licensed under the [Apache License 2.0](LICENSE).
+
+The vocabulary banks and derived source manifest retain their separate
+[CC BY-SA 4.0 terms and source attribution](docs/CONTENT-SOURCES.md).
+Third-party components retain their own licenses; see [NOTICE](NOTICE) and the
+[bundled notices](Sources/MalApp/Resources/Notices).
