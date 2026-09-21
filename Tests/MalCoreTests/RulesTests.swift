@@ -290,11 +290,11 @@ func introductionsResumeOnlyAfterDueCardsClear(phase: Phase, iterationDue: Bool)
     #expect(StudyQueue.select(entries: words, states: [key: state], settings: settings, context: context) == Selection("new", isNew: true))
 }
 
-@Test func semicolonMeaningsAcceptIndividualAnswersWithoutDroppingQualifiers() {
+@Test func semicolonMeaningsAcceptIndividualAnswersAndOptionalHints() {
     let meet = Entry(id: "meet", lemma: "만나다", partOfSpeech: .verb, english: ["meet; to see (someone)", "to meet; to see (someone)"], koreanForms: [KoreanForm("만나요", speechLevel: "informal-polite")])
     let accepted = FormPractice.accepted(meet, direction: .koreanToEnglish, style: .polite, pool: [meet], displayedKorean: "만나요")
-    for text in ["meet", "to meet", "see (someone)", "to see (someone)", "meet; to see (someone)"] { #expect(accepted.contains(text)) }
-    for text in ["someone", "see", "meet to see", "not meet"] { #expect(!accepted.contains(text)) }
+    for text in ["see", "to see", "meet", "to meet", "see (someone)", "to see (someone)", "meet; to see (someone)"] { #expect(accepted.contains(text)) }
+    for text in ["someone", "meet to see", "not meet"] { #expect(!accepted.contains(text)) }
     let qualified = Entry(id: "q", lemma: "말", partOfSpeech: .noun, english: ["speech (formal; informal); language", "a long, detailed explanation"])
     let meanings = Grader.accepted(qualified, direction: .koreanToEnglish)
     #expect(meanings.contains("language"))
@@ -313,4 +313,22 @@ func introductionsResumeOnlyAfterDueCardsClear(phase: Phase, iterationDue: Bool)
     }
     #expect(!FormPractice.canRememberAlias(red, direction: .englishToKorean, style: .polite))
     #expect(FormPractice.canRememberAlias(red, direction: .englishToKorean, style: .dictionary))
+}
+
+@Test func parentheticalEnglishHintsAreOptionalButNotAnswers() {
+    let light = Entry(id: "light", lemma: "가볍다", partOfSpeech: .adjective, english: ["light (not heavy)"])
+    for value in ["light", " LIGHT ", "light (not heavy)"] {
+        #expect(Grader.isCorrect(value, entry: light, direction: .koreanToEnglish))
+    }
+    for value in ["heavy", "not heavy", "", "light (bright)"] {
+        #expect(!Grader.isCorrect(value, entry: light, direction: .koreanToEnglish))
+    }
+    let nested = Entry(id: "nested", lemma: "예", partOfSpeech: .verb, english: ["to take (an object (not a person)); to carry (by hand)", "be (very) light", "(hint only)", "broken (hint"])
+    let accepted = Grader.accepted(nested, direction: .koreanToEnglish)
+    #expect(accepted.contains("take") && accepted.contains("carry") && accepted.contains("be light"))
+    #expect(!accepted.contains("") && !accepted.contains("broken"))
+    #expect(!Grader.isCorrect("가볍다 (hint)", entry: light, direction: .englishToKorean))
+    // Optional English answers must not erase distinctions for Korean prompts.
+    let bare = Entry(id: "bare", lemma: "빛", partOfSpeech: .noun, english: ["light"])
+    #expect(FormPractice.accepted(bare, direction: .englishToKorean, style: .dictionary, pool: [bare, light]) == ["빛"])
 }

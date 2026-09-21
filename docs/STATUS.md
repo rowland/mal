@@ -416,3 +416,21 @@ Next human acceptance: reopen Mal and answer many with either 많이 or 많아�
 ## Cross-category translation checkpoint approved — 2026-09-20
 
 User reports the behavior is better and explicitly requests a commit. Review gate satisfied for this checkpoint. Latest automated verification: 87 tests passed and signed app build succeeded; no implementation changes since that run. Commit-time diff check passed. Next action: continue study and collect any remaining ambiguous-prompt examples; broader linguistic verification remains open.
+
+## Optional parenthetical hints in English answers — 2026-09-21
+
+User requests accepting light for light (not heavy) without per-word overrides. Added optional balanced-parenthesis omission to English dictionary-answer expansion, including nested hints, semicolon meanings and optional to. Full gloss remains displayed/accepted; hint text alone does not pass. Malformed/empty expansions are excluded. Korean answers and personal aliases remain literal; English→Korean sense equivalence retains parenthetical qualifiers.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **88 tests passed**, including light, see (someone), nested/mid-phrase hints, malformed parentheses, empty-answer prevention, wrong qualifier rejection, strict Korean grading and protection against reverse-sense merging. `./scripts/build-app.sh` succeeded and published signed build/Mal.app. `git diff --check` passed. No data migrations or bank changes.
+
+Next action: reopen Mal and answer a parenthetically qualified English definition with just the main word. Native study acceptance pending; changes left uncommitted for review. Existing content/IME verification gates remain open.
+
+## Football/soccer vocabulary correction — 2026-09-21
+
+Fixed 축구 (mal.novice.d60647b53b86ec02) storing football, (US) soccer as one indivisible answer. Explicit football/soccer alternatives now precede the retained combined gloss. Novice contentVersion raised to 5 for automatic import on launch; stable ID, history and draft verification status preserved. Parenthesis omission alone could not resolve the comma-separated alternatives.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **89 tests passed**, including bundled entry acceptance of both names and rejection of US alone. Signed app build succeeded; `git diff --check` passed. Next action: reopen Mal and confirm soccer passes for 축구 with progress intact. This correction and the prior parenthetical-hint changes remain uncommitted for review.
+
+## English-answer fixes approved — 2026-09-21
+
+User reports “Seems to work” after the soccer correction and authorizes proceeding with the pending commit. Recorded user-tested outcome separately from automated evidence: latest suite remains 89 passing tests and signed app build succeeded. No implementation changes since verification; commit-time diff check passed. This checkpoint includes optional parenthetical English hints and explicit football/soccer alternatives. Next action: continue study and collect any remaining malformed dictionary alternatives; broader content/IME verification gates remain open.

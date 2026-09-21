@@ -5,13 +5,13 @@ public enum Grader {
         let value = text.precomposedStringWithCanonicalMapping.trimmingCharacters(in: .whitespacesAndNewlines)
         return direction == .koreanToEnglish ? value.lowercased(with: Locale(identifier: "en_US_POSIX")) : value
     }
-    public static func accepted(_ entry: Entry, direction: Direction, aliases: [String] = []) -> Set<String> {
+    public static func accepted(_ entry: Entry, direction: Direction, aliases: [String] = [], optionalEnglishHints: Bool = true) -> Set<String> {
         let values = direction == .englishToKorean ? [entry.lemma] + entry.koreanForms.map(\.text) : entry.english
-        let expanded = direction == .koreanToEnglish ? values.flatMap { englishAlternatives($0, predicate: entry.partOfSpeech == .verb || entry.partOfSpeech == .adjective) } : values
+        let expanded = direction == .koreanToEnglish ? values.flatMap { englishAlternatives($0, predicate: entry.partOfSpeech == .verb || entry.partOfSpeech == .adjective, optionalHints: optionalEnglishHints) } : values
         // Personal aliases are literal user decisions, not dictionary gloss syntax.
         return Set((expanded + aliases).map { normalize($0, direction: direction) })
     }
-    private static func englishAlternatives(_ gloss: String, predicate: Bool) -> [String] {
+    private static func englishAlternatives(_ gloss: String, predicate: Bool, optionalHints: Bool) -> [String] {
         var result = [gloss]
         var fragment = ""
         var depth = 0
@@ -23,8 +23,24 @@ public enum Grader {
             } else { fragment.append(character) }
         }
         result.append(fragment)
+        if optionalHints { result += result.compactMap(withoutParentheticalHints) }
         let parts = result.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }
         return parts + (predicate ? parts.compactMap { $0.lowercased().hasPrefix("to ") ? String($0.dropFirst(3)) : nil } : [])
+    }
+    private static func withoutParentheticalHints(_ text: String) -> String? {
+        var depth = 0
+        var output = ""
+        var removed = false
+        for character in text {
+            if character == "(" { depth += 1; removed = true }
+            else if character == ")" {
+                guard depth > 0 else { return nil }
+                depth -= 1
+            } else if depth == 0 { output.append(character) }
+        }
+        guard removed, depth == 0 else { return nil }
+        let trimmed = output.split(whereSeparator: { $0.isWhitespace }).joined(separator: " ")
+        return trimmed.isEmpty ? nil : trimmed
     }
     // With no sense cue, all catalogued meanings of the displayed lemma/POS are valid.
     public static func promptAnswers(_ entry: Entry, direction: Direction, pool: [Entry], aliases: [String: [String]] = [:]) -> Set<String> {

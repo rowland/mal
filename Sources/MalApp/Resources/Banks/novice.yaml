@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: "mal.novice"
-contentVersion: 4
+contentVersion: 5
 title: "Novice"
 provenance:
   source: "NIKL Korean learner vocabulary (2003); English Wiktionary contributors via Kaikki, 2026-09-02 dump"
@@ -3191,7 +3191,7 @@ entries:
   - id: "mal.novice.d60647b53b86ec02"
     lemma: "축구"
     partOfSpeech: "noun"
-    english: ["football, (US) soccer"]
+    english: ["football", "soccer", "football, (US) soccer"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: football, (US) soccer\nSource: https://en.wiktionary.org/wiki/축구#Korean · NIKL level A, frequency rank 1317"

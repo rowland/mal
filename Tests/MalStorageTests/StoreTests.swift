@@ -300,3 +300,14 @@ private func fixture(version: Int = 1) -> Bank {
         #expect(choices.filter { accepted.contains($0) }.count == 1)
     }
 }
+
+@Test func bundledFootballAcceptsBothEnglishNames() throws {
+    let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let bank = try BankCodec.decode(String(contentsOf: root.appendingPathComponent("Sources/MalApp/Resources/Banks/novice.yaml"), encoding: .utf8), allowBuiltIn: true)
+    let soccer = try #require(bank.entries.first { $0.id == "mal.novice.d60647b53b86ec02" })
+    #expect(bank.contentVersion >= 5)
+    for answer in ["soccer", "football", "football, (US) soccer"] {
+        #expect(Grader.isCorrect(answer, entry: soccer, direction: .koreanToEnglish))
+    }
+    #expect(!Grader.isCorrect("US", entry: soccer, direction: .koreanToEnglish))
+}

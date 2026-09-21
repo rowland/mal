@@ -63,7 +63,7 @@ public enum FormPractice {
             let equivalents = pool.filter { candidate in
                 (cue.isEmpty || candidate.partOfSpeech == entry.partOfSpeech) &&
                 Grader.normalize(candidate.promptCue ?? "", direction: .koreanToEnglish) == cue &&
-                Grader.accepted(candidate, direction: .koreanToEnglish).contains { meaning($0, for: candidate) == promptMeaning }
+                Grader.accepted(candidate, direction: .koreanToEnglish, optionalEnglishHints: false).contains { meaning($0, for: candidate) == promptMeaning }
             }
             return (equivalents + [entry]).reduce(into: Set<String>()) { result, candidate in
                 if style != .dictionary && applies(candidate, style: style) {
