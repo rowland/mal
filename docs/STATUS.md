@@ -56,7 +56,7 @@ Last updated: 2026-09-16. This is the handoff entry point. Read REQUIREMENTS.md 
 
 ## Working conventions
 
-Keep commits focused. Update this status file after each iteration with exact checks run, open defects and the next concrete action. Never erase user progress for convenience; test against temporary stores. No remote repository or external issue service has been configured.
+Keep commits focused. Update this status file after each iteration with exact checks run, open defects and the next concrete action. Never erase user progress for convenience; test against temporary stores. GitHub remote: https://github.com/rowland/mal (private), with main tracking origin/main. Project tracking remains in repository Markdown; no external issue workflow is configured.
 
 ## Final checks for this iteration
 
@@ -393,3 +393,8 @@ Next action: reopen the app and repeat receive; 빨아요 should match 받아요
 User reviewed the speech iterations, reported restored speed and good progress, and explicitly requested a commit. The review gate for this checkpoint is satisfied. Commit includes progressive hypothesis matching, faster/prepared recognition, inspectable Apple results and extensible speech-only vowel/consonant rules. Latest verification remains 86 passing tests plus successful signed app build; no implementation changes since those checks. Commit-time diff whitespace check passed.
 
 Next action: continue ordinary study and capture Apple recognition details for unresolved words; add narrowly tested rules only when supported by examples. Contextual ㅐ/ㅔ expansion, broader false-positive evaluation, and existing content/IME release gates remain open. Approval of this checkpoint does not constitute exhaustive linguistic or UI acceptance.
+
+
+## GitHub repository — 2026-09-20
+
+At the user's request, created private https://github.com/rowland/mal and pushed the existing main history. Set origin to git@github.com:rowland/mal.git and main to track origin/main. Build artifacts and personal SQLite databases remain ignored. No code changes or new test run for this repository setup; latest application verification remains 86 passing tests and successful signed build. Next action: continue project work from this repository and push reviewed commits.
