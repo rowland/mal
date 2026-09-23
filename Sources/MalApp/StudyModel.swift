@@ -62,6 +62,9 @@ import MalStorage
     private var aliases: [String: [String]] = [:]
     private var speech = AVSpeechSynthesizer()
     private var speechDeadline: TimeInterval = 0
+    var awaitingPronunciation = false
+    private var advanceAfterSpeech: Task<Void, Never>?
+    private var playback = PronunciationCompletion()
     private var random = SystemRandomNumberGenerator()
     private var keyMonitor: Any?
     var selectedEntries: [Entry] { banks.filter { settings.bankIDs.contains($0.id) }.flatMap(\.entries) }
@@ -129,6 +132,7 @@ import MalStorage
         next()
     }
     func next() {
+        advanceAfterSpeech?.cancel(); advanceAfterSpeech = nil; awaitingPronunciation = false
         pauseDictation()
         speechConfirmation = nil; hasSpokenDraft = false
         editingSpokenAnswer = false
@@ -156,6 +160,7 @@ import MalStorage
         // Keep this card and its choices. Reading the introduction is not a grade.
     }
     func dontKnow() {
+        guard !awaitingPronunciation else { return }
         pauseDictation()
         guard !introducing, !waiting, let entry = current else { return }
         do {
@@ -186,7 +191,7 @@ import MalStorage
         else { setSpokenAnswers(true) }
     }
     func beginSpokenAnswer() {
-        guard spokenPractice, !editingSpokenAnswer, speechConfirmation == nil, !introducing, !waiting,
+        guard !awaitingPronunciation, spokenPractice, !editingSpokenAnswer, speechConfirmation == nil, !introducing, !waiting,
               current != nil, !showLibrary, !showHistory, !dictation.active else { return }
         speechGeneration += 1
         let generation = speechGeneration
@@ -220,7 +225,7 @@ import MalStorage
         }
     }
     func submit(_ text: String? = nil) {
-        guard !introducing, speechConfirmation == nil else { return }
+        guard !awaitingPronunciation, !introducing, speechConfirmation == nil else { return }
         if waiting { next(); return }
         guard let entry = current else { return }
         let value = text ?? answer
@@ -264,7 +269,22 @@ import MalStorage
             try reload(includeContent: false)
             lastSense = entry.id; lastGraded = entry
             feedback = "\(correct ? "Correct" : "Incorrect") · \(koreanText(entry)) — \(entry.english.joined(separator: "; "))"
-            if correct { next() } else { waiting = true }
+            if correct {
+                if playback.pending > 0 {
+                    awaitingPronunciation = true
+                    advanceAfterSpeech = Task { [weak self] in
+                        guard let self else { return }
+                        while playback.pending > 0 {
+                            if ProcessInfo.processInfo.systemUptime >= speechDeadline {
+                                resetSpeech(); break
+                            }
+                            do { try await Task.sleep(for: .milliseconds(30)) } catch { return }
+                        }
+                        guard !Task.isCancelled else { return }
+                        next()
+                    }
+                } else { next() }
+            } else { waiting = true }
         } catch { self.error = error.localizedDescription }
     }
     func acceptAnswer() {
@@ -277,6 +297,8 @@ import MalStorage
         } catch { self.error = error.localizedDescription }
     }
     func undo() {
+        advanceAfterSpeech?.cancel(); advanceAfterSpeech = nil; awaitingPronunciation = false
+        resetSpeech()
         speechConfirmation = nil; hasSpokenDraft = false
         pauseDictation()
         do {
@@ -318,6 +340,8 @@ import MalStorage
     private func resetSpeech() {
         speech.stopSpeaking(at: .immediate)
         speech = AVSpeechSynthesizer()
+        playback = PronunciationCompletion()
+        speech.delegate = playback
         speechDeadline = 0
     }
     private func speakSequence(_ texts: [String], automatic: Bool = false) {
@@ -336,6 +360,7 @@ import MalStorage
         // a fresh instance also makes the speaker button a recovery action.
         resetSpeech()
         speechDeadline = ProcessInfo.processInfo.systemUptime + max(10, Double(texts.joined().count) * 0.5 + 5)
+        playback.pending = texts.count
         for (index, text) in texts.enumerated() {
             let utterance = AVSpeechUtterance(string: text)
             utterance.voice = voice; utterance.rate = 0.4
@@ -367,5 +392,17 @@ import MalStorage
         guard alert.runModal() == .alertFirstButtonReturn else { return }
         do { try store?.restore(from: url); settings = try store?.settings() ?? StudySettings(); try reload(); lastSense = nil; next(); feedback = "Backup restored." }
         catch { self.error = error.localizedDescription }
+    }
+}
+
+/// Count completion callbacks, including queued utterances that have not started.
+/// A fresh observer per sequence isolates late callbacks from cancelled playback.
+@MainActor private final class PronunciationCompletion: NSObject, @preconcurrency AVSpeechSynthesizerDelegate {
+    var pending = 0
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        pending = max(0, pending - 1)
+    }
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
+        pending = max(0, pending - 1)
     }
 }

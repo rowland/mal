@@ -8,7 +8,7 @@ Accepted 2026-09-12. Working name Mal (말). This file preserves user decisions 
 | UX-02 | Independent direction and answer-mode switches. Five choices by default, configurable 4/5/6/8/10; 30-point choice text and 28-point number labels; one full-width column, numbered top to bottom, with wrapping answers. |
 | UX-03 | Distractors from all selected banks, not restricted to active rotation; prefer same part of speech, exclude valid alternatives. |
 | UX-04 | All parts of speech by default; selectable filters preserve progress. |
-| UX-05 | Immediate correct-answer advancement; incorrect answers emphasize the correct answer and Continue. Undo remains available; a secondary Count as correct button both corrects the grade and remembers the answer wherever personal aliases are supported; no one-time override menu. |
+| UX-05 | Correct answers advance after enabled answer pronunciation finishes, otherwise immediately; incorrect answers emphasize the correct answer and Continue. Undo remains available; a secondary Count as correct button both corrects the grade and remembers the answer wherever personal aliases are supported; no one-time override menu. |
 | UX-06 | Keyboard-only study; Return committing Hangul composition must not grade. |
 | UX-09 | Before a track’s first quiz, introduce its Korean form and English meanings. Continue begins practice without grading the introduction. |
 | UX-08 | Korean-to-English cues are opt-in hints; accept catalogued meanings for the same lemma/POS and exclude them from distractors. English-to-Korean cues remain visible. |

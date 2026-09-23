@@ -458,3 +458,21 @@ Verification: signed app build succeeded; `git diff --check` passed. UI/action w
 User reports intermittent loss of spoken output requiring restart. Added fresh synthesizer per sequence, Auto-off reset, explicit speaker replay that cancels active dictation instead of doing nothing, and bounded isSpeaking waiting before dictation. No actual intermittent failure reproduced; these are recovery/lifecycle changes, not a confirmed root-cause fix. Clicking the speaker during dictation pauses capture; use the existing resume control to dictate again.
 
 Verification: signed app build succeeded; `git diff --check` passed. No rules/storage changes; unit suite not rerun (latest 90 passing). Next manual acceptance: study with Auto enabled, advance rapidly, toggle Auto and replay words; if silence recurs, click the speaker and report whether recovery works and whether recognition was active. Check incorrect-answer sequences still speak both words in order. Changes and the preceding Count as correct UI change remain uncommitted for review.
+
+## Preserve answer audio before new-word introductions — 2026-09-23
+
+Identified deterministic cancellation: correct-answer pronunciation starts, record advances, and the new introduction resets the synthesizer. Batch automatic pronunciation requests during submit/record/next and flush once, retaining answer first and introduction second with existing pause. No UI advancement delay; spoken-answer replay suppression stays intact. Previous uncommitted UI/recovery changes preserved.
+
+Verification: signed app build succeeded; `git diff --check` passed. This changes app audio orchestration, not core grading/storage; unit suite not rerun (latest 90 passing). Live playback acceptance remains pending. Next action: with Auto on, answer correctly in English→Korean when the next card is an introduction; verify both words play in order, ordinary transitions remain responsive, and wrong-answer sequences still work. Changes remain uncommitted for review.
+
+## Advance after correct-answer pronunciation — 2026-09-23
+
+User confirmed prior ordered audio worked, requested matching screen timing. Correct grades now retain the answered card until playback completion callbacks finish, then next selects/displays the new card and speaks its introduction. Removed cross-card speech batching. Queued utterance counting avoids startup races; duplicate answers/unknown and recognition startup are guarded during the hold. Undo/next cancel pending advancement, Auto off clears playback, and existing timeout recovery bounds stuck callbacks.
+
+Verification: signed app build succeeded; `git diff --check` passed. App audio orchestration only; rules/storage suite not rerun (latest 90 passing). Native timing acceptance pending. Next manual check: answer correctly with Auto on, verify current frame remains throughout speech and the new frame appears before its own pronunciation. Exercise repeated Return, Undo during playback, Auto off and manual speaker replay. Changes remain uncommitted for review.
+
+## Persistent choice highlight during pronunciation — 2026-09-23
+
+Selected multiple-choice row now retains accent-color background and white text/number during correct-answer playback, for both clicks and numeric shortcuts. Uses the existing submitted-answer state rather than transient mouse press state; accessibility selected trait added. Clears when the card advances or Undo restores it. No changes to grading or playback timing.
+
+Verification: signed app build succeeded; `git diff --check` passed. UI-only styling change; unit suite not rerun (latest 90 passing). Next manual check: with Auto on, choose via mouse then via number key; confirm the selected row remains blue/white throughout pronunciation in light/dark appearance and clears on the next card. Changes remain uncommitted pending review.

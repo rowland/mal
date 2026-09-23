@@ -219,11 +219,15 @@ struct ContentView: View {
                                 Spacer(minLength: 0)
                             }.padding(.horizontal, 14).padding(.vertical, 8)
                                 .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
-                                .background(.quaternary, in: RoundedRectangle(cornerRadius: 6))
+                                .foregroundStyle(model.awaitingPronunciation && model.answer == model.choices[index] ? Color.white : Color.primary)
+                                .background(model.awaitingPronunciation && model.answer == model.choices[index]
+                                    ? AnyShapeStyle(Color.accentColor) : AnyShapeStyle(.quaternary),
+                                    in: RoundedRectangle(cornerRadius: 6))
                                 .contentShape(RoundedRectangle(cornerRadius: 6))
                         }.buttonStyle(.plain)
                             .keyboardShortcut(KeyEquivalent(Character(key)), modifiers: [])
                             .accessibilityLabel("Choice \(key): \(model.choices[index])")
+                            .accessibilityAddTraits(model.awaitingPronunciation && model.answer == model.choices[index] ? .isSelected : [])
                         }
                     }.id(model.choices)
                     if model.choices.count < model.settings.choiceCount { Text("\(model.choices.count) distinct choices available in the selected banks.").font(.caption).foregroundStyle(.secondary) }
