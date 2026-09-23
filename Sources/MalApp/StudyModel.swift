@@ -60,7 +60,8 @@ import MalStorage
     private var lastGraded: Entry?
     private var store: Store?
     private var aliases: [String: [String]] = [:]
-    private let speech = AVSpeechSynthesizer()
+    private var speech = AVSpeechSynthesizer()
+    private var speechDeadline: TimeInterval = 0
     private var random = SystemRandomNumberGenerator()
     private var keyMonitor: Any?
     var selectedEntries: [Entry] { banks.filter { settings.bankIDs.contains($0.id) }.flatMap(\.entries) }
@@ -192,6 +193,10 @@ import MalStorage
         Task {
             // Let introduction/correction audio finish before reopening the microphone.
             while speech.isSpeaking {
+                if ProcessInfo.processInfo.systemUptime >= speechDeadline {
+                    resetSpeech()
+                    break
+                }
                 try? await Task.sleep(for: .milliseconds(100))
                 guard generation == speechGeneration else { return }
             }
@@ -298,7 +303,7 @@ import MalStorage
     func setAutomaticPronunciation(_ enabled: Bool) {
         settings.automaticPronunciation = enabled
         do { try store?.saveSettings(settings) } catch { self.error = error.localizedDescription }
-        if !enabled { speech.stopSpeaking(at: .immediate) }
+        if !enabled { resetSpeech() }
         else if let current, !waiting { pronounceAutomatically(current) }
     }
     private func pronounceAutomatically(_ entry: Entry, submittedAnswer: String? = nil, correct: Bool? = nil) {
@@ -310,14 +315,27 @@ import MalStorage
         if !sequence.isEmpty { speakSequence(sequence, automatic: true) }
     }
     func speak(_ entry: Entry) { speakSequence([entry.id == current?.id ? koreanText(entry) : entry.lemma]) }
+    private func resetSpeech() {
+        speech.stopSpeaking(at: .immediate)
+        speech = AVSpeechSynthesizer()
+        speechDeadline = 0
+    }
     private func speakSequence(_ texts: [String], automatic: Bool = false) {
-        if dictation.active { return }
+        if dictation.active {
+            if automatic { return }
+            // An explicit replay must work even if recognition has become stuck.
+            // Stop capture so it cannot transcribe the app's own pronunciation.
+            pauseDictation()
+        }
         guard let voice = AVSpeechSynthesisVoice.speechVoices().first(where: { $0.language.hasPrefix("ko") }) else {
             let message = "Install a Korean voice in System Settings → Accessibility → Read & Speak → System voice. Study works without a voice."
             if automatic { feedback = message } else { error = message }
             return
         }
-        speech.stopSpeaking(at: .immediate)
+        // Do not enqueue immediately into a synthesizer we just cancelled:
+        // a fresh instance also makes the speaker button a recovery action.
+        resetSpeech()
+        speechDeadline = ProcessInfo.processInfo.systemUptime + max(10, Double(texts.joined().count) * 0.5 + 5)
         for (index, text) in texts.enumerated() {
             let utterance = AVSpeechUtterance(string: text)
             utterance.voice = voice; utterance.rate = 0.4

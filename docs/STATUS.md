@@ -452,3 +452,9 @@ Commit authorization: user explicitly requested committing the tested comma-sepa
 Replaced grading dropdown with Count as correct, always calling the existing correct-and-remember operation. Removed one-time UI override and mutable saveAlias toggle; action itself checks existing alias eligibility. English answers retain availability in all form categories. Focused Korean conjugations retain their prior unlabelled-alias restriction. No storage or grading rule changes.
 
 Verification: signed app build succeeded; `git diff --check` passed. UI/action wiring change only; unit suite not rerun (latest full suite: 90 passed). Next manual acceptance: reopen Mal, submit an English answer judged wrong, click Count as correct, and verify corrected history plus future acceptance after restart. Changes remain uncommitted for review.
+
+## Pronunciation recovery — 2026-09-22 — needs live verification
+
+User reports intermittent loss of spoken output requiring restart. Added fresh synthesizer per sequence, Auto-off reset, explicit speaker replay that cancels active dictation instead of doing nothing, and bounded isSpeaking waiting before dictation. No actual intermittent failure reproduced; these are recovery/lifecycle changes, not a confirmed root-cause fix. Clicking the speaker during dictation pauses capture; use the existing resume control to dictate again.
+
+Verification: signed app build succeeded; `git diff --check` passed. No rules/storage changes; unit suite not rerun (latest 90 passing). Next manual acceptance: study with Auto enabled, advance rapidly, toggle Auto and replay words; if silence recurs, click the speaker and report whether recovery works and whether recognition was active. Check incorrect-answer sequences still speak both words in order. Changes and the preceding Count as correct UI change remain uncommitted for review.
