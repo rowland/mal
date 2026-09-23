@@ -446,3 +446,9 @@ Next action: reopen Mal and retry color for 색. Native acceptance pending; chan
 User acceptance follow-up: user reports “That worked” for the comma-separated colour/color fix. Recorded separately from the 90 passing automated tests. Changes remain uncommitted pending commit authorization. Next action: continue study and collect any remaining English-answer parsing defects.
 
 Commit authorization: user explicitly requested committing the tested comma-separated answer fix. Latest verification remains 90 passing tests and successful signed app build, followed by positive user acceptance. No implementation changes since verification; commit-time diff check passed. Next action: continue study and report remaining content or grading issues.
+
+## Direct Count as correct button — 2026-09-22
+
+Replaced grading dropdown with Count as correct, always calling the existing correct-and-remember operation. Removed one-time UI override and mutable saveAlias toggle; action itself checks existing alias eligibility. English answers retain availability in all form categories. Focused Korean conjugations retain their prior unlabelled-alias restriction. No storage or grading rule changes.
+
+Verification: signed app build succeeded; `git diff --check` passed. UI/action wiring change only; unit suite not rerun (latest full suite: 90 passed). Next manual acceptance: reopen Mal, submit an English answer judged wrong, click Count as correct, and verify corrected history plus future acceptance after restart. Changes remain uncommitted for review.

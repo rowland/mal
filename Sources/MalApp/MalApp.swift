@@ -98,12 +98,9 @@ struct ContentView: View {
                         }
                     }
                     Spacer()
-                    if model.waiting {
-                        Menu("Grading options") {
-                            Button("Count my answer as correct") { model.saveAlias = false; model.acceptAnswer() }
-                            if model.canRememberAnswer { Button("Count as correct and remember this answer") { model.saveAlias = true; model.acceptAnswer() } }
-                        }.menuStyle(.borderlessButton).fixedSize()
-                            .foregroundStyle(.secondary)
+                    if model.waiting && model.canRememberAnswer {
+                        Button("Count as correct", action: model.acceptAnswer)
+                            .help("Count this answer as correct and remember it for future reviews.")
                     }
                     Button("Undo", action: model.undo).disabled(model.history.allSatisfy(\.undone))
                 }.frame(minHeight: 24)

@@ -56,7 +56,6 @@ import MalStorage
     var search = ""
     var showLibrary = false
     var showHistory = false
-    var saveAlias = false
     private var lastSense: String?
     private var lastGraded: Entry?
     private var store: Store?
@@ -134,7 +133,7 @@ import MalStorage
         editingSpokenAnswer = false
         reintroducing = false
         let excluded = skipNextSense; skipNextSense = nil
-        introducing = false; waiting = false; hintRevealed = false; answer = ""; saveAlias = false
+        introducing = false; waiting = false; hintRevealed = false; answer = ""
         sinceIntroduction = (try? store?.answersSinceIntroduction(trackID: clockTrackID)) ?? 5
         let context = QueueContext(now: Date(), sequence: sequence, answersSinceIntroduction: sinceIntroduction, previousSense: lastSense, trackSequences: trackSequences)
         guard let selection = StudyQueue.select(entries: practiceEntries.filter { $0.id != excluded }, states: states, settings: settings, context: context, activeEntryIDs: Set(allEntries.map(\.id)), activeEntries: allEntries),
@@ -264,9 +263,9 @@ import MalStorage
         } catch { self.error = error.localizedDescription }
     }
     func acceptAnswer() {
-        guard waiting, let entry = current else { return }
+        guard waiting, canRememberAnswer, let entry = current else { return }
         do {
-            _ = try store?.correctLastAnswer(expectedKey: studyKey(entry), saveAlias: saveAlias)
+            _ = try store?.correctLastAnswer(expectedKey: studyKey(entry), saveAlias: true)
             try reload(includeContent: false)
             feedback = "Accepted · \(koreanText(entry)) — \(entry.english.joined(separator: "; "))"
             next()
