@@ -28,3 +28,18 @@ import MalCore
     let hidden = StudyCounts.calculate(keys: [], states: [key: state], sequences: [:], now: now, introduction: key)
     #expect(hidden.total == 0)
 }
+
+@Test func currentCompletionExcludesUnseenAndEitherDueClock() {
+    let now = Date(timeIntervalSince1970: 1000)
+    let keys = (0..<5).map { CardKey("\($0)", .koreanToEnglish, .writeIn) }
+    var future = LearningState(due: now.addingTimeInterval(60)); future.dueSequence = 10
+    var dueByCount = future; dueByCount.dueSequence = 5
+    var dueByTime = future; dueByTime.due = now
+    var review = future; review.phase = .maintenance
+    let other = CardKey("4", .koreanToEnglish, .multipleChoice)
+    let states = [keys[0]: future, keys[1]: dueByCount, keys[2]: dueByTime, keys[3]: review, other: review]
+    let counts = CurrentCompletion.calculate(keys: Set(keys), states: states, sequences: [keys[0].trackID: 5], now: now)
+    #expect(counts.complete == 2 && counts.possible == 5)
+    #expect(CurrentCompletion.calculate(keys: Set(keys), states: states, sequences: [keys[0].trackID: 10], now: now).complete == 0)
+    #expect(CurrentCompletion.calculate(keys: Set(keys), states: states, sequences: [:], now: now.addingTimeInterval(60)).complete == 0)
+}

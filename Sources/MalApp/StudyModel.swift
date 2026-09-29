@@ -68,6 +68,10 @@ import MalStorage
     private var random = SystemRandomNumberGenerator()
     private var keyMonitor: Any?
     var selectedEntries: [Entry] { banks.filter { settings.bankIDs.contains($0.id) }.flatMap(\.entries) }
+    func completion(_ entries: [Entry], at now: Date) -> CurrentCompletion {
+        let keys = Set(entries.filter { !FormPractice.forms($0, style: practiceStyle).isEmpty }.map { studyKey($0) })
+        return CurrentCompletion.calculate(keys: keys, states: states, sequences: trackSequences, now: now)
+    }
     var allEntries: [Entry] { banks.flatMap(\.entries) }
     var filteredLibrary: [Entry] {
         selectedEntries.filter { settings.parts.contains($0.partOfSpeech) && (search.isEmpty || $0.lemma.localizedCaseInsensitiveContains(search) || $0.english.joined(separator: " ").localizedCaseInsensitiveContains(search)) }

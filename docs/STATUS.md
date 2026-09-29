@@ -476,3 +476,27 @@ Verification: signed app build succeeded; `git diff --check` passed. App audio o
 Selected multiple-choice row now retains accent-color background and white text/number during correct-answer playback, for both clicks and numeric shortcuts. Uses the existing submitted-answer state rather than transient mouse press state; accessibility selected trait added. Clears when the card advances or Undo restores it. No changes to grading or playback timing.
 
 Verification: signed app build succeeded; `git diff --check` passed. UI-only styling change; unit suite not rerun (latest 90 passing). Next manual check: with Auto on, choose via mouse then via number key; confirm the selected row remains blue/white throughout pronunciation in light/dark appearance and clears on the next card. Changes remain uncommitted pending review.
+
+## Online learner-dictionary links — 2026-09-28
+
+Added a book icon beside the study prompt and library Korean word, opening NIKL Korean-English Learners' Dictionary in the default browser. Uses dictionary lemma, not conjugated presentation; encodes search query with URLComponents. Search landing accommodates homonyms and entries without preassigned NIKL IDs. No automatic network lookup, progress or grading change.
+
+Verification: live web search for 많다 returned relevant English dictionary results; 상세하다 detail page contained fuller definition, forms and Korean examples. Signed app build succeeded; `git diff --check` passed. UI-only link addition; unit suite not rerun (latest 90 passing). Next manual check: reopen Mal, click book beside a conjugated word and confirm browser searches its lemma; check library link and return-to-study behavior. Prior uncommitted UI/audio changes preserved. Changes remain uncommitted for review.
+
+## Clearer dictionary link — 2026-09-28
+
+Replaced standalone book icon with Dictionary plus an external-link arrow, using 14-point medium text and a padded click target in study/library views. Signed app build and `git diff --check` passed. UI-only change; no unit rerun. Next action: reopen Mal and assess readability/layout beside short and long prompts. Visual acceptance pending; changes remain uncommitted.
+
+## Arrow-only dictionary link — 2026-09-28
+
+Removed Dictionary label as requested; retained external-link symbol, tooltip, accessibility label and padded click target. Signed app build succeeded; `git diff --check` passed. UI-only change; no unit rerun. Next action: reopen app for visual review. Changes remain uncommitted.
+
+## Sidebar current completion counts — 2026-09-29
+
+Renamed bank editorial label to vocabulary unverified and added currently complete/possible counts to banks and word-focus rows. Pure CurrentCompletion calculation uses selected-track keys and existing dual-clock due rule; unseen words remain incomplete. Each bank uses its own eligible entries; POS rows use selected banks regardless of checked POS. Missing forms excluded. Timeline refresh handles elapsed time without requiring an answer.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **91 tests passed**, including future learning/maintenance, unseen words, other-mode isolation, and either-clock expiration. Signed app build succeeded; `git diff --check` passed. Native sidebar layout/use remains pending. Next action: reopen Mal, compare counts across mode/form switches and bank selections; verify unchecked categories still show totals and due reviews lower completion. All accumulated changes remain uncommitted for review.
+
+## Sidebar and dictionary checkpoint approved — 2026-09-29
+
+User explicitly requested commit after the sidebar iteration. Pending diff contains dictionary lookup links, sidebar completion counts, tests and project notes; earlier audio/UI work is already in repository history. Latest verification remains 91 passing tests and successful signed app build. No implementation changes since verification; commit-time diff check passed. Next action: continue study and report any count/layout issues; broader native and linguistic acceptance gates remain open.

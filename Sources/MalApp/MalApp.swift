@@ -37,7 +37,9 @@ struct ContentView: View {
                         })) {
                             VStack(alignment: .leading, spacing: 3) {
                                 Text(bank.title)
-                                Text("\(bank.entries.count) words" + (bank.entries.contains { $0.verification != "verified" } ? " · under review" : "")).font(.caption).foregroundStyle(.secondary)
+                                Text("\(bank.entries.count) words" + (bank.entries.contains { $0.verification != "verified" } ? " · vocabulary unverified" : "")).font(.caption).foregroundStyle(.secondary)
+                                    .help("Editorial verification, independent of learning progress.")
+                                completionLabel(bank.entries)
                             }
                         }.toggleStyle(.checkbox).padding(.vertical, 3)
                     }
@@ -45,9 +47,14 @@ struct ContentView: View {
                 Section("WORD FOCUS") {
                     Button("All parts of speech") { model.settings.parts = Set(PartOfSpeech.allCases); model.changeSettings() }
                     ForEach(PartOfSpeech.allCases, id: \.self) { part in
-                        Toggle(part.label, isOn: Binding(get: { model.settings.parts.contains(part) }, set: { value in
+                        Toggle(isOn: Binding(get: { model.settings.parts.contains(part) }, set: { value in
                             if value { model.settings.parts.insert(part) } else { model.settings.parts.remove(part) }; model.changeSettings()
-                        })).toggleStyle(.checkbox)
+                        })) {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(part.label)
+                                completionLabel(model.selectedEntries.filter { $0.partOfSpeech == part })
+                            }
+                        }.toggleStyle(.checkbox)
                     }
                 }
                 Section {
@@ -115,6 +122,14 @@ struct ContentView: View {
         .sheet(isPresented: $model.showLibrary) { LibraryView(model: model) }
         .sheet(isPresented: $model.showHistory) { HistoryView(model: model) }
     }
+    private func completionLabel(_ entries: [Entry]) -> some View {
+        TimelineView(.periodic(from: .now, by: 30)) { context in
+            let count = model.completion(entries, at: context.date)
+            Text("\(count.complete) / \(count.possible) currently complete")
+                .font(.caption).foregroundStyle(.secondary)
+                .help("Answered and not due by time or practice count in the selected direction, answer mode and form. Unseen words are incomplete; unavailable forms are excluded. Category counts use selected banks regardless of checked categories.")
+        }
+    }
     @ViewBuilder private func studyCard(_ entry: Entry) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
@@ -129,8 +144,11 @@ struct ContentView: View {
             if model.introducing {
                 Text(model.reintroducing ? "LET’S REVIEW" : "INTRODUCTION").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
             }
-            Text(model.introducing ? model.koreanText(entry) : model.studyPrompt(entry)).font(.system(size: 38, weight: .medium)).textSelection(.enabled)
-                .accessibilityIdentifier("studyPrompt")
+            HStack(alignment: .firstTextBaseline, spacing: 12) {
+                Text(model.introducing ? model.koreanText(entry) : model.studyPrompt(entry)).font(.system(size: 38, weight: .medium)).textSelection(.enabled)
+                    .accessibilityIdentifier("studyPrompt")
+                DictionaryLink(lemma: entry.lemma)
+            }
             if model.focusedForm {
                 Text(model.practiceStyle.label + (model.practiceStyle == .attributive ? " · before a noun" : " · present affirmative"))
                     .font(.callout).foregroundStyle(.secondary)
@@ -326,7 +344,7 @@ struct LibraryView: View {
             TextField("Search Korean or English", text: $model.search)
             List(model.filteredLibrary) { entry in
                 VStack(alignment: .leading, spacing: 5) {
-                    HStack { Text(entry.lemma).font(.title3); Text(entry.english.joined(separator: "; ")); Spacer(); Text(entry.verification).font(.caption).foregroundStyle(.secondary); Button { model.speak(entry) } label: { Image(systemName: "speaker.wave.2") } }
+                    HStack { Text(entry.lemma).font(.title3); DictionaryLink(lemma: entry.lemma); Text(entry.english.joined(separator: "; ")); Spacer(); Text(entry.verification).font(.caption).foregroundStyle(.secondary); Button { model.speak(entry) } label: { Image(systemName: "speaker.wave.2") } }
                     if !entry.koreanForms.isEmpty {
                         DisclosureGroup("Listed forms") {
                             ForEach(KoreanPracticeStyle.allCases.filter { $0 != .dictionary && FormPractice.applies(entry, style: $0) }, id: \.self) { style in
@@ -359,5 +377,24 @@ struct HistoryView: View {
                 }
             }
         }.padding(24).frame(width: 800, height: 550)
+    }
+}
+
+private struct DictionaryLink: View {
+    let lemma: String
+    private var destination: URL {
+        var url = URLComponents(string: "https://krdict.korean.go.kr/eng/dicMarinerSearch/search")!
+        url.queryItems = [URLQueryItem(name: "mainSearchWord", value: lemma), URLQueryItem(name: "nation", value: "eng")]
+        return url.url!
+    }
+    var body: some View {
+        Link(destination: destination) {
+            Image(systemName: "arrow.up.right.square")
+            .font(.system(size: 14, weight: .medium))
+            .fixedSize()
+            .padding(.vertical, 5)
+        }
+        .help("Look up the dictionary form in the Korean-English Learners’ Dictionary (opens browser)")
+        .accessibilityLabel("Look up word in Korean-English Learners’ Dictionary")
     }
 }

@@ -18,3 +18,16 @@ public struct StudyCounts: Equatable, Sendable {
         return counts
     }
 }
+
+/// Current work completed in one track, not permanent mastery.
+public struct CurrentCompletion: Equatable, Sendable {
+    public let complete: Int
+    public let possible: Int
+    public static func calculate(keys: Set<CardKey>, states: [CardKey: LearningState], sequences: [String: Int], now: Date) -> CurrentCompletion {
+        let complete = keys.filter { key in
+            guard let state = states[key] else { return false }
+            return !Scheduler.isDue(state, now: now, sequence: sequences[state.clockTrackID ?? key.trackID, default: 0])
+        }.count
+        return CurrentCompletion(complete: complete, possible: keys.count)
+    }
+}

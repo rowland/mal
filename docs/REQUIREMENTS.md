@@ -56,3 +56,7 @@ UX-17 (review trial): Speech accommodations use independently testable, named/ve
 UX-17 refinement: Both initial speech rules are live-enabled. Plain/tense tolerance permits one onset substitution, preserving vowels, final consonants, and all other syllables. Other consonant differences remain subject to confirmation.
 
 UX-17 contextual trial: Permit one ㄹ/ㄷ final-consonant confusion immediately before an identical ㅇ-initial syllable with ㅏ/ㅓ, optionally with the supported plain/tense onset difference in that same preceding syllable. Preserve all other characters. Exclude ㅐ/ㅔ contexts pending evidence; retain exact precedence, ambiguity confirmation and strict typing.
+
+UX-18: Provide an optional dictionary lookup beside study prompts and library Korean words. Open NIKL's Korean-English Learners' Dictionary in the browser using the lemma, not the displayed conjugation. Only the chosen lookup requires network access; offline study is unchanged.
+
+UX-19: Bank and word-focus sidebar rows show currently-complete/possible counts for the selected direction, answer mode and form. Complete means recorded state not due by either scheduling clock; unseen introductions do not count. Exclude unavailable forms. Category totals use selected banks independent of checked categories; bank totals use each bank independently. Clearly distinguish editorial vocabulary verification from learner progress.
