@@ -1,0 +1,710 @@
+{
+  "bank": "mal.novice",
+  "batch": 10,
+  "date": "2026-09-30",
+  "baseContentVersion": 14,
+  "contentVersion": 15,
+  "status": "editorial complete; form/source verification separate",
+  "entries": [
+    {
+      "position": 212,
+      "id": "mal.novice.50c142015d28dda2",
+      "previousID": "mal.novice.50c142015d28dda2",
+      "lemma": "이제",
+      "before": [
+        "now",
+        "and now"
+      ],
+      "after": [
+        "now",
+        "and now"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: now, and now\nSource: https://en.wiktionary.org/wiki/이제#Korean · NIKL level A, frequency rank 370",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 214,
+      "id": "mal.novice.70fb9caff54d57e2",
+      "previousID": "mal.novice.70fb9caff54d57e2",
+      "lemma": "술",
+      "before": [
+        "alcoholic beverage",
+        "liquor"
+      ],
+      "after": [
+        "alcohol",
+        "alcoholic drink",
+        "liquor",
+        "alcoholic beverage"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: alcoholic beverage; liquor\nSource: https://en.wiktionary.org/wiki/술#Korean · NIKL level A, frequency rank 372",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 216,
+      "id": "mal.novice.9b10685b56ec75e1",
+      "previousID": "mal.novice.9b10685b56ec75e1",
+      "lemma": "전화",
+      "before": [
+        "telephone",
+        "phone"
+      ],
+      "after": [
+        "telephone",
+        "phone"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: telephone, phone\nSource: https://en.wiktionary.org/wiki/전화#Korean · NIKL level A, frequency rank 375",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 217,
+      "id": "mal.novice.926a5b7dc318a865",
+      "previousID": "mal.novice.926a5b7dc318a865",
+      "lemma": "끝나다",
+      "before": [
+        "come to an end; to become finished",
+        "to come to an end; to become finished"
+      ],
+      "after": [
+        "end",
+        "finish",
+        "come to an end",
+        "to end",
+        "to finish",
+        "to come to an end"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to come to an end; to become finished\nSource: https://en.wiktionary.org/wiki/끝나다#Korean · NIKL level A, frequency rank 376",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 218,
+      "id": "mal.novice.22b9204726b68fea",
+      "previousID": "mal.novice.22b9204726b68fea",
+      "lemma": "돌아오다",
+      "before": [
+        "return",
+        "to return",
+        "come back",
+        "to come back"
+      ],
+      "after": [
+        "return",
+        "to return",
+        "come back",
+        "to come back"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to return, to come back\nSource: https://en.wiktionary.org/wiki/돌아오다#Korean · NIKL level A, frequency rank 377",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 219,
+      "id": "mal.novice.080e906696ea64f6",
+      "previousID": "mal.novice.080e906696ea64f6",
+      "lemma": "아빠",
+      "before": [
+        "dad",
+        "papa"
+      ],
+      "after": [
+        "dad",
+        "papa"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: dad, papa\nSource: https://en.wiktionary.org/wiki/아빠#Korean · NIKL level A, frequency rank 379",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 220,
+      "id": "mal.novice.3f534542c74adad8",
+      "previousID": "mal.novice.3f534542c74adad8",
+      "lemma": "한번",
+      "before": [
+        "one day",
+        "someday"
+      ],
+      "after": [
+        "one day",
+        "someday"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": "Retain this attested someday sense. The spaced 한 번 means one time; do not silently treat the two spellings as interchangeable.",
+      "sourceEvidence": "Source sense: one day, someday\nSource: https://en.wiktionary.org/wiki/한번#Korean · NIKL level A, frequency rank 382",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/한번#Korean"
+      ],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 221,
+      "id": "mal.novice.33e1d525d7662ee8",
+      "previousID": "mal.novice.33e1d525d7662ee8",
+      "lemma": "커피",
+      "before": [
+        "coffee",
+        "especially the beverage"
+      ],
+      "after": [
+        "coffee"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: coffee, especially the beverage\nSource: https://en.wiktionary.org/wiki/커피#Korean · NIKL level A, frequency rank 383",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 222,
+      "id": "mal.novice.9ddb284c4c69f41c",
+      "previousID": "mal.novice.9ddb284c4c69f41c",
+      "lemma": "가슴",
+      "before": [
+        "chest",
+        "breast"
+      ],
+      "after": [
+        "chest",
+        "breast"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: chest, breast\nSource: https://en.wiktionary.org/wiki/가슴#Korean · NIKL level A, frequency rank 384",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 223,
+      "id": "mal.novice.d5bba31ccedfa717",
+      "previousID": "mal.novice.d5bba31ccedfa717",
+      "lemma": "길다",
+      "before": [
+        "be long",
+        "to be long"
+      ],
+      "after": [
+        "be long",
+        "to be long"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to be long\nSource: https://en.wiktionary.org/wiki/길다#Korean · NIKL level A, frequency rank 386",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 224,
+      "id": "mal.novice.7365e80de4064ef8",
+      "previousID": "mal.novice.7365e80de4064ef8",
+      "lemma": "맛",
+      "before": [
+        "taste",
+        "flavor"
+      ],
+      "after": [
+        "taste",
+        "flavor",
+        "flavour"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: taste, flavor\nSource: https://en.wiktionary.org/wiki/맛#Korean · NIKL level A, frequency rank 390",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 225,
+      "id": "mal.novice.ef2c2a2e918b6d82",
+      "previousID": "mal.novice.ef2c2a2e918b6d82",
+      "lemma": "매우",
+      "before": [
+        "very",
+        "extremely"
+      ],
+      "after": [
+        "very",
+        "extremely"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: very, extremely\nSource: https://en.wiktionary.org/wiki/매우#Korean · NIKL level A, frequency rank 393",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 226,
+      "id": "mal.novice.be1073a65d328067",
+      "previousID": "mal.novice.be1073a65d328067",
+      "lemma": "오르다",
+      "before": [
+        "go up",
+        "to go up"
+      ],
+      "after": [
+        "go up",
+        "to go up"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to go up\nSource: https://en.wiktionary.org/wiki/오르다#Korean · NIKL level A, frequency rank 394",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 227,
+      "id": "mal.novice.9a8f87427c81eb84",
+      "previousID": "mal.novice.9a8f87427c81eb84",
+      "lemma": "음식",
+      "before": [
+        "food",
+        "including drink"
+      ],
+      "after": [
+        "food"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: food, including drink\nSource: https://en.wiktionary.org/wiki/음식#Korean · NIKL level A, frequency rank 395",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 228,
+      "id": "mal.novice.371c9c2cc0002525",
+      "previousID": "mal.novice.371c9c2cc0002525",
+      "lemma": "꼭",
+      "before": [
+        "absolutely",
+        "surely"
+      ],
+      "after": [
+        "absolutely",
+        "surely"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: absolutely; surely\nSource: https://en.wiktionary.org/wiki/꼭#Korean · NIKL level A, frequency rank 397",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 229,
+      "id": "mal.novice.892705bee29a4f83",
+      "previousID": "mal.novice.892705bee29a4f83",
+      "lemma": "요즘",
+      "before": [
+        "recent times",
+        "recently"
+      ],
+      "after": [
+        "these days",
+        "recently"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: recent times; recently\nSource: https://en.wiktionary.org/wiki/요즘#Korean · NIKL level A, frequency rank 399",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 230,
+      "id": "mal.novice.024dcaba1ee5b9bd",
+      "previousID": "mal.novice.024dcaba1ee5b9bd",
+      "lemma": "얼마",
+      "before": [
+        "how much",
+        "how many"
+      ],
+      "after": [
+        "how much",
+        "how many"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: how much, how many\nSource: https://en.wiktionary.org/wiki/얼마#Korean · NIKL level A, frequency rank 402",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 231,
+      "id": "mal.novice.e4d078c167ea0d9a",
+      "previousID": "mal.novice.e4d078c167ea0d9a",
+      "lemma": "계속",
+      "before": [
+        "continuously"
+      ],
+      "after": [
+        "continuously"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: continuously\nSource: https://en.wiktionary.org/wiki/계속#Korean · NIKL level A, frequency rank 405",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 232,
+      "id": "mal.novice.f7f5be7f0dc10186",
+      "previousID": "mal.novice.f7f5be7f0dc10186",
+      "lemma": "아내",
+      "before": [
+        "wife",
+        "especially one's own"
+      ],
+      "after": [
+        "wife"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: wife, especially one's own\nSource: https://en.wiktionary.org/wiki/아내#Korean · NIKL level A, frequency rank 408",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 233,
+      "id": "mal.novice.fc628578384b7dad",
+      "previousID": "mal.novice.fc628578384b7dad",
+      "lemma": "가족",
+      "before": [
+        "household",
+        "family"
+      ],
+      "after": [
+        "family",
+        "household"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: household; family\nSource: https://en.wiktionary.org/wiki/가족#Korean · NIKL level A, frequency rank 409",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 234,
+      "id": "mal.novice.97cf12fe7c965026",
+      "previousID": "mal.novice.97cf12fe7c965026",
+      "lemma": "놓다",
+      "before": [
+        "lay",
+        "to lay",
+        "put",
+        "set",
+        "place"
+      ],
+      "after": [
+        "put",
+        "place",
+        "set",
+        "lay",
+        "to put",
+        "to place",
+        "to set",
+        "to lay"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to lay, put, set, place\nSource: https://en.wiktionary.org/wiki/놓다#Korean · NIKL level A, frequency rank 415",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 236,
+      "id": "mal.novice.e89cbfc4e2426b83",
+      "previousID": "mal.novice.e89cbfc4e2426b83",
+      "lemma": "놀다",
+      "before": [
+        "play",
+        "to play",
+        "hang out",
+        "to hang out"
+      ],
+      "after": [
+        "play",
+        "to play",
+        "hang out",
+        "to hang out"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to play, to hang out\nSource: https://en.wiktionary.org/wiki/놀다#Korean · NIKL level A, frequency rank 418",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 237,
+      "id": "mal.novice.3499433f3c0fcb7c",
+      "previousID": "mal.novice.3499433f3c0fcb7c",
+      "lemma": "도시",
+      "before": [
+        "city"
+      ],
+      "after": [
+        "city"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: city\nSource: https://en.wiktionary.org/wiki/도시#Korean · NIKL level A, frequency rank 423",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 239,
+      "id": "mal.novice.1330b7df0184ceb6",
+      "previousID": "mal.novice.1330b7df0184ceb6",
+      "lemma": "바꾸다",
+      "before": [
+        "change [something]; to replace [something] with something else",
+        "to change [something]; to replace [something] with something else"
+      ],
+      "after": [
+        "change",
+        "replace",
+        "to change",
+        "to replace"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to change [something]; to replace [something] with something else\nSource: https://en.wiktionary.org/wiki/바꾸다#Korean · NIKL level A, frequency rank 432",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 240,
+      "id": "mal.novice.f7404507b993665d",
+      "previousID": "mal.novice.f7404507b993665d",
+      "lemma": "좋아하다",
+      "before": [
+        "like something or someone; to prefer",
+        "to like something or someone; to prefer"
+      ],
+      "after": [
+        "like",
+        "prefer",
+        "to like",
+        "to prefer"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to like something or someone; to prefer\nSource: https://en.wiktionary.org/wiki/좋아하다#Korean · NIKL level A, frequency rank 438",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    }
+  ],
+  "sourceSHA256": "ef5ff3629552a78e88418883da76cd317b56559a88803a46d72c0d4379bfa259",
+  "resultSHA256": "0b5ca393d78db646c78ad90eeeb3e20193a4fc21baa68e22f39b92f6f7505e41"
+}

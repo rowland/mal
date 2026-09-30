@@ -1,0 +1,504 @@
+{
+  "bank": "mal.novice",
+  "batch": 3,
+  "date": "2026-09-29",
+  "baseContentVersion": 7,
+  "contentVersion": 8,
+  "reviewer": "assistant",
+  "reviewed": 25,
+  "newlyVerified": 8,
+  "entries": [
+    {
+      "position": 25,
+      "id": "mal.novice.0e15f34e538cda38",
+      "lemma": "빨갛다",
+      "before": [
+        "red",
+        "be red"
+      ],
+      "after": [
+        "red",
+        "be red"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/빨갛다#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Retain checked: complete form-by-form reference corroboration remains pending; no promotion based on partial table excerpts. Also corroborate all stored 붉다 synonym forms.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/빨갛다#Korean · NIKL level B, frequency rank 2385"
+    },
+    {
+      "position": 26,
+      "id": "mal.novice.ff3d21630022f92c",
+      "lemma": "하얗다",
+      "before": [
+        "white",
+        "be white"
+      ],
+      "after": [
+        "white",
+        "be white"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/하얗다#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Direct Wiktionary lookup failed; secondary university table search returned a conflicting formal form. Resolve against authoritative spelling/form evidence before promotion; retain existing forms.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/하얗다#Korean · NIKL level B, frequency rank 1528"
+    },
+    {
+      "position": 27,
+      "id": "mal.novice.b73421c13ce0c9ab",
+      "lemma": "파랗다",
+      "before": [
+        "blue",
+        "be blue"
+      ],
+      "after": [
+        "blue",
+        "be blue"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/파랗다#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Retain checked: complete form-by-form reference corroboration remains pending; no promotion based on partial table excerpts.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/파랗다#Korean · NIKL level B, frequency rank 3506"
+    },
+    {
+      "position": 28,
+      "id": "mal.novice.a526e8fc89746b58",
+      "lemma": "좋다",
+      "before": [
+        "good",
+        "be good"
+      ],
+      "after": [
+        "good",
+        "be good"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/좋다#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Direct lookup failed; retain checked pending reference corroboration of all forms.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/좋다#Korean · NIKL level A, frequency rank 45"
+    },
+    {
+      "position": 29,
+      "id": "mal.novice.25c2b54effeea0f1",
+      "lemma": "크다",
+      "before": [
+        "big",
+        "large",
+        "be big"
+      ],
+      "after": [
+        "big",
+        "large",
+        "be big"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/크다#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Retain checked: complete form-by-form reference corroboration remains pending; no promotion based on partial table excerpts.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/크다#Korean · NIKL level A, frequency rank 39"
+    },
+    {
+      "position": 30,
+      "id": "mal.novice.bb15dbc847f405d6",
+      "lemma": "작다",
+      "before": [
+        "small",
+        "be small"
+      ],
+      "after": [
+        "small",
+        "be small"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/작다#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Retain checked: complete form-by-form reference corroboration remains pending; no promotion based on partial table excerpts.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/작다#Korean · NIKL level A, frequency rank 259"
+    },
+    {
+      "position": 31,
+      "id": "mal.novice.a1404fd002b09155",
+      "lemma": "춥다",
+      "before": [
+        "cold",
+        "be cold"
+      ],
+      "after": [
+        "cold",
+        "be cold"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/춥다#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Retain checked: complete form-by-form reference corroboration remains pending; no promotion based on partial table excerpts.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/춥다#Korean · NIKL level A, frequency rank 1654"
+    },
+    {
+      "position": 32,
+      "id": "mal.novice.64fc9a44de9fc177",
+      "lemma": "덥다",
+      "before": [
+        "hot",
+        "be hot"
+      ],
+      "after": [
+        "hot",
+        "be hot"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/덥다#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Retain checked: complete form-by-form reference corroboration remains pending; no promotion based on partial table excerpts.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/덥다#Korean · NIKL level A, frequency rank 2678"
+    },
+    {
+      "position": 33,
+      "id": "mal.novice.0434c61c39d20261",
+      "lemma": "빠르다",
+      "before": [
+        "fast",
+        "quick",
+        "be fast"
+      ],
+      "after": [
+        "fast",
+        "quick",
+        "be fast"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/빠르다#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Retain checked: complete form-by-form reference corroboration remains pending; no promotion based on partial table excerpts.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/빠르다#Korean · NIKL level A, frequency rank 613"
+    },
+    {
+      "position": 34,
+      "id": "mal.novice.01a3b38987450c54",
+      "lemma": "예쁘다",
+      "before": [
+        "pretty",
+        "beautiful",
+        "be pretty"
+      ],
+      "after": [
+        "pretty",
+        "beautiful",
+        "be pretty"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/예쁘다#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Retain checked: complete form-by-form reference corroboration remains pending; no promotion based on partial table excerpts.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/예쁘다#Korean · NIKL level A, frequency rank 1009"
+    },
+    {
+      "position": 35,
+      "id": "mal.novice.9a6f558de11fa34c",
+      "lemma": "많다",
+      "before": [
+        "many",
+        "much",
+        "numerous"
+      ],
+      "after": [
+        "many",
+        "much",
+        "numerous"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/많다#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Retain checked: complete form-by-form reference corroboration remains pending; no promotion based on partial table excerpts.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/많다#Korean · NIKL level A, frequency rank 43"
+    },
+    {
+      "position": 36,
+      "id": "mal.novice.69015b131249cb99",
+      "lemma": "조금",
+      "before": [
+        "a little",
+        "a bit"
+      ],
+      "after": [
+        "a little",
+        "a bit"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "verified",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/조금#Korean",
+      "evidenceScope": "Korean sense and lexical category; no inflected forms",
+      "unresolved": null,
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/조금#Korean · NIKL level A, frequency rank 738"
+    },
+    {
+      "position": 37,
+      "id": "mal.novice.49668e21b58916a9",
+      "lemma": "빨리",
+      "before": [
+        "quickly",
+        "fast"
+      ],
+      "after": [
+        "quickly",
+        "fast"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "verified",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/빨리#Korean",
+      "evidenceScope": "Korean sense and lexical category; no inflected forms",
+      "unresolved": null,
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/빨리#Korean · NIKL level A, frequency rank 572"
+    },
+    {
+      "position": 38,
+      "id": "mal.novice.22aa01341c2b7a7b",
+      "lemma": "천천히",
+      "before": [
+        "slowly"
+      ],
+      "after": [
+        "slowly"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "verified",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/천천히#Korean",
+      "evidenceScope": "Korean sense and lexical category; no inflected forms",
+      "unresolved": null,
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/천천히#Korean · NIKL level A, frequency rank 1683"
+    },
+    {
+      "position": 39,
+      "id": "mal.novice.59f77b443ffc0c18",
+      "lemma": "자주",
+      "before": [
+        "often",
+        "frequently"
+      ],
+      "after": [
+        "often",
+        "frequently"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "verified",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/자주#Korean",
+      "evidenceScope": "Korean sense and lexical category; no inflected forms",
+      "unresolved": null,
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/자주#Korean · NIKL level A, frequency rank 674"
+    },
+    {
+      "position": 40,
+      "id": "mal.novice.b25f1c2cbf378066",
+      "lemma": "항상",
+      "before": [
+        "always"
+      ],
+      "after": [
+        "always"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "verified",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/항상#Korean",
+      "evidenceScope": "Korean sense and lexical category; no inflected forms",
+      "unresolved": null,
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/항상#Korean · NIKL level A, frequency rank 754"
+    },
+    {
+      "position": 41,
+      "id": "mal.novice.e74ee6b5a35ab624",
+      "lemma": "아주",
+      "before": [
+        "very"
+      ],
+      "after": [
+        "very"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "verified",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/아주#Korean",
+      "evidenceScope": "Korean sense and lexical category; no inflected forms",
+      "unresolved": null,
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/아주#Korean · NIKL level A, frequency rank 274"
+    },
+    {
+      "position": 42,
+      "id": "mal.novice.c510308d6bf860cb",
+      "lemma": "하나",
+      "before": [
+        "one"
+      ],
+      "after": [
+        "one"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/하나#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Numeral sense supported; explicitly confirm the stored prenominal form and its label before promotion.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/하나#Korean · NIKL level A, frequency rank 119"
+    },
+    {
+      "position": 43,
+      "id": "mal.novice.6f1c275ce0dae637",
+      "lemma": "둘",
+      "before": [
+        "two"
+      ],
+      "after": [
+        "two"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/둘#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Numeral sense supported; explicitly confirm the stored prenominal form and its label before promotion.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/둘#Korean · NIKL level A, frequency rank 575"
+    },
+    {
+      "position": 44,
+      "id": "mal.novice.c612cd9517cd4c07",
+      "lemma": "셋",
+      "before": [
+        "three"
+      ],
+      "after": [
+        "three"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/셋#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Numeral sense supported; explicitly confirm the stored prenominal form and its label before promotion.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/셋#Korean · NIKL level A, frequency rank 2771"
+    },
+    {
+      "position": 45,
+      "id": "mal.novice.c60094eb73421bcb",
+      "lemma": "넷",
+      "before": [
+        "four"
+      ],
+      "after": [
+        "four"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/넷#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Numeral sense supported; explicitly confirm the stored prenominal form and its label before promotion.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/넷#Korean · NIKL level A, frequency rank 6980"
+    },
+    {
+      "position": 46,
+      "id": "mal.novice.7fdd74004106c6c0",
+      "lemma": "일",
+      "before": [
+        "one"
+      ],
+      "after": [
+        "one"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/일#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Number meaning supported; original NIKL frequency metadata needs sense alignment check before promotion.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/일#Korean · NIKL level A, frequency rank 7600"
+    },
+    {
+      "position": 47,
+      "id": "mal.novice.ad54cefaae33545d",
+      "lemma": "이",
+      "before": [
+        "two"
+      ],
+      "after": [
+        "two"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "checked",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/이#Korean",
+      "evidenceScope": "Partial reference evidence plus editorial review; full corroboration pending",
+      "unresolved": "Number meaning supported; original NIKL frequency metadata needs sense alignment check before promotion.",
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/이#Korean · NIKL level A, frequency rank 9733"
+    },
+    {
+      "position": 48,
+      "id": "mal.novice.17147c20c982a95a",
+      "lemma": "명",
+      "before": [
+        "counter for people"
+      ],
+      "after": [
+        "counter for people",
+        "people counter",
+        "counter for persons"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "verified",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/명#Korean",
+      "evidenceScope": "Korean sense and lexical category; no inflected forms",
+      "unresolved": null,
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/명#Korean · NIKL level A, frequency rank 77"
+    },
+    {
+      "position": 49,
+      "id": "mal.novice.8b922b11cc7526c2",
+      "lemma": "개",
+      "before": [
+        "counter for items"
+      ],
+      "after": [
+        "counter for items",
+        "counter for objects",
+        "item counter"
+      ],
+      "verificationBefore": "checked",
+      "verificationAfter": "verified",
+      "reviewer": "assistant",
+      "source": "https://en.wiktionary.org/wiki/개#Korean",
+      "evidenceScope": "Korean sense and lexical category; no inflected forms",
+      "unresolved": null,
+      "originalNotes": "Source: https://en.wiktionary.org/wiki/개#Korean · NIKL level A, frequency rank 85"
+    }
+  ],
+  "sourceSHA256": "b83e3f23a951cdf192ab9a8a5701857a6d16f560015188bc8deac9637b7a35d0",
+  "resultSHA256": "ed2d05f2d329ff00a0a4488cf577497263a9ae19dd4852d250e8487a637d9166"
+}

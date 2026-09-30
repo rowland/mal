@@ -500,3 +500,51 @@ Verification: `swift test --scratch-path /tmp/mal-speech-tests`: **91 tests pass
 ## Sidebar and dictionary checkpoint approved — 2026-09-29
 
 User explicitly requested commit after the sidebar iteration. Pending diff contains dictionary lookup links, sidebar completion counts, tests and project notes; earlier audio/UI work is already in repository history. Latest verification remains 91 passing tests and successful signed app build. No implementation changes since verification; commit-time diff check passed. Next action: continue study and report any count/layout issues; broader native and linguistic acceptance gates remain open.
+
+## Novice gloss revision, batch 001 — 2026-09-29
+
+Audited the 500-entry list for gloss presentation and suspicious source-sense choices; performed 25 targeted English gloss revisions, not a linguistic review of the whole bank. Novice contentVersion 5→6. Explicit shorter alternatives replace combined prose; original arrays and source notes are retained in docs/editorial/novice-001.json, with a readable comparison in novice-001.md. All stable IDs, Korean forms, POS, cues and verification labels preserved by a per-entry comparison. Personal database/aliases untouched; other banks unchanged.
+
+Verification: **91 tests passed** (`swift test --scratch-path /tmp/mal-speech-tests`), built-in bank validator passed (500 entries, all 500 still awaiting independent verification), signed `scripts/build-app.sh` succeeded, `git diff --check` passed. No new rules/storage code. Native study acceptance and independent linguistic review remain pending. Automated structural audit is not a content-verification claim.
+
+Open issues: suspected poor foundational sense selections (including 시장, 분, 교수, 타다, 찍다, 별, 남쪽, 미안하다) are deferred in the review report; do not silently replace their meanings under existing IDs. Shortened English prompts may broaden existing catalogued equivalence matches; manually review both study directions, especially 높다 and 개월. Next action: user reviews the 25-row comparison and studies the rebuilt app; then continue with the earliest 25 unreviewed Novice entries, skipping batch-001 IDs. 475 entries remain for this editorial pass; Technician has not started. Changes left uncommitted for review.
+
+## Wiktionary lookup destination — 2026-09-29
+
+Study and library external-link arrows now open the lemma’s English Wiktionary page at #Korean. Updated tooltip, accessibility label and UX-18. Preserved pending Novice editorial changes.
+
+Verification: signed app build succeeded; `git diff --check` passed. UI destination change only; unit suite not rerun (latest 91 passing). Attempted live web fetch for 많다 failed with UnexpectedStatusCode, so browser navigation acceptance remains pending. Next action: reopen build/Mal.app and click a conjugated card’s arrow to verify lemma lookup and Korean-section navigation. Changes remain uncommitted for review; Novice batch 001 review/continuation remains pending.
+
+## Novice common-meaning review, batch 002 — 2026-09-29
+
+User accepted the Wiktionary link and directed prioritization of common useful senses. Reviewed 25 entries: positions 1–24 retained after editorial review, plus 교수 at position 213 changed from instruction to professor with a new stable ID. Novice version 6→7. Old instruction ID is retired by normal import; history/state/aliases remain attached to it, and professor starts unseen. No personal database was touched. Before/after evidence and ID mapping are in docs/editorial/novice-002.json and novice-002.md. Other banks and existing forms/cues unchanged; independent verification labels unchanged.
+
+Verification: **92 tests passed**, including a new temporary-store regression using the actual Novice bank to verify one addition/one retirement, retained old state/history/alias, absent new state/alias, and idempotent reimport. Bank validator passed: 500 entries, 500 awaiting independent verification. Signed app build succeeded; `git diff --check` passed. User/native acceptance of the new professor introduction remains pending. Other suspect sense selections remain open in batch 001; no claim of full-bank linguistic verification.
+
+Next action: review batch 002 and try the rebuilt app. Then review positions 25–49. Across both batches 50 distinct entries have received this editorial pass; 450 remain. All changes remain uncommitted pending review/commit instruction.
+
+## Assistant assumes vocabulary editor role — 2026-09-29
+
+Updated editorial policy, bank-format status interpretation, requirements and content-source notes: assistant owns vocabulary research and status decisions; user is not asked to certify Korean accuracy. User feedback remains useful for product behavior and suspicious glosses, but is neither necessary nor sufficient for linguistic promotion. Defined complete-entry checked review and evidence-backed verified review with explicit assistant attribution; no human-expert certification is implied. Earlier gloss-only batches retain their existing status until the full entry is checked.
+
+Verification: documentation-only iteration; `git diff --check` passed. No content, app or database changes; tests/build not repeated (latest 92 tests passed and signed build succeeded). Next concrete action: continue Novice positions 25–49 with source evidence and complete-entry review, promoting only entries that meet the documented criteria. 50 gloss-reviewed entries remain recorded; full-entry/source verification is a separate count. No per-word user linguistic approval is required. Changes remain uncommitted.
+
+## Novice batch 003 — 2026-09-29
+
+Reviewed positions 25–49, retaining preferred English glosses and adding explicit counter paraphrases for 명/개. Promoted 조금, 빨리, 천천히, 자주, 항상, 아주, 명, 개 from checked to verified after reviewing their source senses/category; these entries have no inflected forms. Remaining 17 stay checked; full predicate-form, synonym-form and numeral evidence gaps are recorded in docs/editorial/novice-003.json/.md, including failed direct lookups and a conflicting secondary table for 하얗다. No user linguistic approval requested. Novice version 8, stable IDs/forms/cues/POS preserved by comparison; personal data untouched.
+
+Verification: **92 tests passed**; bank validator passed with 500 entries / 492 awaiting verification; signed app build succeeded; `git diff --check` passed. Release gate remains unsatisfied. Native study of counter answer variants not separately tested. No claim of completing the pending form checks.
+
+Next action: positions 50–74 for editorial review; later return to the explicitly listed 17 full-source checks. Total editorial coverage: 75 distinct entries, 425 remaining. Eight source-verified entries; other banks untouched. Changes remain uncommitted until requested.
+
+## Novice English-gloss pass complete — 2026-09-30
+
+Completed all remaining 425 entries in batches 004–020: 147 revised, 278 retained. Fourteen sense replacements use new IDs; earlier professor change is separate. Full coverage is now 500/500 editorially reviewed English glosses/senses. Novice contentVersion 25; all 500 active lemmas remain. Added common English equivalents, removed misleading definition fragments, and preserved key usage distinctions in cues/notes. All old source evidence remains in the ledgers. No personal database/aliases touched; other banks unchanged.
+
+Verification: **94 tests passed** after fixing three migration-ledger answer arrays found by the first run (missing infinitive aliases). New tests cover all 14 replacements' retained old history/state/aliases, no mastery or alias transfer, unchanged-card progress, idempotent import, revised grading and hot-weather/object distinction. All five banks validate at 500 entries. `python3 scripts/audit-editorial-ledger.py` passes: exact 500-position coverage and matching active IDs/answers. Signed app build succeeded; `git diff --check` passed. Native study acceptance was not performed.
+
+Scope/known limitations: this completes the English-gloss editorial pass, not release-level linguistic verification. Novice remains 8 verified / 41 checked / 451 draft. The 17 explicit batch-003 full-source gaps remain; no unsupported promotions or inferred full-form correctness. Details and source links are in docs/editorial/novice-completion.md. Next concrete work: separate full-entry source verification, starting with those 17 gaps, then remaining draft forms/metadata. Do not begin another bank without direction. Changes remain uncommitted until requested.
+
+## Novice editorial checkpoint approved — 2026-09-30
+
+User requested a checkpoint and expressed satisfaction with progress. Checkpoint includes the complete Novice English-gloss pass and twenty batch ledgers, stable-ID sense replacements and migration regressions, assistant editorial policy, Wiktionary links, and structural ledger audit. Latest automated verification remains 94 passing tests, all-bank validation, successful signed build and ledger coverage audit; no implementation changes since those checks. Commit-time whitespace and ledger checks passed. Next concrete work remains full-entry source verification beginning with the 17 batch-003 gaps; this checkpoint does not declare release-ready vocabulary. Local Git checkpoint only; no push requested.

@@ -19,7 +19,7 @@ Each Korean form has required `text` and optional `speechLevel` (descriptive lab
 
 The grader accepts only explicit equivalents plus personal aliases. Avoid mixing different senses into one entry. Use a cue for English homonyms and Korean polysemy. Curate equivalent Korean predicates including their accepted forms; runtime suffix guessing is intentionally absent.
 
-`draft`: automated/unreviewed entry. `checked`: editorial review performed, independent review still pending. `verified`: sense, accepted forms and metadata checked against a recorded source. Format validation is not linguistic validation.
+`draft`: automated/unreviewed entry. `checked`: editorial review performed, independent review still pending. `verified`: sense, accepted forms and metadata checked against a recorded source. Format validation is not linguistic validation. The assistant serves as editor and owns evidence-based status decisions; user usability approval is not vocabulary verification. Record assistant review and reference evidence explicitly. “Independent” refers to source corroboration rather than automated matching, and does not imply human expert certification. See docs/editorial/README.md for the review checklist.
 
 ## Updates
 

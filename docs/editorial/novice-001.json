@@ -1,0 +1,409 @@
+{
+  "bank": "mal.novice",
+  "batch": 1,
+  "date": "2026-09-29",
+  "baseContentVersion": 5,
+  "contentVersion": 6,
+  "scope": "25 targeted gloss cleanups, not a sequential review of all 500 entries",
+  "status": "awaiting user review; uncommitted",
+  "sourceSHA256": "b78b27b7126751b71d7bd263f0137386ca430cd98bcc88503b07fc5a20278cec",
+  "resultSHA256": "cf318e09e216f892f24bda9c2b9f0442c3d9e7f9ed281465ac40ea35ac534010",
+  "entries": [
+    {
+      "position": 113,
+      "id": "mal.novice.85c61d9c506fbe51",
+      "lemma": "무엇",
+      "before": [
+        "what - used in questions"
+      ],
+      "after": [
+        "what"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: what - used in questions\nSource: https://en.wiktionary.org/wiki/무엇#Korean · NIKL level A, frequency rank 135",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 119,
+      "id": "mal.novice.27a910b1e93744ad",
+      "lemma": "날",
+      "before": [
+        "day (twenty-four hours, a thirtieth of the month)"
+      ],
+      "after": [
+        "day"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: day (twenty-four hours, a thirtieth of the month)\nSource: https://en.wiktionary.org/wiki/날#Korean · NIKL level A, frequency rank 143",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 124,
+      "id": "mal.novice.b37e15bf004aa5e8",
+      "lemma": "아버지",
+      "before": [
+        "father (parent)"
+      ],
+      "after": [
+        "father"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: father (parent)\nSource: https://en.wiktionary.org/wiki/아버지#Korean · NIKL level A, frequency rank 153",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 127,
+      "id": "mal.novice.4b4bbac8f118dc58",
+      "lemma": "몸",
+      "before": [
+        "body (of a human or animal)"
+      ],
+      "after": [
+        "body"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: body (of a human or animal)\nSource: https://en.wiktionary.org/wiki/몸#Korean · NIKL level A, frequency rank 156",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 132,
+      "id": "mal.novice.1afb23f8c68a07a6",
+      "lemma": "만나다",
+      "before": [
+        "meet; to see (someone)",
+        "to meet; to see (someone)"
+      ],
+      "after": [
+        "meet",
+        "see someone"
+      ],
+      "rationale": "Represent alternative answers explicitly rather than inside a combined definition.",
+      "sourceEvidence": "Source sense: to meet; to see (someone)\nSource: https://en.wiktionary.org/wiki/만나다#Korean · NIKL level A, frequency rank 166",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 140,
+      "id": "mal.novice.39d39014a731ba79",
+      "lemma": "손",
+      "before": [
+        "hand (organ of humans and humanoid animals)"
+      ],
+      "after": [
+        "hand"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: hand (organ of humans and humanoid animals)\nSource: https://en.wiktionary.org/wiki/손#Korean · NIKL level A, frequency rank 185",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 144,
+      "id": "mal.novice.ac215cc44984de1f",
+      "lemma": "나가다",
+      "before": [
+        "go out; (contextually) to leave",
+        "to go out; (contextually) to leave"
+      ],
+      "after": [
+        "go out",
+        "leave"
+      ],
+      "rationale": "Represent alternative answers explicitly rather than inside a combined definition.",
+      "sourceEvidence": "Source sense: to go out; (contextually) to leave\nSource: https://en.wiktionary.org/wiki/나가다#Korean · NIKL level A, frequency rank 196",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 153,
+      "id": "mal.novice.89f365f1fc788872",
+      "lemma": "역사",
+      "before": [
+        "history (the academic study of past events in human society)"
+      ],
+      "after": [
+        "history"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: history (the academic study of past events in human society)\nSource: https://en.wiktionary.org/wiki/역사#Korean · NIKL level A, frequency rank 208",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 166,
+      "id": "mal.novice.b39c4e7b1716ea8c",
+      "lemma": "자리",
+      "before": [
+        "space, place, site (occupied by something or someone)"
+      ],
+      "after": [
+        "place",
+        "space",
+        "site"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: space, place, site (occupied by something or someone)\nSource: https://en.wiktionary.org/wiki/자리#Korean · NIKL level A, frequency rank 229",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 167,
+      "id": "mal.novice.fae96356d44fdaf4",
+      "lemma": "죽다",
+      "before": [
+        "die (to stop living)",
+        "to die (to stop living)"
+      ],
+      "after": [
+        "die"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: to die (to stop living)\nSource: https://en.wiktionary.org/wiki/죽다#Korean · NIKL level A, frequency rank 231",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 183,
+      "id": "mal.novice.a64ee974939b337c",
+      "lemma": "높다",
+      "before": [
+        "be high, to be tall, to be lofty (of an object, a place, a quantified statistic, etc.)",
+        "to be high, to be tall, to be lofty (of an object, a place, a quantified statistic, etc.)"
+      ],
+      "after": [
+        "high",
+        "tall",
+        "lofty"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: to be high, to be tall, to be lofty (of an object, a place, a quantified statistic, etc.)\nSource: https://en.wiktionary.org/wiki/높다#Korean · NIKL level A, frequency rank 277",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 185,
+      "id": "mal.novice.621273081b5de269",
+      "lemma": "먼저",
+      "before": [
+        "first in time or sequence"
+      ],
+      "after": [
+        "first"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: first in time or sequence\nSource: https://en.wiktionary.org/wiki/먼저#Korean · NIKL level A, frequency rank 283",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 215,
+      "id": "mal.novice.1e05e84b09d506f6",
+      "lemma": "사랑",
+      "before": [
+        "love; affection (emotion)"
+      ],
+      "after": [
+        "love",
+        "affection"
+      ],
+      "rationale": "Represent alternative answers explicitly rather than inside a combined definition.",
+      "sourceEvidence": "Source sense: love; affection (emotion)\nSource: https://en.wiktionary.org/wiki/사랑#Korean · NIKL level A, frequency rank 373",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 235,
+      "id": "mal.novice.a953cc06b1eee3df",
+      "lemma": "차",
+      "before": [
+        "vehicle (usually refers to car)"
+      ],
+      "after": [
+        "car",
+        "vehicle"
+      ],
+      "rationale": "Lead with the everyday car gloss already identified by the source; retain vehicle.",
+      "sourceEvidence": "Source sense: vehicle (usually refers to car)\nSource: https://en.wiktionary.org/wiki/차#Korean · NIKL level A, frequency rank 417",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 238,
+      "id": "mal.novice.35096a7e95423da4",
+      "lemma": "나이",
+      "before": [
+        "age of a person or other living thing"
+      ],
+      "after": [
+        "age"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: age of a person or other living thing\nSource: https://en.wiktionary.org/wiki/나이#Korean · NIKL level A, frequency rank 429",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 246,
+      "id": "mal.novice.8fee3d71fa56976f",
+      "lemma": "배",
+      "before": [
+        "abdomen, belly (of a human or animal)"
+      ],
+      "after": [
+        "belly",
+        "abdomen"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: abdomen, belly (of a human or animal)\nSource: https://en.wiktionary.org/wiki/배#Korean · NIKL level A, frequency rank 462",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 264,
+      "id": "mal.novice.21783fee7fc2f653",
+      "lemma": "이해하다",
+      "before": [
+        "understand or comprehend",
+        "to understand or comprehend"
+      ],
+      "after": [
+        "understand",
+        "comprehend"
+      ],
+      "rationale": "Represent alternative answers explicitly rather than inside a combined definition.",
+      "sourceEvidence": "Source sense: to understand or comprehend\nSource: https://en.wiktionary.org/wiki/이해하다#Korean · NIKL level A, frequency rank 515",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 276,
+      "id": "mal.novice.3481b712a0ac54fe",
+      "lemma": "발",
+      "before": [
+        "foot (of a human or amother animal)"
+      ],
+      "after": [
+        "foot"
+      ],
+      "rationale": "Remove the redundant anatomical explanation and its source typo.",
+      "sourceEvidence": "Source sense: foot (of a human or amother animal)\nSource: https://en.wiktionary.org/wiki/발#Korean · NIKL level A, frequency rank 564",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 297,
+      "id": "mal.novice.21e149a367a62797",
+      "lemma": "딸",
+      "before": [
+        "daughter (female child)"
+      ],
+      "after": [
+        "daughter"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: daughter (female child)\nSource: https://en.wiktionary.org/wiki/딸#Korean · NIKL level A, frequency rank 625",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 306,
+      "id": "mal.novice.e06552cdc3fcc54e",
+      "lemma": "가깝다",
+      "before": [
+        "be close, to be near (in distance, time, emotional rapport, kinship, etc.)",
+        "to be close, to be near (in distance, time, emotional rapport, kinship, etc.)"
+      ],
+      "after": [
+        "close",
+        "near"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: to be close, to be near (in distance, time, emotional rapport, kinship, etc.)\nSource: https://en.wiktionary.org/wiki/가깝다#Korean · NIKL level A, frequency rank 648",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 336,
+      "id": "mal.novice.592a64c225e33519",
+      "lemma": "비슷하다",
+      "before": [
+        "be similar (but not identical)",
+        "to be similar (but not identical)"
+      ],
+      "after": [
+        "similar"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: to be similar (but not identical)\nSource: https://en.wiktionary.org/wiki/비슷하다#Korean · NIKL level A, frequency rank 760",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 344,
+      "id": "mal.novice.8b8e3a9c3190e992",
+      "lemma": "개월",
+      "before": [
+        "months; used as a count word for months"
+      ],
+      "after": [
+        "month",
+        "months"
+      ],
+      "rationale": "Use singular and plural month answers; counter usage belongs in notes.",
+      "sourceEvidence": "Source sense: months; used as a count word for months\nSource: https://en.wiktionary.org/wiki/개월#Korean · NIKL level A, frequency rank 799",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 352,
+      "id": "mal.novice.b583a23933ce0511",
+      "lemma": "주인",
+      "before": [
+        "master or owner"
+      ],
+      "after": [
+        "owner",
+        "master"
+      ],
+      "rationale": "Represent alternative answers explicitly rather than inside a combined definition.",
+      "sourceEvidence": "Source sense: master or owner\nSource: https://en.wiktionary.org/wiki/주인#Korean · NIKL level A, frequency rank 825",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 460,
+      "id": "mal.novice.1b5ac86426ec29f4",
+      "lemma": "색",
+      "before": [
+        "colour (UK), color (US)"
+      ],
+      "after": [
+        "color",
+        "colour"
+      ],
+      "rationale": "Represent alternative answers explicitly rather than inside a combined definition.",
+      "sourceEvidence": "Source sense: colour (UK), color (US)\nSource: https://en.wiktionary.org/wiki/색#Korean · NIKL level A, frequency rank 1358",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    },
+    {
+      "position": 468,
+      "id": "mal.novice.af5be98b440537bb",
+      "lemma": "컵",
+      "before": [
+        "cup (drinking vessel)"
+      ],
+      "after": [
+        "cup"
+      ],
+      "rationale": "Use concise answers; keep explanatory prose out of the answer list.",
+      "sourceEvidence": "Source sense: cup (drinking vessel)\nSource: https://en.wiktionary.org/wiki/컵#Korean · NIKL level A, frequency rank 1414",
+      "promptCue": null,
+      "status": "editorially revised; human review pending; independent verification unchanged"
+    }
+  ]
+}

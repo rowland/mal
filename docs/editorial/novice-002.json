@@ -1,0 +1,424 @@
+{
+  "bank": "mal.novice",
+  "batch": 2,
+  "date": "2026-09-29",
+  "baseContentVersion": 6,
+  "contentVersion": 7,
+  "status": "awaiting user review; uncommitted",
+  "reviewed": 25,
+  "changed": 1,
+  "retained": 24,
+  "entries": [
+    {
+      "position": 1,
+      "id": "mal.novice.2dc5cf1b488fd478",
+      "previousID": "mal.novice.2dc5cf1b488fd478",
+      "lemma": "집",
+      "before": [
+        "house",
+        "home"
+      ],
+      "after": [
+        "house",
+        "home"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/집#Korean · NIKL level A, frequency rank 49",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 2,
+      "id": "mal.novice.1f0af95ed9456438",
+      "previousID": "mal.novice.1f0af95ed9456438",
+      "lemma": "물",
+      "before": [
+        "water"
+      ],
+      "after": [
+        "water"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/물#Korean · NIKL level A, frequency rank 165",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 3,
+      "id": "mal.novice.7006bda748bbb014",
+      "previousID": "mal.novice.7006bda748bbb014",
+      "lemma": "사람",
+      "before": [
+        "person",
+        "human"
+      ],
+      "after": [
+        "person",
+        "human"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/사람#Korean · NIKL level A, frequency rank 12",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 4,
+      "id": "mal.novice.1112d747896a00e4",
+      "previousID": "mal.novice.1112d747896a00e4",
+      "lemma": "학교",
+      "before": [
+        "school"
+      ],
+      "after": [
+        "school"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/학교#Korean · NIKL level A, frequency rank 125",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 5,
+      "id": "mal.novice.cf42e7b9fbd97dc1",
+      "previousID": "mal.novice.cf42e7b9fbd97dc1",
+      "lemma": "책",
+      "before": [
+        "book"
+      ],
+      "after": [
+        "book"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/책#Korean · NIKL level A, frequency rank 215",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 6,
+      "id": "mal.novice.5248beb5c743cf86",
+      "previousID": "mal.novice.5248beb5c743cf86",
+      "lemma": "밥",
+      "before": [
+        "cooked rice",
+        "rice"
+      ],
+      "after": [
+        "cooked rice",
+        "rice"
+      ],
+      "rationale": "Retain cooked rice as preferred gloss: distinguishes this sense from uncooked rice; meal is a separate sense and is not added here.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/밥#Korean · NIKL level A, frequency rank 353",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 7,
+      "id": "mal.novice.3ffa0b499126f632",
+      "previousID": "mal.novice.3ffa0b499126f632",
+      "lemma": "친구",
+      "before": [
+        "friend"
+      ],
+      "after": [
+        "friend"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/친구#Korean · NIKL level A, frequency rank 147",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 8,
+      "id": "mal.novice.288bbea0e21cc8c9",
+      "previousID": "mal.novice.288bbea0e21cc8c9",
+      "lemma": "오늘",
+      "before": [
+        "today"
+      ],
+      "after": [
+        "today"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/오늘#Korean · NIKL level A, frequency rank 544",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 9,
+      "id": "mal.novice.3fa508a8043e54ec",
+      "previousID": "mal.novice.3fa508a8043e54ec",
+      "lemma": "내일",
+      "before": [
+        "tomorrow"
+      ],
+      "after": [
+        "tomorrow"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/내일#Korean · NIKL level A, frequency rank 3520",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 10,
+      "id": "mal.novice.2680ebf38f0e48be",
+      "previousID": "mal.novice.2680ebf38f0e48be",
+      "lemma": "어제",
+      "before": [
+        "yesterday"
+      ],
+      "after": [
+        "yesterday"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/어제#Korean · NIKL level A, frequency rank 2138",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 11,
+      "id": "mal.novice.1adf02963d38070f",
+      "previousID": "mal.novice.1adf02963d38070f",
+      "lemma": "시간",
+      "before": [
+        "time"
+      ],
+      "after": [
+        "time"
+      ],
+      "rationale": "Retain time: hour is another use and is not needed for this sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/시간#Korean · NIKL level A, frequency rank 551",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 12,
+      "id": "mal.novice.fd0737fd4c8bf086",
+      "previousID": "mal.novice.fd0737fd4c8bf086",
+      "lemma": "이름",
+      "before": [
+        "name"
+      ],
+      "after": [
+        "name"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/이름#Korean · NIKL level A, frequency rank 241",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 13,
+      "id": "mal.novice.91e3019b1ef62c55",
+      "previousID": "mal.novice.91e3019b1ef62c55",
+      "lemma": "한국어",
+      "before": [
+        "Korean language",
+        "Korean"
+      ],
+      "after": [
+        "Korean language",
+        "Korean"
+      ],
+      "rationale": "Retain Korean language to make the language sense explicit; Korean remains accepted.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/한국어#Korean · NIKL level A, frequency rank 2642",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 14,
+      "id": "mal.novice.830b2e6f332f95ae",
+      "previousID": "mal.novice.830b2e6f332f95ae",
+      "lemma": "가다",
+      "before": [
+        "go",
+        "to go"
+      ],
+      "after": [
+        "go",
+        "to go"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/가다#Korean · NIKL level A, frequency rank 25",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 15,
+      "id": "mal.novice.9ef5a1e86b5d6f49",
+      "previousID": "mal.novice.9ef5a1e86b5d6f49",
+      "lemma": "오다",
+      "before": [
+        "come",
+        "to come"
+      ],
+      "after": [
+        "come",
+        "to come"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/오다#Korean · NIKL level A, frequency rank 35",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 16,
+      "id": "mal.novice.a775a9146c517336",
+      "previousID": "mal.novice.a775a9146c517336",
+      "lemma": "하다",
+      "before": [
+        "do",
+        "to do"
+      ],
+      "after": [
+        "do",
+        "to do"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/하다#Korean · NIKL level A, frequency rank 2",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 17,
+      "id": "mal.novice.5120c118fb2bb5cc",
+      "previousID": "mal.novice.5120c118fb2bb5cc",
+      "lemma": "먹다",
+      "before": [
+        "eat",
+        "to eat"
+      ],
+      "after": [
+        "eat",
+        "to eat"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/먹다#Korean · NIKL level C, frequency rank 10015",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 18,
+      "id": "mal.novice.29f729386a74ac96",
+      "previousID": "mal.novice.29f729386a74ac96",
+      "lemma": "마시다",
+      "before": [
+        "drink",
+        "to drink"
+      ],
+      "after": [
+        "drink",
+        "to drink"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/마시다#Korean · NIKL level A, frequency rank 365",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 19,
+      "id": "mal.novice.ad6ca285120a5df4",
+      "previousID": "mal.novice.ad6ca285120a5df4",
+      "lemma": "보다",
+      "before": [
+        "see",
+        "to see"
+      ],
+      "after": [
+        "see",
+        "to see"
+      ],
+      "rationale": "Retain see for the current sense; do not add watch as an unrestricted synonym without a sense review.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/보다#Korean · NIKL level A, frequency rank 17",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 20,
+      "id": "mal.novice.88561f28c01e6dbc",
+      "previousID": "mal.novice.88561f28c01e6dbc",
+      "lemma": "읽다",
+      "before": [
+        "read",
+        "to read"
+      ],
+      "after": [
+        "read",
+        "to read"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/읽다#Korean · NIKL level A, frequency rank 209",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 21,
+      "id": "mal.novice.4914f0a932b71e04",
+      "previousID": "mal.novice.4914f0a932b71e04",
+      "lemma": "듣다",
+      "before": [
+        "listen",
+        "hear",
+        "to listen",
+        "to hear"
+      ],
+      "after": [
+        "listen",
+        "hear",
+        "to listen",
+        "to hear"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/듣다#Korean · NIKL level A, frequency rank 88",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 22,
+      "id": "mal.novice.2f0488cbb3418f16",
+      "previousID": "mal.novice.2f0488cbb3418f16",
+      "lemma": "걷다",
+      "before": [
+        "walk",
+        "to walk"
+      ],
+      "after": [
+        "walk",
+        "to walk"
+      ],
+      "rationale": "Retain: concise, everyday equivalent for the existing sense.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/걷다#Korean · NIKL level A, frequency rank 546",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 23,
+      "id": "mal.novice.711019d8260deb28",
+      "previousID": "mal.novice.711019d8260deb28",
+      "lemma": "입다",
+      "before": [
+        "wear"
+      ],
+      "after": [
+        "wear"
+      ],
+      "rationale": "Retain wear plus the existing object cue; different Korean verbs require the clothes/hat distinction.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/입다#Korean · NIKL level A, frequency rank 354",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 24,
+      "id": "mal.novice.c779abc47ab9ec90",
+      "previousID": "mal.novice.c779abc47ab9ec90",
+      "lemma": "쓰다",
+      "before": [
+        "wear"
+      ],
+      "after": [
+        "wear"
+      ],
+      "rationale": "Retain wear plus the existing object cue; different Korean verbs require the clothes/hat distinction.",
+      "sourceEvidence": "Source: https://en.wiktionary.org/wiki/쓰다#Korean · NIKL level A, frequency rank 1795",
+      "status": "reviewed; retained"
+    },
+    {
+      "position": 213,
+      "id": "mal.novice.gyosu-professor",
+      "previousID": "mal.novice.ec5ffa0f63bb265c",
+      "lemma": "교수",
+      "before": [
+        "instruction"
+      ],
+      "after": [
+        "professor"
+      ],
+      "rationale": "Choose the university occupation for foundational practice rather than the act of instruction. This is a sense replacement, so use a new ID and retire the old one.",
+      "sourceEvidence": "Source sense: instruction\nSource: https://en.wiktionary.org/wiki/교수#Korean · NIKL level A, frequency rank 371",
+      "status": "changed; user review pending"
+    }
+  ],
+  "sourcesConsulted": [
+    "https://en.wiktionary.org/wiki/교수#Korean",
+    "https://krdict.korean.go.kr/m/eng/searchResultView?ParaWordNo=31684&nation=eng"
+  ],
+  "sourceSHA256": "cf318e09e216f892f24bda9c2b9f0442c3d9e7f9ed281465ac40ea35ac534010",
+  "resultSHA256": "b83e3f23a951cdf192ab9a8a5701857a6d16f560015188bc8deac9637b7a35d0"
+}

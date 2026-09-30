@@ -383,8 +383,9 @@ struct HistoryView: View {
 private struct DictionaryLink: View {
     let lemma: String
     private var destination: URL {
-        var url = URLComponents(string: "https://krdict.korean.go.kr/eng/dicMarinerSearch/search")!
-        url.queryItems = [URLQueryItem(name: "mainSearchWord", value: lemma), URLQueryItem(name: "nation", value: "eng")]
+        var url = URLComponents(string: "https://en.wiktionary.org")!
+        url.path = "/wiki/" + lemma
+        url.fragment = "Korean"
         return url.url!
     }
     var body: some View {
@@ -394,7 +395,7 @@ private struct DictionaryLink: View {
             .fixedSize()
             .padding(.vertical, 5)
         }
-        .help("Look up the dictionary form in the Korean-English Learners’ Dictionary (opens browser)")
-        .accessibilityLabel("Look up word in Korean-English Learners’ Dictionary")
+        .help("Look up the dictionary form in Wiktionary’s Korean section (opens browser)")
+        .accessibilityLabel("Look up word in Wiktionary")
     }
 }

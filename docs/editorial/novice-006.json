@@ -1,0 +1,675 @@
+{
+  "bank": "mal.novice",
+  "batch": 6,
+  "date": "2026-09-30",
+  "baseContentVersion": 10,
+  "contentVersion": 11,
+  "status": "editorial complete; form/source verification separate",
+  "entries": [
+    {
+      "position": 100,
+      "id": "mal.novice.1ee2c0914add839e",
+      "previousID": "mal.novice.1ee2c0914add839e",
+      "lemma": "어머니",
+      "before": [
+        "mother"
+      ],
+      "after": [
+        "mother"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: mother\nSource: https://en.wiktionary.org/wiki/어머니#Korean · NIKL level A, frequency rank 106",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 101,
+      "id": "mal.novice.ab9dec9dc6768c2e",
+      "previousID": "mal.novice.ab9dec9dc6768c2e",
+      "lemma": "눈",
+      "before": [
+        "eye (organ allowing animals to see)"
+      ],
+      "after": [
+        "eye"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: eye (organ allowing animals to see)\nSource: https://en.wiktionary.org/wiki/눈#Korean · NIKL level A, frequency rank 107",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 102,
+      "id": "mal.novice.bfa5234d9758e008",
+      "previousID": "mal.novice.bfa5234d9758e008",
+      "lemma": "누구",
+      "before": [
+        "who"
+      ],
+      "after": [
+        "who"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: who\nSource: https://en.wiktionary.org/wiki/누구#Korean · NIKL level A, frequency rank 114",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 103,
+      "id": "mal.novice.09bf1afd11380499",
+      "previousID": "mal.novice.09bf1afd11380499",
+      "lemma": "전",
+      "before": [
+        "before"
+      ],
+      "after": [
+        "before"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: before\nSource: https://en.wiktionary.org/wiki/전#Korean · NIKL level A, frequency rank 115",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 104,
+      "id": "mal.novice.6219cc636bba6a51",
+      "previousID": "mal.novice.6219cc636bba6a51",
+      "lemma": "곳",
+      "before": [
+        "place"
+      ],
+      "after": [
+        "place"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: place\nSource: https://en.wiktionary.org/wiki/곳#Korean · NIKL level A, frequency rank 116",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 105,
+      "id": "mal.novice.640295d96981bc61",
+      "previousID": "mal.novice.640295d96981bc61",
+      "lemma": "여러",
+      "before": [
+        "several",
+        "various"
+      ],
+      "after": [
+        "several",
+        "various"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: several, various\nSource: https://en.wiktionary.org/wiki/여러#Korean · NIKL level A, frequency rank 117",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 106,
+      "id": "mal.novice.a545083e47b552ac",
+      "previousID": "mal.novice.a545083e47b552ac",
+      "lemma": "위",
+      "before": [
+        "above",
+        "upper",
+        "upside",
+        "top"
+      ],
+      "after": [
+        "above",
+        "top"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: above, upper, upside, top\nSource: https://en.wiktionary.org/wiki/위#Korean · NIKL level A, frequency rank 122",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 107,
+      "id": "mal.novice.6491bf51816e1e82",
+      "previousID": "mal.novice.6491bf51816e1e82",
+      "lemma": "운동",
+      "before": [
+        "exercise",
+        "physical activity",
+        "sport",
+        "sports"
+      ],
+      "after": [
+        "exercise",
+        "physical activity",
+        "sport",
+        "sports"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: exercise, physical activity; sport, sports\nSource: https://en.wiktionary.org/wiki/운동#Korean · NIKL level A, frequency rank 123",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 108,
+      "id": "mal.novice.be799b37840a9d44",
+      "previousID": "mal.novice.be799b37840a9d44",
+      "lemma": "가장",
+      "before": [
+        "most",
+        "-est"
+      ],
+      "after": [
+        "most",
+        "-est"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: most, -est\nSource: https://en.wiktionary.org/wiki/가장#Korean · NIKL level A, frequency rank 127",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 109,
+      "id": "mal.novice.cfce09ffc667d66d",
+      "previousID": "mal.novice.cfce09ffc667d66d",
+      "lemma": "시작하다",
+      "before": [
+        "begin",
+        "to begin"
+      ],
+      "after": [
+        "start",
+        "begin",
+        "to start",
+        "to begin"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to begin\nSource: https://en.wiktionary.org/wiki/시작하다#Korean · NIKL level A, frequency rank 131",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 110,
+      "id": "mal.novice.baro-immediately",
+      "previousID": "mal.novice.931f14143b073bab",
+      "lemma": "바로",
+      "before": [
+        "truly",
+        "without lie or deception"
+      ],
+      "after": [
+        "right away",
+        "immediately",
+        "right now"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "sense replaced",
+      "rationale": "Replace the selected sense with a more useful foundational meaning; assign a new ID and retain old history through retirement.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: truly, without lie or deception\nSource: https://en.wiktionary.org/wiki/바로#Korean · NIKL level A, frequency rank 132",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/바로#Korean"
+      ],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 111,
+      "id": "mal.novice.f28fbb10c7f0f68d",
+      "previousID": "mal.novice.f28fbb10c7f0f68d",
+      "lemma": "어느",
+      "before": [
+        "which"
+      ],
+      "after": [
+        "which"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: which\nSource: https://en.wiktionary.org/wiki/어느#Korean · NIKL level A, frequency rank 133",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 112,
+      "id": "mal.novice.02d5803f62a0d9c8",
+      "previousID": "mal.novice.02d5803f62a0d9c8",
+      "lemma": "그래서",
+      "before": [
+        "therefore, accordingly, because of that, because things are like that, thus"
+      ],
+      "after": [
+        "so",
+        "therefore"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: therefore, accordingly, because of that, because things are like that, thus.\nSource: https://en.wiktionary.org/wiki/그래서#Korean · NIKL level A, frequency rank 134",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 114,
+      "id": "mal.novice.7c1f0a12e58332e7",
+      "previousID": "mal.novice.7c1f0a12e58332e7",
+      "lemma": "모든",
+      "before": [
+        "all",
+        "every",
+        "each"
+      ],
+      "after": [
+        "all",
+        "every",
+        "each"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: all, every, each\nSource: https://en.wiktionary.org/wiki/모든#Korean · NIKL level A, frequency rank 137",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 115,
+      "id": "mal.novice.240386cde658c4f4",
+      "previousID": "mal.novice.240386cde658c4f4",
+      "lemma": "번",
+      "before": [
+        "times"
+      ],
+      "after": [
+        "time",
+        "times"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: times\nSource: https://en.wiktionary.org/wiki/번#Korean · NIKL level A, frequency rank 138",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 116,
+      "id": "mal.novice.19c0f077fe782d80",
+      "previousID": "mal.novice.19c0f077fe782d80",
+      "lemma": "그거",
+      "before": [
+        "it",
+        "that thing"
+      ],
+      "after": [
+        "it",
+        "that thing"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: it, that thing\nSource: https://en.wiktionary.org/wiki/그거#Korean · NIKL level A, frequency rank 139",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 117,
+      "id": "mal.novice.9cf7696153429318",
+      "previousID": "mal.novice.9cf7696153429318",
+      "lemma": "돈",
+      "before": [
+        "money"
+      ],
+      "after": [
+        "money"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: money\nSource: https://en.wiktionary.org/wiki/돈#Korean · NIKL level A, frequency rank 140",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 118,
+      "id": "mal.novice.837c8d6d9069a516",
+      "previousID": "mal.novice.837c8d6d9069a516",
+      "lemma": "그런데",
+      "before": [
+        "but",
+        "however",
+        "on the other hand"
+      ],
+      "after": [
+        "but",
+        "however",
+        "on the other hand"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: but, however, on the other hand\nSource: https://en.wiktionary.org/wiki/그런데#Korean · NIKL level A, frequency rank 142",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 120,
+      "id": "mal.novice.1db1327cb5545c53",
+      "previousID": "mal.novice.1db1327cb5545c53",
+      "lemma": "여기",
+      "before": [
+        "here"
+      ],
+      "after": [
+        "here"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: here\nSource: https://en.wiktionary.org/wiki/여기#Korean · NIKL level A, frequency rank 144",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 121,
+      "id": "mal.novice.5a8080a673b380d0",
+      "previousID": "mal.novice.5a8080a673b380d0",
+      "lemma": "모두",
+      "before": [
+        "all",
+        "wholly"
+      ],
+      "after": [
+        "all",
+        "wholly"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: all, wholly\nSource: https://en.wiktionary.org/wiki/모두#Korean · NIKL level A, frequency rank 145",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 122,
+      "id": "mal.novice.a8fdbe7dcbf17c7f",
+      "previousID": "mal.novice.a8fdbe7dcbf17c7f",
+      "lemma": "마음",
+      "before": [
+        "mind, heart (i.e. one's emotions)"
+      ],
+      "after": [
+        "heart",
+        "mind"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: mind, heart (i.e. one's emotions)\nSource: https://en.wiktionary.org/wiki/마음#Korean · NIKL level A, frequency rank 148",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 123,
+      "id": "mal.novice.561d4762d2502b2f",
+      "previousID": "mal.novice.561d4762d2502b2f",
+      "lemma": "후",
+      "before": [
+        "after"
+      ],
+      "after": [
+        "after"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: after\nSource: https://en.wiktionary.org/wiki/후#Korean · NIKL level A, frequency rank 149",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 125,
+      "id": "mal.novice.7311a2a1e6057016",
+      "previousID": "mal.novice.7311a2a1e6057016",
+      "lemma": "남자",
+      "before": [
+        "man"
+      ],
+      "after": [
+        "man"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: man\nSource: https://en.wiktionary.org/wiki/남자#Korean · NIKL level A, frequency rank 154",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 126,
+      "id": "mal.novice.5eae4260dce886ff",
+      "previousID": "mal.novice.5eae4260dce886ff",
+      "lemma": "어디",
+      "before": [
+        "where"
+      ],
+      "after": [
+        "where"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: where\nSource: https://en.wiktionary.org/wiki/어디#Korean · NIKL level A, frequency rank 155",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 128,
+      "id": "mal.novice.e51eb147ad847c00",
+      "previousID": "mal.novice.e51eb147ad847c00",
+      "lemma": "얼굴",
+      "before": [
+        "face"
+      ],
+      "after": [
+        "face"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: face\nSource: https://en.wiktionary.org/wiki/얼굴#Korean · NIKL level A, frequency rank 157",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    }
+  ],
+  "sourceSHA256": "26d55f7c41a28c71d1f5bfbfbdd7648d2642b3651976feb4986ce195af24f694",
+  "resultSHA256": "2be4b6784f25076a6f8e333d22e705bed7a7b4b659daabe0394fa5dc0491d97e"
+}

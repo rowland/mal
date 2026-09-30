@@ -311,3 +311,104 @@ private func fixture(version: Int = 1) -> Bank {
     }
     #expect(!Grader.isCorrect("US", entry: soccer, direction: .koreanToEnglish))
 }
+
+@Test @MainActor func professorSenseReplacementRetainsHistoryWithoutTransferringMastery() throws {
+    let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let current = try BankCodec.decode(String(contentsOf: root.appendingPathComponent("Sources/MalApp/Resources/Banks/novice.yaml"), encoding: .utf8), allowBuiltIn: true)
+    let index = try #require(current.entries.firstIndex { $0.lemma == "교수" })
+    #expect(current.entries[index].english == ["professor"])
+    let oldID = "mal.novice.ec5ffa0f63bb265c"
+    #expect(current.entries[index].id != oldID)
+    var prior = current
+    prior.contentVersion -= 1
+    prior.entries[index].id = oldID
+    prior.entries[index].english = ["instruction"]
+    let store = try temporaryStore(); defer { store.close() }
+    _ = try store.importBank(prior, builtIn: true)
+    let oldKey = CardKey(oldID, .koreanToEnglish, .writeIn)
+    let newKey = CardKey(current.entries[index].id, oldKey.direction, oldKey.mode)
+    let state = try store.grade(oldKey, answer: "instruction", correct: true, at: Date(timeIntervalSince1970: 100), sequence: 1)
+    try store.addAlias(entryID: oldID, direction: oldKey.direction, answer: "teaching")
+    let summary = try store.importBank(current, builtIn: true)
+    #expect(summary.added == 1 && summary.retired == 1 && summary.changed == 0)
+    #expect(try store.states()[oldKey] == state)
+    #expect(try store.states()[newKey] == nil)
+    #expect(try store.aliases(direction: oldKey.direction)[oldID] == ["teaching"])
+    #expect(try store.aliases(direction: oldKey.direction)[newKey.entryID] == nil)
+    #expect(try store.history().first?.key == oldKey)
+    #expect(try store.banks().first?.entries.contains { $0.id == oldID } == false)
+    #expect(try store.importBank(current, builtIn: true).unchanged)
+}
+
+private struct NoviceSenseReplacement: Decodable {
+    let lemma: String
+    let oldID: String
+    let newID: String
+    let oldEnglish: [String]
+    let newEnglish: [String]
+    let oldPOS: PartOfSpeech
+}
+private struct NoviceSenseReplacementLedger: Decodable {
+    let replacements: [NoviceSenseReplacement]
+}
+
+@Test @MainActor func noviceSenseReplacementsRetireWithoutTransferringProgress() throws {
+    let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let current = try BankCodec.decode(String(contentsOf: root.appendingPathComponent("Sources/MalApp/Resources/Banks/novice.yaml"), encoding: .utf8), allowBuiltIn: true)
+    let ledger = try JSONDecoder().decode(NoviceSenseReplacementLedger.self, from: Data(contentsOf: root.appendingPathComponent("docs/editorial/novice-sense-replacements.json")))
+    #expect(ledger.replacements.count == 14)
+    var prior = current; prior.contentVersion -= 1
+    for replacement in ledger.replacements {
+        let index = try #require(prior.entries.firstIndex { $0.id == replacement.newID })
+        #expect(prior.entries[index].lemma == replacement.lemma)
+        #expect(prior.entries[index].english == replacement.newEnglish)
+        prior.entries[index].id = replacement.oldID
+        prior.entries[index].english = replacement.oldEnglish
+        prior.entries[index].partOfSpeech = replacement.oldPOS
+    }
+    let store = try temporaryStore(); defer { store.close() }
+    _ = try store.importBank(prior, builtIn: true)
+    let now = Date(timeIntervalSince1970: 1_000)
+    for (sequence, replacement) in ledger.replacements.enumerated() {
+        let key = CardKey(replacement.oldID, .koreanToEnglish, .writeIn)
+        _ = try store.grade(key, answer: replacement.oldEnglish[0], correct: true, at: now, sequence: sequence + 1)
+        try store.addAlias(entryID: key.entryID, direction: key.direction, answer: "personal old sense")
+    }
+    let house = try #require(current.entries.first { $0.lemma == "집" })
+    let houseKey = CardKey(house.id, .koreanToEnglish, .writeIn)
+    _ = try store.grade(houseKey, answer: "house", correct: true, at: now, sequence: 15)
+    let statesBefore = try store.states()
+    let historyBefore = try store.history().map(\.id)
+    let summary = try store.importBank(current, builtIn: true)
+    #expect(summary.added == 14 && summary.retired == 14 && summary.changed == 0)
+    #expect(try store.states() == statesBefore)
+    #expect(try store.history().map(\.id) == historyBefore)
+    for replacement in ledger.replacements {
+        #expect(try store.states()[CardKey(replacement.newID, .koreanToEnglish, .writeIn)] == nil)
+        #expect(try store.aliases(direction: .koreanToEnglish)[replacement.newID] == nil)
+        #expect(try store.aliases(direction: .koreanToEnglish)[replacement.oldID] == ["personal old sense"])
+        #expect(!current.entries.contains { $0.id == replacement.oldID })
+    }
+    #expect(try store.importBank(current, builtIn: true).unchanged)
+}
+
+@Test func noviceEditorialAnswersAndSenseBoundaries() throws {
+    let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let bank = try BankCodec.decode(String(contentsOf: root.appendingPathComponent("Sources/MalApp/Resources/Banks/novice.yaml"), encoding: .utf8), allowBuiltIn: true)
+    for (lemma, accepted, rejected) in [
+        ("시장", "market", "hunger"), ("분", "minute", "unit of length"),
+        ("타다", "ride", "burn"), ("찍다", "take a photo", "chop"),
+        ("보통", "usually", "averageness"), ("미안하다", "sorry", "ashamed of oneself"),
+        ("마리", "animal counter", "fish"), ("커피", "coffee", "especially the beverage"),
+        ("게임", "game", "especially computer games"), ("아내", "wife", "especially one's own")
+    ] {
+        let entry = try #require(bank.entries.first { $0.lemma == lemma })
+        #expect(Grader.isCorrect(accepted, entry: entry, direction: .koreanToEnglish))
+        #expect(!Grader.isCorrect(rejected, entry: entry, direction: .koreanToEnglish))
+    }
+    let photo = try #require(bank.entries.first { $0.lemma == "찍다" })
+    #expect(Grader.isCorrect("to take a photo", entry: photo, direction: .koreanToEnglish))
+    #expect(FormPractice.accepted(photo, direction: .englishToKorean, style: .polite, pool: bank.entries).contains("찍어요"))
+    let hot = try #require(bank.entries.first { $0.lemma == "뜨겁다" })
+    #expect(!FormPractice.accepted(hot, direction: .englishToKorean, style: .polite, pool: bank.entries).contains("더워요"))
+}

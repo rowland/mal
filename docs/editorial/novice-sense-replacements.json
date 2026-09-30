@@ -1,0 +1,239 @@
+{
+  "date": "2026-09-30",
+  "replacements": [
+    {
+      "position": 90,
+      "lemma": "좀",
+      "oldID": "mal.novice.01cb582c704ba53e",
+      "newID": "mal.novice.jom-small-amount",
+      "oldEnglish": [
+        "little while",
+        "short time"
+      ],
+      "newEnglish": [
+        "a little",
+        "a bit",
+        "somewhat"
+      ],
+      "oldPOS": "adverb",
+      "newPOS": "adverb"
+    },
+    {
+      "position": 110,
+      "lemma": "바로",
+      "oldID": "mal.novice.931f14143b073bab",
+      "newID": "mal.novice.baro-immediately",
+      "oldEnglish": [
+        "truly",
+        "without lie or deception"
+      ],
+      "newEnglish": [
+        "right away",
+        "immediately",
+        "right now"
+      ],
+      "oldPOS": "adverb",
+      "newPOS": "adverb"
+    },
+    {
+      "position": 157,
+      "lemma": "시장",
+      "oldID": "mal.novice.9abadc6d62b4622a",
+      "newID": "mal.novice.sijang-market",
+      "oldEnglish": [
+        "hunger"
+      ],
+      "newEnglish": [
+        "market",
+        "marketplace"
+      ],
+      "oldPOS": "noun",
+      "newPOS": "noun"
+    },
+    {
+      "position": 178,
+      "lemma": "타다",
+      "oldID": "mal.novice.1b41eed426e589c4",
+      "newID": "mal.novice.tada-ride",
+      "oldEnglish": [
+        "burn",
+        "to burn"
+      ],
+      "newEnglish": [
+        "ride",
+        "get on",
+        "board",
+        "to ride",
+        "to get on",
+        "to board"
+      ],
+      "oldPOS": "verb",
+      "newPOS": "verb"
+    },
+    {
+      "position": 194,
+      "lemma": "분",
+      "oldID": "mal.novice.e9b06ff60d50718c",
+      "newID": "mal.novice.bun-minute",
+      "oldEnglish": [
+        "unit of length equivalent to about 0.3 cm"
+      ],
+      "newEnglish": [
+        "minute",
+        "minutes"
+      ],
+      "oldPOS": "other",
+      "newPOS": "other"
+    },
+    {
+      "position": 211,
+      "lemma": "혼자",
+      "oldID": "mal.novice.a4197dfa44106297",
+      "newID": "mal.novice.honja-alone",
+      "oldEnglish": [
+        "solitude"
+      ],
+      "newEnglish": [
+        "alone",
+        "by oneself",
+        "on one's own"
+      ],
+      "oldPOS": "noun",
+      "newPOS": "adverb"
+    },
+    {
+      "position": 330,
+      "lemma": "제일",
+      "oldID": "mal.novice.60ce72e798e43402",
+      "newID": "mal.novice.jeil-most",
+      "oldEnglish": [
+        "number one",
+        "the first or primary"
+      ],
+      "newEnglish": [
+        "most",
+        "-est"
+      ],
+      "oldPOS": "noun",
+      "newPOS": "adverb"
+    },
+    {
+      "position": 334,
+      "lemma": "해",
+      "oldID": "mal.novice.68f497dc91984b8b",
+      "newID": "mal.novice.hae-sun",
+      "oldEnglish": [
+        "sunlight",
+        "sunbeam"
+      ],
+      "newEnglish": [
+        "sun"
+      ],
+      "oldPOS": "noun",
+      "newPOS": "noun"
+    },
+    {
+      "position": 425,
+      "lemma": "찍다",
+      "oldID": "mal.novice.f678bbd2bc629c5f",
+      "newID": "mal.novice.jjikda-photograph",
+      "oldEnglish": [
+        "chop",
+        "to chop"
+      ],
+      "newEnglish": [
+        "take a photo",
+        "take a picture",
+        "photograph",
+        "to take a photo",
+        "to take a picture",
+        "to photograph"
+      ],
+      "oldPOS": "verb",
+      "newPOS": "verb"
+    },
+    {
+      "position": 434,
+      "lemma": "피우다",
+      "oldID": "mal.novice.f0427191846c2204",
+      "newID": "mal.novice.piuda-smoke",
+      "oldEnglish": [
+        "cause to bloom",
+        "to cause to bloom"
+      ],
+      "newEnglish": [
+        "smoke",
+        "to smoke"
+      ],
+      "oldPOS": "verb",
+      "newPOS": "verb"
+    },
+    {
+      "position": 458,
+      "lemma": "별",
+      "oldID": "mal.novice.7c731b991bccd599",
+      "newID": "mal.novice.byeol-star",
+      "oldEnglish": [
+        "star (shape); a star symbol"
+      ],
+      "newEnglish": [
+        "star"
+      ],
+      "oldPOS": "noun",
+      "newPOS": "noun"
+    },
+    {
+      "position": 463,
+      "lemma": "보통",
+      "oldID": "mal.novice.7da7f0052cedffb5",
+      "newID": "mal.novice.botong-usually",
+      "oldEnglish": [
+        "averageness",
+        "normality",
+        "usuality",
+        "generality",
+        "commonness",
+        "ordinariness",
+        "regularness"
+      ],
+      "newEnglish": [
+        "usually",
+        "generally",
+        "normally",
+        "in general"
+      ],
+      "oldPOS": "noun",
+      "newPOS": "adverb"
+    },
+    {
+      "position": 478,
+      "lemma": "미안하다",
+      "oldID": "mal.novice.707867cfda7a3e65",
+      "newID": "mal.novice.mianhada-sorry",
+      "oldEnglish": [
+        "be ashamed of oneself",
+        "to be ashamed of oneself"
+      ],
+      "newEnglish": [
+        "sorry",
+        "be sorry"
+      ],
+      "oldPOS": "adjective",
+      "newPOS": "adjective"
+    },
+    {
+      "position": 490,
+      "lemma": "남쪽",
+      "oldID": "mal.novice.b978f053134f364a",
+      "newID": "mal.novice.namjjok-south",
+      "oldEnglish": [
+        "South Korea in relation to North Korea"
+      ],
+      "newEnglish": [
+        "south"
+      ],
+      "oldPOS": "noun",
+      "newPOS": "noun"
+    }
+  ]
+}

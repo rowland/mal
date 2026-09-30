@@ -14,7 +14,7 @@ The vocabulary data license applies to the vocabulary and derived source manifes
 
 ## Review gate
 
-All five banks contain 500 distinct Korean lemmas. The first 49 entries in Novice are editorially checked. The remaining 2,451 entries are **draft source matches**, not independently verified. Automatic source matching cannot safely resolve every homonym, equivalent synonym, or domain-specific gloss. Extracted honorific labels also require review because Wiktextract's tables do not consistently tag honorific status.
+All five banks contain 500 distinct Korean lemmas. Of the original 49-entry Novice slice, 8 are now source-verified by the assistant and 41 remain editorially checked (see docs/editorial/novice-003.json). The other 2,451 entries remain draft, including the new professor sense. Gloss-review progress is tracked separately from complete-entry verification. Automatic source matching cannot safely resolve every homonym, equivalent synonym, or domain-specific gloss. Extracted honorific labels also require review because Wiktextract's tables do not consistently tag honorific status.
 
 The release validator must fail until there are 500 verified entries per bank. Do not remove this gate to make a build appear complete.
 
@@ -34,3 +34,11 @@ For each entry, review:
 - C-003: Audit extracted honorific labels and omitted attributive variants.
 - C-004: Expand curated synonym equivalence, especially adjective pairs and honorific vocabulary.
 - C-005: Review five-tier placement; NIKL A/B/C is only an initial aid, and the 2002 frequency data is dated.
+
+## Editorial responsibility (2026-09-29)
+
+The assistant is the vocabulary editor and performs the reference checks required for status promotion. User acceptance is usability feedback, not independent linguistic verification. Source-backed verification does not imply review by a human Korean expert. Record reviewer, reference evidence, date and scope; see docs/editorial/README.md. Earlier gloss-only batches are not automatically promoted.
+
+## Completed Novice English-gloss pass (2026-09-30)
+
+All 500 Novice entries have received the editorial gloss/sense pass, recorded in docs/editorial/novice-001.json through novice-020.json. This does not certify all forms or source-rank/sense alignment: current labels remain 8 verified, 41 checked, 451 draft. Sense replacements retire old IDs and retain history; see novice-sense-replacements.json for this continuation and batch 002 for professor. The original content-manifest.json is historical assembly evidence, not the current active-ID inventory; use the current bank plus editorial ledgers for subsequent changes. Vocabulary attribution and CC BY-SA licensing are unchanged.

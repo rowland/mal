@@ -1,0 +1,702 @@
+{
+  "bank": "mal.novice",
+  "batch": 17,
+  "date": "2026-09-30",
+  "baseContentVersion": 21,
+  "contentVersion": 22,
+  "status": "editorial complete; form/source verification separate",
+  "entries": [
+    {
+      "position": 399,
+      "id": "mal.novice.b6d2e309b93bc399",
+      "previousID": "mal.novice.b6d2e309b93bc399",
+      "lemma": "고기",
+      "before": [
+        "meat",
+        "flesh"
+      ],
+      "after": [
+        "meat",
+        "flesh"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: meat; flesh\nSource: https://en.wiktionary.org/wiki/고기#Korean · NIKL level A, frequency rank 1055",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 400,
+      "id": "mal.novice.03876e3fb7a61396",
+      "previousID": "mal.novice.03876e3fb7a61396",
+      "lemma": "가져오다",
+      "before": [
+        "bring something",
+        "to bring something"
+      ],
+      "after": [
+        "bring",
+        "bring something",
+        "to bring",
+        "to bring something"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to bring something\nSource: https://en.wiktionary.org/wiki/가져오다#Korean · NIKL level A, frequency rank 1060",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 401,
+      "id": "mal.novice.d7bbf5837248ee1f",
+      "previousID": "mal.novice.d7bbf5837248ee1f",
+      "lemma": "남녀",
+      "before": [
+        "man and woman"
+      ],
+      "after": [
+        "men and women",
+        "man and woman"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: man and woman\nSource: https://en.wiktionary.org/wiki/남녀#Korean · NIKL level A, frequency rank 1068",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 402,
+      "id": "mal.novice.ffaf62128a5da17b",
+      "previousID": "mal.novice.ffaf62128a5da17b",
+      "lemma": "준비",
+      "before": [
+        "readiness",
+        "preparation"
+      ],
+      "after": [
+        "preparation",
+        "readiness"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: readiness, preparation\nSource: https://en.wiktionary.org/wiki/준비#Korean · NIKL level A, frequency rank 1074",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 403,
+      "id": "mal.novice.625cd2b6331a0534",
+      "previousID": "mal.novice.625cd2b6331a0534",
+      "lemma": "구월",
+      "before": [
+        "September"
+      ],
+      "after": [
+        "September"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: September\nSource: https://en.wiktionary.org/wiki/구월#Korean · NIKL level A, frequency rank 1076",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 404,
+      "id": "mal.novice.fd5adab31f251af9",
+      "previousID": "mal.novice.fd5adab31f251af9",
+      "lemma": "맑다",
+      "before": [
+        "be clear",
+        "to be clear",
+        "clean",
+        "fresh",
+        "pure",
+        "limpid",
+        "transparent"
+      ],
+      "after": [
+        "be clear",
+        "to be clear",
+        "clean",
+        "fresh",
+        "pure",
+        "limpid",
+        "transparent"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to be clear, clean, fresh, pure, limpid, transparent\nSource: https://en.wiktionary.org/wiki/맑다#Korean · NIKL level A, frequency rank 1077",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 405,
+      "id": "mal.novice.f9ed168f9e2a9314",
+      "previousID": "mal.novice.f9ed168f9e2a9314",
+      "lemma": "유월",
+      "before": [
+        "June (month)"
+      ],
+      "after": [
+        "June"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: June (month)\nSource: https://en.wiktionary.org/wiki/유월#Korean · NIKL level A, frequency rank 1080",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 406,
+      "id": "mal.novice.946dbb31eaee982d",
+      "previousID": "mal.novice.946dbb31eaee982d",
+      "lemma": "허리",
+      "before": [
+        "side of waist or hip"
+      ],
+      "after": [
+        "waist",
+        "lower back"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: side of waist or hip\nSource: https://en.wiktionary.org/wiki/허리#Korean · NIKL level A, frequency rank 1082",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 407,
+      "id": "mal.novice.fa31c038a6fa48bc",
+      "previousID": "mal.novice.fa31c038a6fa48bc",
+      "lemma": "대답하다",
+      "before": [
+        "answer or reply",
+        "to answer or reply"
+      ],
+      "after": [
+        "answer",
+        "reply",
+        "to answer",
+        "to reply"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to answer or reply\nSource: https://en.wiktionary.org/wiki/대답하다#Korean · NIKL level A, frequency rank 1096",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 408,
+      "id": "mal.novice.f99637a24644a2c0",
+      "previousID": "mal.novice.f99637a24644a2c0",
+      "lemma": "벗다",
+      "before": [
+        "take off or remove something from oneself",
+        "to take off or remove something from oneself"
+      ],
+      "after": [
+        "take off",
+        "remove",
+        "to take off",
+        "to remove"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": "clothes",
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": "Removing clothing from the body, not arbitrary removal.",
+      "sourceEvidence": "Source sense: to take off or remove something from oneself\nSource: https://en.wiktionary.org/wiki/벗다#Korean · NIKL level A, frequency rank 1104",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 409,
+      "id": "mal.novice.aeb52fe43d28bba7",
+      "previousID": "mal.novice.aeb52fe43d28bba7",
+      "lemma": "준비하다",
+      "before": [
+        "prepare",
+        "to prepare"
+      ],
+      "after": [
+        "prepare",
+        "to prepare"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to prepare\nSource: https://en.wiktionary.org/wiki/준비하다#Korean · NIKL level A, frequency rank 1107",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 410,
+      "id": "mal.novice.2d3ab7449ce508ca",
+      "previousID": "mal.novice.2d3ab7449ce508ca",
+      "lemma": "돕다",
+      "before": [
+        "help",
+        "to help",
+        "contribute",
+        "to contribute"
+      ],
+      "after": [
+        "help",
+        "contribute",
+        "to help",
+        "to contribute"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to help; to contribute\nSource: https://en.wiktionary.org/wiki/돕다#Korean · NIKL level A, frequency rank 1109",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 411,
+      "id": "mal.novice.fec32215f92f9b70",
+      "previousID": "mal.novice.fec32215f92f9b70",
+      "lemma": "달",
+      "before": [
+        "moon",
+        "the Moon"
+      ],
+      "after": [
+        "moon",
+        "the Moon"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: moon; the Moon\nSource: https://en.wiktionary.org/wiki/달#Korean · NIKL level A, frequency rank 1115",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 412,
+      "id": "mal.novice.33e798816a2019bc",
+      "previousID": "mal.novice.33e798816a2019bc",
+      "lemma": "사장",
+      "before": [
+        "CEO or director of a company"
+      ],
+      "after": [
+        "company president",
+        "company head",
+        "CEO"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: CEO or director of a company\nSource: https://en.wiktionary.org/wiki/사장#Korean · NIKL level A, frequency rank 1116",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 413,
+      "id": "mal.novice.c2f8e35151869567",
+      "previousID": "mal.novice.c2f8e35151869567",
+      "lemma": "삼월",
+      "before": [
+        "March (the month)"
+      ],
+      "after": [
+        "March"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: March (the month)\nSource: https://en.wiktionary.org/wiki/삼월#Korean · NIKL level A, frequency rank 1117",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 414,
+      "id": "mal.novice.8c4ed0966222ca98",
+      "previousID": "mal.novice.8c4ed0966222ca98",
+      "lemma": "그렇지만",
+      "before": [
+        "nonetheless",
+        "however",
+        "but"
+      ],
+      "after": [
+        "nonetheless",
+        "however",
+        "but"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: nonetheless; however, but\nSource: https://en.wiktionary.org/wiki/그렇지만#Korean · NIKL level A, frequency rank 1120",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 415,
+      "id": "mal.novice.cf771fe42116bf75",
+      "previousID": "mal.novice.cf771fe42116bf75",
+      "lemma": "키",
+      "before": [
+        "height of a person or animal"
+      ],
+      "after": [
+        "height"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: height of a person or animal\nSource: https://en.wiktionary.org/wiki/키#Korean · NIKL level A, frequency rank 1124",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 416,
+      "id": "mal.novice.db7ea8d3ce1a9b39",
+      "previousID": "mal.novice.db7ea8d3ce1a9b39",
+      "lemma": "걱정",
+      "before": [
+        "anxiety",
+        "worry"
+      ],
+      "after": [
+        "anxiety",
+        "worry"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: anxiety; worry\nSource: https://en.wiktionary.org/wiki/걱정#Korean · NIKL level A, frequency rank 1129",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 417,
+      "id": "mal.novice.0a96e0e6b24ff1d1",
+      "previousID": "mal.novice.0a96e0e6b24ff1d1",
+      "lemma": "결혼하다",
+      "before": [
+        "marry",
+        "to marry",
+        "get married",
+        "to get married"
+      ],
+      "after": [
+        "marry",
+        "to marry",
+        "get married",
+        "to get married"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: to marry, to get married\nSource: https://en.wiktionary.org/wiki/결혼하다#Korean · NIKL level A, frequency rank 1130",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 418,
+      "id": "mal.novice.0317165728a23b28",
+      "previousID": "mal.novice.0317165728a23b28",
+      "lemma": "누나",
+      "before": [
+        "older sister of a male"
+      ],
+      "after": [
+        "older sister",
+        "elder sister"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "male speaker",
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": "Used by a male speaker for an older sister.",
+      "sourceEvidence": "Source sense: older sister of a male\nSource: https://en.wiktionary.org/wiki/누나#Korean · NIKL level A, frequency rank 1140",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 419,
+      "id": "mal.novice.b5521544900b3f9b",
+      "previousID": "mal.novice.b5521544900b3f9b",
+      "lemma": "근처",
+      "before": [
+        "neighborhood",
+        "vicinity",
+        "the nearby area"
+      ],
+      "after": [
+        "nearby area",
+        "vicinity",
+        "neighborhood",
+        "neighbourhood"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: neighborhood; vicinity; the nearby area\nSource: https://en.wiktionary.org/wiki/근처#Korean · NIKL level A, frequency rank 1151",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 420,
+      "id": "mal.novice.8c963513563e1ce9",
+      "previousID": "mal.novice.8c963513563e1ce9",
+      "lemma": "마리",
+      "before": [
+        "animals; head (of cattle); fish"
+      ],
+      "after": [
+        "counter for animals",
+        "animal counter"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": "Animal counter; animals or fish alone are not English equivalents of the counter.",
+      "sourceEvidence": "Source sense: animals; head (of cattle); fish\nSource: https://en.wiktionary.org/wiki/마리#Korean · NIKL level A, frequency rank 1168",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 421,
+      "id": "mal.novice.f3bce158c5fe2aa5",
+      "previousID": "mal.novice.f3bce158c5fe2aa5",
+      "lemma": "비행기",
+      "before": [
+        "airplane"
+      ],
+      "after": [
+        "airplane",
+        "aeroplane",
+        "plane"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: airplane\nSource: https://en.wiktionary.org/wiki/비행기#Korean · NIKL level A, frequency rank 1171",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 422,
+      "id": "mal.novice.19d6f5c69c687cda",
+      "previousID": "mal.novice.19d6f5c69c687cda",
+      "lemma": "뜨겁다",
+      "before": [
+        "be hot (of the temperature of an object)",
+        "to be hot (of the temperature of an object)"
+      ],
+      "after": [
+        "hot",
+        "be hot"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": "object temperature",
+      "decision": "revised",
+      "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
+      "usageNote": "Object temperature rather than weather/feeling hot (덥다).",
+      "sourceEvidence": "Source sense: to be hot (of the temperature of an object)\nSource: https://en.wiktionary.org/wiki/뜨겁다#Korean · NIKL level A, frequency rank 1178",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    },
+    {
+      "position": 423,
+      "id": "mal.novice.3312fe56440bf05a",
+      "previousID": "mal.novice.3312fe56440bf05a",
+      "lemma": "낮",
+      "before": [
+        "daytime"
+      ],
+      "after": [
+        "daytime"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "decision": "retained",
+      "rationale": "Retain: useful concise English equivalent(s) for the selected everyday sense.",
+      "usageNote": null,
+      "sourceEvidence": "Source sense: daytime\nSource: https://en.wiktionary.org/wiki/낮#Korean · NIKL level A, frequency rank 1184",
+      "referencesConsulted": [],
+      "reviewer": "assistant",
+      "scope": "English gloss/sense editorial review; not complete Korean-form verification",
+      "verificationBefore": "draft",
+      "verificationAfter": "draft"
+    }
+  ],
+  "sourceSHA256": "fedf461747b981a4266e0b6f5ca1c2caa6513308aa95685f5f5408d250478762",
+  "resultSHA256": "8a554ef847363908832a5d81ddd46a2bf01ddebb15bb34cf5dda53cbff54d850"
+}
