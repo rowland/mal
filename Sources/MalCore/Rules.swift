@@ -7,11 +7,11 @@ public enum Grader {
     }
     public static func accepted(_ entry: Entry, direction: Direction, aliases: [String] = [], optionalEnglishHints: Bool = true) -> Set<String> {
         let values = direction == .englishToKorean ? [entry.lemma] + entry.koreanForms.map(\.text) : entry.english
-        let expanded = direction == .koreanToEnglish ? values.flatMap { englishAlternatives($0, predicate: entry.partOfSpeech == .verb || entry.partOfSpeech == .adjective, optionalHints: optionalEnglishHints) } : values
+        let expanded = direction == .koreanToEnglish ? values.flatMap { englishAlternatives($0, partOfSpeech: entry.partOfSpeech, optionalHints: optionalEnglishHints) } : values
         // Personal aliases are literal user decisions, not dictionary gloss syntax.
         return Set((expanded + aliases).map { normalize($0, direction: direction) })
     }
-    private static func englishAlternatives(_ gloss: String, predicate: Bool, optionalHints: Bool) -> [String] {
+    private static func englishAlternatives(_ gloss: String, partOfSpeech: PartOfSpeech, optionalHints: Bool) -> [String] {
         var result = [gloss]
         var fragment = ""
         var depth = 0
@@ -25,7 +25,14 @@ public enum Grader {
         result.append(fragment)
         if optionalHints { result += result.compactMap(withoutParentheticalHints) }
         let parts = result.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }
-        return parts + (predicate ? parts.compactMap { $0.lowercased().hasPrefix("to ") ? String($0.dropFirst(3)) : nil } : [])
+        let infinitiveVariants = parts.compactMap { part -> String? in
+            guard partOfSpeech == .verb || partOfSpeech == .adjective else { return nil }
+            if part.lowercased().hasPrefix("to ") { return String(part.dropFirst(3)) }
+            // A bare adjective such as “young” is not an English infinitive.
+            guard partOfSpeech == .verb || part.lowercased().hasPrefix("be ") else { return nil }
+            return "to " + part
+        }
+        return parts + infinitiveVariants
     }
     private static func withoutParentheticalHints(_ text: String) -> String? {
         var depth = 0
@@ -56,6 +63,12 @@ public enum Grader {
     }
 }
 public enum ChoiceBuilder {
+    public static func englishAlternatives(for choice: String, in pool: [Entry]) -> [String] {
+        var seen = Set<String>()
+        return pool.filter { $0.answer(.koreanToEnglish) == choice }
+            .flatMap { $0.english.dropFirst() }
+            .filter { seen.insert($0).inserted }
+    }
     public static func choices<R: RandomNumberGenerator>(target: Entry, pool: [Entry], direction: Direction, count: Int, koreanAnswers: [String: String] = [:], acceptedAnswers: Set<String>? = nil, sensePool: [Entry]? = nil, aliases: [String: [String]] = [:], using random: inout R) -> [String] {
         let targetAnswers = acceptedAnswers ?? Grader.promptAnswers(target, direction: direction, pool: sensePool ?? pool, aliases: aliases)
         // Exclude equivalent senses in either language, even when their preferred gloss differs.

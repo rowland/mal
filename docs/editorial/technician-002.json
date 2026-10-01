@@ -1,0 +1,511 @@
+{
+  "bank": "mal.technician",
+  "batch": 2,
+  "date": "2026-09-30",
+  "baseContentVersion": 3,
+  "contentVersion": 4,
+  "scope": "Sequential English gloss/sense editorial review, positions 26–50; six revised, 19 retained",
+  "sourceSHA256": "a7553b04b8afe56b7b5b46d39c723623dd4040ffcb9f81a3d49be20cda1d07ad",
+  "resultSHA256": "38e9f42d139920db7e4379c6cde0f3cdc2ce74774472f0358f49fb7ff4e1e0f9",
+  "entries": [
+    {
+      "position": 26,
+      "id": "mal.technician.114a0a365bb5a5a5",
+      "lemma": "않다",
+      "before": [
+        "auxiliary verb used to negate the clause to which the main verb belongs"
+      ],
+      "after": [
+        "not"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": "following a verb or adjective",
+      "sourceEvidence": "Source sense: auxiliary verb used to negate the clause to which the main verb belongs\nSource: https://en.wiktionary.org/wiki/않다#Korean · NIKL level A, frequency rank 1859",
+      "decision": "revised",
+      "rationale": "The standalone source gloss is not usable as a prompt; NIKL confirms auxiliary negation after a predicate.",
+      "referencesConsulted": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=71581"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 27,
+      "id": "mal.technician.ea497688b2c91ca8",
+      "lemma": "잡지",
+      "before": [
+        "magazine"
+      ],
+      "after": [
+        "magazine"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: magazine\nSource: https://en.wiktionary.org/wiki/잡지#Korean · NIKL level A, frequency rank 1862",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 28,
+      "id": "mal.technician.dffe5f245f7a7c66",
+      "lemma": "댁",
+      "before": [
+        "house",
+        "home"
+      ],
+      "after": [
+        "house",
+        "home"
+      ],
+      "promptCueBefore": "honorific",
+      "promptCueAfter": "honorific",
+      "sourceEvidence": "Source sense: house, home, residence\nSource: https://en.wiktionary.org/wiki/댁#Korean · NIKL level A, frequency rank 1867",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 29,
+      "id": "mal.technician.3f4ca46e62cafabf",
+      "lemma": "반갑다",
+      "before": [
+        "glad",
+        "be glad"
+      ],
+      "after": [
+        "glad",
+        "be glad"
+      ],
+      "promptCueBefore": "pleased to meet or see someone",
+      "promptCueAfter": "pleased to meet or see someone",
+      "sourceEvidence": "Source sense: to be glad, happy; pleasant; welcome\nSource: https://en.wiktionary.org/wiki/반갑다#Korean · NIKL level A, frequency rank 1868",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 30,
+      "id": "mal.technician.2eaf905a51d34349",
+      "lemma": "다녀오다",
+      "before": [
+        "go and come back",
+        "make a round trip"
+      ],
+      "after": [
+        "go and come back",
+        "make a round trip"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to return; to come back; to go and then come back\nSource: https://en.wiktionary.org/wiki/다녀오다#Korean · NIKL level A, frequency rank 1876",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 31,
+      "id": "mal.technician.7ecfef8a0c70e810",
+      "lemma": "비디오",
+      "before": [
+        "video"
+      ],
+      "after": [
+        "video"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: video\nSource: https://en.wiktionary.org/wiki/비디오#Korean · NIKL level A, frequency rank 1882",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 32,
+      "id": "mal.technician.56bd20346ef30a8d",
+      "lemma": "이쪽",
+      "before": [
+        "this side",
+        "this way"
+      ],
+      "after": [
+        "this side",
+        "this way"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: This side\nSource: https://en.wiktionary.org/wiki/이쪽#Korean · NIKL level A, frequency rank 1885",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 33,
+      "id": "mal.technician.6f299152e6f3e524",
+      "lemma": "연습",
+      "before": [
+        "practice"
+      ],
+      "after": [
+        "practice"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: practice, exercise\nSource: https://en.wiktionary.org/wiki/연습#Korean · NIKL level A, frequency rank 1896",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 34,
+      "id": "mal.technician.5c534e6d3e421fdb",
+      "lemma": "오른쪽",
+      "before": [
+        "right",
+        "right side"
+      ],
+      "after": [
+        "right",
+        "right side"
+      ],
+      "promptCueBefore": "direction",
+      "promptCueAfter": "direction",
+      "sourceEvidence": "Source sense: right-hand; the right side\nSource: https://en.wiktionary.org/wiki/오른쪽#Korean · NIKL level A, frequency rank 1897",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 35,
+      "id": "mal.technician.7d2525c43f494c06",
+      "lemma": "지도",
+      "before": [
+        "map"
+      ],
+      "after": [
+        "map"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: map\nSource: https://en.wiktionary.org/wiki/지도#Korean · NIKL level A, frequency rank 1901",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 36,
+      "id": "mal.technician.8d1d392c0a872bf1",
+      "lemma": "화장실",
+      "before": [
+        "bathroom",
+        "restroom",
+        "toilet"
+      ],
+      "after": [
+        "bathroom",
+        "restroom",
+        "toilet"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: bathroom; restroom; toilet\nSource: https://en.wiktionary.org/wiki/화장실#Korean · NIKL level A, frequency rank 1904",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 37,
+      "id": "mal.technician.6c4814925d1a6a83",
+      "lemma": "주말",
+      "before": [
+        "weekend"
+      ],
+      "after": [
+        "weekend"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: weekend\nSource: https://en.wiktionary.org/wiki/주말#Korean · NIKL level A, frequency rank 1933",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 38,
+      "id": "mal.technician.8c2df10316563b58",
+      "lemma": "내년",
+      "before": [
+        "next year"
+      ],
+      "after": [
+        "next year"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: next year\nSource: https://en.wiktionary.org/wiki/내년#Korean · NIKL level A, frequency rank 1941",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 39,
+      "id": "mal.technician.1e68187afbcc9849",
+      "lemma": "대학생",
+      "before": [
+        "college/university student"
+      ],
+      "after": [
+        "college student",
+        "university student"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: college/university student\nSource: https://en.wiktionary.org/wiki/대학생#Korean · NIKL level A, frequency rank 1944",
+      "decision": "revised",
+      "rationale": "Split the slash wording into natural English alternatives without changing sense.",
+      "referencesConsulted": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=66320"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 40,
+      "id": "mal.technician.7631f2f5cf42bc86",
+      "lemma": "닫다",
+      "before": [
+        "close",
+        "to close",
+        "shut",
+        "to shut"
+      ],
+      "after": [
+        "close",
+        "to close",
+        "shut",
+        "to shut"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to close, to shut\nSource: https://en.wiktionary.org/wiki/닫다#Korean · NIKL level A, frequency rank 1959",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 41,
+      "id": "mal.technician.78e41e761e430be9",
+      "lemma": "생일",
+      "before": [
+        "birthday"
+      ],
+      "after": [
+        "birthday"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: birthday\nSource: https://en.wiktionary.org/wiki/생일#Korean · NIKL level A, frequency rank 1963",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 42,
+      "id": "mal.technician.c0cb8140fc26cebc",
+      "lemma": "걸어가다",
+      "before": [
+        "walk",
+        "to walk",
+        "go on foot",
+        "to go on foot",
+        "go by walking",
+        "to go by walking"
+      ],
+      "after": [
+        "walk there",
+        "go on foot",
+        "walk"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to walk, to go on foot, to go by walking\nSource: https://en.wiktionary.org/wiki/걸어가다#Korean · NIKL level A, frequency rank 1970",
+      "decision": "revised",
+      "rationale": "Lead with directed motion while retaining the ordinary walk/go-on-foot equivalents; distinct from undirected 걷다.",
+      "referencesConsulted": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=32042&nation=eng"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 43,
+      "id": "mal.technician.372c883a9ba532cd",
+      "lemma": "백화점",
+      "before": [
+        "department store"
+      ],
+      "after": [
+        "department store"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: department store\nSource: https://en.wiktionary.org/wiki/백화점#Korean · NIKL level A, frequency rank 1974",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 44,
+      "id": "mal.technician.4a1481651422881b",
+      "lemma": "안녕하다",
+      "before": [
+        "well",
+        "healthy"
+      ],
+      "after": [
+        "be well",
+        "well",
+        "healthy"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: well, healthy\nSource: https://en.wiktionary.org/wiki/안녕하다#Korean · NIKL level A, frequency rank 1978",
+      "decision": "revised",
+      "rationale": "Use a natural predicate prompt while keeping the existing health/wellbeing sense.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/안녕하다#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 45,
+      "id": "mal.technician.bfecf925e3c6a8c3",
+      "lemma": "출발하다",
+      "before": [
+        "depart",
+        "to depart"
+      ],
+      "after": [
+        "depart",
+        "to depart"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to depart\nSource: https://en.wiktionary.org/wiki/출발하다#Korean · NIKL level A, frequency rank 1982",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 46,
+      "id": "mal.technician.6a036c1dd210ff0c",
+      "lemma": "고양이",
+      "before": [
+        "cat"
+      ],
+      "after": [
+        "cat"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: cat\nSource: https://en.wiktionary.org/wiki/고양이#Korean · NIKL level A, frequency rank 1987",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 47,
+      "id": "mal.technician.4e09a295c5b17051",
+      "lemma": "중학교",
+      "before": [
+        "middle school"
+      ],
+      "after": [
+        "middle school"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: middle school\nSource: https://en.wiktionary.org/wiki/중학교#Korean · NIKL level A, frequency rank 1996",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 48,
+      "id": "mal.technician.c9f1cf488f963e30",
+      "lemma": "약",
+      "before": [
+        "drug",
+        "medicine"
+      ],
+      "after": [
+        "medicine",
+        "drug"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: drug; medicine\nSource: https://en.wiktionary.org/wiki/약#Korean · NIKL level A, frequency rank 2027",
+      "decision": "revised",
+      "rationale": "Prefer the everyday medicinal prompt; keep drug as a valid equivalent.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/약#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 49,
+      "id": "mal.technician.83a0143d4486962e",
+      "lemma": "저쪽",
+      "before": [
+        "over there"
+      ],
+      "after": [
+        "that side",
+        "over there"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": "distant direction",
+      "sourceEvidence": "Source sense: over there\nSource: https://en.wiktionary.org/wiki/저쪽#Korean · NIKL level A, frequency rank 2031",
+      "decision": "revised",
+      "rationale": "Distinguish the directional demonstrative 저쪽 from the location adverb 저기 while retaining the source gloss.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/저쪽#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 50,
+      "id": "mal.technician.385e20b9d559f30f",
+      "lemma": "창문",
+      "before": [
+        "window"
+      ],
+      "after": [
+        "window"
+      ],
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: window\nSource: https://en.wiktionary.org/wiki/창문#Korean · NIKL level A, frequency rank 2033",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    }
+  ],
+  "limitations": "Full Korean forms and metadata have not been independently verified; all entries remain draft. No sense was replaced or stable ID changed."
+}

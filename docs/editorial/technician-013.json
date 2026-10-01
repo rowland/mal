@@ -1,0 +1,630 @@
+{
+  "bank": "technician",
+  "batch": 13,
+  "date": "2026-10-01",
+  "baseContentVersion": 14,
+  "contentVersion": 15,
+  "scope": "English-gloss review, positions 301–325",
+  "sourceSHA256": "490cd41cfddb1289a29a45cb89efc18acf138e53eb2768985aeb012eef0cb1d1",
+  "resultSHA256": "39985dd66744e0d68cbcb506c5353f943eda330a6d278ef13423854a4d767c93",
+  "entries": [
+    {
+      "position": 301,
+      "id": "mal.technician.f598313aed7974fe",
+      "previousID": "mal.technician.f598313aed7974fe",
+      "lemma": "팔십",
+      "before": [
+        "eighty"
+      ],
+      "after": [
+        "eighty"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: eighty\nSource: https://en.wiktionary.org/wiki/팔십#Korean · NIKL level A, frequency rank 29719",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 302,
+      "id": "mal.technician.f419a52a7dc465fe",
+      "previousID": "mal.technician.f419a52a7dc465fe",
+      "lemma": "여덟",
+      "before": [
+        "eight"
+      ],
+      "after": [
+        "eight"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "native Korean number",
+      "sourceEvidence": "Source sense: eight\nSource: https://en.wiktionary.org/wiki/여덟#Korean · NIKL level A, frequency rank 34841",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 303,
+      "id": "mal.technician.53a3f5421c6ed575",
+      "previousID": "mal.technician.53a3f5421c6ed575",
+      "lemma": "아흔",
+      "before": [
+        "ninety"
+      ],
+      "after": [
+        "ninety"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "native Korean number",
+      "sourceEvidence": "Source sense: ninety\nSource: https://en.wiktionary.org/wiki/아흔#Korean · NIKL level A, frequency rank 49265",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 304,
+      "id": "mal.technician.9e1f7b1b6b2fefd0",
+      "previousID": "mal.technician.9e1f7b1b6b2fefd0",
+      "lemma": "이십",
+      "before": [
+        "twenty"
+      ],
+      "after": [
+        "twenty"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: twenty\nSource: https://en.wiktionary.org/wiki/이십#Korean · NIKL level A, frequency rank 51771",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 305,
+      "id": "mal.technician.296e38719b969007",
+      "previousID": "mal.technician.296e38719b969007",
+      "lemma": "대하다",
+      "before": [
+        "pertain or relate to a topic",
+        "to pertain or relate to a topic"
+      ],
+      "after": [
+        "relate to",
+        "pertain to",
+        "be about"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": "a topic",
+      "sourceEvidence": "Source sense: to pertain or relate to a topic\nSource: https://en.wiktionary.org/wiki/대하다#Korean · NIKL level B, frequency rank 24",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/대하다#Korean"
+      ],
+      "usageNote": "In this sense, normally used as ~에 대해/대하여 (about) or ~에 대한 (about, before a noun). Other senses include treating or facing someone. The existing finite-form practice needs separate review.",
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 306,
+      "id": "mal.technician.06b13d869582daa9",
+      "previousID": "mal.technician.06b13d869582daa9",
+      "lemma": "위하다",
+      "before": [
+        "help",
+        "to help",
+        "serve",
+        "to serve",
+        "benefit",
+        "to benefit",
+        "honour",
+        "to honour",
+        "esteem",
+        "to esteem"
+      ],
+      "after": [
+        "help",
+        "serve",
+        "benefit",
+        "honor",
+        "honour",
+        "esteem"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to help, to serve, to benefit; to honour, to esteem\nSource: https://en.wiktionary.org/wiki/위하다#Korean · NIKL level B, frequency rank 33",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/위하다#Korean"
+      ],
+      "usageNote": "Often encountered as 위해/위하여 or 위한 in expressions meaning for the sake of. This card retains the original help/serve/benefit sense; construction-specific form coverage remains pending.",
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 307,
+      "id": "mal.technician.32ca1082e88aded8",
+      "previousID": "mal.technician.32ca1082e88aded8",
+      "lemma": "사회",
+      "before": [
+        "society"
+      ],
+      "after": [
+        "society"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: society\nSource: https://en.wiktionary.org/wiki/사회#Korean · NIKL level B, frequency rank 42",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 308,
+      "id": "mal.technician.3a356a64c507ce0d",
+      "previousID": "mal.technician.3a356a64c507ce0d",
+      "lemma": "따르다",
+      "before": [
+        "follow",
+        "to follow"
+      ],
+      "after": [
+        "follow"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to follow\nSource: https://en.wiktionary.org/wiki/따르다#Korean · NIKL level B, frequency rank 51",
+      "decision": "revised",
+      "rationale": "Remove redundant infinitive display variants; grading already accepts optional to.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 309,
+      "id": "mal.technician.959654a3b1d41466",
+      "previousID": "mal.technician.959654a3b1d41466",
+      "lemma": "그런",
+      "before": [
+        "like that",
+        "such"
+      ],
+      "after": [
+        "like that",
+        "such"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: like that, such\nSource: https://en.wiktionary.org/wiki/그런#Korean · NIKL level B, frequency rank 54",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 310,
+      "id": "mal.technician.e1b0004024499b36",
+      "previousID": "mal.technician.e1b0004024499b36",
+      "lemma": "경우",
+      "before": [
+        "conditions",
+        "circumstances"
+      ],
+      "after": [
+        "case",
+        "situation",
+        "circumstances"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: conditions, circumstances\nSource: https://en.wiktionary.org/wiki/경우#Korean · NIKL level B, frequency rank 65",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 311,
+      "id": "mal.technician.jasin-self",
+      "previousID": "mal.technician.1e46adcde3248612",
+      "lemma": "자신",
+      "before": [
+        "one's body"
+      ],
+      "after": [
+        "oneself",
+        "self"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: one's body\nSource: https://en.wiktionary.org/wiki/자신#Korean · NIKL level B, frequency rank 72",
+      "decision": "sense replacement",
+      "rationale": "Replace the body-only sense with the self/person sense documented by NIKL; editorial learner-utility choice, not a measured frequency claim.",
+      "referencesConsulted": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=62096&nation=eng"
+      ],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 312,
+      "id": "mal.technician.bc0070fcf20b4cd2",
+      "previousID": "mal.technician.bc0070fcf20b4cd2",
+      "lemma": "문화",
+      "before": [
+        "culture"
+      ],
+      "after": [
+        "culture"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: culture\nSource: https://en.wiktionary.org/wiki/문화#Korean · NIKL level B, frequency rank 73",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 313,
+      "id": "mal.technician.7fe6b5574e9bd0d3",
+      "previousID": "mal.technician.7fe6b5574e9bd0d3",
+      "lemma": "통하다",
+      "before": [
+        "pass through, from one end to the other",
+        "to pass through, from one end to the other"
+      ],
+      "after": [
+        "pass through"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": "from one end to the other",
+      "sourceEvidence": "Source sense: to pass through, from one end to the other\nSource: https://en.wiktionary.org/wiki/통하다#Korean · NIKL level B, frequency rank 78",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 314,
+      "id": "mal.technician.8696d69522bcab7c",
+      "previousID": "mal.technician.8696d69522bcab7c",
+      "lemma": "소리",
+      "before": [
+        "sound"
+      ],
+      "after": [
+        "sound"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: sound\nSource: https://en.wiktionary.org/wiki/소리#Korean · NIKL level B, frequency rank 80",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 315,
+      "id": "mal.technician.4e150e83c41dca28",
+      "previousID": "mal.technician.4e150e83c41dca28",
+      "lemma": "정도",
+      "before": [
+        "degree",
+        "extent"
+      ],
+      "after": [
+        "degree",
+        "extent"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: degree, extent\nSource: https://en.wiktionary.org/wiki/정도#Korean · NIKL level B, frequency rank 86",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 316,
+      "id": "mal.technician.7b242d955e99c1ad",
+      "previousID": "mal.technician.7b242d955e99c1ad",
+      "lemma": "보이다",
+      "before": [
+        "be seen",
+        "to be seen"
+      ],
+      "after": [
+        "be seen"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to be seen\nSource: https://en.wiktionary.org/wiki/보이다#Korean · NIKL level B, frequency rank 93",
+      "decision": "revised",
+      "rationale": "Remove redundant infinitive display variants; grading already accepts optional to.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 317,
+      "id": "mal.technician.8d1bdf4c31a15161",
+      "previousID": "mal.technician.8d1bdf4c31a15161",
+      "lemma": "지나다",
+      "before": [
+        "pass (by, beyond, through; also of time)",
+        "to pass (by, beyond, through; also of time)"
+      ],
+      "after": [
+        "pass",
+        "go by",
+        "pass by"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to pass (by, beyond, through; also of time)\nSource: https://en.wiktionary.org/wiki/지나다#Korean · NIKL level B, frequency rank 97",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 318,
+      "id": "mal.technician.610693fffad9110d",
+      "previousID": "mal.technician.610693fffad9110d",
+      "lemma": "인간",
+      "before": [
+        "human",
+        "human being"
+      ],
+      "after": [
+        "human",
+        "human being"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: human, human being\nSource: https://en.wiktionary.org/wiki/인간#Korean · NIKL level B, frequency rank 102",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 319,
+      "id": "mal.technician.4f4fafba444f773d",
+      "previousID": "mal.technician.4f4fafba444f773d",
+      "lemma": "사실",
+      "before": [
+        "fact",
+        "reality",
+        "truth"
+      ],
+      "after": [
+        "fact",
+        "reality",
+        "truth"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: fact, reality, truth\nSource: https://en.wiktionary.org/wiki/사실#Korean · NIKL level B, frequency rank 103",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 320,
+      "id": "mal.technician.180a8aaed180f222",
+      "previousID": "mal.technician.180a8aaed180f222",
+      "lemma": "점",
+      "before": [
+        "point",
+        "spot",
+        "dot",
+        "period",
+        "full stop"
+      ],
+      "after": [
+        "point",
+        "spot",
+        "dot",
+        "period",
+        "full stop"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: point, spot; dot, period, full stop\nSource: https://en.wiktionary.org/wiki/점#Korean · NIKL level B, frequency rank 109",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 321,
+      "id": "mal.technician.22d09964bfd615df",
+      "previousID": "mal.technician.22d09964bfd615df",
+      "lemma": "의하다",
+      "before": [
+        "be due to",
+        "to be due to"
+      ],
+      "after": [
+        "be due to",
+        "be caused by"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to be due to\nSource: https://en.wiktionary.org/wiki/의하다#Korean · NIKL level B, frequency rank 110",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/의하다#Korean"
+      ],
+      "usageNote": "This causal sense occurs especially in ~에 의해/의하여. ~에 의하면 means according to in another construction. Existing standalone speech-level forms need separate review.",
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 322,
+      "id": "mal.technician.889560aa8a79f0ef",
+      "previousID": "mal.technician.889560aa8a79f0ef",
+      "lemma": "시대",
+      "before": [
+        "historical age or period"
+      ],
+      "after": [
+        "era",
+        "age",
+        "period"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "historical",
+      "sourceEvidence": "Source sense: historical age or period\nSource: https://en.wiktionary.org/wiki/시대#Korean · NIKL level B, frequency rank 111",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 323,
+      "id": "mal.technician.7418ef7a1d749d45",
+      "previousID": "mal.technician.7418ef7a1d749d45",
+      "lemma": "대통령",
+      "before": [
+        "president of a country"
+      ],
+      "after": [
+        "president"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "of a country",
+      "sourceEvidence": "Source sense: president of a country\nSource: https://en.wiktionary.org/wiki/대통령#Korean · NIKL level B, frequency rank 128",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 324,
+      "id": "mal.technician.a2639a13d678d97a",
+      "previousID": "mal.technician.a2639a13d678d97a",
+      "lemma": "국가",
+      "before": [
+        "political state",
+        "nation",
+        "country",
+        "polity"
+      ],
+      "after": [
+        "country",
+        "nation",
+        "state"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "political entity",
+      "sourceEvidence": "Source sense: political state, nation, country, polity\nSource: https://en.wiktionary.org/wiki/국가#Korean · NIKL level B, frequency rank 141",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 325,
+      "id": "mal.technician.619748bcf4903ec3",
+      "previousID": "mal.technician.619748bcf4903ec3",
+      "lemma": "여성",
+      "before": [
+        "female",
+        "woman",
+        "womenfolk",
+        "womankind"
+      ],
+      "after": [
+        "woman",
+        "women",
+        "female"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: female, woman, womenfolk, womankind\nSource: https://en.wiktionary.org/wiki/여성#Korean · NIKL level B, frequency rank 146",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    }
+  ],
+  "limitations": "Assistant gloss/sense editing only; no measured sense-frequency ranking or full Korean-form verification. Existing Korean forms preserved."
+}

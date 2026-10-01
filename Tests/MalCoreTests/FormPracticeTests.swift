@@ -16,7 +16,7 @@ private struct FormRandom: RandomNumberGenerator { mutating func next() -> UInt6
         #expect(FormPractice.forms(go, style: style) == [text])
         let accepted = FormPractice.accepted(go, direction: .englishToKorean, style: style, pool: [go], aliases: [go.id: ["가다", "갔어요"]])
         if style != .dictionary { #expect(accepted == [text]) }
-        #expect(FormPractice.accepted(go, direction: .koreanToEnglish, style: style, pool: [go]) == ["go"])
+        #expect(FormPractice.accepted(go, direction: .koreanToEnglish, style: style, pool: [go]) == ["go", "to go"])
     }
 }
 @Test func variantsAndIrregularFormsRemainExplicit() {
@@ -81,8 +81,8 @@ private struct FormRandom: RandomNumberGenerator { mutating func next() -> UInt6
     let synonym = Entry(id: "test.raise", lemma: "올리다", partOfSpeech: .verb, english: ["lift"], koreanForms: [.init("올려요", speechLevel: "informal-polite")])
     let pool = [hear, lift, synonym, go]
     let accepted = FormPractice.accepted(hear, direction: .koreanToEnglish, style: .polite, pool: pool, displayedKorean: "들어요")
-    #expect(accepted == ["hear", "lift"])
-    #expect(FormPractice.accepted(hear, direction: .koreanToEnglish, style: .dictionary, pool: pool, displayedKorean: "듣다") == ["hear"])
+    #expect(accepted == ["hear", "to hear", "lift", "to lift"])
+    #expect(FormPractice.accepted(hear, direction: .koreanToEnglish, style: .dictionary, pool: pool, displayedKorean: "듣다") == ["hear", "to hear"])
     var random = FormRandom()
     let choices = ChoiceBuilder.choices(target: hear, pool: pool, direction: .koreanToEnglish, count: 5, acceptedAnswers: accepted, using: &random)
     #expect(Set(choices) == ["hear", "go"])

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: "mal.novice"
-contentVersion: 25
+contentVersion: 26
 title: "Novice"
 provenance:
   source: "NIKL Korean learner vocabulary (2003); English Wiktionary contributors via Kaikki, 2026-09-02 dump"
@@ -2209,7 +2209,7 @@ entries:
   - id: "mal.novice.e00f8dae912a0e11"
     lemma: "열심히"
     partOfSpeech: "adverb"
-    english: ["hard", "diligently", "with dedication", "enthusiastically"]
+    english: ["diligently", "hard", "with dedication", "enthusiastically"]
     koreanForms: []
     verification: "draft"
     notes: "Source sense: enthusiastically, fervently, with dedication\nSource: https://en.wiktionary.org/wiki/열심히#Korean · NIKL level A, frequency rank 660 Editorial 2026-09-30: Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments. "

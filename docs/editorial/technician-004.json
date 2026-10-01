@@ -1,0 +1,575 @@
+{
+  "bank": "mal.technician",
+  "batch": 4,
+  "date": "2026-09-30",
+  "baseContentVersion": 5,
+  "contentVersion": 6,
+  "scope": "Sequential English gloss/sense editorial review, positions 76–100; one new-ID sense replacement, nine other revisions, 15 retained",
+  "sourceSHA256": "f7f8246554a4b3048b1b3a9c1090579715e06cab11bc887c57ec5cddcd9e13fb",
+  "resultSHA256": "39def0be5e487b1517281f1d594fc397391948d7121a347164f16cc6c23ff735",
+  "entries": [
+    {
+      "position": 76,
+      "id": "mal.technician.64576c94b79bcfaf",
+      "previousID": "mal.technician.64576c94b79bcfaf",
+      "lemma": "극장",
+      "before": [
+        "theater"
+      ],
+      "after": [
+        "theater"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: theater\nSource: https://en.wiktionary.org/wiki/극장#Korean · NIKL level A, frequency rank 2331",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 77,
+      "id": "mal.technician.10e3d3e72bb93c49",
+      "previousID": "mal.technician.10e3d3e72bb93c49",
+      "lemma": "오랜만",
+      "before": [
+        "long time; the first occurrence after a long absence"
+      ],
+      "after": [
+        "a long time",
+        "after a long time"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: long time; the first occurrence after a long absence\nSource: https://en.wiktionary.org/wiki/오랜만#Korean · NIKL level A, frequency rank 2390",
+      "decision": "revised",
+      "rationale": "Condense source prose to studyable equivalents for an extended absence.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 78,
+      "id": "mal.technician.5849fb5152aac26e",
+      "previousID": "mal.technician.5849fb5152aac26e",
+      "lemma": "아줌마",
+      "before": [
+        "middle-aged elder female"
+      ],
+      "after": [
+        "middle-aged woman",
+        "auntie"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: middle-aged elder female\nSource: https://en.wiktionary.org/wiki/아줌마#Korean · NIKL level A, frequency rank 2419",
+      "decision": "revised",
+      "rationale": "Replace unnatural elder-female phrase with a natural referent and address equivalent.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/아줌마#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 79,
+      "id": "mal.technician.a67b6ab387d2d35b",
+      "previousID": "mal.technician.a67b6ab387d2d35b",
+      "lemma": "추다",
+      "before": [
+        "dance",
+        "to dance"
+      ],
+      "after": [
+        "dance",
+        "to dance"
+      ],
+      "partOfSpeech": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to dance\nSource: https://en.wiktionary.org/wiki/추다#Korean · NIKL level A, frequency rank 2426",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 80,
+      "id": "mal.technician.kyeoda-turn-on",
+      "previousID": "mal.technician.7b8b03a52c8dec0f",
+      "lemma": "켜다",
+      "before": [
+        "To light an oil lamp or candle; strike a match or lighter"
+      ],
+      "after": [
+        "turn on",
+        "switch on",
+        "to turn on"
+      ],
+      "partOfSpeech": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": "a light or electrical device",
+      "sourceEvidence": "Source sense: To light an oil lamp or candle; strike a match or lighter\nSource: https://en.wiktionary.org/wiki/켜다#Korean · NIKL level A, frequency rank 2427",
+      "decision": "sense replacement",
+      "rationale": "Replace the candle/match sense with the everyday electrical-device sense; assign a new ID and retire the old sense without transferring mastery.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/켜다#Korean",
+        "https://krdict.korean.go.kr/eng/dicMarinerSearch/search?mainSearchWord=%EC%BC%9C%EB%8B%A4"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 81,
+      "id": "mal.technician.24479213ffb302f7",
+      "previousID": "mal.technician.24479213ffb302f7",
+      "lemma": "공항",
+      "before": [
+        "airport"
+      ],
+      "after": [
+        "airport"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: airport\nSource: https://en.wiktionary.org/wiki/공항#Korean · NIKL level A, frequency rank 2433",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 82,
+      "id": "mal.technician.c41c64899af088a8",
+      "previousID": "mal.technician.c41c64899af088a8",
+      "lemma": "군인",
+      "before": [
+        "military personnel",
+        "soldier"
+      ],
+      "after": [
+        "military personnel",
+        "soldier"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: military personnel; soldier\nSource: https://en.wiktionary.org/wiki/군인#Korean · NIKL level A, frequency rank 2434",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 83,
+      "id": "mal.technician.6f7c2aeaa3bc06b2",
+      "previousID": "mal.technician.6f7c2aeaa3bc06b2",
+      "lemma": "치마",
+      "before": [
+        "skirt"
+      ],
+      "after": [
+        "skirt"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: skirt\nSource: https://en.wiktionary.org/wiki/치마#Korean · NIKL level A, frequency rank 2457",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 84,
+      "id": "mal.technician.5c79a4b09ee9e1b5",
+      "previousID": "mal.technician.5c79a4b09ee9e1b5",
+      "lemma": "호텔",
+      "before": [
+        "hotel (establishment providing accommodation)"
+      ],
+      "after": [
+        "hotel"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: hotel (establishment providing accommodation)\nSource: https://en.wiktionary.org/wiki/호텔#Korean · NIKL level A, frequency rank 2460",
+      "decision": "revised",
+      "rationale": "Remove explanatory prose.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 85,
+      "id": "mal.technician.0a8f010ca9bd89be",
+      "previousID": "mal.technician.0a8f010ca9bd89be",
+      "lemma": "깎다",
+      "before": [
+        "cut",
+        "to cut",
+        "shave",
+        "shear",
+        "peel",
+        "mow",
+        "clip"
+      ],
+      "after": [
+        "cut",
+        "peel",
+        "shave",
+        "trim"
+      ],
+      "partOfSpeech": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to cut, shave, shear, peel, mow, clip\nSource: https://en.wiktionary.org/wiki/깎다#Korean · NIKL level A, frequency rank 2465",
+      "decision": "revised",
+      "rationale": "Keep frequent cutting/peeling/trimming actions without an oversized near-synonym list.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 86,
+      "id": "mal.technician.b891307a23b7e722",
+      "previousID": "mal.technician.b891307a23b7e722",
+      "lemma": "청소",
+      "before": [
+        "cleaning"
+      ],
+      "after": [
+        "cleaning"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: cleaning\nSource: https://en.wiktionary.org/wiki/청소#Korean · NIKL level A, frequency rank 2484",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 87,
+      "id": "mal.technician.8e5b4a154aac6bed",
+      "previousID": "mal.technician.8e5b4a154aac6bed",
+      "lemma": "걱정하다",
+      "before": [
+        "worry",
+        "to worry",
+        "feel concerned",
+        "to feel concerned"
+      ],
+      "after": [
+        "worry",
+        "to worry",
+        "feel concerned",
+        "to feel concerned"
+      ],
+      "partOfSpeech": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to worry, to feel concerned\nSource: https://en.wiktionary.org/wiki/걱정하다#Korean · NIKL level A, frequency rank 2491",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 88,
+      "id": "mal.technician.9963d13c244d9d88",
+      "previousID": "mal.technician.9963d13c244d9d88",
+      "lemma": "구름",
+      "before": [
+        "cloud"
+      ],
+      "after": [
+        "cloud"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: cloud\nSource: https://en.wiktionary.org/wiki/구름#Korean · NIKL level A, frequency rank 2493",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 89,
+      "id": "mal.technician.1749d4cf7481c70c",
+      "previousID": "mal.technician.1749d4cf7481c70c",
+      "lemma": "끄다",
+      "before": [
+        "extinguish; to douse a fire or light; to turn off the electricity",
+        "to extinguish; to douse a fire or light; to turn off the electricity"
+      ],
+      "after": [
+        "turn off",
+        "switch off",
+        "extinguish",
+        "put out"
+      ],
+      "partOfSpeech": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to extinguish; to douse a fire or light; to turn off the electricity\nSource: https://en.wiktionary.org/wiki/끄다#Korean · NIKL level A, frequency rank 2495",
+      "decision": "revised",
+      "rationale": "Lead with the common electrical sense while retaining the fire/light sense in the same source entry.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/끄다#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 90,
+      "id": "mal.technician.aaf831a461ddedda",
+      "previousID": "mal.technician.aaf831a461ddedda",
+      "lemma": "계절",
+      "before": [
+        "season (of the year)"
+      ],
+      "after": [
+        "season (of the year)"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: season (of the year)\nSource: https://en.wiktionary.org/wiki/계절#Korean · NIKL level A, frequency rank 2520",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 91,
+      "id": "mal.technician.143a67c232e62a3b",
+      "previousID": "mal.technician.143a67c232e62a3b",
+      "lemma": "운동장",
+      "before": [
+        "sports ground"
+      ],
+      "after": [
+        "sports ground"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: sports ground\nSource: https://en.wiktionary.org/wiki/운동장#Korean · NIKL level A, frequency rank 2534",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 92,
+      "id": "mal.technician.6aea8b53de55736a",
+      "previousID": "mal.technician.6aea8b53de55736a",
+      "lemma": "동쪽",
+      "before": [
+        "east"
+      ],
+      "after": [
+        "east"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: east\nSource: https://en.wiktionary.org/wiki/동쪽#Korean · NIKL level A, frequency rank 2569",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 93,
+      "id": "mal.technician.5f4eecb48096bc2b",
+      "previousID": "mal.technician.5f4eecb48096bc2b",
+      "lemma": "잠깐",
+      "before": [
+        "moment",
+        "a little while"
+      ],
+      "after": [
+        "moment",
+        "a little while"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: moment; a little while\nSource: https://en.wiktionary.org/wiki/잠깐#Korean · NIKL level A, frequency rank 2582",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 94,
+      "id": "mal.technician.0d7896a290f59ae5",
+      "previousID": "mal.technician.0d7896a290f59ae5",
+      "lemma": "요즈음",
+      "before": [
+        "today",
+        "the present"
+      ],
+      "after": [
+        "these days",
+        "nowadays",
+        "the present"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: today; the present\nSource: https://en.wiktionary.org/wiki/요즈음#Korean · NIKL level A, frequency rank 2603",
+      "decision": "revised",
+      "rationale": "Replace misleading single-day today with the current-period meaning supported by the source noun entry.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/요즈음#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 95,
+      "id": "mal.technician.3ab9d3f5c7d6fde9",
+      "previousID": "mal.technician.3ab9d3f5c7d6fde9",
+      "lemma": "잃어버리다",
+      "before": [
+        "lose; to no longer have in one's possession",
+        "to lose; to no longer have in one's possession"
+      ],
+      "after": [
+        "lose",
+        "to lose"
+      ],
+      "partOfSpeech": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to lose; to no longer have in one's possession\nSource: https://en.wiktionary.org/wiki/잃어버리다#Korean · NIKL level A, frequency rank 2606",
+      "decision": "revised",
+      "rationale": "Remove dictionary-definition prose.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 96,
+      "id": "mal.technician.9d935959387080d7",
+      "previousID": "mal.technician.9d935959387080d7",
+      "lemma": "조용하다",
+      "before": [
+        "be silent",
+        "to be silent",
+        "quiet",
+        "still",
+        "calm",
+        "empty",
+        "sedate"
+      ],
+      "after": [
+        "quiet",
+        "silent",
+        "be quiet",
+        "be silent"
+      ],
+      "partOfSpeech": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to be silent, quiet, still, calm, empty, sedate\nSource: https://en.wiktionary.org/wiki/조용하다#Korean · NIKL level A, frequency rank 2610",
+      "decision": "revised",
+      "rationale": "Retain the quiet/silent sense; omit overbroad empty/sedate.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 97,
+      "id": "mal.technician.16224c5da778b71a",
+      "previousID": "mal.technician.16224c5da778b71a",
+      "lemma": "한복",
+      "before": [
+        "hanbok (traditional Korean outfit)"
+      ],
+      "after": [
+        "hanbok (traditional Korean outfit)"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: hanbok (traditional Korean outfit)\nSource: https://en.wiktionary.org/wiki/한복#Korean · NIKL level A, frequency rank 2614",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 98,
+      "id": "mal.technician.86b9cb326f26eed8",
+      "previousID": "mal.technician.86b9cb326f26eed8",
+      "lemma": "라면",
+      "before": [
+        "instant noodle"
+      ],
+      "after": [
+        "instant noodle"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: instant noodle\nSource: https://en.wiktionary.org/wiki/라면#Korean · NIKL level A, frequency rank 2623",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 99,
+      "id": "mal.technician.49164a172bb599ac",
+      "previousID": "mal.technician.49164a172bb599ac",
+      "lemma": "바지",
+      "before": [
+        "pants",
+        "trousers"
+      ],
+      "after": [
+        "pants",
+        "trousers"
+      ],
+      "partOfSpeech": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: pants, trousers\nSource: https://en.wiktionary.org/wiki/바지#Korean · NIKL level A, frequency rank 2627",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 100,
+      "id": "mal.technician.7b0b7c558c5e10a1",
+      "previousID": "mal.technician.7b0b7c558c5e10a1",
+      "lemma": "싫어하다",
+      "before": [
+        "detest",
+        "to detest",
+        "loathe",
+        "to loathe"
+      ],
+      "after": [
+        "dislike",
+        "hate",
+        "to dislike",
+        "to hate"
+      ],
+      "partOfSpeech": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to detest, to loathe\nSource: https://en.wiktionary.org/wiki/싫어하다#Korean · NIKL level A, frequency rank 2636",
+      "decision": "revised",
+      "rationale": "Prefer the everyday dislike sense while retaining the source hate equivalent; avoid stronger loathe as default.",
+      "referencesConsulted": [
+        "https://krdict.korean.go.kr/eng/dicMarinerSearch/search?mainSearchWord=%EC%8B%AB%EC%96%B4%ED%95%98%EB%8B%A4&nation=eng"
+      ],
+      "verification": "draft; complete-entry review pending"
+    }
+  ],
+  "limitations": "Full Korean forms and metadata have not been independently verified; all entries remain draft. Old 켜다 sense history remains with its retired ID."
+}

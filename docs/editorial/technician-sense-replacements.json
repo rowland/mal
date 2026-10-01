@@ -1,0 +1,278 @@
+{
+  "bank": "mal.technician",
+  "replacements": [
+    {
+      "lemma": "켜다",
+      "oldID": "mal.technician.7b8b03a52c8dec0f",
+      "newID": "mal.technician.kyeoda-turn-on",
+      "oldEnglish": [
+        "To light an oil lamp or candle; strike a match or lighter"
+      ],
+      "newEnglish": [
+        "turn on",
+        "switch on",
+        "to turn on"
+      ],
+      "oldCue": null,
+      "newCue": "a light or electrical device",
+      "partOfSpeech": "verb",
+      "evidence": [
+        "https://en.wiktionary.org/wiki/켜다#Korean",
+        "https://krdict.korean.go.kr/eng/dicMarinerSearch/search?mainSearchWord=%EC%BC%9C%EB%8B%A4"
+      ]
+    },
+    {
+      "lemma": "한자",
+      "oldID": "mal.technician.1ae1871e5b693768",
+      "newID": "mal.technician.hanja-characters",
+      "oldEnglish": [
+        "written Chinese language"
+      ],
+      "newEnglish": [
+        "Chinese characters",
+        "hanja",
+        "Chinese character"
+      ],
+      "oldCue": null,
+      "newCue": null,
+      "partOfSpeech": "noun",
+      "evidence": [
+        "https://en.wiktionary.org/wiki/한자#Korean"
+      ]
+    },
+    {
+      "lemma": "시",
+      "oldID": "mal.technician.915928c91b36efea",
+      "newID": "mal.technician.si-oclock",
+      "oldEnglish": [
+        "hour (time)"
+      ],
+      "newEnglish": [
+        "o’clock",
+        "o'clock"
+      ],
+      "oldCue": null,
+      "newCue": "clock hour, after a number",
+      "partOfSpeech": "noun",
+      "evidence": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=65108&nation=eng&nationCode=6"
+      ]
+    },
+    {
+      "lemma": "휴지",
+      "oldID": "mal.technician.c75d8fefb6ebb20d",
+      "newID": "mal.technician.hyuji-tissue",
+      "oldEnglish": [
+        "waste paper"
+      ],
+      "newEnglish": [
+        "toilet paper",
+        "tissue"
+      ],
+      "oldCue": null,
+      "newCue": "for wiping or cleaning",
+      "partOfSpeech": "noun",
+      "evidence": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=44797&nation=eng"
+      ]
+    },
+    {
+      "lemma": "자신",
+      "oldID": "mal.technician.1e46adcde3248612",
+      "newID": "mal.technician.jasin-self",
+      "oldEnglish": [
+        "one's body"
+      ],
+      "newEnglish": [
+        "oneself",
+        "self"
+      ],
+      "oldCue": null,
+      "newCue": null,
+      "oldPOS": "noun",
+      "newPOS": "noun",
+      "evidence": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=62096&nation=eng"
+      ]
+    },
+    {
+      "lemma": "내용",
+      "oldID": "mal.technician.d638f9747248a237",
+      "newID": "mal.technician.naeyong-content",
+      "oldEnglish": [
+        "that which is contained in a container"
+      ],
+      "newEnglish": [
+        "content",
+        "contents"
+      ],
+      "oldCue": null,
+      "newCue": "of speech or writing",
+      "oldPOS": "noun",
+      "newPOS": "noun",
+      "evidence": [
+        "https://en.wiktionary.org/wiki/내용#Korean"
+      ]
+    },
+    {
+      "lemma": "글",
+      "oldID": "mal.technician.b8eb9917adb8fd16",
+      "newID": "mal.technician.geul-text",
+      "oldEnglish": [
+        "letters",
+        "cultivation",
+        "knowledge"
+      ],
+      "newEnglish": [
+        "writing",
+        "text",
+        "a piece of writing"
+      ],
+      "oldCue": null,
+      "newCue": null,
+      "oldPOS": "noun",
+      "newPOS": "noun",
+      "evidence": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=59226&nation=eng"
+      ]
+    },
+    {
+      "lemma": "애",
+      "oldID": "mal.technician.d291277158d4ff38",
+      "newID": "mal.technician.ae-child",
+      "oldEnglish": [
+        "guy, person (usually rather young)"
+      ],
+      "newEnglish": [
+        "kid",
+        "child"
+      ],
+      "oldCue": null,
+      "newCue": "colloquial",
+      "oldPOS": "noun",
+      "newPOS": "noun",
+      "evidence": [
+        "https://en.wiktionary.org/wiki/애#Korean"
+      ]
+    },
+    {
+      "lemma": "그대로",
+      "oldID": "mal.technician.599611f6fda38e47",
+      "newID": "mal.technician.geudaero-unchanged",
+      "oldEnglish": [
+        "just",
+        "exactly"
+      ],
+      "newEnglish": [
+        "as it is",
+        "unchanged",
+        "just as before"
+      ],
+      "oldCue": null,
+      "newCue": null,
+      "oldPOS": "adverb",
+      "newPOS": "adverb",
+      "evidence": [
+        "https://en.wiktionary.org/wiki/그대로#Korean"
+      ]
+    },
+    {
+      "lemma": "줄",
+      "oldID": "mal.technician.8148d090483d795e",
+      "newID": "mal.technician.jul-cord",
+      "oldEnglish": [
+        "joule (measure of energy)"
+      ],
+      "newEnglish": [
+        "string",
+        "rope",
+        "cord"
+      ],
+      "oldCue": null,
+      "newCue": "for tying things",
+      "oldPOS": "other",
+      "newPOS": "noun",
+      "evidence": [
+        "https://krdict.korean.go.kr/eng/dicMarinerSearch/search?mainSearchWord=%EC%A4%84"
+      ]
+    },
+    {
+      "lemma": "하루",
+      "oldID": "mal.technician.c70bf87787c68038",
+      "newID": "mal.technician.haru-one-day",
+      "oldEnglish": [
+        "daytime"
+      ],
+      "newEnglish": [
+        "one day",
+        "a day",
+        "day"
+      ],
+      "oldCue": null,
+      "newCue": "a period of 24 hours",
+      "oldPOS": "noun",
+      "newPOS": "noun",
+      "evidence": [
+        "https://en.wiktionary.org/wiki/하루#Korean"
+      ]
+    },
+    {
+      "lemma": "고개",
+      "oldID": "mal.technician.db7544c3fa0a947b",
+      "newID": "mal.technician.gogae-head",
+      "oldEnglish": [
+        "nape of the neck"
+      ],
+      "newEnglish": [
+        "head"
+      ],
+      "oldCue": null,
+      "newCue": "when nodding, bowing, or turning",
+      "oldPOS": "noun",
+      "newPOS": "noun",
+      "evidence": [
+        "https://en.wiktionary.org/wiki/고개#Korean"
+      ]
+    },
+    {
+      "lemma": "어리다",
+      "oldID": "mal.technician.9b4171c28152b5ca",
+      "newID": "mal.technician.eorida-young",
+      "oldEnglish": [
+        "be naïve",
+        "to be naïve",
+        "be immature",
+        "to be immature"
+      ],
+      "newEnglish": [
+        "be young",
+        "young"
+      ],
+      "oldCue": null,
+      "newCue": "young in age",
+      "oldPOS": "adjective",
+      "newPOS": "adjective",
+      "evidence": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=74176&nation=eng"
+      ]
+    },
+    {
+      "lemma": "대표",
+      "oldID": "mal.technician.682cde58d678bf22",
+      "newID": "mal.technician.daepyo-representative",
+      "oldEnglish": [
+        "something which is representative"
+      ],
+      "newEnglish": [
+        "representative"
+      ],
+      "oldCue": null,
+      "newCue": "person representing a group",
+      "oldPOS": "noun",
+      "newPOS": "noun",
+      "evidence": [
+        "https://en.wiktionary.org/wiki/대표#Korean"
+      ]
+    }
+  ]
+}

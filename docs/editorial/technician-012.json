@@ -1,0 +1,580 @@
+{
+  "bank": "technician",
+  "batch": 12,
+  "date": "2026-09-30",
+  "baseContentVersion": 13,
+  "contentVersion": 14,
+  "scope": "English-gloss review of positions 276–300 in bank order",
+  "sourceSHA256": "88b9ea36f63f6089e91d7fb2717c80ec6ec51a296a63a267d57f496952cd7edb",
+  "resultSHA256": "490cd41cfddb1289a29a45cb89efc18acf138e53eb2768985aeb012eef0cb1d1",
+  "entries": [
+    {
+      "position": 276,
+      "id": "mal.technician.543c11fbe2876f82",
+      "previousID": "mal.technician.543c11fbe2876f82",
+      "lemma": "여든",
+      "before": [
+        "eighty"
+      ],
+      "after": [
+        "eighty"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "native Korean number",
+      "sourceEvidence": "Source sense: eighty\nSource: https://en.wiktionary.org/wiki/여든#Korean · NIKL level A, frequency rank 13584",
+      "decision": "revised",
+      "rationale": "Distinguish numeral system.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 277,
+      "id": "mal.technician.bc899f57989b5a67",
+      "previousID": "mal.technician.bc899f57989b5a67",
+      "lemma": "일흔",
+      "before": [
+        "seventy"
+      ],
+      "after": [
+        "seventy"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "native Korean number",
+      "sourceEvidence": "Source sense: seventy\nSource: https://en.wiktionary.org/wiki/일흔#Korean · NIKL level A, frequency rank 13695",
+      "decision": "revised",
+      "rationale": "Distinguish numeral system.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 278,
+      "id": "mal.technician.3425ce24d15036ec",
+      "previousID": "mal.technician.3425ce24d15036ec",
+      "lemma": "화요일",
+      "before": [
+        "Tuesday"
+      ],
+      "after": [
+        "Tuesday"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: Tuesday\nSource: https://en.wiktionary.org/wiki/화요일#Korean · NIKL level A, frequency rank 13987",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 279,
+      "id": "mal.technician.39e576e201a49d06",
+      "previousID": "mal.technician.39e576e201a49d06",
+      "lemma": "선물하다",
+      "before": [
+        "give a gift/a present",
+        "to give a gift/a present"
+      ],
+      "after": [
+        "give a gift",
+        "give a present"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to give a gift/a present\nSource: https://en.wiktionary.org/wiki/선물하다#Korean · NIKL level A, frequency rank 14518",
+      "decision": "revised",
+      "rationale": "Separate answer alternatives.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 280,
+      "id": "mal.technician.2fc9c81181978824",
+      "previousID": "mal.technician.2fc9c81181978824",
+      "lemma": "아이스크림",
+      "before": [
+        "ice cream (dessert)"
+      ],
+      "after": [
+        "ice cream"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: ice cream (dessert)\nSource: https://en.wiktionary.org/wiki/아이스크림#Korean · NIKL level A, frequency rank 14611",
+      "decision": "revised",
+      "rationale": "Remove dessert explanation.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 281,
+      "id": "mal.technician.76bda080181838cf",
+      "previousID": "mal.technician.76bda080181838cf",
+      "lemma": "요리하다",
+      "before": [
+        "cook",
+        "to cook"
+      ],
+      "after": [
+        "cook"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to cook\nSource: https://en.wiktionary.org/wiki/요리하다#Korean · NIKL level A, frequency rank 14695",
+      "decision": "revised",
+      "rationale": "Remove duplicate infinitive.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 282,
+      "id": "mal.technician.332e1b07461abc86",
+      "previousID": "mal.technician.332e1b07461abc86",
+      "lemma": "칠",
+      "before": [
+        "seven"
+      ],
+      "after": [
+        "seven"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: seven\nSource: https://en.wiktionary.org/wiki/칠#Korean · NIKL level A, frequency rank 14947",
+      "decision": "revised",
+      "rationale": "Distinguish from native 일곱.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 283,
+      "id": "mal.technician.79bec59a5f71681c",
+      "previousID": "mal.technician.79bec59a5f71681c",
+      "lemma": "다섯째",
+      "before": [
+        "fifth (ordinal form of the number 5)"
+      ],
+      "after": [
+        "fifth"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "ordinal",
+      "sourceEvidence": "Source sense: fifth (ordinal form of the number 5)\nSource: https://en.wiktionary.org/wiki/다섯째#Korean · NIKL level A, frequency rank 15360",
+      "decision": "revised",
+      "rationale": "Move number explanation into cue.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 284,
+      "id": "mal.technician.bbcc5424073280b1",
+      "previousID": "mal.technician.bbcc5424073280b1",
+      "lemma": "맛없다",
+      "before": [
+        "not tasting good"
+      ],
+      "after": [
+        "taste bad",
+        "not taste good",
+        "be unappetizing"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: not tasting good\nSource: https://en.wiktionary.org/wiki/맛없다#Korean · NIKL level A, frequency rank 15475",
+      "decision": "revised",
+      "rationale": "Use natural predicate equivalents.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 285,
+      "id": "mal.technician.d7a38a1a70edcb07",
+      "previousID": "mal.technician.d7a38a1a70edcb07",
+      "lemma": "백",
+      "before": [
+        "hundred"
+      ],
+      "after": [
+        "hundred"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: hundred\nSource: https://en.wiktionary.org/wiki/백#Korean · NIKL level A, frequency rank 15575",
+      "decision": "revised",
+      "rationale": "Identify numeral system.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 286,
+      "id": "mal.technician.008d36a8dff110a6",
+      "previousID": "mal.technician.008d36a8dff110a6",
+      "lemma": "사십",
+      "before": [
+        "forty"
+      ],
+      "after": [
+        "forty"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: forty\nSource: https://en.wiktionary.org/wiki/사십#Korean · NIKL level A, frequency rank 15648",
+      "decision": "revised",
+      "rationale": "Distinguish from native 마흔.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 287,
+      "id": "mal.technician.6184c01da811531b",
+      "previousID": "mal.technician.6184c01da811531b",
+      "lemma": "실례하다",
+      "before": [
+        "be rude",
+        "to be rude"
+      ],
+      "after": [
+        "be rude",
+        "be impolite"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to be rude\nSource: https://en.wiktionary.org/wiki/실례하다#Korean · NIKL level A, frequency rank 17194",
+      "decision": "revised",
+      "rationale": "Add common equivalent and remove duplicate infinitive.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 288,
+      "id": "mal.technician.ffa118af3afec8ef",
+      "previousID": "mal.technician.ffa118af3afec8ef",
+      "lemma": "여섯",
+      "before": [
+        "six"
+      ],
+      "after": [
+        "six"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "native Korean number",
+      "sourceEvidence": "Source sense: six\nSource: https://en.wiktionary.org/wiki/여섯#Korean · NIKL level A, frequency rank 17283",
+      "decision": "revised",
+      "rationale": "Distinguish from Sino-Korean 육.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 289,
+      "id": "mal.technician.062ab0f896ee2648",
+      "previousID": "mal.technician.062ab0f896ee2648",
+      "lemma": "육",
+      "before": [
+        "six"
+      ],
+      "after": [
+        "six"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: six\nSource: https://en.wiktionary.org/wiki/육#Korean · NIKL level A, frequency rank 17406",
+      "decision": "revised",
+      "rationale": "Distinguish from native 여섯.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 290,
+      "id": "mal.technician.7c7e5c4fcd773ab2",
+      "previousID": "mal.technician.7c7e5c4fcd773ab2",
+      "lemma": "일곱",
+      "before": [
+        "seven"
+      ],
+      "after": [
+        "seven"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "native Korean number",
+      "sourceEvidence": "Source sense: seven\nSource: https://en.wiktionary.org/wiki/일곱#Korean · NIKL level A, frequency rank 17461",
+      "decision": "revised",
+      "rationale": "Distinguish from Sino-Korean 칠.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 291,
+      "id": "mal.technician.2c9310a4998450a5",
+      "previousID": "mal.technician.2c9310a4998450a5",
+      "lemma": "삼십",
+      "before": [
+        "thirty"
+      ],
+      "after": [
+        "thirty"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: thirty\nSource: https://en.wiktionary.org/wiki/삼십#Korean · NIKL level A, frequency rank 18764",
+      "decision": "revised",
+      "rationale": "Distinguish from native 서른.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 292,
+      "id": "mal.technician.a6f16961fc1a1524",
+      "previousID": "mal.technician.a6f16961fc1a1524",
+      "lemma": "오십",
+      "before": [
+        "fifty"
+      ],
+      "after": [
+        "fifty"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: fifty\nSource: https://en.wiktionary.org/wiki/오십#Korean · NIKL level A, frequency rank 19100",
+      "decision": "revised",
+      "rationale": "Distinguish from native 쉰.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 293,
+      "id": "mal.technician.cc34afa1b6af5366",
+      "previousID": "mal.technician.cc34afa1b6af5366",
+      "lemma": "칠십",
+      "before": [
+        "seventy"
+      ],
+      "after": [
+        "seventy"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: seventy\nSource: https://en.wiktionary.org/wiki/칠십#Korean · NIKL level A, frequency rank 19607",
+      "decision": "revised",
+      "rationale": "Distinguish from native 일흔.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 294,
+      "id": "mal.technician.586c2817cd741f91",
+      "previousID": "mal.technician.586c2817cd741f91",
+      "lemma": "사탕",
+      "before": [
+        "candy (piece of candy)"
+      ],
+      "after": [
+        "candy",
+        "sweet"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: candy (piece of candy)\nSource: https://en.wiktionary.org/wiki/사탕#Korean · NIKL level A, frequency rank 20886",
+      "decision": "revised",
+      "rationale": "Remove piece-of-candy explanation.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 295,
+      "id": "mal.technician.9aaa779fce56657a",
+      "previousID": "mal.technician.9aaa779fce56657a",
+      "lemma": "예순",
+      "before": [
+        "sixty"
+      ],
+      "after": [
+        "sixty"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "native Korean number",
+      "sourceEvidence": "Source sense: sixty\nSource: https://en.wiktionary.org/wiki/예순#Korean · NIKL level A, frequency rank 21340",
+      "decision": "revised",
+      "rationale": "Distinguish numeral system.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 296,
+      "id": "mal.technician.beebc3de09baa862",
+      "previousID": "mal.technician.beebc3de09baa862",
+      "lemma": "오",
+      "before": [
+        "five"
+      ],
+      "after": [
+        "five"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: five\nSource: https://en.wiktionary.org/wiki/오#Korean · NIKL level A, frequency rank 21348",
+      "decision": "revised",
+      "rationale": "Distinguish numeral system.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 297,
+      "id": "mal.technician.35785fa6a23fa32c",
+      "previousID": "mal.technician.35785fa6a23fa32c",
+      "lemma": "십",
+      "before": [
+        "ten"
+      ],
+      "after": [
+        "ten"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: ten\nSource: https://en.wiktionary.org/wiki/십#Korean · NIKL level A, frequency rank 24036",
+      "decision": "revised",
+      "rationale": "Distinguish from native 열.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 298,
+      "id": "mal.technician.8c0e8a2686e4afda",
+      "previousID": "mal.technician.8c0e8a2686e4afda",
+      "lemma": "천",
+      "before": [
+        "thousand"
+      ],
+      "after": [
+        "thousand"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: thousand\nSource: https://en.wiktionary.org/wiki/천#Korean · NIKL level A, frequency rank 24937",
+      "decision": "revised",
+      "rationale": "Identify numeral system.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 299,
+      "id": "mal.technician.d71d205738d75bff",
+      "previousID": "mal.technician.d71d205738d75bff",
+      "lemma": "쉰",
+      "before": [
+        "fifty"
+      ],
+      "after": [
+        "fifty"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "native Korean number",
+      "sourceEvidence": "Source sense: fifty\nSource: https://en.wiktionary.org/wiki/쉰#Korean · NIKL level A, frequency rank 27846",
+      "decision": "revised",
+      "rationale": "Distinguish from Sino-Korean 오십.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 300,
+      "id": "mal.technician.1f2bc6117c675997",
+      "previousID": "mal.technician.1f2bc6117c675997",
+      "lemma": "육십",
+      "before": [
+        "sixty"
+      ],
+      "after": [
+        "sixty"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: sixty\nSource: https://en.wiktionary.org/wiki/육십#Korean · NIKL level A, frequency rank 28580",
+      "decision": "revised",
+      "rationale": "Distinguish from native 예순.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    }
+  ],
+  "limitations": "Gloss/cue editorial pass, not complete linguistic verification. All entries remain draft."
+}

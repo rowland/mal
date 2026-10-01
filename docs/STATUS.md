@@ -1,6 +1,6 @@
 # Mal implementation status
 
-Last updated: 2026-09-16. This is the handoff entry point. Read REQUIREMENTS.md and DECISIONS.md before changing behavior.
+Last updated: 2026-10-01. This is the handoff entry point. Read REQUIREMENTS.md and DECISIONS.md before changing behavior.
 
 ## Delivered development build
 
@@ -548,3 +548,52 @@ Scope/known limitations: this completes the English-gloss editorial pass, not re
 ## Novice editorial checkpoint approved — 2026-09-30
 
 User requested a checkpoint and expressed satisfaction with progress. Checkpoint includes the complete Novice English-gloss pass and twenty batch ledgers, stable-ID sense replacements and migration regressions, assistant editorial policy, Wiktionary links, and structural ledger audit. Latest automated verification remains 94 passing tests, all-bank validation, successful signed build and ledger coverage audit; no implementation changes since those checks. Commit-time whitespace and ledger checks passed. Next concrete work remains full-entry source verification beginning with the 17 batch-003 gaps; this checkpoint does not declare release-ready vocabulary. Local Git checkpoint only; no push requested.
+
+## Technician editorial review, batch 001 — 2026-09-30
+
+User asked for Technician work while studying revised Novice. Reviewed positions 1–25: 22 retained, three English answer sets revised (권, 아주머니, 시원하다). Technician contentVersion 2→3. IDs, Korean forms, cues, categories and draft labels are unchanged, so existing personal progress remains attached to the same senses; the personal database was not opened. Full before/after and original source notes are in docs/editorial/technician-001.json and technician-001.md. This is English-gloss/sense review, not independent full-entry verification; Technician remains 500 draft entries.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests` passed **94 tests**; the built `mal-bank --built-in` validator passed **500 entries / 500 awaiting independent verification**; `scripts/build-app.sh` produced a signed `build/Mal.app`. A direct `swift run` validator attempt was blocked by the execution sandbox, so the already-built validator binary was used. Native study acceptance of the revised prompts is pending. Open defects CONTENT-001/002/003 and QA-001/002 remain open; no new app defect was observed.
+
+Next concrete action: review Technician positions 26–50, researching any meaning replacement before assigning a new ID, and save the next bounded ledger. Technician English-gloss coverage is 25/500; 475 remain. Novice full-entry source verification also remains open. Changes are uncommitted pending a commit request.
+
+## Targeted Novice check: 열심히 — 2026-09-30
+
+The entry had “hard” first, producing an ambiguous bare English→Korean prompt. NIKL's learner-dictionary result supports the effort-related adverbial sense. Reordered the existing accepted English answers to show “diligently” first while retaining “hard” for Korean→English grading. Novice contentVersion 25→26, with the same stable ID, forms, part of speech and draft status. Updated the original novice-013 ledger and added a regression assertion for prompt order and the retained accepted answer. Personal progress was untouched; Technician's pending changes were preserved.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests` passed **94 tests**; `python3 scripts/audit-editorial-ledger.py` passed **500/500** exact Novice coverage; built-in Novice validator passed **500 entries / 492 awaiting independent verification**; `scripts/build-app.sh` succeeded and produced a signed app. The first build attempt hit a SwiftPM compiler-cache sandbox restriction; a permitted retry succeeded. Native acceptance of the reordered prompt is pending. Next concrete action: continue Technician positions 26–50, and separately resume Novice full-entry source verification. Changes remain uncommitted.
+
+## Show all English alternatives on quiz cards — 2026-09-30
+
+User clarified that the quiz should expose all curated English adaptations. English→Korean cards now show the primary prompt in large type and all remaining accepted English alternatives on a smaller wrapping line, in multiple-choice and write-in modes. 열심히 therefore displays “diligently” with “hard,” “with dedication,” and “enthusiastically” directly below. No grading, choice construction, content, or progress rule changed. Introductions and the library already showed all meanings.
+
+Verification: `scripts/build-app.sh` succeeded and signed the app; `git diff --check` passed. Rules/storage tests were not rerun after this presentation-only change (latest 94 passing). Native visual acceptance is pending, particularly cards with long answer lists and minimum-size windows. Next concrete action: have the user assess the rebuilt quiz card, then continue Technician positions 26–50. Pending Novice and Technician edits remain uncommitted.
+
+## Korean→English choice alternatives correction — 2026-09-30
+
+User reported still seeing one word. Inspecting the active Mal window showed Korean→English multiple choice, where the prior English→Korean prompt change did not apply. Each Korean→English choice now displays its canonical English gloss in large type with its curated alternatives beneath it, including numeric-key and accessibility selection. Canonical choice values still drive grading; distractor selection and learning state are unchanged. A pure ChoiceBuilder helper deduplicates alternatives for entries sharing the same primary gloss.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests` passed **95 tests**, including new alternative-label coverage; `scripts/build-app.sh` succeeded and signed the app; `git diff --check` passed. Reopened the built app without grading or changing personal data. The live Korean→English multiple-choice window now visibly shows secondary alternatives under all five choices (including work, talk, speak); accessibility labels contain those alternatives. User acceptance of the layout, especially at a small window size, is still pending. Next action: continue Technician positions 26–50. Changes remain uncommitted.
+
+## Technician English-gloss checkpoint through position 300 — 2026-09-30
+
+Continued Technician in eleven 25-entry batches (002–012), covering positions 26–300; contentVersion 3→14, with 500 active entries and all 500 still draft. Each batch has a JSON evidence/decision ledger and a readable Markdown comparison in `docs/editorial/`. Four sense replacements—켜다, 한자, 시, 휴지—have new stable IDs and a shared old/new-ID ledger. Existing progress remains on retired IDs and does not transfer to the new senses; other revised entries keep their IDs. Numeral cues now distinguish native and Sino-Korean systems and standalone versus pre-counter twenty. No personal database or aliases were read or reset.
+
+Verification: `swift test --scratch-path /tmp/mal-speech-tests` passed **96 tests**, including a temporary-store regression for all four sense replacements, retained old state/history/aliases, no progress transfer and identical reimport. Technician bank validator passed **500 entries / 500 awaiting independent verification**. `python3 scripts/audit-editorial-ledger.py` passed **300/500** sequential Technician coverage and exact active-ID/answer matches (Novice 500/500 also passes). `scripts/build-app.sh` succeeded and produced the signed app; `git diff --check` passed. One sandboxed test retry failed because SwiftPM could not write its compiler cache; an authorized retry passed. Native quiz/IME acceptance of these revisions was not performed while the user studies in the current app.
+
+Open work: positions 301–500 need the same English-gloss/sense pass. All Technician forms and metadata still need separate evidence-based full-entry verification; no draft status was promoted. Novice's 17 documented batch-003 source gaps remain. User assessment of the revised multiple-choice layout is pending; existing product and QA defects remain open. Next concrete action: review Technician positions 301–325, then continue bounded checkpoints. All current edits remain uncommitted.
+
+
+## Technician English-gloss pass complete — 2026-10-01
+
+Finished positions 301–500 in batches 013–020: 123 wording/cue revisions, ten sense replacements, 67 retained. Technician contentVersion 14→22; complete coverage is now 500/500 (250 revisions, 14 replacements, 236 retained). Each checkpoint records original source evidence, old/new answers, cues, categories and decisions. All 500 entries remain draft; Korean forms were preserved, not independently certified. New sense IDs retain old history without transferring mastery. No personal database or aliases were read or altered.
+
+MalCore now accepts optional English infinitive “to” for concise verb glosses, preserving answers after duplicate display variants are removed. Bare adjectives do not accept ungrammatical “to young”; personal aliases remain literal. Updated form-practice assertions reflect the expanded English answer sets.
+
+Verification: **97 tests passed** with `swift test --scratch-path /tmp/mal-speech-tests`, including all 14 replacement migrations and their retained state/history/aliases, new-ID isolation, category changes and no-op reimports. Technician validator passed **500 entries / 500 awaiting independent verification**. Editorial audit passed exact **500/500** coverage for both Novice and Technician, matching active IDs/answers and final-batch cues/categories, with all 14 Technician retired IDs absent. Signed app build succeeded at build/Mal.app; whitespace checks passed. Initial sandboxed test attempt could not write compiler caches; permitted retry exposed ten outdated exact-set assertions after the intentional infinitive expansion, which were corrected before the successful run.
+
+Native study/IME/speech acceptance was not performed and the current app was not relaunched. Existing CONTENT-001/002/003 and QA defects remain open. Full report/manual script: docs/editorial/technician-completion.md. Next concrete action: complete-entry Technician verification starting with construction-dependent 대하다/위하다/의하다/관하다, then irregular forms and new sense metadata; Novice's 17 batch-003 source gaps remain separate open work. All pending changes remain uncommitted; staged user changes were preserved.
+
+## Technician editorial checkpoint — 2026-10-01
+
+User requested committing the completed checkpoint. Includes Technician's 500-entry gloss pass and evidence ledgers, progress-preserving sense replacements, optional English infinitive grading, the earlier alternative-gloss display improvements, and the focused Novice 열심히 ordering correction. Latest verification remains 97 passing tests, valid Technician bank, successful signed app build and exact Novice/Technician ledger coverage; commit-time whitespace and ledger checks also passed. No implementation changed after that verification. Full-entry linguistic verification and native user acceptance remain open as described above. Local checkpoint only; no push requested.

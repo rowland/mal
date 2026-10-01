@@ -149,6 +149,12 @@ struct ContentView: View {
                     .accessibilityIdentifier("studyPrompt")
                 DictionaryLink(lemma: entry.lemma)
             }
+            if !model.introducing && model.settings.direction == .englishToKorean && entry.english.count > 1 {
+                Text("Also: " + entry.english.dropFirst().joined(separator: " · "))
+                    .font(.callout).foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .textSelection(.enabled)
+            }
             if model.focusedForm {
                 Text(model.practiceStyle.label + (model.practiceStyle == .attributive ? " · before a noun" : " · present affirmative"))
                     .font(.callout).foregroundStyle(.secondary)
@@ -230,10 +236,16 @@ struct ContentView: View {
                             HStack(alignment: .firstTextBaseline, spacing: 14) {
                                 Text(key).font(.system(size: 28, weight: .semibold, design: .monospaced))
                                     .frame(minWidth: 24)
-                                Text(model.choices[index]).font(.system(size: 30))
-                                    .lineLimit(nil).multilineTextAlignment(.leading)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .fixedSize(horizontal: false, vertical: true)
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(model.choices[index]).font(.system(size: 30))
+                                    if let alternatives = model.choiceAlternatives[model.choices[index]], !alternatives.isEmpty {
+                                        Text(alternatives.joined(separator: " · "))
+                                            .font(.system(size: 20))
+                                    }
+                                }
+                                .lineLimit(nil).multilineTextAlignment(.leading)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .fixedSize(horizontal: false, vertical: true)
                                 Spacer(minLength: 0)
                             }.padding(.horizontal, 14).padding(.vertical, 8)
                                 .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
@@ -244,7 +256,7 @@ struct ContentView: View {
                                 .contentShape(RoundedRectangle(cornerRadius: 6))
                         }.buttonStyle(.plain)
                             .keyboardShortcut(KeyEquivalent(Character(key)), modifiers: [])
-                            .accessibilityLabel("Choice \(key): \(model.choices[index])")
+                            .accessibilityLabel("Choice \(key): \(([model.choices[index]] + (model.choiceAlternatives[model.choices[index]] ?? [])).joined(separator: ", "))")
                             .accessibilityAddTraits(model.awaitingPronunciation && model.answer == model.choices[index] ? .isSelected : [])
                         }
                     }.id(model.choices)

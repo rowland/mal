@@ -51,6 +51,10 @@ UX-15: Recognition confirmation offers all accepted Korean forms for the current
 
 UX-16 (review trial, 2026-09-20): During spoken English→Korean practice, progressively intersect each live primary/alternative recognition hypothesis with the accepted Korean set for the prompt and selected form style. An exact whole-word/contiguous-phrase match submits immediately, including within an utterance containing extra words. No match continues listening until the existing silence endpoint or Return. Typed grading remains exact. Human review is required before committing this trial.
 
+UX-19: English→Korean quiz cards show the primary English prompt and all curated alternative English meanings beneath it, including in both multiple-choice and write-in modes. Keep the alternatives readable and allow wrapping.
+
+UX-20: Korean→English multiple-choice options show each primary English gloss with its curated alternatives beneath it. Keep the canonical choice value for grading and numeric selection; show the same option text to accessibility tools.
+
 UX-17 (review trial): Speech accommodations use independently testable, named/versioned rules in MalCore, with evidence and explicit live/submission eligibility. Exact matches take precedence; automatic rule acceptance requires one distinct accepted answer across applicable rules/hypotheses. Do not chain rules or loosen typed grading. Initial rules: ㅐ/ㅔ and ㅒ/ㅖ vowel substitutions with otherwise identical syllables, plus the existing single plain/tense onset substitution.
 
 UX-17 refinement: Both initial speech rules are live-enabled. Plain/tense tolerance permits one onset substitution, preserving vowels, final consonants, and all other syllables. Other consonant differences remain subject to confirmation.

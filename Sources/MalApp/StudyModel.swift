@@ -11,6 +11,7 @@ import MalStorage
     var settings = StudySettings()
     var current: Entry?
     var choices: [String] = []
+    var choiceAlternatives: [String: [String]] = [:]
     private var koreanDisplays: [String: String] = [:]
     var practiceStyle: KoreanPracticeStyle { settings.formStyle ?? .dictionary }
     var practiceEntries: [Entry] { selectedEntries.filter { !FormPractice.forms($0, style: practiceStyle).isEmpty } }
@@ -31,6 +32,12 @@ import MalStorage
         if koreanDisplays[entry.id] == nil { koreanDisplays[entry.id] = FormPractice.forms(entry, style: practiceStyle).first ?? entry.lemma }
         let accepted = FormPractice.accepted(entry, direction: settings.direction, style: practiceStyle, pool: allEntries, displayedKorean: koreanText(entry), aliases: aliases)
         choices = ChoiceBuilder.choices(target: entry, pool: practiceEntries, direction: settings.direction, count: settings.choiceCount, koreanAnswers: koreanDisplays, acceptedAnswers: accepted, sensePool: allEntries, aliases: aliases, using: &random)
+        choiceAlternatives = [:]
+        if settings.direction == .koreanToEnglish {
+            for choice in choices {
+                choiceAlternatives[choice] = ChoiceBuilder.englishAlternatives(for: choice, in: practiceEntries)
+            }
+        }
     }
     let dictation = KoreanDictation()
     var speechConfirmation: [String]?

@@ -19,7 +19,7 @@ Assistant English gloss/sense review. Verification labels unchanged; source link
 | 308 | 밑 | bottom, underneath; the lower/bottom part (of an object) | bottom / underneath / lower part | revised |
 | 309 | 어른 | grownup / adult / elder / senior | adult / grown-up / grownup | revised |
 | 310 | 팔다 | sell / to sell | sell / to sell | retained |
-| 311 | 열심히 | enthusiastically / fervently / with dedication | hard / diligently / with dedication / enthusiastically | revised |
+| 311 | 열심히 | enthusiastically / fervently / with dedication | diligently / hard / with dedication / enthusiastically | revised |
 | 312 | 일하다 | work / to work / do one's job / to do one's job / labor / to labor | work / do one's job / labor / labour / to work / to do one's job / to labor / to labour | revised |
 | 313 | 팀 | team | team | retained |
 | 314 | 부모 | parents | parents | retained |
@@ -31,3 +31,5 @@ Assistant English gloss/sense review. Verification labels unchanged; source link
 | 320 | 벌써 | already | already | retained |
 
 See the JSON companion for IDs, cues, rationale and evidence. See novice-completion.md for final scope, limitations, tests and remaining verification work.
+
+Amendment (2026-09-30, version 26): 열심히 now displays “diligently” rather than the ambiguous bare “hard.” The [NIKL learner dictionary](https://krdict.korean.go.kr/eng/dicMarinerSearch/search?mainSearchWord=%EC%97%B4&nation=eng) supports both in this adverbial sense. “Hard” remains a valid Korean→English answer. ID, form, category, and draft verification status did not change.

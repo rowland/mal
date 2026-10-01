@@ -1,0 +1,579 @@
+{
+  "bank": "technician",
+  "batch": 8,
+  "date": "2026-09-30",
+  "baseContentVersion": 9,
+  "contentVersion": 10,
+  "scope": "English-gloss review of positions 176–200 in bank order",
+  "sourceSHA256": "e042cb393c1a3196fb291eac388236c05e97c1cf1deff4d454ca1c40fe70297b",
+  "resultSHA256": "fdf4a46dd926a20b9f71a6b6449f07806520a948d8fc6c639c4bfe2589d59348",
+  "entries": [
+    {
+      "position": 176,
+      "id": "mal.technician.41e98dcc4fbd6bf5",
+      "previousID": "mal.technician.41e98dcc4fbd6bf5",
+      "lemma": "메뉴",
+      "before": [
+        "menu"
+      ],
+      "after": [
+        "menu"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: menu\nSource: https://en.wiktionary.org/wiki/메뉴#Korean · NIKL level A, frequency rank 5002",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 177,
+      "id": "mal.technician.5dbc8e63861019a1",
+      "previousID": "mal.technician.5dbc8e63861019a1",
+      "lemma": "외국어",
+      "before": [
+        "foreign language"
+      ],
+      "after": [
+        "foreign language"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: foreign language\nSource: https://en.wiktionary.org/wiki/외국어#Korean · NIKL level A, frequency rank 5040",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 178,
+      "id": "mal.technician.a726c75e8974d559",
+      "previousID": "mal.technician.a726c75e8974d559",
+      "lemma": "중학생",
+      "before": [
+        "middle school or secondary school/high school student"
+      ],
+      "after": [
+        "middle school student"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: middle school or secondary school/high school student\nSource: https://en.wiktionary.org/wiki/중학생#Korean · NIKL level A, frequency rank 5053",
+      "decision": "revised",
+      "rationale": "Remove the misleading high-school alternative.",
+      "referencesConsulted": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=62521"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 179,
+      "id": "mal.technician.858306285402e2a9",
+      "previousID": "mal.technician.858306285402e2a9",
+      "lemma": "휴일",
+      "before": [
+        "holiday",
+        "day off"
+      ],
+      "after": [
+        "holiday",
+        "day off"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: holiday, day off\nSource: https://en.wiktionary.org/wiki/휴일#Korean · NIKL level A, frequency rank 5070",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 180,
+      "id": "mal.technician.dade3daa4d995cd2",
+      "previousID": "mal.technician.dade3daa4d995cd2",
+      "lemma": "달력",
+      "before": [
+        "calendar"
+      ],
+      "after": [
+        "calendar"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: calendar\nSource: https://en.wiktionary.org/wiki/달력#Korean · NIKL level A, frequency rank 5088",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 181,
+      "id": "mal.technician.b17cf63d20253be3",
+      "previousID": "mal.technician.b17cf63d20253be3",
+      "lemma": "소풍",
+      "before": [
+        "picnic",
+        "outing",
+        "excursion"
+      ],
+      "after": [
+        "picnic",
+        "outing",
+        "excursion"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: picnic, outing, excursion\nSource: https://en.wiktionary.org/wiki/소풍#Korean · NIKL level A, frequency rank 5121",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 182,
+      "id": "mal.technician.b04784eac70c73b1",
+      "previousID": "mal.technician.b04784eac70c73b1",
+      "lemma": "춤추다",
+      "before": [
+        "dance",
+        "to dance"
+      ],
+      "after": [
+        "dance",
+        "to dance"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to dance\nSource: https://en.wiktionary.org/wiki/춤추다#Korean · NIKL level A, frequency rank 5154",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 183,
+      "id": "mal.technician.4158076873e362f7",
+      "previousID": "mal.technician.4158076873e362f7",
+      "lemma": "테니스",
+      "before": [
+        "tennis"
+      ],
+      "after": [
+        "tennis"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: tennis\nSource: https://en.wiktionary.org/wiki/테니스#Korean · NIKL level A, frequency rank 5157",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 184,
+      "id": "mal.technician.347dcfd8818b2220",
+      "previousID": "mal.technician.347dcfd8818b2220",
+      "lemma": "공책",
+      "before": [
+        "notebook",
+        "jotter"
+      ],
+      "after": [
+        "notebook",
+        "exercise book"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: notebook, jotter\nSource: https://en.wiktionary.org/wiki/공책#Korean · NIKL level A, frequency rank 5179",
+      "decision": "revised",
+      "rationale": "Use common school-supply terms.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 185,
+      "id": "mal.technician.35dd5a3c376a5756",
+      "previousID": "mal.technician.35dd5a3c376a5756",
+      "lemma": "똑바로",
+      "before": [
+        "straight",
+        "upright",
+        "even"
+      ],
+      "after": [
+        "straight",
+        "properly",
+        "upright"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: straight, upright, even\nSource: https://en.wiktionary.org/wiki/똑바로#Korean · NIKL level A, frequency rank 5201",
+      "decision": "revised",
+      "rationale": "Remove vague even; include the manner meaning.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 186,
+      "id": "mal.technician.d9d9473e7655f0b4",
+      "previousID": "mal.technician.d9d9473e7655f0b4",
+      "lemma": "서점",
+      "before": [
+        "bookshop (shop that sells books)"
+      ],
+      "after": [
+        "bookstore",
+        "bookshop"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: bookshop (shop that sells books)\nSource: https://en.wiktionary.org/wiki/서점#Korean · NIKL level A, frequency rank 5229",
+      "decision": "revised",
+      "rationale": "Remove dictionary-style parenthetical prose.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 187,
+      "id": "mal.technician.2ef6fc6e36385b89",
+      "previousID": "mal.technician.2ef6fc6e36385b89",
+      "lemma": "양말",
+      "before": [
+        "socks"
+      ],
+      "after": [
+        "socks"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: socks\nSource: https://en.wiktionary.org/wiki/양말#Korean · NIKL level A, frequency rank 5248",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 188,
+      "id": "mal.technician.6e86994c05c40204",
+      "previousID": "mal.technician.6e86994c05c40204",
+      "lemma": "초대하다",
+      "before": [
+        "invite",
+        "to invite"
+      ],
+      "after": [
+        "invite",
+        "to invite"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to invite\nSource: https://en.wiktionary.org/wiki/초대하다#Korean · NIKL level A, frequency rank 5293",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 189,
+      "id": "mal.technician.b9930fe2623c334a",
+      "previousID": "mal.technician.b9930fe2623c334a",
+      "lemma": "연습하다",
+      "before": [
+        "practice",
+        "to practice"
+      ],
+      "after": [
+        "practice",
+        "to practice"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to practice\nSource: https://en.wiktionary.org/wiki/연습하다#Korean · NIKL level A, frequency rank 5382",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 190,
+      "id": "mal.technician.6620ab1f4d7c33dc",
+      "previousID": "mal.technician.6620ab1f4d7c33dc",
+      "lemma": "경치",
+      "before": [
+        "scenery",
+        "scene",
+        "view"
+      ],
+      "after": [
+        "scenery",
+        "view",
+        "landscape"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: scenery, scene, view\nSource: https://en.wiktionary.org/wiki/경치#Korean · NIKL level A, frequency rank 5452",
+      "decision": "revised",
+      "rationale": "Remove the vague scene answer.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 191,
+      "id": "mal.technician.902edf43aa7dd66b",
+      "previousID": "mal.technician.902edf43aa7dd66b",
+      "lemma": "발음",
+      "before": [
+        "pronunciation"
+      ],
+      "after": [
+        "pronunciation"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: pronunciation\nSource: https://en.wiktionary.org/wiki/발음#Korean · NIKL level A, frequency rank 5491",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 192,
+      "id": "mal.technician.be8b4e0cfc1a5afa",
+      "previousID": "mal.technician.be8b4e0cfc1a5afa",
+      "lemma": "재미없다",
+      "before": [
+        "uninteresting",
+        "dull"
+      ],
+      "after": [
+        "uninteresting",
+        "dull"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: uninteresting, dull\nSource: https://en.wiktionary.org/wiki/재미없다#Korean · NIKL level A, frequency rank 5538",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 193,
+      "id": "mal.technician.7d0fd6bbe93052e8",
+      "previousID": "mal.technician.7d0fd6bbe93052e8",
+      "lemma": "주스",
+      "before": [
+        "juice (beverage made of juice)"
+      ],
+      "after": [
+        "juice"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: juice (beverage made of juice)\nSource: https://en.wiktionary.org/wiki/주스#Korean · NIKL level A, frequency rank 5553",
+      "decision": "revised",
+      "rationale": "Remove redundant beverage explanation.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 194,
+      "id": "mal.technician.f6b11a7de7c8a273",
+      "previousID": "mal.technician.f6b11a7de7c8a273",
+      "lemma": "콜라",
+      "before": [
+        "cola (drink)"
+      ],
+      "after": [
+        "cola"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: cola (drink)\nSource: https://en.wiktionary.org/wiki/콜라#Korean · NIKL level A, frequency rank 5567",
+      "decision": "revised",
+      "rationale": "Remove redundant drink explanation.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 195,
+      "id": "mal.technician.7bdcd1a3775fb6ac",
+      "previousID": "mal.technician.7bdcd1a3775fb6ac",
+      "lemma": "남학생",
+      "before": [
+        "schoolboy",
+        "a male student",
+        "a male pupil"
+      ],
+      "after": [
+        "male student",
+        "schoolboy"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: schoolboy; a male student; a male pupil\nSource: https://en.wiktionary.org/wiki/남학생#Korean · NIKL level A, frequency rank 5594",
+      "decision": "revised",
+      "rationale": "Lead with the broader student gloss.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 196,
+      "id": "mal.technician.d1e10336d1f9a7f0",
+      "previousID": "mal.technician.d1e10336d1f9a7f0",
+      "lemma": "식사하다",
+      "before": [
+        "eat",
+        "to eat",
+        "have/take a meal",
+        "to have/take a meal"
+      ],
+      "after": [
+        "eat a meal",
+        "have a meal",
+        "dine"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to eat, to have/take a meal\nSource: https://en.wiktionary.org/wiki/식사하다#Korean · NIKL level A, frequency rank 5777",
+      "decision": "revised",
+      "rationale": "Keep the meal-specific sense, distinct from generic eat.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 197,
+      "id": "mal.technician.60d43c55903833c6",
+      "previousID": "mal.technician.60d43c55903833c6",
+      "lemma": "우체국",
+      "before": [
+        "post office"
+      ],
+      "after": [
+        "post office"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: post office\nSource: https://en.wiktionary.org/wiki/우체국#Korean · NIKL level A, frequency rank 5791",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 198,
+      "id": "mal.technician.26ffe76b8c713905",
+      "previousID": "mal.technician.26ffe76b8c713905",
+      "lemma": "고프다",
+      "before": [
+        "be hungry",
+        "to be hungry",
+        "empty",
+        "starved"
+      ],
+      "after": [
+        "be hungry",
+        "hungry"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to be hungry, empty, starved\nSource: https://en.wiktionary.org/wiki/고프다#Korean · NIKL level A, frequency rank 5860",
+      "decision": "revised",
+      "rationale": "Remove empty/starved as misleading alternatives.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 199,
+      "id": "mal.technician.a7f5d76207d1b5d5",
+      "previousID": "mal.technician.a7f5d76207d1b5d5",
+      "lemma": "배고프다",
+      "before": [
+        "be hungry",
+        "to be hungry"
+      ],
+      "after": [
+        "be hungry",
+        "hungry"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to be hungry\nSource: https://en.wiktionary.org/wiki/배고프다#Korean · NIKL level A, frequency rank 5905",
+      "decision": "revised",
+      "rationale": "Remove duplicated infinitive.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 200,
+      "id": "mal.technician.de84f73196f5b199",
+      "previousID": "mal.technician.de84f73196f5b199",
+      "lemma": "삼",
+      "before": [
+        "three"
+      ],
+      "after": [
+        "three"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: three\nSource: https://en.wiktionary.org/wiki/삼#Korean · NIKL level A, frequency rank 5923",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    }
+  ],
+  "limitations": "Gloss/cue editorial pass, not complete linguistic verification. All entries remain draft."
+}

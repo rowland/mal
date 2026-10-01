@@ -1,0 +1,575 @@
+{
+  "bank": "technician",
+  "batch": 6,
+  "date": "2026-09-30",
+  "baseContentVersion": 7,
+  "contentVersion": 8,
+  "scope": "English-gloss review of positions 126–150 in bank order",
+  "sourceSHA256": "f1083c36820b03b97bcf83bc7f0d5cd40e2c37fa76a4d48cc6edf219c298c98b",
+  "resultSHA256": "1998e627d9190884b90372ce5401359d18548322132f51bf748b757424700991",
+  "entries": [
+    {
+      "position": 126,
+      "id": "mal.technician.96f3db9b4bdab2a6",
+      "previousID": "mal.technician.96f3db9b4bdab2a6",
+      "lemma": "그쪽",
+      "before": [
+        "there",
+        "that way"
+      ],
+      "after": [
+        "that side",
+        "that way",
+        "there"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "near the listener or already mentioned",
+      "sourceEvidence": "Source sense: there, that way\nSource: https://en.wiktionary.org/wiki/그쪽#Korean · NIKL level A, frequency rank 3027",
+      "decision": "revised",
+      "rationale": "Clarify the deictic direction.",
+      "referencesConsulted": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=17206&nation=eng&nationCode=6"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 127,
+      "id": "mal.technician.e7e0377643ed91d9",
+      "previousID": "mal.technician.e7e0377643ed91d9",
+      "lemma": "검은색",
+      "before": [
+        "black (color)"
+      ],
+      "after": [
+        "black"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: black (color)\nSource: https://en.wiktionary.org/wiki/검은색#Korean · NIKL level A, frequency rank 3064",
+      "decision": "revised",
+      "rationale": "Remove color explanation.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 128,
+      "id": "mal.technician.a1280d5bc2eeff8d",
+      "previousID": "mal.technician.a1280d5bc2eeff8d",
+      "lemma": "서쪽",
+      "before": [
+        "west"
+      ],
+      "after": [
+        "west"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: west\nSource: https://en.wiktionary.org/wiki/서쪽#Korean · NIKL level A, frequency rank 3152",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 129,
+      "id": "mal.technician.37b1e119d247b95d",
+      "previousID": "mal.technician.37b1e119d247b95d",
+      "lemma": "경찰서",
+      "before": [
+        "police station"
+      ],
+      "after": [
+        "police station"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: police station\nSource: https://en.wiktionary.org/wiki/경찰서#Korean · NIKL level A, frequency rank 3214",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 130,
+      "id": "mal.technician.2188fce912837ec7",
+      "previousID": "mal.technician.2188fce912837ec7",
+      "lemma": "구두",
+      "before": [
+        "dress shoes (Western-style footwear made of leather)"
+      ],
+      "after": [
+        "dress shoes"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: dress shoes (Western-style footwear made of leather)\nSource: https://en.wiktionary.org/wiki/구두#Korean · NIKL level A, frequency rank 3217",
+      "decision": "revised",
+      "rationale": "Remove lengthy footwear explanation.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 131,
+      "id": "mal.technician.2ad29e7b3592cdb8",
+      "previousID": "mal.technician.2ad29e7b3592cdb8",
+      "lemma": "사과",
+      "before": [
+        "apple"
+      ],
+      "after": [
+        "apple"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: apple\nSource: https://en.wiktionary.org/wiki/사과#Korean · NIKL level A, frequency rank 3237",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 132,
+      "id": "mal.technician.986943ceb013e3eb",
+      "previousID": "mal.technician.986943ceb013e3eb",
+      "lemma": "여학생",
+      "before": [
+        "female student"
+      ],
+      "after": [
+        "female student"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: female student\nSource: https://en.wiktionary.org/wiki/여학생#Korean · NIKL level A, frequency rank 3287",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 133,
+      "id": "mal.technician.c722bfe23caffdf6",
+      "previousID": "mal.technician.c722bfe23caffdf6",
+      "lemma": "냉장고",
+      "before": [
+        "refrigerator"
+      ],
+      "after": [
+        "refrigerator"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: refrigerator\nSource: https://en.wiktionary.org/wiki/냉장고#Korean · NIKL level A, frequency rank 3311",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 134,
+      "id": "mal.technician.b2f6aaac03d1b9ee",
+      "previousID": "mal.technician.b2f6aaac03d1b9ee",
+      "lemma": "결혼식",
+      "before": [
+        "wedding ceremony"
+      ],
+      "after": [
+        "wedding ceremony"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: wedding ceremony\nSource: https://en.wiktionary.org/wiki/결혼식#Korean · NIKL level A, frequency rank 3389",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 135,
+      "id": "mal.technician.483b9ffff6dcb32a",
+      "previousID": "mal.technician.483b9ffff6dcb32a",
+      "lemma": "노래하다",
+      "before": [
+        "sing a song",
+        "to sing a song"
+      ],
+      "after": [
+        "sing",
+        "sing a song"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to sing a song\nSource: https://en.wiktionary.org/wiki/노래하다#Korean · NIKL level A, frequency rank 3398",
+      "decision": "revised",
+      "rationale": "Use a natural action-verb gloss.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 136,
+      "id": "mal.technician.a415707ea0d2f4cf",
+      "previousID": "mal.technician.a415707ea0d2f4cf",
+      "lemma": "운전",
+      "before": [
+        "driving"
+      ],
+      "after": [
+        "driving"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: driving\nSource: https://en.wiktionary.org/wiki/운전#Korean · NIKL level A, frequency rank 3707",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 137,
+      "id": "mal.technician.8fe458c93783030d",
+      "previousID": "mal.technician.8fe458c93783030d",
+      "lemma": "불고기",
+      "before": [
+        "bulgogi; a Korean dish of shredded beef with vegetables"
+      ],
+      "after": [
+        "bulgogi"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: bulgogi; a Korean dish of shredded beef with vegetables\nSource: https://en.wiktionary.org/wiki/불고기#Korean · NIKL level A, frequency rank 3754",
+      "decision": "revised",
+      "rationale": "Use the recognizable food name; retain explanation in source note.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 138,
+      "id": "mal.technician.5bb8663a59a0ab23",
+      "previousID": "mal.technician.5bb8663a59a0ab23",
+      "lemma": "목욕",
+      "before": [
+        "bath",
+        "bathing"
+      ],
+      "after": [
+        "bath",
+        "bathing"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: bath, bathing\nSource: https://en.wiktionary.org/wiki/목욕#Korean · NIKL level A, frequency rank 3808",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 139,
+      "id": "mal.technician.1f1beae9f8d94d83",
+      "previousID": "mal.technician.1f1beae9f8d94d83",
+      "lemma": "전화번호",
+      "before": [
+        "telephone number"
+      ],
+      "after": [
+        "telephone number"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: telephone number\nSource: https://en.wiktionary.org/wiki/전화번호#Korean · NIKL level A, frequency rank 3836",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 140,
+      "id": "mal.technician.f96e908cb35504ad",
+      "previousID": "mal.technician.f96e908cb35504ad",
+      "lemma": "감사하다",
+      "before": [
+        "be thankful",
+        "to be thankful"
+      ],
+      "after": [
+        "be thankful",
+        "be grateful",
+        "thank"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to be thankful\nSource: https://en.wiktionary.org/wiki/감사하다#Korean · NIKL level A, frequency rank 3847",
+      "decision": "revised",
+      "rationale": "Include common English equivalents; thank is a common verbal translation.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 141,
+      "id": "mal.technician.9c05a2842a2c7ff5",
+      "previousID": "mal.technician.9c05a2842a2c7ff5",
+      "lemma": "지갑",
+      "before": [
+        "wallet",
+        "purse"
+      ],
+      "after": [
+        "wallet",
+        "purse"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: wallet, purse\nSource: https://en.wiktionary.org/wiki/지갑#Korean · NIKL level A, frequency rank 3888",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 142,
+      "id": "mal.technician.2c98015060c90f53",
+      "previousID": "mal.technician.2c98015060c90f53",
+      "lemma": "친절하다",
+      "before": [
+        "be kind",
+        "to be kind",
+        "be cordial",
+        "to be cordial"
+      ],
+      "after": [
+        "be kind",
+        "be friendly",
+        "be cordial"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to be kind, to be cordial\nSource: https://en.wiktionary.org/wiki/친절하다#Korean · NIKL level A, frequency rank 3894",
+      "decision": "revised",
+      "rationale": "Remove repetitive infinitives; add common translation.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 143,
+      "id": "mal.technician.ca6e33085ae30988",
+      "previousID": "mal.technician.ca6e33085ae30988",
+      "lemma": "저거",
+      "before": [
+        "that thing"
+      ],
+      "after": [
+        "that thing"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: that thing\nSource: https://en.wiktionary.org/wiki/저거#Korean · NIKL level A, frequency rank 4015",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 144,
+      "id": "mal.technician.f53aa08b8bbb51d3",
+      "previousID": "mal.technician.f53aa08b8bbb51d3",
+      "lemma": "걸어오다",
+      "before": [
+        "To walk",
+        "come on foot",
+        "to come on foot",
+        "come by walking",
+        "to come by walking"
+      ],
+      "after": [
+        "come on foot",
+        "walk here",
+        "walk to the speaker"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: To walk, to come on foot, to come by walking.\nSource: https://en.wiktionary.org/wiki/걸어오다#Korean · NIKL level A, frequency rank 4041",
+      "decision": "revised",
+      "rationale": "Lead with the motion-toward-speaker sense, distinct from 걸어가다.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/걸어오다#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 145,
+      "id": "mal.technician.96b2b91360f44c80",
+      "previousID": "mal.technician.96b2b91360f44c80",
+      "lemma": "모자",
+      "before": [
+        "hat",
+        "cap"
+      ],
+      "after": [
+        "hat",
+        "cap"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: hat, cap\nSource: https://en.wiktionary.org/wiki/모자#Korean · NIKL level A, frequency rank 4059",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 146,
+      "id": "mal.technician.52203c5c59772d4e",
+      "previousID": "mal.technician.52203c5c59772d4e",
+      "lemma": "소파",
+      "before": [
+        "sofa"
+      ],
+      "after": [
+        "sofa"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: sofa\nSource: https://en.wiktionary.org/wiki/소파#Korean · NIKL level A, frequency rank 4073",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 147,
+      "id": "mal.technician.5cd6b38c94e38d30",
+      "previousID": "mal.technician.5cd6b38c94e38d30",
+      "lemma": "스무",
+      "before": [
+        "twenty (of something)"
+      ],
+      "after": [
+        "twenty"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "before a counter",
+      "sourceEvidence": "Source sense: twenty (of something)\nSource: https://en.wiktionary.org/wiki/스무#Korean · NIKL level A, frequency rank 4078",
+      "decision": "revised",
+      "rationale": "Expose the native numeral determiner use.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/스무#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 148,
+      "id": "mal.technician.f62aca39b0cfaf96",
+      "previousID": "mal.technician.f62aca39b0cfaf96",
+      "lemma": "역",
+      "before": [
+        "(railway, subway) station"
+      ],
+      "after": [
+        "train station",
+        "subway station",
+        "station"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "rail transport",
+      "sourceEvidence": "Source sense: (railway, subway) station\nSource: https://en.wiktionary.org/wiki/역#Korean · NIKL level A, frequency rank 4087",
+      "decision": "revised",
+      "rationale": "Clarify the station sense.",
+      "referencesConsulted": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=70724&nation=eng"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 149,
+      "id": "mal.technician.41356e801d5a0a80",
+      "previousID": "mal.technician.41356e801d5a0a80",
+      "lemma": "인사하다",
+      "before": [
+        "greet",
+        "to greet"
+      ],
+      "after": [
+        "greet",
+        "say hello"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to greet\nSource: https://en.wiktionary.org/wiki/인사하다#Korean · NIKL level A, frequency rank 4096",
+      "decision": "revised",
+      "rationale": "Use idiomatic greeting equivalents.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 150,
+      "id": "mal.technician.a11c077b4c6e02f4",
+      "previousID": "mal.technician.a11c077b4c6e02f4",
+      "lemma": "여권",
+      "before": [
+        "passport"
+      ],
+      "after": [
+        "passport"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: passport\nSource: https://en.wiktionary.org/wiki/여권#Korean · NIKL level A, frequency rank 4142",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    }
+  ],
+  "limitations": "Gloss/cue editorial pass, not complete linguistic verification. All entries remain draft."
+}

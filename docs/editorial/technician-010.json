@@ -1,0 +1,549 @@
+{
+  "bank": "technician",
+  "batch": 10,
+  "date": "2026-09-30",
+  "baseContentVersion": 11,
+  "contentVersion": 12,
+  "scope": "English-gloss review of positions 226–250 in bank order",
+  "sourceSHA256": "f8e7dc045ec536d29fd3724606c7a456dd72573c81507f7fa6b3b0c92c6c4964",
+  "resultSHA256": "df2faa17dea8c9464a2d7a280555b0f68340ef710e618e288e25ba79a73b04ab",
+  "entries": [
+    {
+      "position": 226,
+      "id": "mal.technician.c282d74ff2150251",
+      "previousID": "mal.technician.c282d74ff2150251",
+      "lemma": "닭고기",
+      "before": [
+        "chicken (meat)"
+      ],
+      "after": [
+        "chicken",
+        "chicken meat"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "as food",
+      "sourceEvidence": "Source sense: chicken (meat)\nSource: https://en.wiktionary.org/wiki/닭고기#Korean · NIKL level A, frequency rank 7478",
+      "decision": "revised",
+      "rationale": "Move food disambiguation into cue.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 227,
+      "id": "mal.technician.bc93c8db8c874ac1",
+      "previousID": "mal.technician.bc93c8db8c874ac1",
+      "lemma": "숟가락",
+      "before": [
+        "spoon (eating utensil)"
+      ],
+      "after": [
+        "spoon"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: spoon (eating utensil)\nSource: https://en.wiktionary.org/wiki/숟가락#Korean · NIKL level A, frequency rank 7561",
+      "decision": "revised",
+      "rationale": "Remove explanatory prose.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 228,
+      "id": "mal.technician.e5a548f28eb027eb",
+      "previousID": "mal.technician.e5a548f28eb027eb",
+      "lemma": "요일",
+      "before": [
+        "day of the week"
+      ],
+      "after": [
+        "day of the week"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: day of the week\nSource: https://en.wiktionary.org/wiki/요일#Korean · NIKL level A, frequency rank 7586",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 229,
+      "id": "mal.technician.7ab1a8c81ac80fd5",
+      "previousID": "mal.technician.7ab1a8c81ac80fd5",
+      "lemma": "질문하다",
+      "before": [
+        "ask a question",
+        "to ask a question"
+      ],
+      "after": [
+        "ask a question",
+        "question"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to ask a question\nSource: https://en.wiktionary.org/wiki/질문하다#Korean · NIKL level A, frequency rank 7634",
+      "decision": "revised",
+      "rationale": "Remove duplicated infinitive.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 230,
+      "id": "mal.technician.296fbc973f67572b",
+      "previousID": "mal.technician.296fbc973f67572b",
+      "lemma": "치약",
+      "before": [
+        "toothpaste"
+      ],
+      "after": [
+        "toothpaste"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: toothpaste\nSource: https://en.wiktionary.org/wiki/치약#Korean · NIKL level A, frequency rank 7649",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 231,
+      "id": "mal.technician.5c7f74ce75a3b228",
+      "previousID": "mal.technician.5c7f74ce75a3b228",
+      "lemma": "금요일",
+      "before": [
+        "Friday"
+      ],
+      "after": [
+        "Friday"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: Friday\nSource: https://en.wiktionary.org/wiki/금요일#Korean · NIKL level A, frequency rank 7714",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 232,
+      "id": "mal.technician.e12ad3b472da5fc2",
+      "previousID": "mal.technician.e12ad3b472da5fc2",
+      "lemma": "바나나",
+      "before": [
+        "banana"
+      ],
+      "after": [
+        "banana"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: banana\nSource: https://en.wiktionary.org/wiki/바나나#Korean · NIKL level A, frequency rank 7773",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 233,
+      "id": "mal.technician.60cc7a4fbc7d71b0",
+      "previousID": "mal.technician.60cc7a4fbc7d71b0",
+      "lemma": "수요일",
+      "before": [
+        "Wednesday"
+      ],
+      "after": [
+        "Wednesday"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: Wednesday\nSource: https://en.wiktionary.org/wiki/수요일#Korean · NIKL level A, frequency rank 7818",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 234,
+      "id": "mal.technician.3e16320d0f7963e2",
+      "previousID": "mal.technician.3e16320d0f7963e2",
+      "lemma": "운전하다",
+      "before": [
+        "drive",
+        "to drive"
+      ],
+      "after": [
+        "drive"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to drive\nSource: https://en.wiktionary.org/wiki/운전하다#Korean · NIKL level A, frequency rank 7864",
+      "decision": "revised",
+      "rationale": "Remove duplicated infinitive.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 235,
+      "id": "mal.technician.e816f16fbb89067c",
+      "previousID": "mal.technician.e816f16fbb89067c",
+      "lemma": "노트",
+      "before": [
+        "notebook"
+      ],
+      "after": [
+        "notebook"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: notebook\nSource: https://en.wiktionary.org/wiki/노트#Korean · NIKL level A, frequency rank 8031",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 236,
+      "id": "mal.technician.25bb9ce22d5d38d0",
+      "previousID": "mal.technician.25bb9ce22d5d38d0",
+      "lemma": "딸기",
+      "before": [
+        "strawberry"
+      ],
+      "after": [
+        "strawberry"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: strawberry\nSource: https://en.wiktionary.org/wiki/딸기#Korean · NIKL level A, frequency rank 8053",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 237,
+      "id": "mal.technician.50e7cf9c918b28a4",
+      "previousID": "mal.technician.50e7cf9c918b28a4",
+      "lemma": "초콜릿",
+      "before": [
+        "chocolate"
+      ],
+      "after": [
+        "chocolate"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: chocolate\nSource: https://en.wiktionary.org/wiki/초콜릿#Korean · NIKL level A, frequency rank 8235",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 238,
+      "id": "mal.technician.2731c32fdb8081ce",
+      "previousID": "mal.technician.2731c32fdb8081ce",
+      "lemma": "피자",
+      "before": [
+        "pizza (baked Italian dish)"
+      ],
+      "after": [
+        "pizza"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: pizza (baked Italian dish)\nSource: https://en.wiktionary.org/wiki/피자#Korean · NIKL level A, frequency rank 8264",
+      "decision": "revised",
+      "rationale": "Remove dish description.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 239,
+      "id": "mal.technician.60fd171f347f56fa",
+      "previousID": "mal.technician.60fd171f347f56fa",
+      "lemma": "노란색",
+      "before": [
+        "yellow (color)"
+      ],
+      "after": [
+        "yellow"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "color",
+      "sourceEvidence": "Source sense: yellow (color)\nSource: https://en.wiktionary.org/wiki/노란색#Korean · NIKL level A, frequency rank 8329",
+      "decision": "revised",
+      "rationale": "Move color disambiguation to cue.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 240,
+      "id": "mal.technician.5aa75bf8b5126f15",
+      "previousID": "mal.technician.5aa75bf8b5126f15",
+      "lemma": "달러",
+      "before": [
+        "dollar"
+      ],
+      "after": [
+        "dollar"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: dollar\nSource: https://en.wiktionary.org/wiki/달러#Korean · NIKL level A, frequency rank 8336",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 241,
+      "id": "mal.technician.4b16c9e0b51d21ac",
+      "previousID": "mal.technician.4b16c9e0b51d21ac",
+      "lemma": "만",
+      "before": [
+        "ten thousand"
+      ],
+      "after": [
+        "ten thousand"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: ten thousand\nSource: https://en.wiktionary.org/wiki/만#Korean · NIKL level A, frequency rank 8359",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 242,
+      "id": "mal.technician.e5f16bb2771fc16c",
+      "previousID": "mal.technician.e5f16bb2771fc16c",
+      "lemma": "칫솔",
+      "before": [
+        "toothbrush"
+      ],
+      "after": [
+        "toothbrush"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: toothbrush\nSource: https://en.wiktionary.org/wiki/칫솔#Korean · NIKL level A, frequency rank 8589",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 243,
+      "id": "mal.technician.b0566453f9d2b29c",
+      "previousID": "mal.technician.b0566453f9d2b29c",
+      "lemma": "포도",
+      "before": [
+        "grape (fruit)"
+      ],
+      "after": [
+        "grape",
+        "grapes"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: grape (fruit)\nSource: https://en.wiktionary.org/wiki/포도#Korean · NIKL level A, frequency rank 8603",
+      "decision": "revised",
+      "rationale": "Remove redundant fruit explanation; accept singular and plural.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 244,
+      "id": "mal.technician.ca17cb4e3652dbe3",
+      "previousID": "mal.technician.ca17cb4e3652dbe3",
+      "lemma": "공중전화",
+      "before": [
+        "payphone",
+        "public telephone"
+      ],
+      "after": [
+        "payphone",
+        "public telephone"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: payphone, public telephone\nSource: https://en.wiktionary.org/wiki/공중전화#Korean · NIKL level A, frequency rank 8672",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 245,
+      "id": "mal.technician.e9551424883a2154",
+      "previousID": "mal.technician.e9551424883a2154",
+      "lemma": "배부르다",
+      "before": [
+        "be full (satisfied, in relation to eating)",
+        "to be full (satisfied, in relation to eating)"
+      ],
+      "after": [
+        "be full",
+        "feel full"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": "after eating",
+      "sourceEvidence": "Source sense: to be full (satisfied, in relation to eating)\nSource: https://en.wiktionary.org/wiki/배부르다#Korean · NIKL level A, frequency rank 8757",
+      "decision": "revised",
+      "rationale": "Move eating context to cue; remove duplicate infinitive.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 246,
+      "id": "mal.technician.796d91b2bbc812f3",
+      "previousID": "mal.technician.796d91b2bbc812f3",
+      "lemma": "샤워",
+      "before": [
+        "shower (device for bathing)"
+      ],
+      "after": [
+        "shower"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: shower (device for bathing)\nSource: https://en.wiktionary.org/wiki/샤워#Korean · NIKL level A, frequency rank 8795",
+      "decision": "revised",
+      "rationale": "Remove parenthetical device explanation; shower covers the sourced noun.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 247,
+      "id": "mal.technician.f00c7ef52d71ed3c",
+      "previousID": "mal.technician.f00c7ef52d71ed3c",
+      "lemma": "세탁기",
+      "before": [
+        "washing machine"
+      ],
+      "after": [
+        "washing machine"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: washing machine\nSource: https://en.wiktionary.org/wiki/세탁기#Korean · NIKL level A, frequency rank 8809",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 248,
+      "id": "mal.technician.bf58aa21a9fd892e",
+      "previousID": "mal.technician.bf58aa21a9fd892e",
+      "lemma": "남동생",
+      "before": [
+        "little brother",
+        "younger brother"
+      ],
+      "after": [
+        "younger brother",
+        "little brother"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: little brother, younger brother\nSource: https://en.wiktionary.org/wiki/남동생#Korean · NIKL level A, frequency rank 9077",
+      "decision": "revised",
+      "rationale": "Lead with age-neutral younger brother.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 249,
+      "id": "mal.technician.c307389b38b5f9fb",
+      "previousID": "mal.technician.c307389b38b5f9fb",
+      "lemma": "도착",
+      "before": [
+        "arrival"
+      ],
+      "after": [
+        "arrival"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: arrival\nSource: https://en.wiktionary.org/wiki/도착#Korean · NIKL level A, frequency rank 9103",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 250,
+      "id": "mal.technician.9a12fe811e22a745",
+      "previousID": "mal.technician.9a12fe811e22a745",
+      "lemma": "쇼핑",
+      "before": [
+        "shopping"
+      ],
+      "after": [
+        "shopping"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: shopping\nSource: https://en.wiktionary.org/wiki/쇼핑#Korean · NIKL level A, frequency rank 9202",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    }
+  ],
+  "limitations": "Gloss/cue editorial pass, not complete linguistic verification. All entries remain draft."
+}

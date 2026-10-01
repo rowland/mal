@@ -340,6 +340,63 @@ private func fixture(version: Int = 1) -> Bank {
     #expect(try store.importBank(current, builtIn: true).unchanged)
 }
 
+private struct TechnicianSenseReplacement: Decodable {
+    let lemma: String
+    let oldID: String
+    let newID: String
+    let oldEnglish: [String]
+    let newEnglish: [String]
+    let oldCue: String?
+    let newCue: String?
+    let oldPOS: PartOfSpeech?
+    let newPOS: PartOfSpeech?
+}
+private struct TechnicianSenseReplacementLedger: Decodable {
+    let replacements: [TechnicianSenseReplacement]
+}
+
+@Test @MainActor func technicianSenseReplacementsRetireWithoutTransferringProgress() throws {
+    let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+    let current = try BankCodec.decode(String(contentsOf: root.appendingPathComponent("Sources/MalApp/Resources/Banks/technician.yaml"), encoding: .utf8), allowBuiltIn: true)
+    let ledger = try JSONDecoder().decode(TechnicianSenseReplacementLedger.self,
+        from: Data(contentsOf: root.appendingPathComponent("docs/editorial/technician-sense-replacements.json")))
+    #expect(ledger.replacements.count == 14)
+    var prior = current
+    prior.contentVersion -= 1
+    for replacement in ledger.replacements {
+        let index = try #require(prior.entries.firstIndex { $0.id == replacement.newID })
+        #expect(prior.entries[index].lemma == replacement.lemma)
+        #expect(prior.entries[index].english == replacement.newEnglish)
+        #expect(prior.entries[index].promptCue == replacement.newCue)
+        if let newPOS = replacement.newPOS { #expect(prior.entries[index].partOfSpeech == newPOS) }
+        if let oldPOS = replacement.oldPOS { prior.entries[index].partOfSpeech = oldPOS }
+        prior.entries[index].id = replacement.oldID
+        prior.entries[index].english = replacement.oldEnglish
+        prior.entries[index].promptCue = replacement.oldCue
+    }
+    let store = try temporaryStore(); defer { store.close() }
+    _ = try store.importBank(prior, builtIn: true)
+    for (sequence, replacement) in ledger.replacements.enumerated() {
+        let oldKey = CardKey(replacement.oldID, .koreanToEnglish, .writeIn)
+        _ = try store.grade(oldKey, answer: replacement.oldEnglish[0], correct: true,
+            at: Date(timeIntervalSince1970: 1_000), sequence: sequence + 1)
+        try store.addAlias(entryID: replacement.oldID, direction: oldKey.direction, answer: "personal old sense")
+    }
+    let statesBefore = try store.states()
+    let historyBefore = try store.history().map(\.id)
+    let summary = try store.importBank(current, builtIn: true)
+    #expect(summary.added == ledger.replacements.count && summary.retired == ledger.replacements.count)
+    #expect(try store.states() == statesBefore)
+    #expect(try store.history().map(\.id) == historyBefore)
+    for replacement in ledger.replacements {
+        #expect(try store.states()[CardKey(replacement.newID, .koreanToEnglish, .writeIn)] == nil)
+        #expect(try store.aliases(direction: .koreanToEnglish)[replacement.oldID] == ["personal old sense"])
+        #expect(try store.aliases(direction: .koreanToEnglish)[replacement.newID] == nil)
+        #expect(!current.entries.contains { $0.id == replacement.oldID })
+    }
+    #expect(try store.importBank(current, builtIn: true).unchanged)
+}
+
 private struct NoviceSenseReplacement: Decodable {
     let lemma: String
     let oldID: String
@@ -411,4 +468,7 @@ private struct NoviceSenseReplacementLedger: Decodable {
     #expect(FormPractice.accepted(photo, direction: .englishToKorean, style: .polite, pool: bank.entries).contains("찍어요"))
     let hot = try #require(bank.entries.first { $0.lemma == "뜨겁다" })
     #expect(!FormPractice.accepted(hot, direction: .englishToKorean, style: .polite, pool: bank.entries).contains("더워요"))
+    let diligently = try #require(bank.entries.first { $0.lemma == "열심히" })
+    #expect(diligently.english.first == "diligently")
+    #expect(Grader.isCorrect("hard", entry: diligently, direction: .koreanToEnglish))
 }

@@ -1,0 +1,472 @@
+{
+  "bank": "mal.technician",
+  "batch": 3,
+  "date": "2026-09-30",
+  "baseContentVersion": 4,
+  "contentVersion": 5,
+  "scope": "Sequential English gloss/sense editorial review, positions 51–75; nine revised, 16 retained",
+  "sourceSHA256": "38e9f42d139920db7e4379c6cde0f3cdc2ce74774472f0358f49fb7ff4e1e0f9",
+  "resultSHA256": "f7f8246554a4b3048b1b3a9c1090579715e06cab11bc887c57ec5cddcd9e13fb",
+  "entries": [
+    {
+      "position": 51,
+      "id": "mal.technician.82ba3c8a9cc5e8e7",
+      "lemma": "우유",
+      "before": [
+        "cow's milk"
+      ],
+      "after": [
+        "milk",
+        "cow's milk"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: cow's milk\nSource: https://en.wiktionary.org/wiki/우유#Korean · NIKL level A, frequency rank 2065",
+      "decision": "revised",
+      "rationale": "Prefer the ordinary English term while retaining the literal description.",
+      "referencesConsulted": [
+        "https://krdict.korean.go.kr/eng/dicMarinerSearch/search?mainSearchWord=%EC%9A%B0%EC%9C%A0"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 52,
+      "id": "mal.technician.2c86e142bb5de123",
+      "lemma": "표",
+      "before": [
+        "ticket"
+      ],
+      "after": [
+        "ticket"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: ticket\nSource: https://en.wiktionary.org/wiki/표#Korean · NIKL level A, frequency rank 2090",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 53,
+      "id": "mal.technician.01d6b0eef6022702",
+      "lemma": "십일월",
+      "before": [
+        "November"
+      ],
+      "after": [
+        "November"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: November\nSource: https://en.wiktionary.org/wiki/십일월#Korean · NIKL level A, frequency rank 2099",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 54,
+      "id": "mal.technician.5e3f0dbea6f797a2",
+      "lemma": "거울",
+      "before": [
+        "mirror (a reflecting surface)"
+      ],
+      "after": [
+        "mirror"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: mirror (a reflecting surface)\nSource: https://en.wiktionary.org/wiki/거울#Korean · NIKL level A, frequency rank 2109",
+      "decision": "revised",
+      "rationale": "Remove explanatory prose from a simple furniture/object gloss.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 55,
+      "id": "mal.technician.affa7c9f08d19fbc",
+      "lemma": "빵",
+      "before": [
+        "bread"
+      ],
+      "after": [
+        "bread"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: bread\nSource: https://en.wiktionary.org/wiki/빵#Korean · NIKL level A, frequency rank 2130",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 56,
+      "id": "mal.technician.c133657768059ec7",
+      "lemma": "위험하다",
+      "before": [
+        "dangerous"
+      ],
+      "after": [
+        "dangerous"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: dangerous\nSource: https://en.wiktionary.org/wiki/위험하다#Korean · NIKL level A, frequency rank 2141",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 57,
+      "id": "mal.technician.63f2d97c54697c35",
+      "lemma": "졸업하다",
+      "before": [
+        "graduate",
+        "to graduate"
+      ],
+      "after": [
+        "graduate",
+        "to graduate"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: to graduate\nSource: https://en.wiktionary.org/wiki/졸업하다#Korean · NIKL level A, frequency rank 2145",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 58,
+      "id": "mal.technician.581e29e858f0abd7",
+      "lemma": "부엌",
+      "before": [
+        "kitchen"
+      ],
+      "after": [
+        "kitchen"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: kitchen\nSource: https://en.wiktionary.org/wiki/부엌#Korean · NIKL level A, frequency rank 2159",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 59,
+      "id": "mal.technician.17e6a4cb1f32cb52",
+      "lemma": "북쪽",
+      "before": [
+        "north",
+        "northward"
+      ],
+      "after": [
+        "north",
+        "northward"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: north, northward\nSource: https://en.wiktionary.org/wiki/북쪽#Korean · NIKL level A, frequency rank 2179",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 60,
+      "id": "mal.technician.0faa9e3b2ed2c59b",
+      "lemma": "쇠고기",
+      "before": [
+        "beef"
+      ],
+      "after": [
+        "beef"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: beef\nSource: https://en.wiktionary.org/wiki/쇠고기#Korean · NIKL level A, frequency rank 2181",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 61,
+      "id": "mal.technician.0a041f8d2cb217c4",
+      "lemma": "주",
+      "before": [
+        "week (unit of time)"
+      ],
+      "after": [
+        "week (unit of time)"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: week (unit of time)\nSource: https://en.wiktionary.org/wiki/주#Korean · NIKL level A, frequency rank 2183",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 62,
+      "id": "mal.technician.fabc7500b767b9a6",
+      "lemma": "카드",
+      "before": [
+        "card"
+      ],
+      "after": [
+        "card"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: card\nSource: https://en.wiktionary.org/wiki/카드#Korean · NIKL level A, frequency rank 2184",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 63,
+      "id": "mal.technician.af44583ba0fbc563",
+      "lemma": "도와주다",
+      "before": [
+        "help, to assist, to aid, to give (somebody) a hand",
+        "to help, to assist, to aid, to give (somebody) a hand"
+      ],
+      "after": [
+        "help",
+        "assist",
+        "give a hand"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: to help, to assist, to aid, to give (somebody) a hand\nSource: https://en.wiktionary.org/wiki/도와주다#Korean · NIKL level A, frequency rank 2194",
+      "decision": "revised",
+      "rationale": "Split source prose into natural answer alternatives.",
+      "referencesConsulted": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=70744&nation=eng"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 64,
+      "id": "mal.technician.8797fda9eb91dd5d",
+      "lemma": "신발",
+      "before": [
+        "shoes",
+        "footwear",
+        "footgear"
+      ],
+      "after": [
+        "shoes",
+        "footwear",
+        "footgear"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: shoes, footwear, footgear\nSource: https://en.wiktionary.org/wiki/신발#Korean · NIKL level A, frequency rank 2199",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 65,
+      "id": "mal.technician.cde6f6ef20ff34aa",
+      "lemma": "김치",
+      "before": [
+        "kimchi, a dish made with fermented, seasoned vegetables"
+      ],
+      "after": [
+        "kimchi"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: kimchi, a dish made with fermented, seasoned vegetables\nSource: https://en.wiktionary.org/wiki/김치#Korean · NIKL level A, frequency rank 2207",
+      "decision": "revised",
+      "rationale": "Keep the dish name as the answer; preparation description stays in source notes.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 66,
+      "id": "mal.technician.d44e0d870e4d60d1",
+      "lemma": "날다",
+      "before": [
+        "fly (travel through the air)",
+        "to fly (travel through the air)"
+      ],
+      "after": [
+        "fly"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: to fly (travel through the air)\nSource: https://en.wiktionary.org/wiki/날다#Korean · NIKL level A, frequency rank 2230",
+      "decision": "revised",
+      "rationale": "Omit the explanatory travel-through-air parenthesis.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 67,
+      "id": "mal.technician.29142145f447f0bb",
+      "lemma": "설탕",
+      "before": [
+        "sugar"
+      ],
+      "after": [
+        "sugar"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: sugar\nSource: https://en.wiktionary.org/wiki/설탕#Korean · NIKL level A, frequency rank 2236",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 68,
+      "id": "mal.technician.09015b02c4eded74",
+      "lemma": "싸다",
+      "before": [
+        "be cheap",
+        "to be cheap",
+        "be inexpensive",
+        "to be inexpensive"
+      ],
+      "after": [
+        "cheap",
+        "inexpensive",
+        "be cheap",
+        "be inexpensive"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: to be cheap, to be inexpensive\nSource: https://en.wiktionary.org/wiki/싸다#Korean · NIKL level A, frequency rank 2240",
+      "decision": "revised",
+      "rationale": "Lead with natural adjective forms and retain predicative alternatives.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 69,
+      "id": "mal.technician.3f323c093ddc5f22",
+      "lemma": "점심",
+      "before": [
+        "lunch",
+        "luncheon"
+      ],
+      "after": [
+        "lunch",
+        "luncheon"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: lunch, luncheon\nSource: https://en.wiktionary.org/wiki/점심#Korean · NIKL level A, frequency rank 2256",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 70,
+      "id": "mal.technician.ef2e7f516cddd65e",
+      "lemma": "칼",
+      "before": [
+        "knife",
+        "sword"
+      ],
+      "after": [
+        "knife",
+        "sword"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: knife, sword\nSource: https://en.wiktionary.org/wiki/칼#Korean · NIKL level A, frequency rank 2273",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 71,
+      "id": "mal.technician.0e32fbeb0e349b97",
+      "lemma": "슬프다",
+      "before": [
+        "be sad",
+        "to be sad"
+      ],
+      "after": [
+        "be sad",
+        "to be sad"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: to be sad\nSource: https://en.wiktionary.org/wiki/슬프다#Korean · NIKL level A, frequency rank 2284",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 72,
+      "id": "mal.technician.cc1b3ecfe1542f1d",
+      "lemma": "의자",
+      "before": [
+        "chair",
+        "sofa"
+      ],
+      "after": [
+        "chair"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: chair, sofa\nSource: https://en.wiktionary.org/wiki/의자#Korean · NIKL level A, frequency rank 2292",
+      "decision": "revised",
+      "rationale": "Remove sofa as an overbroad English answer; NIKL describes a chair/stool.",
+      "referencesConsulted": [
+        "https://krdict.korean.go.kr/m/eng/searchResultView?ParaSenseSeq=&ParaWordNo=71121&fileNo=&imgCount=&multiMediaSeq=&nation=eng&searchKind=&searchKindValue=&shortenUrl=&studySeq="
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 73,
+      "id": "mal.technician.e30b3041a554b5bd",
+      "lemma": "카메라",
+      "before": [
+        "camera (a device for taking still or moving pictures)"
+      ],
+      "after": [
+        "camera"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: camera (a device for taking still or moving pictures)\nSource: https://en.wiktionary.org/wiki/카메라#Korean · NIKL level A, frequency rank 2298",
+      "decision": "revised",
+      "rationale": "Remove dictionary-definition prose.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 74,
+      "id": "mal.technician.d33a88bf29d030b5",
+      "lemma": "토요일",
+      "before": [
+        "Saturday"
+      ],
+      "after": [
+        "Saturday"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: Saturday\nSource: https://en.wiktionary.org/wiki/토요일#Korean · NIKL level A, frequency rank 2327",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 75,
+      "id": "mal.technician.4ed930cf4cb6f369",
+      "lemma": "경찰관",
+      "before": [
+        "policeman",
+        "police officer"
+      ],
+      "after": [
+        "police officer",
+        "policeman"
+      ],
+      "promptCue": null,
+      "sourceEvidence": "Source sense: policeman, police officer\nSource: https://en.wiktionary.org/wiki/경찰관#Korean · NIKL level A, frequency rank 2329",
+      "decision": "revised",
+      "rationale": "Prefer gender-neutral modern English while retaining the source equivalent.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    }
+  ],
+  "limitations": "Full Korean forms and metadata have not been independently verified; all entries remain draft. No sense was replaced or stable ID changed."
+}

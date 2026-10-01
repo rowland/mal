@@ -1,0 +1,424 @@
+{
+  "bank": "mal.technician",
+  "batch": 1,
+  "date": "2026-09-30",
+  "baseContentVersion": 2,
+  "contentVersion": 3,
+  "scope": "Sequential English-gloss and sense editorial review, positions 1–25; three revisions and 22 retained",
+  "sourceSHA256": "2d3b1387cb76fef2c94422edba065957f469a141cd5a77feca29b51d92e22850",
+  "resultSHA256": "a7553b04b8afe56b7b5b46d39c723623dd4040ffcb9f81a3d49be20cda1d07ad",
+  "entries": [
+    {
+      "position": 1,
+      "id": "mal.technician.f7ba52afe16b7159",
+      "lemma": "둘째",
+      "before": [
+        "second"
+      ],
+      "after": [
+        "second"
+      ],
+      "sourceEvidence": "Source sense: second, next after the first; the ordinal number for two\nSource: https://en.wiktionary.org/wiki/둘째#Korean · NIKL level A, frequency rank 1660",
+      "promptCue": "ordinal number",
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 2,
+      "id": "mal.technician.62cf029cb3c0f9fa",
+      "lemma": "무겁다",
+      "before": [
+        "heavy",
+        "be heavy"
+      ],
+      "after": [
+        "heavy",
+        "be heavy"
+      ],
+      "sourceEvidence": "Source sense: to be heavy\nSource: https://en.wiktionary.org/wiki/무겁다#Korean · NIKL level A, frequency rank 1662",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 3,
+      "id": "mal.technician.e2f6c18342c3a958",
+      "lemma": "침대",
+      "before": [
+        "bed"
+      ],
+      "after": [
+        "bed"
+      ],
+      "sourceEvidence": "Source sense: bed (furniture)\nSource: https://en.wiktionary.org/wiki/침대#Korean · NIKL level A, frequency rank 1670",
+      "promptCue": "furniture",
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 4,
+      "id": "mal.technician.7271015b194ddc68",
+      "lemma": "권",
+      "before": [
+        "volume",
+        "volumes",
+        "counter for books"
+      ],
+      "after": [
+        "book counter",
+        "volume",
+        "volumes"
+      ],
+      "sourceEvidence": "Source sense: volumes\nSource: https://en.wiktionary.org/wiki/권#Korean · NIKL level A, frequency rank 1672",
+      "promptCue": "book counter",
+      "decision": "revised",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 5,
+      "id": "mal.technician.f4e0b4578d32a651",
+      "lemma": "잎",
+      "before": [
+        "leaf",
+        "leaves"
+      ],
+      "after": [
+        "leaf",
+        "leaves"
+      ],
+      "sourceEvidence": "Source sense: leaf, leafage, foliage\nSource: https://en.wiktionary.org/wiki/잎#Korean · NIKL level A, frequency rank 1680",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 6,
+      "id": "mal.technician.58a865966cadd5f5",
+      "lemma": "스포츠",
+      "before": [
+        "sports",
+        "sport"
+      ],
+      "after": [
+        "sports",
+        "sport"
+      ],
+      "sourceEvidence": "Source sense: sports\nSource: https://en.wiktionary.org/wiki/스포츠#Korean · NIKL level A, frequency rank 1689",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 7,
+      "id": "mal.technician.3bdf54b318237214",
+      "lemma": "저기",
+      "before": [
+        "over there"
+      ],
+      "after": [
+        "over there"
+      ],
+      "sourceEvidence": "Source sense: over there\nSource: https://en.wiktionary.org/wiki/저기#Korean · NIKL level A, frequency rank 1692",
+      "promptCue": "distant location",
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 8,
+      "id": "mal.technician.b994638c975587d9",
+      "lemma": "교회",
+      "before": [
+        "church"
+      ],
+      "after": [
+        "church"
+      ],
+      "sourceEvidence": "Source sense: church\nSource: https://en.wiktionary.org/wiki/교회#Korean · NIKL level A, frequency rank 1708",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 9,
+      "id": "mal.technician.a4a64ed21961fe9f",
+      "lemma": "화",
+      "before": [
+        "anger"
+      ],
+      "after": [
+        "anger"
+      ],
+      "sourceEvidence": "Source sense: anger; rage\nSource: https://en.wiktionary.org/wiki/화#Korean · NIKL level A, frequency rank 1714",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 10,
+      "id": "mal.technician.115afd7b3a6f6fbc",
+      "lemma": "일월",
+      "before": [
+        "January"
+      ],
+      "after": [
+        "January"
+      ],
+      "sourceEvidence": "Source sense: January\nSource: https://en.wiktionary.org/wiki/일월#Korean · NIKL level A, frequency rank 1725",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 11,
+      "id": "mal.technician.dfdd0aef5abca430",
+      "lemma": "첫째",
+      "before": [
+        "first"
+      ],
+      "after": [
+        "first"
+      ],
+      "sourceEvidence": "Source sense: first (ordinal number)\nSource: https://en.wiktionary.org/wiki/첫째#Korean · NIKL level A, frequency rank 1728",
+      "promptCue": "ordinal number",
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 12,
+      "id": "mal.technician.b56740953ca70b9f",
+      "lemma": "도서관",
+      "before": [
+        "library"
+      ],
+      "after": [
+        "library"
+      ],
+      "sourceEvidence": "Source sense: library\nSource: https://en.wiktionary.org/wiki/도서관#Korean · NIKL level A, frequency rank 1732",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 13,
+      "id": "mal.technician.f178353a3414292f",
+      "lemma": "선물",
+      "before": [
+        "gift",
+        "present"
+      ],
+      "after": [
+        "gift",
+        "present"
+      ],
+      "sourceEvidence": "Source sense: gift; present\nSource: https://en.wiktionary.org/wiki/선물#Korean · NIKL level A, frequency rank 1741",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 14,
+      "id": "mal.technician.c5509f139efd3123",
+      "lemma": "아주머니",
+      "before": [
+        "ma'am",
+        "madam"
+      ],
+      "after": [
+        "middle-aged woman",
+        "ma'am",
+        "madam"
+      ],
+      "sourceEvidence": "Source sense: ma'am, madam\nSource: https://en.wiktionary.org/wiki/아주머니#Korean · NIKL level A, frequency rank 1743",
+      "promptCue": null,
+      "decision": "revised",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 15,
+      "id": "mal.technician.29fc6d3236a0d957",
+      "lemma": "위험",
+      "before": [
+        "danger",
+        "risk"
+      ],
+      "after": [
+        "danger",
+        "risk"
+      ],
+      "sourceEvidence": "Source sense: danger\nSource: https://en.wiktionary.org/wiki/위험#Korean · NIKL level A, frequency rank 1744",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 16,
+      "id": "mal.technician.aea29def7c56d44d",
+      "lemma": "지하",
+      "before": [
+        "underground",
+        "below ground"
+      ],
+      "after": [
+        "underground",
+        "below ground"
+      ],
+      "sourceEvidence": "Source sense: below ground\nSource: https://en.wiktionary.org/wiki/지하#Korean · NIKL level A, frequency rank 1745",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 17,
+      "id": "mal.technician.93fc0a6f1c6e38b6",
+      "lemma": "지하철",
+      "before": [
+        "subway",
+        "metro"
+      ],
+      "after": [
+        "subway",
+        "metro"
+      ],
+      "sourceEvidence": "Source sense: subway\nSource: https://en.wiktionary.org/wiki/지하철#Korean · NIKL level A, frequency rank 1755",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 18,
+      "id": "mal.technician.40c89d44d5fe3a00",
+      "lemma": "사무실",
+      "before": [
+        "office"
+      ],
+      "after": [
+        "office"
+      ],
+      "sourceEvidence": "Source sense: office\nSource: https://en.wiktionary.org/wiki/사무실#Korean · NIKL level A, frequency rank 1781",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 19,
+      "id": "mal.technician.f262b3f794b02acb",
+      "lemma": "이월",
+      "before": [
+        "February"
+      ],
+      "after": [
+        "February"
+      ],
+      "sourceEvidence": "Source sense: February\nSource: https://en.wiktionary.org/wiki/이월#Korean · NIKL level A, frequency rank 1783",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 20,
+      "id": "mal.technician.8f752ae6765039bb",
+      "lemma": "일요일",
+      "before": [
+        "Sunday"
+      ],
+      "after": [
+        "Sunday"
+      ],
+      "sourceEvidence": "Source sense: Sunday\nSource: https://en.wiktionary.org/wiki/일요일#Korean · NIKL level A, frequency rank 1784",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 21,
+      "id": "mal.technician.b501a4546fc82ebd",
+      "lemma": "강",
+      "before": [
+        "river"
+      ],
+      "after": [
+        "river"
+      ],
+      "sourceEvidence": "Source sense: river\nSource: https://en.wiktionary.org/wiki/강#Korean · NIKL level A, frequency rank 1812",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 22,
+      "id": "mal.technician.8bb422a44f138187",
+      "lemma": "비싸다",
+      "before": [
+        "expensive",
+        "be expensive"
+      ],
+      "after": [
+        "expensive",
+        "be expensive"
+      ],
+      "sourceEvidence": "Source sense: expensive\nSource: https://en.wiktionary.org/wiki/비싸다#Korean · NIKL level A, frequency rank 1819",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 23,
+      "id": "mal.technician.4346412fbe4c27d6",
+      "lemma": "왼쪽",
+      "before": [
+        "left",
+        "left side"
+      ],
+      "after": [
+        "left",
+        "left side"
+      ],
+      "sourceEvidence": "Source sense: left side\nSource: https://en.wiktionary.org/wiki/왼쪽#Korean · NIKL level A, frequency rank 1822",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 24,
+      "id": "mal.technician.53e362eeb81d4a05",
+      "lemma": "택시",
+      "before": [
+        "taxi",
+        "cab"
+      ],
+      "after": [
+        "taxi",
+        "cab"
+      ],
+      "sourceEvidence": "Source sense: taxi\nSource: https://en.wiktionary.org/wiki/택시#Korean · NIKL level A, frequency rank 1824",
+      "promptCue": null,
+      "decision": "retained",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    },
+    {
+      "position": 25,
+      "id": "mal.technician.78e93cad81f79663",
+      "lemma": "시원하다",
+      "before": [
+        "be refreshing",
+        "to be refreshing"
+      ],
+      "after": [
+        "cool",
+        "refreshing",
+        "be cool",
+        "be refreshing"
+      ],
+      "sourceEvidence": "Source sense: to be refreshing\nSource: https://en.wiktionary.org/wiki/시원하다#Korean · NIKL level A, frequency rank 1844",
+      "promptCue": null,
+      "decision": "revised",
+      "reviewStatus": "English gloss/sense editorial review; full-entry verification remains draft"
+    }
+  ],
+  "consultedReferences": [
+    "https://en.wiktionary.org/wiki/권#Korean",
+    "https://en.wiktionary.org/wiki/시원하다#Korean",
+    "https://en.wiktionary.org/wiki/아주머니#Korean"
+  ],
+  "limitations": "Original source notes retained. Full Korean forms, metadata, and release-level verification not completed; all entries remain draft."
+}

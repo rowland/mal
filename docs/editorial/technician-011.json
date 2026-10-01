@@ -1,0 +1,574 @@
+{
+  "bank": "technician",
+  "batch": 11,
+  "date": "2026-09-30",
+  "baseContentVersion": 12,
+  "contentVersion": 13,
+  "scope": "English-gloss review of positions 251–275 in bank order",
+  "sourceSHA256": "df2faa17dea8c9464a2d7a280555b0f68340ef710e618e288e25ba79a73b04ab",
+  "resultSHA256": "88b9ea36f63f6089e91d7fb2717c80ec6ec51a296a63a267d57f496952cd7edb",
+  "entries": [
+    {
+      "position": 251,
+      "id": "mal.technician.6dad53d3997317ae",
+      "previousID": "mal.technician.6dad53d3997317ae",
+      "lemma": "스키",
+      "before": [
+        "ski, skis (a pair of long flat runners designed for gliding over snow)"
+      ],
+      "after": [
+        "ski",
+        "skis"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: ski, skis (a pair of long flat runners designed for gliding over snow)\nSource: https://en.wiktionary.org/wiki/스키#Korean · NIKL level A, frequency rank 9214",
+      "decision": "revised",
+      "rationale": "Remove equipment explanation.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 252,
+      "id": "mal.technician.aa482c53371f3851",
+      "previousID": "mal.technician.aa482c53371f3851",
+      "lemma": "열",
+      "before": [
+        "ten"
+      ],
+      "after": [
+        "ten"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "native Korean number",
+      "sourceEvidence": "Source sense: ten\nSource: https://en.wiktionary.org/wiki/열#Korean · NIKL level A, frequency rank 9266",
+      "decision": "revised",
+      "rationale": "Distinguish from Sino-Korean 십.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 253,
+      "id": "mal.technician.f4d7bd61f4721d53",
+      "previousID": "mal.technician.f4d7bd61f4721d53",
+      "lemma": "운동화",
+      "before": [
+        "sneakers",
+        "trainers",
+        "athletic shoes"
+      ],
+      "after": [
+        "sneakers",
+        "trainers",
+        "athletic shoes"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: sneakers, trainers, athletic shoes\nSource: https://en.wiktionary.org/wiki/운동화#Korean · NIKL level A, frequency rank 9285",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 254,
+      "id": "mal.technician.b47b01ead745874c",
+      "previousID": "mal.technician.b47b01ead745874c",
+      "lemma": "짜다",
+      "before": [
+        "be salty",
+        "to be salty",
+        "be saline",
+        "to be saline"
+      ],
+      "after": [
+        "be salty",
+        "salty"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to be salty, to be saline\nSource: https://en.wiktionary.org/wiki/짜다#Korean · NIKL level A, frequency rank 9356",
+      "decision": "revised",
+      "rationale": "Remove uncommon saline gloss and duplicate infinitive.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 255,
+      "id": "mal.technician.d1e39b5a797c7803",
+      "previousID": "mal.technician.d1e39b5a797c7803",
+      "lemma": "초등학교",
+      "before": [
+        "elementary school",
+        "primary school"
+      ],
+      "after": [
+        "elementary school",
+        "primary school"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: elementary school, primary school\nSource: https://en.wiktionary.org/wiki/초등학교#Korean · NIKL level A, frequency rank 9369",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 256,
+      "id": "mal.technician.492ff73a250cb66e",
+      "previousID": "mal.technician.492ff73a250cb66e",
+      "lemma": "공휴일",
+      "before": [
+        "public holiday",
+        "legal holiday"
+      ],
+      "after": [
+        "public holiday",
+        "legal holiday"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: public holiday, legal holiday\nSource: https://en.wiktionary.org/wiki/공휴일#Korean · NIKL level A, frequency rank 9466",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 257,
+      "id": "mal.technician.e871a244e07f60cb",
+      "previousID": "mal.technician.e871a244e07f60cb",
+      "lemma": "마흔",
+      "before": [
+        "forty"
+      ],
+      "after": [
+        "forty"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "native Korean number",
+      "sourceEvidence": "Source sense: forty\nSource: https://en.wiktionary.org/wiki/마흔#Korean · NIKL level A, frequency rank 9548",
+      "decision": "revised",
+      "rationale": "Distinguish from Sino-Korean 사십.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 258,
+      "id": "mal.technician.d7bdd18671a87cfc",
+      "previousID": "mal.technician.d7bdd18671a87cfc",
+      "lemma": "볼펜",
+      "before": [
+        "ballpoint pen"
+      ],
+      "after": [
+        "ballpoint pen"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: ballpoint pen\nSource: https://en.wiktionary.org/wiki/볼펜#Korean · NIKL level A, frequency rank 9583",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 259,
+      "id": "mal.technician.a65d8491c84e221f",
+      "previousID": "mal.technician.a65d8491c84e221f",
+      "lemma": "빨간색",
+      "before": [
+        "red (color)"
+      ],
+      "after": [
+        "red"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "color",
+      "sourceEvidence": "Source sense: red (color)\nSource: https://en.wiktionary.org/wiki/빨간색#Korean · NIKL level A, frequency rank 9605",
+      "decision": "revised",
+      "rationale": "Move color context to cue.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 260,
+      "id": "mal.technician.1b0d4f2e019716f9",
+      "previousID": "mal.technician.1b0d4f2e019716f9",
+      "lemma": "스물",
+      "before": [
+        "twenty (independently, without a classifier)"
+      ],
+      "after": [
+        "twenty"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "native Korean number, standalone form",
+      "sourceEvidence": "Source sense: twenty (independently, without a classifier)\nSource: https://en.wiktionary.org/wiki/스물#Korean · NIKL level A, frequency rank 10126",
+      "decision": "revised",
+      "rationale": "Distinguish 스물 from attributive 스무.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/스물#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 261,
+      "id": "mal.technician.3785b08cd8f1fd9d",
+      "previousID": "mal.technician.3785b08cd8f1fd9d",
+      "lemma": "청바지",
+      "before": [
+        "jeans (denim trousers)"
+      ],
+      "after": [
+        "jeans"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: jeans (denim trousers)\nSource: https://en.wiktionary.org/wiki/청바지#Korean · NIKL level A, frequency rank 10274",
+      "decision": "revised",
+      "rationale": "Remove clothing explanation.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 262,
+      "id": "mal.technician.566b786f55092e1d",
+      "previousID": "mal.technician.566b786f55092e1d",
+      "lemma": "핸드폰",
+      "before": [
+        "mobile phone"
+      ],
+      "after": [
+        "mobile phone"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: mobile phone\nSource: https://en.wiktionary.org/wiki/핸드폰#Korean · NIKL level A, frequency rank 10334",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 263,
+      "id": "mal.technician.ec32e4ce635793d1",
+      "previousID": "mal.technician.ec32e4ce635793d1",
+      "lemma": "휴지통",
+      "before": [
+        "wastebasket",
+        "garbage can"
+      ],
+      "after": [
+        "wastebasket",
+        "garbage can"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: wastebasket; garbage can\nSource: https://en.wiktionary.org/wiki/휴지통#Korean · NIKL level A, frequency rank 10353",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 264,
+      "id": "mal.technician.a94855b78a906343",
+      "previousID": "mal.technician.a94855b78a906343",
+      "lemma": "칠판",
+      "before": [
+        "blackboard",
+        "chalkboard"
+      ],
+      "after": [
+        "blackboard",
+        "chalkboard"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: blackboard, chalkboard\nSource: https://en.wiktionary.org/wiki/칠판#Korean · NIKL level A, frequency rank 10833",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 265,
+      "id": "mal.technician.4b6d50f2b67b415b",
+      "previousID": "mal.technician.4b6d50f2b67b415b",
+      "lemma": "구",
+      "before": [
+        "nine"
+      ],
+      "after": [
+        "nine"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: nine\nSource: https://en.wiktionary.org/wiki/구#Korean · NIKL level A, frequency rank 10999",
+      "decision": "revised",
+      "rationale": "Distinguish from native 아홉.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 266,
+      "id": "mal.technician.c49490f269f10e25",
+      "previousID": "mal.technician.c49490f269f10e25",
+      "lemma": "목요일",
+      "before": [
+        "Thursday"
+      ],
+      "after": [
+        "Thursday"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: Thursday\nSource: https://en.wiktionary.org/wiki/목요일#Korean · NIKL level A, frequency rank 11099",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 267,
+      "id": "mal.technician.e3c73ab34a7f2336",
+      "previousID": "mal.technician.e3c73ab34a7f2336",
+      "lemma": "지우개",
+      "before": [
+        "eraser",
+        "rubber"
+      ],
+      "after": [
+        "eraser",
+        "rubber"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: eraser, rubber\nSource: https://en.wiktionary.org/wiki/지우개#Korean · NIKL level A, frequency rank 11421",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 268,
+      "id": "mal.technician.6de7b4faffba35e5",
+      "previousID": "mal.technician.6de7b4faffba35e5",
+      "lemma": "사",
+      "before": [
+        "four"
+      ],
+      "after": [
+        "four"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "Sino-Korean number",
+      "sourceEvidence": "Source sense: four\nSource: https://en.wiktionary.org/wiki/사#Korean · NIKL level A, frequency rank 11837",
+      "decision": "revised",
+      "rationale": "Distinguish from native 넷.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 269,
+      "id": "mal.technician.50fb6e0864dfdc5e",
+      "previousID": "mal.technician.50fb6e0864dfdc5e",
+      "lemma": "수영장",
+      "before": [
+        "swimming pool",
+        "swimming baths"
+      ],
+      "after": [
+        "swimming pool",
+        "swimming baths"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: swimming pool, swimming baths\nSource: https://en.wiktionary.org/wiki/수영장#Korean · NIKL level A, frequency rank 11896",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 270,
+      "id": "mal.technician.7bdc876b1e528345",
+      "previousID": "mal.technician.7bdc876b1e528345",
+      "lemma": "갈비",
+      "before": [
+        "ribs"
+      ],
+      "after": [
+        "ribs"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: ribs\nSource: https://en.wiktionary.org/wiki/갈비#Korean · NIKL level A, frequency rank 12246",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 271,
+      "id": "mal.technician.38038eae2469ab5e",
+      "previousID": "mal.technician.38038eae2469ab5e",
+      "lemma": "서른",
+      "before": [
+        "thirty"
+      ],
+      "after": [
+        "thirty"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "native Korean number",
+      "sourceEvidence": "Source sense: thirty\nSource: https://en.wiktionary.org/wiki/서른#Korean · NIKL level A, frequency rank 12580",
+      "decision": "revised",
+      "rationale": "Distinguish from Sino-Korean 삼십.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 272,
+      "id": "mal.technician.756b1daac86ebfac",
+      "previousID": "mal.technician.756b1daac86ebfac",
+      "lemma": "아홉",
+      "before": [
+        "nine"
+      ],
+      "after": [
+        "nine"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": "native Korean number",
+      "sourceEvidence": "Source sense: nine\nSource: https://en.wiktionary.org/wiki/아홉#Korean · NIKL level A, frequency rank 12669",
+      "decision": "revised",
+      "rationale": "Distinguish from Sino-Korean 구.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/열#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 273,
+      "id": "mal.technician.1e5f9a0f1160d7ac",
+      "previousID": "mal.technician.1e5f9a0f1160d7ac",
+      "lemma": "장미",
+      "before": [
+        "rose (plant or flower), rosebush"
+      ],
+      "after": [
+        "rose",
+        "rosebush"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: rose (plant or flower), rosebush\nSource: https://en.wiktionary.org/wiki/장미#Korean · NIKL level A, frequency rank 12818",
+      "decision": "revised",
+      "rationale": "Separate valid alternatives.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 274,
+      "id": "mal.technician.7c801ac0ad8550c1",
+      "previousID": "mal.technician.7c801ac0ad8550c1",
+      "lemma": "파란색",
+      "before": [
+        "blue (color)"
+      ],
+      "after": [
+        "blue"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "color",
+      "sourceEvidence": "Source sense: blue (color)\nSource: https://en.wiktionary.org/wiki/파란색#Korean · NIKL level A, frequency rank 12965",
+      "decision": "revised",
+      "rationale": "Move color context to cue.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 275,
+      "id": "mal.technician.8babec7cf563b7e8",
+      "previousID": "mal.technician.8babec7cf563b7e8",
+      "lemma": "비빔밥",
+      "before": [
+        "bibimbap"
+      ],
+      "after": [
+        "bibimbap"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: bibimbap\nSource: https://en.wiktionary.org/wiki/비빔밥#Korean · NIKL level A, frequency rank 13411",
+      "decision": "retained",
+      "rationale": "Existing concise gloss retained.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    }
+  ],
+  "limitations": "Gloss/cue editorial pass, not complete linguistic verification. All entries remain draft."
+}

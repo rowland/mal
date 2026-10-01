@@ -22,6 +22,26 @@ private struct Seeded: RandomNumberGenerator {
     #expect(!Grader.isCorrect("reddish", entry: red, direction: .koreanToEnglish))
     #expect(Grader.isCorrect("붉다", entry: red, direction: .englishToKorean, aliases: ["붉다"]))
 }
+@Test func concisePredicatesKeepOptionalInfinitivesWithoutChangingNouns() {
+    let appear = entry("appear", "나타나다", "appear", .verb)
+    let oldAppear = entry("old-appear", "나타나다", "to appear", .verb)
+    for value in ["appear", "to appear", " TO APPEAR "] {
+        #expect(Grader.isCorrect(value, entry: appear, direction: .koreanToEnglish))
+        #expect(Grader.isCorrect(value, entry: oldAppear, direction: .koreanToEnglish))
+    }
+    let hungry = entry("hungry", "배고프다", "be hungry", .adjective)
+    #expect(Grader.isCorrect("to be hungry", entry: hungry, direction: .koreanToEnglish))
+    let young = entry("young", "어리다", "young", .adjective)
+    #expect(!Grader.isCorrect("to young", entry: young, direction: .koreanToEnglish))
+    let society = entry("society", "사회", "society")
+    #expect(!Grader.isCorrect("to society", entry: society, direction: .koreanToEnglish))
+    for value in ["appeared", "appearing", "not appear", "to disappear"] {
+        #expect(!Grader.isCorrect(value, entry: appear, direction: .koreanToEnglish))
+    }
+    #expect(!Grader.isCorrect("to materialize", entry: appear, direction: .koreanToEnglish, aliases: ["materialize"]))
+    var rng = Seeded()
+    #expect(ChoiceBuilder.choices(target: appear, pool: [appear, oldAppear, society], direction: .koreanToEnglish, count: 4, using: &rng).count == 2)
+}
 @Test(arguments: [4, 5, 6, 8, 10]) func requestedChoices(_ count: Int) {
     let pool = (0..<30).map { entry("\($0)", "단어\($0)", "word \($0)") }
     var rng = Seeded()
@@ -49,6 +69,16 @@ private struct Seeded: RandomNumberGenerator {
     let other = entry("other", "붉다", "crimson", .adjective)
     var rng = Seeded()
     #expect(ChoiceBuilder.choices(target: red, pool: [red, other], direction: .englishToKorean, count: 8, aliases: [red.id: ["붉다"]], using: &rng).count == 1)
+}
+@Test func englishChoiceAlternativesKeepCanonicalSelection() {
+    let diligent = Entry(id: "diligent", lemma: "열심히", partOfSpeech: .adverb,
+        english: ["diligently", "hard", "with dedication", "enthusiastically"])
+    let samePrimary = Entry(id: "other", lemma: "부지런히", partOfSpeech: .adverb,
+        english: ["diligently", "steadily", "hard"])
+    #expect(ChoiceBuilder.englishAlternatives(for: "diligently", in: [diligent, samePrimary]) ==
+        ["hard", "with dedication", "enthusiastically", "steadily"])
+    #expect(ChoiceBuilder.englishAlternatives(for: "unknown", in: [diligent]) == [])
+    #expect(Grader.isCorrect("diligently", entry: diligent, direction: .koreanToEnglish))
 }
 @Test func promptCueIsNotRequiredInAnswer() {
     var hat = entry("hat", "쓰다", "wear", .verb); hat.promptCue = "a hat"

@@ -1,0 +1,636 @@
+{
+  "bank": "technician",
+  "batch": 15,
+  "date": "2026-10-01",
+  "baseContentVersion": 16,
+  "contentVersion": 17,
+  "scope": "English-gloss review, positions 351–375",
+  "sourceSHA256": "b6563fa30a095b3c5b53c454a2ea1a90d827a6b5ecc06d9f05ccf5e395676269",
+  "resultSHA256": "076038b86d719596da81c3f21640a3726a9f0a35de1b5a866aea165a65200894",
+  "entries": [
+    {
+      "position": 351,
+      "id": "mal.technician.geul-text",
+      "previousID": "mal.technician.b8eb9917adb8fd16",
+      "lemma": "글",
+      "before": [
+        "letters",
+        "cultivation",
+        "knowledge"
+      ],
+      "after": [
+        "writing",
+        "text",
+        "a piece of writing"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: letters, cultivation, knowledge\nSource: https://en.wiktionary.org/wiki/글#Korean · NIKL level B, frequency rank 252",
+      "decision": "sense replacement",
+      "rationale": "Select the written-text sense rather than the original mixed letters/cultivation/knowledge gloss; old ID retired.",
+      "referencesConsulted": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=59226&nation=eng"
+      ],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 352,
+      "id": "mal.technician.55108a8f2d5ad3c8",
+      "previousID": "mal.technician.55108a8f2d5ad3c8",
+      "lemma": "세상",
+      "before": [
+        "world"
+      ],
+      "after": [
+        "world"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: world\nSource: https://en.wiktionary.org/wiki/세상#Korean · NIKL level B, frequency rank 258",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 353,
+      "id": "mal.technician.6989af26d77b0128",
+      "previousID": "mal.technician.6989af26d77b0128",
+      "lemma": "두다",
+      "before": [
+        "put",
+        "to put"
+      ],
+      "after": [
+        "put"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to put\nSource: https://en.wiktionary.org/wiki/두다#Korean · NIKL level B, frequency rank 266",
+      "decision": "revised",
+      "rationale": "Remove redundant infinitive display variants; grading already accepts optional to.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 354,
+      "id": "mal.technician.42c1ca3edf97bf35",
+      "previousID": "mal.technician.42c1ca3edf97bf35",
+      "lemma": "즉",
+      "before": [
+        "that is to say",
+        "in other words",
+        "i.e"
+      ],
+      "after": [
+        "that is",
+        "in other words",
+        "that is to say"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: that is to say, in other words, i.e.\nSource: https://en.wiktionary.org/wiki/즉#Korean · NIKL level B, frequency rank 267",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 355,
+      "id": "mal.technician.32d72191ac11ae26",
+      "previousID": "mal.technician.32d72191ac11ae26",
+      "lemma": "문학",
+      "before": [
+        "literature"
+      ],
+      "after": [
+        "literature"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: literature\nSource: https://en.wiktionary.org/wiki/문학#Korean · NIKL level B, frequency rank 272",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 356,
+      "id": "mal.technician.44ca1919c9641c28",
+      "previousID": "mal.technician.44ca1919c9641c28",
+      "lemma": "지방",
+      "before": [
+        "rural areas",
+        "the country"
+      ],
+      "after": [
+        "the provinces",
+        "countryside",
+        "rural areas"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "outside the capital",
+      "sourceEvidence": "Source sense: rural areas; the country\nSource: https://en.wiktionary.org/wiki/지방#Korean · NIKL level B, frequency rank 275",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": "Retains the provincial/country sense; 지방 can also mean a region. The unrelated fat homonym is not taught by this card.",
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 357,
+      "id": "mal.technician.ece4276b4fd89f2e",
+      "previousID": "mal.technician.ece4276b4fd89f2e",
+      "lemma": "환경",
+      "before": [
+        "environment",
+        "as a general concept"
+      ],
+      "after": [
+        "environment",
+        "surroundings"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: environment, as a general concept\nSource: https://en.wiktionary.org/wiki/환경#Korean · NIKL level B, frequency rank 281",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 358,
+      "id": "mal.technician.984b021fbc3b7069",
+      "previousID": "mal.technician.984b021fbc3b7069",
+      "lemma": "남다",
+      "before": [
+        "remain",
+        "to remain",
+        "be left over",
+        "to be left over"
+      ],
+      "after": [
+        "remain",
+        "be left over"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to remain, to be left over\nSource: https://en.wiktionary.org/wiki/남다#Korean · NIKL level B, frequency rank 290",
+      "decision": "revised",
+      "rationale": "Remove redundant infinitive display variants; grading already accepts optional to.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 359,
+      "id": "mal.technician.57d5bb92450dac30",
+      "previousID": "mal.technician.57d5bb92450dac30",
+      "lemma": "부분",
+      "before": [
+        "portion",
+        "section",
+        "part"
+      ],
+      "after": [
+        "portion",
+        "section",
+        "part"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: portion; section; part\nSource: https://en.wiktionary.org/wiki/부분#Korean · NIKL level B, frequency rank 291",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 360,
+      "id": "mal.technician.9eec2817d4b8d132",
+      "previousID": "mal.technician.9eec2817d4b8d132",
+      "lemma": "변화",
+      "before": [
+        "change",
+        "variation"
+      ],
+      "after": [
+        "change",
+        "variation"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: change; variation\nSource: https://en.wiktionary.org/wiki/변화#Korean · NIKL level B, frequency rank 294",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 361,
+      "id": "mal.technician.e9903028caa67eee",
+      "previousID": "mal.technician.e9903028caa67eee",
+      "lemma": "뜻",
+      "before": [
+        "meaning",
+        "sense",
+        "significance"
+      ],
+      "after": [
+        "meaning",
+        "sense",
+        "significance"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: meaning, sense, significance\nSource: https://en.wiktionary.org/wiki/뜻#Korean · NIKL level B, frequency rank 296",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 362,
+      "id": "mal.technician.a134a1d695bf8923",
+      "previousID": "mal.technician.a134a1d695bf8923",
+      "lemma": "떨어지다",
+      "before": [
+        "fall",
+        "to fall",
+        "tumble",
+        "drop"
+      ],
+      "after": [
+        "fall",
+        "tumble",
+        "drop"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to fall; tumble; drop\nSource: https://en.wiktionary.org/wiki/떨어지다#Korean · NIKL level B, frequency rank 299",
+      "decision": "revised",
+      "rationale": "Remove redundant infinitive display variants; grading already accepts optional to.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 363,
+      "id": "mal.technician.3dd2e4e6b70c6f42",
+      "previousID": "mal.technician.3dd2e4e6b70c6f42",
+      "lemma": "관하다",
+      "before": [
+        "be in relation to, with regard to",
+        "to be in relation to, with regard to"
+      ],
+      "after": [
+        "concern",
+        "relate to",
+        "be about"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": "a topic",
+      "sourceEvidence": "Source sense: to be in relation to, with regard to\nSource: https://en.wiktionary.org/wiki/관하다#Korean · NIKL level B, frequency rank 301",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/관하다#Korean"
+      ],
+      "usageNote": "Commonly used in ~에 관해/관하여 and ~에 관한. Standalone finite-form practice needs separate review.",
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 364,
+      "id": "mal.technician.8d741ac9f5eebccf",
+      "previousID": "mal.technician.8d741ac9f5eebccf",
+      "lemma": "그냥",
+      "before": [
+        "simply",
+        "just like that",
+        "just as it is"
+      ],
+      "after": [
+        "simply",
+        "just like that",
+        "just as it is"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: simply; just like that; just as it is.\nSource: https://en.wiktionary.org/wiki/그냥#Korean · NIKL level B, frequency rank 303",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 365,
+      "id": "mal.technician.b71bbf2d364f2e2c",
+      "previousID": "mal.technician.b71bbf2d364f2e2c",
+      "lemma": "나누다",
+      "before": [
+        "divide (into pieces); to split up",
+        "to divide (into pieces); to split up"
+      ],
+      "after": [
+        "divide",
+        "split",
+        "split up"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": "into parts",
+      "sourceEvidence": "Source sense: to divide (into pieces); to split up\nSource: https://en.wiktionary.org/wiki/나누다#Korean · NIKL level B, frequency rank 304",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 366,
+      "id": "mal.technician.f7c06612c5681717",
+      "previousID": "mal.technician.f7c06612c5681717",
+      "lemma": "이용하다",
+      "before": [
+        "use",
+        "to use",
+        "utilize",
+        "to utilize"
+      ],
+      "after": [
+        "use",
+        "utilize"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to use; to utilize\nSource: https://en.wiktionary.org/wiki/이용하다#Korean · NIKL level B, frequency rank 305",
+      "decision": "revised",
+      "rationale": "Remove redundant infinitive display variants; grading already accepts optional to.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 367,
+      "id": "mal.technician.ac6c6690335d46be",
+      "previousID": "mal.technician.ac6c6690335d46be",
+      "lemma": "거의",
+      "before": [
+        "almost",
+        "nearly"
+      ],
+      "after": [
+        "almost",
+        "nearly"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: almost, nearly\nSource: https://en.wiktionary.org/wiki/거의#Korean · NIKL level B, frequency rank 306",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 368,
+      "id": "mal.technician.63f4d10da6e8114c",
+      "previousID": "mal.technician.63f4d10da6e8114c",
+      "lemma": "중심",
+      "before": [
+        "center",
+        "core"
+      ],
+      "after": [
+        "center",
+        "centre",
+        "core"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: center, core\nSource: https://en.wiktionary.org/wiki/중심#Korean · NIKL level B, frequency rank 308",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 369,
+      "id": "mal.technician.6d734e9f795225b5",
+      "previousID": "mal.technician.6d734e9f795225b5",
+      "lemma": "활동",
+      "before": [
+        "activity"
+      ],
+      "after": [
+        "activity"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: activity\nSource: https://en.wiktionary.org/wiki/활동#Korean · NIKL level B, frequency rank 309",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 370,
+      "id": "mal.technician.9956009eead06d3e",
+      "previousID": "mal.technician.9956009eead06d3e",
+      "lemma": "관심",
+      "before": [
+        "interest in",
+        "or inclination to",
+        "a topic or activity"
+      ],
+      "after": [
+        "interest"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "in a subject or activity",
+      "sourceEvidence": "Source sense: interest in, or inclination to, a topic or activity\nSource: https://en.wiktionary.org/wiki/관심#Korean · NIKL level B, frequency rank 312",
+      "decision": "revised",
+      "rationale": "Repair a definition mistakenly split into fragments; reject bare topic/activity fragments.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 371,
+      "id": "mal.technician.e416d916c774dfce",
+      "previousID": "mal.technician.e416d916c774dfce",
+      "lemma": "역시",
+      "before": [
+        "too",
+        "also"
+      ],
+      "after": [
+        "too",
+        "also"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: too, also\nSource: https://en.wiktionary.org/wiki/역시#Korean · NIKL level B, frequency rank 313",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 372,
+      "id": "mal.technician.ae-child",
+      "previousID": "mal.technician.d291277158d4ff38",
+      "lemma": "애",
+      "before": [
+        "guy, person (usually rather young)"
+      ],
+      "after": [
+        "kid",
+        "child"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "colloquial",
+      "sourceEvidence": "Source sense: guy, person (usually rather young)\nSource: https://en.wiktionary.org/wiki/애#Korean · NIKL level B, frequency rank 315",
+      "decision": "sense replacement",
+      "rationale": "Select the colloquial child sense instead of the broader young-person address sense.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/애#Korean"
+      ],
+      "usageNote": "Colloquial shortening of 아이. The unrelated effort/anxiety homonym is not included.",
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 373,
+      "id": "mal.technician.f35021626dcc7ddb",
+      "previousID": "mal.technician.f35021626dcc7ddb",
+      "lemma": "광고",
+      "before": [
+        "advertisement",
+        "advertising in general"
+      ],
+      "after": [
+        "advertisement",
+        "advertising",
+        "ad"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: advertisement, advertising in general\nSource: https://en.wiktionary.org/wiki/광고#Korean · NIKL level B, frequency rank 316",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 374,
+      "id": "mal.technician.6306988aad9e9b2b",
+      "previousID": "mal.technician.6306988aad9e9b2b",
+      "lemma": "정신",
+      "before": [
+        "mind",
+        "consciousness",
+        "pneuma",
+        "psyche"
+      ],
+      "after": [
+        "mind",
+        "consciousness",
+        "spirit"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: mind; consciousness; pneuma; psyche\nSource: https://en.wiktionary.org/wiki/정신#Korean · NIKL level B, frequency rank 319",
+      "decision": "revised",
+      "rationale": "Remove the obscure pneuma/psyche wording from the study display.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 375,
+      "id": "mal.technician.325153c619a74d9b",
+      "previousID": "mal.technician.325153c619a74d9b",
+      "lemma": "이르다",
+      "before": [
+        "arrive at a place or time",
+        "to arrive at a place or time"
+      ],
+      "after": [
+        "reach",
+        "arrive at"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": "a place or time",
+      "sourceEvidence": "Source sense: to arrive at a place or time\nSource: https://en.wiktionary.org/wiki/이르다#Korean · NIKL level B, frequency rank 320",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    }
+  ],
+  "limitations": "Assistant gloss/sense editing only; no measured sense-frequency ranking or full Korean-form verification. Existing Korean forms preserved."
+}

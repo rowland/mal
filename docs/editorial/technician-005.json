@@ -1,0 +1,586 @@
+{
+  "bank": "mal.technician",
+  "batch": 5,
+  "date": "2026-09-30",
+  "baseContentVersion": 6,
+  "contentVersion": 7,
+  "scope": "Sequential English gloss/sense editorial review, positions 101–125; two new-ID sense replacements, 11 other revisions, 12 retained",
+  "sourceSHA256": "39def0be5e487b1517281f1d594fc397391948d7121a347164f16cc6c23ff735",
+  "resultSHA256": "f1083c36820b03b97bcf83bc7f0d5cd40e2c37fa76a4d48cc6edf219c298c98b",
+  "entries": [
+    {
+      "position": 101,
+      "id": "mal.technician.0180de5dc5a85387",
+      "previousID": "mal.technician.0180de5dc5a85387",
+      "lemma": "테이블",
+      "before": [
+        "table (furniture)"
+      ],
+      "after": [
+        "table"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: table (furniture)\nSource: https://en.wiktionary.org/wiki/테이블#Korean · NIKL level A, frequency rank 2639",
+      "decision": "revised",
+      "rationale": "Remove furniture explanation from a simple answer.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 102,
+      "id": "mal.technician.6616a851e1394653",
+      "previousID": "mal.technician.6616a851e1394653",
+      "lemma": "피곤하다",
+      "before": [
+        "tired"
+      ],
+      "after": [
+        "tired"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: tired\nSource: https://en.wiktionary.org/wiki/피곤하다#Korean · NIKL level A, frequency rank 2641",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 103,
+      "id": "mal.technician.hanja-characters",
+      "previousID": "mal.technician.1ae1871e5b693768",
+      "lemma": "한자",
+      "before": [
+        "written Chinese language"
+      ],
+      "after": [
+        "Chinese characters",
+        "hanja",
+        "Chinese character"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: written Chinese language\nSource: https://en.wiktionary.org/wiki/한자#Korean · NIKL level A, frequency rank 2643",
+      "decision": "sense replacement",
+      "rationale": "Replace the written-Chinese-language sense with Korean-used Chinese characters; new stable ID.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/한자#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 104,
+      "id": "mal.technician.si-oclock",
+      "previousID": "mal.technician.915928c91b36efea",
+      "lemma": "시",
+      "before": [
+        "hour (time)"
+      ],
+      "after": [
+        "o’clock",
+        "o'clock"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "clock hour, after a number",
+      "sourceEvidence": "Source sense: hour (time)\nSource: https://en.wiktionary.org/wiki/시#Korean · NIKL level A, frequency rank 2657",
+      "decision": "sense replacement",
+      "rationale": "Replace duration-like hour gloss with the clock-time counter sense; new stable ID.",
+      "referencesConsulted": [
+        "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=65108&nation=eng&nationCode=6"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 105,
+      "id": "mal.technician.3ca240e71f47e95d",
+      "previousID": "mal.technician.3ca240e71f47e95d",
+      "lemma": "안경",
+      "before": [
+        "glasses",
+        "spectacles"
+      ],
+      "after": [
+        "glasses",
+        "spectacles"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: glasses, spectacles\nSource: https://en.wiktionary.org/wiki/안경#Korean · NIKL level A, frequency rank 2659",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 106,
+      "id": "mal.technician.b20f92b3310d496d",
+      "previousID": "mal.technician.b20f92b3310d496d",
+      "lemma": "약속하다",
+      "before": [
+        "promise",
+        "to promise"
+      ],
+      "after": [
+        "promise",
+        "to promise"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to promise\nSource: https://en.wiktionary.org/wiki/약속하다#Korean · NIKL level A, frequency rank 2660",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 107,
+      "id": "mal.technician.7e9864632223fb6b",
+      "previousID": "mal.technician.7e9864632223fb6b",
+      "lemma": "취미",
+      "before": [
+        "hobby"
+      ],
+      "after": [
+        "hobby"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: hobby\nSource: https://en.wiktionary.org/wiki/취미#Korean · NIKL level A, frequency rank 2671",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 108,
+      "id": "mal.technician.6db8e07c1925b4b2",
+      "previousID": "mal.technician.6db8e07c1925b4b2",
+      "lemma": "야구",
+      "before": [
+        "baseball (ball game)"
+      ],
+      "after": [
+        "baseball"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: baseball (ball game)\nSource: https://en.wiktionary.org/wiki/야구#Korean · NIKL level A, frequency rank 2688",
+      "decision": "revised",
+      "rationale": "Remove explanatory game parenthesis.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 109,
+      "id": "mal.technician.01dffdc95bc00465",
+      "previousID": "mal.technician.01dffdc95bc00465",
+      "lemma": "신다",
+      "before": [
+        "wear on one's feet",
+        "to wear on one's feet"
+      ],
+      "after": [
+        "wear shoes",
+        "put on shoes",
+        "wear on the feet"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": "shoes or socks",
+      "sourceEvidence": "Source sense: to wear on one's feet\nSource: https://en.wiktionary.org/wiki/신다#Korean · NIKL level A, frequency rank 2715",
+      "decision": "revised",
+      "rationale": "Make the footwear restriction explicit; bare wear would overgeneralize.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/신다#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 110,
+      "id": "mal.technician.560a87a9551f6082",
+      "previousID": "mal.technician.560a87a9551f6082",
+      "lemma": "죄송하다",
+      "before": [
+        "be sorry",
+        "to be sorry",
+        "feel apologetic",
+        "to feel apologetic"
+      ],
+      "after": [
+        "sorry",
+        "apologetic",
+        "be sorry"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to be sorry, to feel apologetic\nSource: https://en.wiktionary.org/wiki/죄송하다#Korean · NIKL level A, frequency rank 2724",
+      "decision": "revised",
+      "rationale": "Prefer concise apology alternatives.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 111,
+      "id": "mal.technician.f4b306d29396238d",
+      "previousID": "mal.technician.f4b306d29396238d",
+      "lemma": "생선",
+      "before": [
+        "fish (as food)"
+      ],
+      "after": [
+        "fish"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "as food",
+      "sourceEvidence": "Source sense: fish (as food)\nSource: https://en.wiktionary.org/wiki/생선#Korean · NIKL level A, frequency rank 2803",
+      "decision": "revised",
+      "rationale": "Keep the food sense separate from a live fish.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 112,
+      "id": "mal.technician.87b4cb276ddf1a10",
+      "previousID": "mal.technician.87b4cb276ddf1a10",
+      "lemma": "지우다",
+      "before": [
+        "erase",
+        "to erase",
+        "rub out",
+        "to rub out",
+        "wipe away",
+        "to wipe away"
+      ],
+      "after": [
+        "erase",
+        "rub out",
+        "wipe away"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to erase; to rub out; to wipe away\nSource: https://en.wiktionary.org/wiki/지우다#Korean · NIKL level A, frequency rank 2812",
+      "decision": "revised",
+      "rationale": "Remove duplicate infinitive variants while preserving the source actions.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 113,
+      "id": "mal.technician.11e2f17a4d1ccd73",
+      "previousID": "mal.technician.11e2f17a4d1ccd73",
+      "lemma": "셋째",
+      "before": [
+        "third"
+      ],
+      "after": [
+        "third"
+      ],
+      "partOfSpeechBefore": "other",
+      "partOfSpeechAfter": "other",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: third\nSource: https://en.wiktionary.org/wiki/셋째#Korean · NIKL level A, frequency rank 2834",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 114,
+      "id": "mal.technician.c874416970e56529",
+      "previousID": "mal.technician.c874416970e56529",
+      "lemma": "졸업",
+      "before": [
+        "graduation"
+      ],
+      "after": [
+        "graduation"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: graduation\nSource: https://en.wiktionary.org/wiki/졸업#Korean · NIKL level A, frequency rank 2845",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 115,
+      "id": "mal.technician.704aaf1f8d135f79",
+      "previousID": "mal.technician.704aaf1f8d135f79",
+      "lemma": "닭",
+      "before": [
+        "chicken"
+      ],
+      "after": [
+        "chicken"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: chicken\nSource: https://en.wiktionary.org/wiki/닭#Korean · NIKL level A, frequency rank 2857",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 116,
+      "id": "mal.technician.fe07446b128f4c71",
+      "previousID": "mal.technician.fe07446b128f4c71",
+      "lemma": "맥주",
+      "before": [
+        "beer"
+      ],
+      "after": [
+        "beer"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: beer\nSource: https://en.wiktionary.org/wiki/맥주#Korean · NIKL level A, frequency rank 2861",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 117,
+      "id": "mal.technician.3fa0fa764ca35c68",
+      "previousID": "mal.technician.3fa0fa764ca35c68",
+      "lemma": "돼지",
+      "before": [
+        "pig",
+        "swine"
+      ],
+      "after": [
+        "pig",
+        "swine"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: pig, swine\nSource: https://en.wiktionary.org/wiki/돼지#Korean · NIKL level A, frequency rank 2893",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 118,
+      "id": "mal.technician.8e5d17a364575717",
+      "previousID": "mal.technician.8e5d17a364575717",
+      "lemma": "수영",
+      "before": [
+        "swimming"
+      ],
+      "after": [
+        "swimming"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: swimming\nSource: https://en.wiktionary.org/wiki/수영#Korean · NIKL level A, frequency rank 2899",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 119,
+      "id": "mal.technician.6c09d27b6206eb37",
+      "previousID": "mal.technician.6c09d27b6206eb37",
+      "lemma": "잊어버리다",
+      "before": [
+        "forget",
+        "to forget",
+        "slip one's mind",
+        "to slip one's mind"
+      ],
+      "after": [
+        "forget",
+        "slip one’s mind",
+        "slip one's mind"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to forget; to slip one's mind\nSource: https://en.wiktionary.org/wiki/잊어버리다#Korean · NIKL level A, frequency rank 2905",
+      "decision": "revised",
+      "rationale": "Prefer concise alternatives; retain natural idiom spelling.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 120,
+      "id": "mal.technician.5187c71a22fda535",
+      "previousID": "mal.technician.5187c71a22fda535",
+      "lemma": "기차",
+      "before": [
+        "train"
+      ],
+      "after": [
+        "train"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: train\nSource: https://en.wiktionary.org/wiki/기차#Korean · NIKL level A, frequency rank 2919",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 121,
+      "id": "mal.technician.e082fd88ff4def66",
+      "previousID": "mal.technician.e082fd88ff4def66",
+      "lemma": "식탁",
+      "before": [
+        "dinner table"
+      ],
+      "after": [
+        "dining table",
+        "dinner table"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: dinner table\nSource: https://en.wiktionary.org/wiki/식탁#Korean · NIKL level A, frequency rank 2932",
+      "decision": "revised",
+      "rationale": "Use the usual furniture term alongside the source gloss.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/식탁#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 122,
+      "id": "mal.technician.0732e4dfb61af545",
+      "previousID": "mal.technician.0732e4dfb61af545",
+      "lemma": "공원",
+      "before": [
+        "park"
+      ],
+      "after": [
+        "park"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: park\nSource: https://en.wiktionary.org/wiki/공원#Korean · NIKL level A, frequency rank 2950",
+      "decision": "retained",
+      "rationale": "Retained after English gloss/sense editorial review.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 123,
+      "id": "mal.technician.a0503807c90caff4",
+      "previousID": "mal.technician.a0503807c90caff4",
+      "lemma": "안되다",
+      "before": [
+        "fail",
+        "to fail",
+        "not do/go well",
+        "to not do/go well"
+      ],
+      "after": [
+        "fail",
+        "not go well",
+        "not work"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to fail, to not do/go well\nSource: https://en.wiktionary.org/wiki/안되다#Korean · NIKL level A, frequency rank 2970",
+      "decision": "revised",
+      "rationale": "Separate source alternatives; avoid slash syntax in the displayed answer.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/안되다#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 124,
+      "id": "mal.technician.1a472e6bb5991d3d",
+      "previousID": "mal.technician.1a472e6bb5991d3d",
+      "lemma": "날짜",
+      "before": [
+        "date",
+        "days"
+      ],
+      "after": [
+        "date"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: date, days\nSource: https://en.wiktionary.org/wiki/날짜#Korean · NIKL level A, frequency rank 2994",
+      "decision": "revised",
+      "rationale": "Remove vague days, which is not the date of a month.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/날짜#Korean"
+      ],
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 125,
+      "id": "mal.technician.2cadc7da58e4c1e1",
+      "previousID": "mal.technician.2cadc7da58e4c1e1",
+      "lemma": "샌드위치",
+      "before": [
+        "sandwich (food)"
+      ],
+      "after": [
+        "sandwich"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: sandwich (food)\nSource: https://en.wiktionary.org/wiki/샌드위치#Korean · NIKL level A, frequency rank 3005",
+      "decision": "revised",
+      "rationale": "Remove explanatory food parenthesis.",
+      "referencesConsulted": [],
+      "verification": "draft; complete-entry review pending"
+    }
+  ],
+  "limitations": "Full Korean forms and metadata have not been independently verified; all entries remain draft. Old 한자 and 시 sense histories remain with retired IDs."
+}

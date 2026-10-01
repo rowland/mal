@@ -1,0 +1,643 @@
+{
+  "bank": "technician",
+  "batch": 19,
+  "date": "2026-10-01",
+  "baseContentVersion": 20,
+  "contentVersion": 21,
+  "scope": "English-gloss review, positions 451–475",
+  "sourceSHA256": "435ac405ee5f29af50871454197f3b64803759aeedb8ab1d47c69f88a737c3fa",
+  "resultSHA256": "34b6458d4bfc305642ba1cb98d6d1a760f62e84c900f09d0a8323c2c7df87270",
+  "entries": [
+    {
+      "position": 451,
+      "id": "mal.technician.dcc1846cde2e3d76",
+      "previousID": "mal.technician.dcc1846cde2e3d76",
+      "lemma": "직접",
+      "before": [
+        "directly"
+      ],
+      "after": [
+        "directly"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: directly\nSource: https://en.wiktionary.org/wiki/직접#Korean · NIKL level B, frequency rank 561",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 452,
+      "id": "mal.technician.d86687f8470d19e7",
+      "previousID": "mal.technician.d86687f8470d19e7",
+      "lemma": "개인",
+      "before": [
+        "personal",
+        "individual"
+      ],
+      "after": [
+        "individual",
+        "person"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "one person",
+      "sourceEvidence": "Source sense: personal, individual\nSource: https://en.wiktionary.org/wiki/개인#Korean · NIKL level B, frequency rank 562",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 453,
+      "id": "mal.technician.5e2bc0fad7cc815b",
+      "previousID": "mal.technician.5e2bc0fad7cc815b",
+      "lemma": "근데",
+      "before": [
+        "however",
+        "but"
+      ],
+      "after": [
+        "however",
+        "but"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: however; but\nSource: https://en.wiktionary.org/wiki/근데#Korean · NIKL level B, frequency rank 563",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 454,
+      "id": "mal.technician.b0f0ebe9c3574777",
+      "previousID": "mal.technician.b0f0ebe9c3574777",
+      "lemma": "효과",
+      "before": [
+        "result",
+        "effect"
+      ],
+      "after": [
+        "result",
+        "effect"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: result, effect\nSource: https://en.wiktionary.org/wiki/효과#Korean · NIKL level B, frequency rank 566",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 455,
+      "id": "mal.technician.0da4684083add066",
+      "previousID": "mal.technician.0da4684083add066",
+      "lemma": "불교",
+      "before": [
+        "Buddhism"
+      ],
+      "after": [
+        "Buddhism"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: Buddhism\nSource: https://en.wiktionary.org/wiki/불교#Korean · NIKL level B, frequency rank 567",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 456,
+      "id": "mal.technician.3d56e679c2152276",
+      "previousID": "mal.technician.3d56e679c2152276",
+      "lemma": "끌다",
+      "before": [
+        "pull",
+        "to pull",
+        "draw",
+        "to draw",
+        "drag",
+        "to drag"
+      ],
+      "after": [
+        "pull",
+        "draw",
+        "drag"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to pull, to draw, to drag\nSource: https://en.wiktionary.org/wiki/끌다#Korean · NIKL level B, frequency rank 568",
+      "decision": "revised",
+      "rationale": "Remove redundant infinitive display variants; grading already accepts optional to.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 457,
+      "id": "mal.technician.403ff45f893b16ec",
+      "previousID": "mal.technician.403ff45f893b16ec",
+      "lemma": "마치",
+      "before": [
+        "exactly the same",
+        "as if",
+        "just like"
+      ],
+      "after": [
+        "as if",
+        "just like"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: exactly the same, as if, just like\nSource: https://en.wiktionary.org/wiki/마치#Korean · NIKL level B, frequency rank 580",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 458,
+      "id": "mal.technician.b3aba0ce86603ae5",
+      "previousID": "mal.technician.b3aba0ce86603ae5",
+      "lemma": "바라다",
+      "before": [
+        "wish",
+        "to wish",
+        "want",
+        "to want",
+        "desire",
+        "to desire",
+        "hope for",
+        "to hope for",
+        "long for",
+        "to long for"
+      ],
+      "after": [
+        "hope for",
+        "wish for",
+        "want",
+        "desire"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to wish, to want, to desire, to hope for, to long for\nSource: https://en.wiktionary.org/wiki/바라다#Korean · NIKL level B, frequency rank 583",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 459,
+      "id": "mal.technician.f135d6d5a477cc53",
+      "previousID": "mal.technician.f135d6d5a477cc53",
+      "lemma": "강하다",
+      "before": [
+        "strong",
+        "powerful"
+      ],
+      "after": [
+        "strong",
+        "powerful"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: strong, powerful\nSource: https://en.wiktionary.org/wiki/강하다#Korean · NIKL level B, frequency rank 584",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 460,
+      "id": "mal.technician.e89d9a79ff2558e0",
+      "previousID": "mal.technician.e89d9a79ff2558e0",
+      "lemma": "경험",
+      "before": [
+        "experience"
+      ],
+      "after": [
+        "experience"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: experience\nSource: https://en.wiktionary.org/wiki/경험#Korean · NIKL level B, frequency rank 585",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 461,
+      "id": "mal.technician.ed4192e50742d251",
+      "previousID": "mal.technician.ed4192e50742d251",
+      "lemma": "나타내다",
+      "before": [
+        "indicate",
+        "to indicate",
+        "represent",
+        "show"
+      ],
+      "after": [
+        "indicate",
+        "represent",
+        "show"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to indicate, represent, show\nSource: https://en.wiktionary.org/wiki/나타내다#Korean · NIKL level B, frequency rank 588",
+      "decision": "revised",
+      "rationale": "Remove redundant infinitive display variants; grading already accepts optional to.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 462,
+      "id": "mal.technician.6501de227684e34e",
+      "previousID": "mal.technician.6501de227684e34e",
+      "lemma": "다양하다",
+      "before": [
+        "be diverse",
+        "to be diverse",
+        "be various",
+        "to be various"
+      ],
+      "after": [
+        "be diverse",
+        "be varied",
+        "diverse",
+        "varied"
+      ],
+      "partOfSpeechBefore": "adjective",
+      "partOfSpeechAfter": "adjective",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to be diverse, to be various\nSource: https://en.wiktionary.org/wiki/다양하다#Korean · NIKL level B, frequency rank 595",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 463,
+      "id": "mal.technician.f532d4345c3452c7",
+      "previousID": "mal.technician.f532d4345c3452c7",
+      "lemma": "법",
+      "before": [
+        "law"
+      ],
+      "after": [
+        "law"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: law\nSource: https://en.wiktionary.org/wiki/법#Korean · NIKL level B, frequency rank 603",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 464,
+      "id": "mal.technician.6d0fbeed38f43482",
+      "previousID": "mal.technician.6d0fbeed38f43482",
+      "lemma": "소설",
+      "before": [
+        "fictional literature",
+        "fictional story"
+      ],
+      "after": [
+        "novel",
+        "fiction"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: fictional literature; fictional story\nSource: https://en.wiktionary.org/wiki/소설#Korean · NIKL level B, frequency rank 604",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/소설#Korean"
+      ],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 465,
+      "id": "mal.technician.9b51013cc6b755cc",
+      "previousID": "mal.technician.9b51013cc6b755cc",
+      "lemma": "질서",
+      "before": [
+        "good order",
+        "public order",
+        "appropriate behavior"
+      ],
+      "after": [
+        "order",
+        "public order"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "orderly behavior or arrangement",
+      "sourceEvidence": "Source sense: good order; public order; appropriate behavior\nSource: https://en.wiktionary.org/wiki/질서#Korean · NIKL level B, frequency rank 607",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 466,
+      "id": "mal.technician.1bd4678314367a2e",
+      "previousID": "mal.technician.1bd4678314367a2e",
+      "lemma": "담다",
+      "before": [
+        "put into a container",
+        "to put into a container"
+      ],
+      "after": [
+        "put in",
+        "put into"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": "a container",
+      "sourceEvidence": "Source sense: to put into a container\nSource: https://en.wiktionary.org/wiki/담다#Korean · NIKL level B, frequency rank 609",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [
+        "https://en.wiktionary.org/wiki/담다#Korean"
+      ],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 467,
+      "id": "mal.technician.acfdda38ce0e9bf7",
+      "previousID": "mal.technician.acfdda38ce0e9bf7",
+      "lemma": "모이다",
+      "before": [
+        "be gathered or collected together",
+        "to be gathered or collected together"
+      ],
+      "after": [
+        "gather",
+        "come together",
+        "assemble"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": "people or things coming together",
+      "sourceEvidence": "Source sense: to be gathered or collected together\nSource: https://en.wiktionary.org/wiki/모이다#Korean · NIKL level B, frequency rank 610",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 468,
+      "id": "mal.technician.12ac1aa03ad98ed5",
+      "previousID": "mal.technician.12ac1aa03ad98ed5",
+      "lemma": "시민",
+      "before": [
+        "citizens",
+        "citizenry"
+      ],
+      "after": [
+        "citizen",
+        "citizens",
+        "citizenry"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: citizens, citizenry\nSource: https://en.wiktionary.org/wiki/시민#Korean · NIKL level B, frequency rank 611",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 469,
+      "id": "mal.technician.082a758af2fde38b",
+      "previousID": "mal.technician.082a758af2fde38b",
+      "lemma": "스스로",
+      "before": [
+        "by oneself",
+        "on one's own",
+        "without assistance"
+      ],
+      "after": [
+        "by oneself",
+        "on one's own",
+        "without assistance"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: by oneself, on one's own, without assistance\nSource: https://en.wiktionary.org/wiki/스스로#Korean · NIKL level B, frequency rank 614",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 470,
+      "id": "mal.technician.73bcf9a4164cca1f",
+      "previousID": "mal.technician.73bcf9a4164cca1f",
+      "lemma": "이날",
+      "before": [
+        "that day",
+        "this day",
+        "the day under discussion"
+      ],
+      "after": [
+        "this day",
+        "that day"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": "the day being discussed",
+      "sourceEvidence": "Source sense: that day; this day; the day under discussion\nSource: https://en.wiktionary.org/wiki/이날#Korean · NIKL level B, frequency rank 618",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 471,
+      "id": "mal.technician.81d31114f0ba7424",
+      "previousID": "mal.technician.81d31114f0ba7424",
+      "lemma": "제대로",
+      "before": [
+        "properly",
+        "in the appropriate manner"
+      ],
+      "after": [
+        "properly",
+        "correctly",
+        "as it should be"
+      ],
+      "partOfSpeechBefore": "adverb",
+      "partOfSpeechAfter": "adverb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: properly, in the appropriate manner\nSource: https://en.wiktionary.org/wiki/제대로#Korean · NIKL level B, frequency rank 619",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 472,
+      "id": "mal.technician.209fae6bc22a3696",
+      "previousID": "mal.technician.209fae6bc22a3696",
+      "lemma": "던지다",
+      "before": [
+        "throw",
+        "to throw",
+        "hurl",
+        "to hurl"
+      ],
+      "after": [
+        "throw",
+        "hurl"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to throw, to hurl\nSource: https://en.wiktionary.org/wiki/던지다#Korean · NIKL level B, frequency rank 621",
+      "decision": "revised",
+      "rationale": "Remove redundant infinitive display variants; grading already accepts optional to.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 473,
+      "id": "mal.technician.398b377c31093690",
+      "previousID": "mal.technician.398b377c31093690",
+      "lemma": "공간",
+      "before": [
+        "space",
+        "room"
+      ],
+      "after": [
+        "space",
+        "room"
+      ],
+      "partOfSpeechBefore": "noun",
+      "partOfSpeechAfter": "noun",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: space, room\nSource: https://en.wiktionary.org/wiki/공간#Korean · NIKL level B, frequency rank 623",
+      "decision": "retained",
+      "rationale": "Retain the concise, useful existing gloss after editorial review.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 474,
+      "id": "mal.technician.bfbb86eef6f7aba1",
+      "previousID": "mal.technician.bfbb86eef6f7aba1",
+      "lemma": "벌이다",
+      "before": [
+        "start",
+        "to start",
+        "begin",
+        "to begin"
+      ],
+      "after": [
+        "start",
+        "begin",
+        "launch"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": "an activity or undertaking",
+      "sourceEvidence": "Source sense: to start, to begin\nSource: https://en.wiktionary.org/wiki/벌이다#Korean · NIKL level B, frequency rank 627",
+      "decision": "revised",
+      "rationale": "Use concise natural English equivalents for the existing sense.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    },
+    {
+      "position": 475,
+      "id": "mal.technician.87a75f5e69f0b3ee",
+      "previousID": "mal.technician.87a75f5e69f0b3ee",
+      "lemma": "강조하다",
+      "before": [
+        "emphasize",
+        "to emphasize"
+      ],
+      "after": [
+        "emphasize"
+      ],
+      "partOfSpeechBefore": "verb",
+      "partOfSpeechAfter": "verb",
+      "promptCueBefore": null,
+      "promptCueAfter": null,
+      "sourceEvidence": "Source sense: to emphasize\nSource: https://en.wiktionary.org/wiki/강조하다#Korean · NIKL level B, frequency rank 631",
+      "decision": "revised",
+      "rationale": "Remove redundant infinitive display variants; grading already accepts optional to.",
+      "referencesConsulted": [],
+      "usageNote": null,
+      "verification": "draft; complete-entry review pending"
+    }
+  ],
+  "limitations": "Assistant gloss/sense editing only; no measured sense-frequency ranking or full Korean-form verification. Existing Korean forms preserved."
+}

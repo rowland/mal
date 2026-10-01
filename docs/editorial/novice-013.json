@@ -421,8 +421,8 @@
         "with dedication"
       ],
       "after": [
-        "hard",
         "diligently",
+        "hard",
         "with dedication",
         "enthusiastically"
       ],
@@ -434,11 +434,14 @@
       "rationale": "Use natural concise equivalents; separate valid alternatives and remove dictionary prose or unsuitable fragments.",
       "usageNote": null,
       "sourceEvidence": "Source sense: enthusiastically, fervently, with dedication\nSource: https://en.wiktionary.org/wiki/열심히#Korean · NIKL level A, frequency rank 660",
-      "referencesConsulted": [],
+      "referencesConsulted": [
+        "https://krdict.korean.go.kr/eng/dicMarinerSearch/search?mainSearchWord=%EC%97%B4&nation=eng"
+      ],
       "reviewer": "assistant",
       "scope": "English gloss/sense editorial review; not complete Korean-form verification",
       "verificationBefore": "draft",
-      "verificationAfter": "draft"
+      "verificationAfter": "draft",
+      "amendment": "2026-09-30: After targeted NIKL review, put diligently first so the English→Korean prompt is not ambiguous bare hard; retain hard for Korean→English write-in. Novice version 25→26."
     },
     {
       "position": 312,
